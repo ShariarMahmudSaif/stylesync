@@ -1,0 +1,524 @@
+body {
+  background: linear-gradient(45deg, #3b82f6, #ef4444);
+  min-height: 100vh;
+}
+.effect {
+  @apply p-4 bg-white rounded-lg shadow-md text-center cursor-pointer text-gray-800;
+}
+.effect-1 {
+  position: relative;
+  overflow: hidden;
+}
+.effect-1::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.4s, height 0.4s;
+}
+.effect-1:active::after {
+  width: 200%;
+  height: 200%;
+}
+.effect-2 {
+  transition: transform 0.3s;
+}
+.effect-2:hover {
+  transform: translateY(-5px);
+}
+.effect-3 {
+  position: relative;
+  overflow: hidden;
+}
+.effect-3::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.5), transparent);
+  transition: left 0.4s;
+}
+.effect-3:hover::after {
+  left: 100%;
+}
+.effect-4 {
+  transition: border-radius 0.3s;
+}
+.effect-4:hover {
+  border-radius: 20px;
+}
+.effect-5 {
+  transition: transform 0.3s;
+}
+.effect-5:hover {
+  transform: perspective(1000px) translateZ(20px);
+}
+.effect-6 {
+  transition: transform 0.3s;
+}
+.effect-6:hover {
+  transform: scale(1.1);
+}
+.effect-7 {
+  transition: clip-path 0.3s;
+}
+.effect-7:hover {
+  clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+}
+.effect-8 {
+  position: relative;
+}
+.effect-8::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+  transform: translateX(-100%);
+}
+.effect-8:hover::before {
+  transform: translateX(0);
+}
+.effect-9 {
+  transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.effect-9:hover {
+  transform: scale(1.2);
+}
+.effect-10 {
+  transition: box-shadow 0.3s;
+}
+.effect-10:hover {
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+}
+.effect-11 {
+  transition: transform 0.3s;
+}
+.effect-11:hover {
+  transform: translate(5px, -5px);
+}
+.effect-12 {
+  transition: box-shadow 0.3s;
+}
+.effect-12:hover {
+  box-shadow: 0 0 10px #00ff88, 0 0 20px #00ff88;
+  animation: flicker 1.5s infinite alternate;
+}
+@keyframes flicker {
+  0% { box-shadow: 0 0 10px #00ff88, 0 0 20px #00ff88; }
+  100% { box-shadow: 0 0 5px #00ff88, 0 0 10px #00ff88; }
+}
+.effect-13 {
+  position: relative;
+  overflow: hidden;
+}
+.effect-13::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.5s, height 0.5s;
+}
+.effect-13:hover::after {
+  width: 300%;
+  height: 300%;
+}
+.effect-14 {
+  transition: opacity 0.2s;
+}
+.effect-14:hover {
+  opacity: 0.7;
+}
+.effect-15 {
+  transition: transform 0.3s;
+}
+.effect-15:hover {
+  transform: rotate(10deg);
+}
+.effect-16 {
+  transition: transform 0.3s;
+}
+.effect-16:hover {
+  transform: scale(1.15);
+}
+.effect-17 {
+  transition: box-shadow 0.3s;
+}
+.effect-17:hover {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+.effect-18 {
+  position: relative;
+}
+.effect-18::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #00ff88;
+  transition: width 0.3s;
+}
+.effect-18:hover::after {
+  width: 100%;
+}
+.effect-19 {
+  transition: transform 0.3s;
+}
+.effect-19:hover {
+  transform: perspective(1000px) rotateY(10deg);
+}
+.effect-20 {
+  position: relative;
+}
+.effect-20::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #000;
+  transform: scaleX(0);
+  transition: transform 0.3s;
+}
+.effect-20:hover::after {
+  transform: scaleX(1);
+}
+.effect-21 {
+  animation: vibrate 0.1s infinite;
+}
+.effect-21:hover {
+  animation: none;
+}
+@keyframes vibrate {
+  0% { transform: translateX(0); }
+  50% { transform: translateX(2px); }
+  100% { transform: translateX(-2px); }
+}
+.effect-22 {
+  transition: filter 0.3s;
+}
+.effect-22:hover {
+  filter: brightness(1.2) contrast(1.2);
+}
+.effect-23 {
+  transition: filter 0.3s;
+}
+.effect-23:hover {
+  filter: opacity(0.8) grayscale(0.5);
+}
+.effect-24 {
+  transition: transform 0.5s;
+}
+.effect-24:hover {
+  transform: rotateY(180deg);
+}
+.effect-25 {
+  position: relative;
+}
+.effect-25::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 4"><path d="M0 2h20" stroke="#000" stroke-width="2" stroke-dasharray="4 4"/></svg>');
+  transition: transform 0.3s;
+}
+.effect-25:hover::after {
+  transform: scaleY(1.5);
+}
+.effect-26 {
+  transition: opacity 0.3s;
+}
+.effect-26:hover {
+  opacity: 0.5;
+}
+.effect-27 {
+  transition: box-shadow 0.3s;
+}
+.effect-27:hover {
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
+}
+.effect-28 {
+  transition: background 0.3s;
+}
+.effect-28:hover {
+  background: linear-gradient(90deg, #ff6b6b, #4ecdc4);
+}
+.effect-29 {
+  position: relative;
+  overflow: hidden;
+}
+.effect-29::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  background: rgba(0, 0, 0, 0.3);
+  transition: height 0.3s;
+}
+.effect-29:hover::after {
+  height: 100%;
+}
+.effect-30 {
+  position: relative;
+}
+.effect-30::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2);
+  transition: opacity 0.3s;
+  opacity: 0;
+}
+.effect-30:hover::after {
+  opacity: 1;
+}
+.effect-31 {
+  transition: transform 0.5s;
+}
+.effect-31:hover {
+  transform: rotateX(180deg);
+}
+.effect-32 {
+  transition: filter 0.3s;
+}
+.effect-32:hover {
+  filter: grayscale(100%);
+}
+.effect-33 {
+  transition: box-shadow 0.3s;
+}
+.effect-33:hover {
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.7);
+  animation: pulse 1s infinite;
+}
+@keyframes pulse {
+  0% { box-shadow: 0 0 15px rgba(255, 255, 255, 0.7); }
+  50% { box-shadow: 0 0 20px rgba(255, 255, 255, 1); }
+}
+.effect-34 {
+  position: relative;
+  overflow: hidden;
+}
+.effect-34::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s;
+  transform: scale(0);
+}
+.effect-34:hover::after {
+  transform: scale(1);
+}
+.effect-35 {
+  transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.effect-35:hover {
+  transform: scale(1.2, 0.8);
+}
+.effect-36 {
+  position: relative;
+}
+.effect-36::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 5px;
+  height: 5px;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  animation: dots 1s infinite;
+}
+@keyframes dots {
+  0% { transform: translate(-50%, -50%) scale(1); }
+  50% { transform: translate(-50%, -50%) scale(2); }
+}
+.effect-37 {
+  position: relative;
+}
+.effect-37::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.5));
+  transition: left 0.5s;
+}
+.effect-37:hover::after {
+  left: 100%;
+}
+.effect-38 {
+  transition: filter 0.3s;
+}
+.effect-38:hover {
+  filter: blur(2px);
+}
+.effect-39 {
+  transition: filter 0.3s;
+}
+.effect-39:hover {
+  filter: contrast(1.5) brightness(1.2);
+}
+.effect-40 {
+  transition: opacity 0.3s;
+}
+.effect-40:hover {
+  opacity: 0.8;
+}
+.effect-41 {
+  position: relative;
+}
+.effect-41::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border: 2px solid #00ff88;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.3s, height 0.3s;
+}
+.effect-41:hover::after {
+  width: 100%;
+  height: 100%;
+}
+.effect-42 {
+  transition: transform 0.3s;
+}
+.effect-42:hover {
+  transform: scale(1.1) rotate(5deg);
+}
+.effect-43 {
+  position: relative;
+}
+.effect-43::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, #ff6b6b, transparent);
+  transition: opacity 0.3s;
+  opacity: 0;
+}
+.effect-43:hover::after {
+  opacity: 1;
+}
+.effect-44 {
+  transition: transform 0.5s;
+}
+.effect-44:hover {
+  transform: rotate(360deg);
+}
+.effect-45 {
+  transition: filter 0.3s;
+}
+.effect-45:hover {
+  filter: hue-rotate(90deg);
+}
+.effect-46 {
+  position: relative;
+}
+.effect-46::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #000;
+  transition: width 0.3s;
+}
+.effect-46:hover::after {
+  width: 100%;
+}
+.effect-47 {
+  position: relative;
+}
+.effect-47:hover::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+.effect-48 {
+  transition: filter 0.3s;
+}
+.effect-48:hover {
+  filter: contrast(1.5);
+}
+.effect-49 {
+  position: relative;
+}
+.effect-49::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, #ff6b6b, #4ecdc4);
+  transition: opacity 0.3s;
+  opacity: 0;
+}
+.effect-49:hover::after {
+  opacity: 0.3;
+}
+.effect-50 {
+  transition: transform 0.3s;
+}
+.effect-50:hover {
+  transform: scale(1.2);
+}
+@media (max-width: 640px) {
+  .effect {
+    @apply text-sm p-3;
+  }
+  .code-container {
+    @apply w-full;
+  }
+}
+main.max-w-6xl {
+    max-width: 90rem;
+}
+main.md\:grid-cols-3 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }

@@ -1,0 +1,441 @@
+/* General Button Styles */
+button {
+  padding: 10px 20px;
+  border-radius: 4px;
+  border: none;
+  background: #3b82f6;
+  color: #fff;
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+button:focus {
+  outline: 2px solid #facc15;
+  outline-offset: 2px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  button {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+}
+
+/* Button-Specific Styles */
+.btn-1:hover {
+  box-shadow: 0 0 15px #facc15;
+}
+.btn-1:active {
+  box-shadow: 0 0 25px #facc15;
+}
+.btn-2 {
+  border: 2px solid transparent;
+}
+.btn-2:hover {
+  border-image: linear-gradient(45deg, #ef4444, #3b82f6) 1;
+}
+.btn-3 {
+  background: conic-gradient(#ef4444, #3b82f6, #facc15);
+}
+.btn-3:hover {
+  background: conic-gradient(#facc15, #ef4444, #3b82f6);
+}
+.btn-4:hover {
+  transform: rotateX(180deg);
+}
+.btn-4 {
+  transition: transform 0.3s;
+}
+.btn-5:hover {
+  filter: blur(2px);
+}
+.btn-5:active {
+  filter: blur(4px);
+}
+.btn-6:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+.btn-7 {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.btn-7 .icon {
+  margin-right: 8px;
+  transform: translateX(-10px);
+  opacity: 0;
+  transition: all 0.3s;
+}
+.btn-7:hover .icon {
+  transform: translateX(0);
+  opacity: 1;
+}
+.btn-8:active {
+  transform: scale(0.9);
+  animation: jelly 0.3s;
+}
+@keyframes jelly {
+  50% { transform: scale(1.2, 0.8); }
+}
+.btn-9 {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+.btn-9:after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #ef4444;
+  transition: top 0.3s;
+  z-index: -1;
+}
+.btn-9:hover:after {
+  top: 0;
+}
+.btn-10:hover {
+  border-radius: 20px;
+}
+.btn-10 {
+  transition: border-radius 0.3s;
+}
+.btn-11:hover {
+  box-shadow: 0 0 15px #ef4444;
+  animation: flicker 0.5s infinite;
+}
+@keyframes flicker {
+  50% { box-shadow: 0 0 5px #ef4444; }
+}
+.btn-12 {
+  position: relative;
+}
+.btn-12:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #3b82f6;
+  transition: width 0.3s;
+}
+.btn-12:hover:after {
+  width: 100%;
+}
+.btn-13 {
+  position: relative;
+  overflow: hidden;
+}
+.btn-13:after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+.btn-13:active:after {
+  animation: ripple 0.5s;
+}
+@keyframes ripple {
+  to { width: 200px; height: 200px; opacity: 0; }
+}
+.btn-14:hover {
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  animation: pulse 1s infinite;
+}
+@keyframes pulse {
+  50% { box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); }
+}
+.btn-15:hover {
+  transform: scaleX(1.2);
+}
+.btn-15 {
+  transition: transform 0.3s;
+}
+.btn-16:hover {
+  transform: rotate(5deg);
+}
+.btn-16 {
+  transition: transform 0.3s;
+}
+.btn-17 {
+  position: relative;
+}
+.btn-17:after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #facc15;
+  transition: width 0.3s;
+}
+.btn-17:hover:after {
+  width: 100%;
+}
+.btn-18:hover {
+  background: linear-gradient(to right, #3b82f6, #ef4444);
+  animation: wave 1s infinite;
+}
+@keyframes wave {
+  50% { background: linear-gradient(to right, #ef4444, #3b82f6); }
+}
+.btn-19:active {
+  transform: scale(1.2);
+}
+.btn-19 {
+  transition: transform 0.2s;
+}
+.btn-20 {
+  background: repeating-linear-gradient(45deg, #fff, #fff 5px, #000 5px, #000 10px);
+}
+.btn-20:hover {
+  background: repeating-linear-gradient(45deg, #000, #000 5px, #fff 5px, #fff 10px);
+}
+.btn-21 {
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+.btn-21:active {
+  box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+.btn-22 {
+  background: linear-gradient(45deg, #0000ff, #ff0000);
+}
+.btn-22:hover {
+  background: linear-gradient(45deg, #ff0000, #0000ff);
+}
+.btn-23:hover {
+  animation: disco 0.5s infinite;
+}
+@keyframes disco {
+  0% { background: #ef4444; }
+  50% { background: #3b82f6; }
+  100% { background: #facc15; }
+}
+.btn-24:hover {
+  transform: scale(1.1);
+  animation: orbit 0.5s;
+}
+@keyframes orbit {
+  50% { transform: scale(0.9); }
+}
+.btn-25 {
+  opacity: 0.7;
+}
+.btn-25:hover {
+  opacity: 1;
+}
+.btn-26 {
+  background: transparent;
+  border: 1px solid #fff;
+}
+.btn-26:hover {
+  background: #fff;
+  color: #000;
+}
+.btn-27:hover {
+  animation: jello 0.5s;
+}
+@keyframes jello {
+  25% { transform: skewX(-10deg); }
+  75% { transform: skewX(10deg); }
+}
+.btn-28 .icon {
+  margin-right: 8px;
+  transform: scale(0);
+  transition: transform 0.3s;
+}
+.btn-28:hover .icon {
+  transform: scale(1);
+}
+.btn-29:hover {
+  background: linear-gradient(to right, #facc15, transparent);
+}
+.btn-30:hover {
+  transform: translate(5px, -5px);
+}
+.btn-30 {
+  transition: transform 0.3s;
+}
+.btn-31 {
+  position: relative;
+}
+.btn-31:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 2px solid #3b82f6;
+  border-radius: inherit;
+  animation: pulse-ring 1s infinite;
+}
+@keyframes pulse-ring {
+  50% { transform: scale(1.2); opacity: 0; }
+}
+.btn-32:hover {
+  filter: hue-rotate(90deg);
+}
+.btn-32:active {
+  filter: hue-rotate(180deg);
+}
+.btn-33:hover {
+  box-shadow: 0 0 20px #facc15;
+  background: radial-gradient(circle, #facc15, #ef4444);
+}
+.btn-34:hover {
+  transform: rotate(360deg);
+}
+.btn-34 {
+  transition: transform 0.5s;
+}
+.btn-35:hover {
+  animation: stop-motion 0.5s steps(5);
+}
+@keyframes stop-motion {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(10px); }
+}
+.btn-36 {
+  box-shadow: 0 0 0 2px #ef4444, 0 0 0 4px #3b82f6, 0 0 0 6px #facc15;
+}
+.btn-36:hover {
+  box-shadow: 0 0 0 4px #ef4444, 0 0 0 6px #3b82f6, 0 0 0 8px #facc15;
+}
+.btn-37:hover {
+  box-shadow: 0 0 15px #8b5cf6;
+}
+.btn-37:active {
+  box-shadow: 0 0 25px #8b5cf6;
+}
+.btn-38:hover {
+  animation: vibrate 0.3s infinite;
+}
+@keyframes vibrate {
+  25% { transform: translateX(-2px); }
+  75% { transform: translateX(2px); }
+}
+.btn-39:hover {
+  transform: scaleY(0.8);
+}
+.btn-39 {
+  transition: transform 0.3s;
+}
+.btn-40:hover {
+  filter: contrast(1.5);
+}
+.btn-40:active {
+  filter: contrast(2);
+}
+.btn-41:hover {
+  background: #facc15;
+  color: #000;
+}
+.btn-41 {
+  font-family: 'Montserrat', sans-serif;
+}
+.btn-42 {
+  border: 2px solid #3b82f6;
+}
+.btn-42:hover {
+  border-image: linear-gradient(to right, #3b82f6, #ef4444) 1;
+}
+.btn-43 {
+  background: linear-gradient(45deg, #ef4444, #facc15);
+}
+.btn-43:hover {
+  background: linear-gradient(45deg, #facc15, #ef4444);
+}
+.btn-44 {
+  position: relative;
+  z-index: 1;
+}
+.btn-44:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: #3b82f6;
+  transition: width 0.3s;
+  z-index: -1;
+}
+.btn-44:hover:after {
+  width: 100%;
+}
+.btn-45:hover {
+  background: #ef4444;
+  box-shadow: 0 0 15px #ef4444;
+}
+.btn-45:active {
+  background: #dc2626;
+}
+.btn-46 {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+.btn-46:hover {
+  backdrop-filter: blur(10px);
+}
+.btn-47 {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+.btn-47:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+.btn-48:hover {
+  background: linear-gradient(45deg, rgba(59, 130, 246, 0.5), rgba(239, 68, 68, 0.5));
+  box-shadow: 0 0 15px rgba(59, 130, 246, 0.5);
+}
+.btn-49 {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+.btn-49:after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: #3b82f6;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 0.3s;
+}
+.btn-49:hover:after {
+  width: 200px;
+  height: 200px;
+}
+.btn-50:hover {
+  transform: scale(1.1);
+  animation: kinetic 0.5s;
+}
+@keyframes kinetic {
+  50% { transform: scale(0.9); }
+}
+
+/* Additional Global Styles */
+.code-container pre {
+  max-height: 200px;
+  overflow-y: auto;
+}
+.copy-btn {
+  transition: background-color 0.3s ease-in-out;
+}

@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hover & Click Effects - StyleSync</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Fira+Code&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="p-6 font-inter">
+  <header class="text-center mb-8">
+    <h1 class="text-3xl font-bold text-white">Hover & Click Effects</h1>
+    <p class="text-lg text-gray-200 mt-2">Interactive and responsive effects for developers</p>
+    <a href="../index.html" class="text-white underline hover:text-gray-200">Back to Home</a>
+  </header>
+  <main class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+    <div class="flex flex-col sm:flex-columb gap-4 items-start">
+      <div class="effect effect-1" data-snippet=".effect-1 { position: relative; overflow: hidden; }\n.effect-1::after { content: ''; position: absolute; top: 50%; left: 50%; width: 0; height: 0; background: rgba(255, 255, 255, 0.3); border-radius: 50%; transform: translate(-50%, -50%); transition: width 0.4s, height 0.4s; }\n.effect-1:active::after { width: 200%; height: 200%; }">Ripple Click</div>
+      <div class="code-container"><pre class="bg-gray-800 text-white p-2 rounded text-xs"><code>.effect-1 {
+  position: relative;
+  overflow: hidden;
+}
+.effect-1::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.4s, height 0.4s;
+}
+.effect-1:active::after {
+  width: 200%;
+  height: 200%;
+}</code></pre><button class="copy-btn mt-2 bg-blue-500 text-white px-2 py-1 rounded hover:bg-blue-600 text-xs">Copy</button></div>
+    </div>
+    <div class="flex flex-col sm:flex-columb gap-4 items-start">
+      <div class="effect effect-2" data-snippet=".effect-2 { transition: transform 0.3s; }\n.effect-2:hover { transform: translateY(-5px); }">Hover Lift</div>
+      <div class="code-container"><pre class="bg-gray-800 text-white p-2 rounded text-xs"><code>.effect-2 {
+  transition: transform 0.3s;
+}
+.effect-2:hover {
+  transform: translateY(-5px);
+}</code></pre><button class="copy-btn mt-2 bg-blue-500 text-white px-2 py-1 rounded hover:bg-blue-600 text-xs">Copy</button></div>
+    </div>
+    <div class="flex flex-col sm:flex-columb gap-4 items-start">
+      <div class="effect effect-3" data-snippet=".effect-3 { position: relative; overflow: hidden; }\n.effect-3::after { content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.5), transparent); transition: left 0.4s; }\n.effect-3:hover::after { left: 100%; }">Shimmer Swipe</div>
+      <div class="code-container"><pre class="bg-gray-800 text-white p-2 rounded text-xs"><code>.effect-3 {
+  position: relative;
+  overflow: hidden;
+}
+.effect-3::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.5), transparent);
+  transition: left 0.4s;
+}
+.effect-3:hover::after {
+  left: 100%;
+}</code></pre><button class="copy-btn mt-2 bg-blue-500 text-white px-2 py-1 rounded hover:bg-blue-600 text-xs">Copy</button></div>
+    </div>
+    <div class="flex flex-col sm:flex-columb gap-4 items-start">
+      <div class="effect effect-4" data-snippet=".effect-4 { transition: border-radius 0.3s; }\n.effect-4:hover { border-radius: 20px; }">Morphing Hover</div>
+      <div class="code-container"><pre class="bg-gray-800 text-white p-2 rounded text-xs"><code>.effect-4 {
+  transition: border-radius 0.3s;
+}
+.effect-4:hover {
+  border-radius: 20px;
+}</code></pre><button class="copy-btn mt-2 bg-blue-500 text-white px-2 py-1 rounded hover:bg-blue-600 text-xs">Copy</button></div>
+    </div>
+    <div class="flex flex-col sm:flex-columb gap-4 items-start">
+      <div class="effect effect-5" data-snippet=".effect-5 { transition: transform 0.3s; }\n.effect-5:hover { transform: perspective(1000px) translateZ(20px); }">Parallax Hover</div>
+      <div class="code-container"><pre class="bg-gray-800 text-white p-2 rounded text-xs"><code>.effect-5 {
+  transition: transform 0.3s;
+}
+.effect-5:hover {
+  transform: perspective(1000px) translateZ(20px);
+}</code></pre><button class="copy-btn mt-2 bg-blue-500 text-white px-2 py-1 rounded hover:bg-blue-600 text-xs">Copy</button></div>
+    </div>
+    <div class="flex flex-col sm:flex-columb gap-4 items-start">
+      <div class="effect effect-6" data-snippet=".effect-6 { transition: transform 0.3s; }\n.effect-6:hover { transform: scale(1.1); }">Bounce Hover</div>
+      <div class="code-container"><pre class="bg-gray-800 text-white p-2 rounded text-xs"><code>.effect-6 {
+  transition: transform 0.3s;
+}
+.effect-6:hover {
+  transform: scale(1.1);
+}</code></pre><button class="copy-btn mt-2 bg-blue-500 text-white px-2 py-1 rounded hover:bg-blue-600 text-xs">Copy</button></div>
+    </div>
+    <div class="flex flex-col sm:flex-columb gap-4 items-start">
+      <div class="effect effect-7" data-snippet=".effect-7 { transition: clip-path 0.3s; }\n.effect-7:hover { clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%); }">Clip-Path Hover</div>
+      <div class="code-container"><pre class="bg-gray-800 text-white p-2 rounded text-xs"><code>.effect-7 {
+  transition: clip-path 0.3s;
+}
+.effect-7:hover {
+  clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+}</code></pre><button class="copy-btn mt-2 bg-blue-500 text-white px-2 py-1 rounded hover:bg-blue-600 text-xs">Copy</button></div>
+    </div>
+    <div class="flex flex-col sm:flex-columb gap-4 items-start">
+      <div class="effect effect-8" data-snippet=".effect-8 { position: relative; }\n.effect-8::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.1); transition: transform 0.3s; transform: translateX(-100%); }\n.effect-8:hover::before { transform: translateX(0); }">Direction-Aware Hover</div>
+      <div class="code-container"><pre class="bg-gray-800 text-white p-2 rounded text-xs"><code>.effect-8 {
+  position: relative;
+}
+.effect-8::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+  transform: translateX(-100%);
+}
+.effect-8:hover::before {
+  transform: translateX(0);
+}</code></pre><button class="copy-btn mt-2 bg-blue-500 text-white px-2 py-1 rounded hover:bg-blue-600 text-xs">Copy</button></div>
+    </div>
+    <div class="flex flex-col sm:flex-columb gap-4 items-start">
+      <div class="effect effect-9" data-snippet=".effect-9 { transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55); }\n.effect-9:hover { transform: scale(1.2); }">Elastic Hover</div>
+      <div class="code-container"><pre class="bg-gray-800 text-white p-2 rounded text-xs"><code>.effect-9 {
+  transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.effect-9:hover {
+  transform: scale(1.2);
+}</code></pre><button class="copy-btn mt-2 bg-blue-500 text-white px-2 py-1 rounded hover:bg-blue-600 text-xs">Copy</button></div>
+    </div>
+    <div class="flex flex-col sm:flex-columb gap-4 items-start">
+      <div class="effect effect-10" data-snippet=".effect-10 { transition: box-shadow 0.3s; }\n.effect-10:hover { box-shadow: 0 0 15px rgba(255, 255, 255, 0.5); }">Glow Hover</div>
+      <div class="code-container"><pre class="bg-gray-800 text-white p-2 rounded text-xs"><code>.effect-10 {
+  transition: box-shadow 0.3s;
+}
+.effect-10:hover {
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+}</code></pre><button class="copy-btn mt-2 bg-blue-500 text-white px-2 py-1 rounded hover:bg-blue-600 text-xs">Copy</button></div>
+    </div>
+    <div class="flex flex-col sm:flex-columb gap-4 items-start">
+      <div class="effect effect-11" data-snippet=".effect-11 { transition: transform 0.3s; }\n.effect-11:hover { transform: translate(5px, -5px); }">Magnetic Hover</div>
+      <div class="code-container"><pre class="bg-gray-800 text-white p-2 rounded text-xs"><code>.effect-11 {
+  transition: transform 0.3s;
+}
+.effect-11:hover {
+  transform: translate(5px, -5px);
+}</code></pre><button class="copy-btn mt-2 bg-blue-500 text-white px-2 py-1 rounded hover:bg-blue-600 text-xs">Copy</button></div>
+    </div>
+    <div class="flex flex-col sm:flex-columb gap-4 items-start">
+      <div class="effect effect-12" data-snippet=".effect-12 { transition: box-shadow 0.3s; }\n.effect-12:hover { box-shadow: 0 0 10px #00ff88, 0 0 20px #00ff88; animation: flicker 1.5s infinite alternate; }\n@keyframes flicker { 0% { box-shadow: 0 0 10px #00ff88, 0 0 20px #00ff88; } 100% { box-shadow: 0 0 5px #00ff88, 0 0 10px #00ff88; } }">Neon Flicker Hover</div>
+      <div class="code-container"><pre class="bg-gray-800 text-white p-2 rounded text-xs"><code>.effect-12 {
+  transition: box-shadow 0.3s;
+}
+.effect-12:hover {
+  box-shadow: 0 0 10px #00ff88, 0 0 20px #00ff88;
+  animation: flicker 1.5s infinite alternate;
+}
+@keyframes flicker {
+  0% { box-shadow: 0 0 10px #00ff88, 0 0 20px #00ff88; }
+  100% { box-shadow: 0 0 5px #00ff88, 0 0 10px #00ff88; }
+}</code></pre><button class="copy-btn mt-2 bg-blue-500 text-white px-2 py-1 rounded hover:bg-blue-600 text-xs">Copy</button></div>
+    </div>
+    <div class="flex flex-col sm:flex-columb gap-4 items-start">
+      <div class="effect effect-13" data-snippet=".effect-13 { position: relative; overflow: hidden; }\n.effect-13::after { content: ''; position: absolute; top: 50%; left: 50%; width: 0; height: 0; background: rgba(255, 255, 255, 0.5); border-radius: 50%; transform: translate(-50%, -50%); transition: width 0.5s, height 0.5s; }\n.effect-13:hover::after { width: 300%; height: 300%; }">Particle Burst Hover</div>
+      <div class="code-container"><pre class="bg-gray-800 text-white p-2 rounded text-xs"><code>.effect-13 {
+  position: relative;
+  overflow: hidden;
+}
+.effect-13::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.5s, height 0.5s;
+}
+.effect-13:hover::after {
+  width: 300%;
+  height: 300%;
+}</code></pre><button class="copy-btn mt-2 bg-blue-500 text-white px-2 py-1 rounded hover:bg-blue-600 text-xs">Copy</button></div>
+    </div>
+    <div class="flex flex-col sm:flex-columb gap-4 items-start">
+      <div class="effect effect-14" data-snippet=".effect-14 { transition: opacity 0.2s; }\n.effect-14:hover { opacity: 0.7; }">Quick Fade Hover</div>
+      <div class="code-container"><pre class="bg-gray-800 text-white p-2 rounded text-xs"><code>.effect-14 {
+  transition: opacity 0.2s;
+}
+.effect-14:hover {
+  opacity: 0.7;
+}</code></pre><button class="copy-btn mt-2 bg-blue-500 text-white px-2 py-1 rounded hover:bg-blue-600 text-xs">Copy</button></div>
+    </div>
+    <div class="flex flex-col sm:flex-columb gap-4 items-start">
+      <div class="effect effect-15" data-snippet=".effect-15 { transition: transform 0.3s; }\n.effect-15:hover { transform: rotate(10deg); }">Rotate Hover</div>
+      <div class="code-container"><pre class="bg-gray-800 text-white p-2 rounded text-xs"><code>.effect-15 {
+  transition: transform 0.3s;
+}
+.effect-15:hover {
+  transform: rotate(10deg);
+}</code></pre><button class="copy-btn mt-2 bg-blue-500 text-white px-2 py-1 rounded hover:bg-blue-600 text-xs">Copy</button></div>
+    </div>
+    <div class="flex flex-col sm:flex-columb gap-4 items-start">
+      <div class="effect effect-16" data-snippet=".effect-16 { transition: transform 0.3s; }\n.effect-16:hover { transform: scale(1.15); }">Scale Hover</div>
+      <div class="code-container"><pre class="bg-gray-800 text-white p-2 rounded text-xs"><code>.effect-16 {
+  transition: transform 0.3s;
+}
+.effect-16:hover {
+  transform: scale(1.15);
+}</code></pre><button class="copy-btn mt-2 bg-blue-500 text-white px-2 py-1 rounded hover:bg-blue-600 text-xs">Copy</button></div>
+    </div>
+    <div class="flex flex-col sm:flex-columb gap-4 items-start">
+      <div class="effect effect-17" data-snippet=".effect-17 { transition: box-shadow 0.3s; }\n.effect-17:hover { box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); }">Shadow Gcolumb Hover</div>
+      <div class="code-container"><pre class="bg-gray-800 text-white p-2 rounded text-xs"><code>.effect-17 {
+  transition: box-shadow 0.3s;
+}
+.effect-17:hover {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}</code></pre><button class="copy-btn mt-2 bg-blue-500 text-white px-2 py-1 rounded hover:bg-blue-600 text-xs">Copy</button></div>
+    </div>
+    <div class="flex flex-col sm:flex-columb gap-4 items-start">
+      <div class="effect effect-18" data-snippet=".effect-18 { position: relative; }\n.effect-18::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 2px; background: #00ff88; transition: width 0.3s; }\n.effect-18:hover::after { width: 100%; }">Swipe Underline Hover</div>
+      <div class="code-container"><pre class="bg-gray-800 text-white p-2 rounded text-xs"><code>.effect-18 {
+  position: relative;
+}
+.effect-18::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #00ff88;
+  transition: width 0.3s;
+}
+.effect-18:hover::after {
+  width: 100%;
+}</code></pre><button class="copy-btn mt-2 bg-blue-500 text-white px-2 py-1 rounded hover:bg-blue-600 text-xs">Copy</button></div>
+    </div>
+    <div class="flex flex-col sm:flex-columb gap-4 items-start">
+      <div class="effect effect-19" data-snippet=".effect-19 { transition: transform 0.3s; }\n.effect-19:hover { transform: perspective(1000px) rotateY(10deg); }">Tilt Hover</div>
+      <div class="code-container"><pre class="bg-gray-800 text-white p-2 rounded text-xs"><code>.effect-19 {
+  transition: transform 0.3s;
+}
+.effect-19:hover {
+  transform: perspective(1000px) rotateY(10deg);
+}</code></pre><button class="copy-btn mt-2 bg-blue-500 text-white px-2 py-1 rounded hover:bg-blue-600 text-xs">Copy</button></div>
+    </div>
+    <div class="flex flex-col sm:flex-columb gap-4 items-start">
+      <div class="effect effect-20" data-snippet=".effect-20 { position: relative; }\n.effect-20::after { content: ''; position: absolute; bottom: 0; left: 0; width: 100%; height: 2px; background: #000; transform: scaleX(0); transition: transform 0.3s; }\n.effect-20:hover::after { transform: scaleX(1); }">Underline Reveal Hover</div>
+      <div class="code-container"><pre class="bg-gray-800 text-white p-2 rounded text-xs"><code>.effect-20 {
+  position: relative;
+}
+.effect-20::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #000;
+  transform: scaleX(0);
+  transition: transform 0.3s;
+}
+.effect-20:hover::after {
+  transform: scaleX(1);
+}</code></pre><button class="copy-btn mt-2 bg-blue-500 text-white px-2 py-1 rounded hover:bg-blue-600 text-xs">Copy</button></div>
+    </div>
+    <div class="flex flex-col sm:flex-columb gap-4 items-start">
+      <div class="effect effect-21" data-snippet=".effect-21 { animation: vibrate 0.1s infinite; }\n.effect-21:hover { animation: none; }\n@keyframes vibrate { 0% { transform: translateX(0); } 50% { transform: translateX(2px); } 100% { transform: translateX(-2px); } }">Vibration Hover</div>
+      <div class="code-container"><pre class="bg-gray-800 text-white p-2 rounded text-xs"><code>.effect-21 {
+  animation: vibrate 0.1s infinite;
+}
+.effect-21:hover {
+  animation: none;
+}
+@keyframes vibrate {
+  0% { transform: translateX(0); }
+  50% { transform: translateX(2px); }
+  100% { transform: translateX(-2px); }
+}</code></pre><button class="copy-btn mt-2 bg-blue-500 text-white px-2 py-1 rounded hover:bg-blue-600 text-xs">Copy</button></div>
+    </div>
+    <div class="flex flex-col sm:flex-columb gap-4 items-start">
+      <div class="effect effect-22" data-snippet=".effect-22 { transition: filter 0.3s; }\n.effect-22:hover { filter: brightness(1.2) contrast(1.2); }">Wave Distortion Hover</div>
+      <div class="code-container"><pre class="bg-gray-800 text-white p-2 rounded text-xs"><code>.effect-22 {
+  transition: filter 0.3s;
+}
+.effect-22:hover {
+  filter: brightness(1.2) contrast(1.2);
+}</code></pre><button class="copy-btn mt-2 bg-blue-500 text-white px-2 py-1 rounded hover:bg-blue-600 text-xs">Copy</button></div>
+    </div>
+    <div class="flex flex-col sm:flex-columb gap-4 items-start">
+      <div class="effect effect-23" data-snippet=".effect-23 { transition: filter 0.3s; }\n.effect-23:hover { filter: opacity(0.8) grayscale(0.5); }">X-Ray Hover</div>
+      <div class="code-container"><pre class="bg-gray-800 text-white p-2 rounded text-xs"><code>.effect-23 {
+  transition: filter 0.3s;
+}
+.effect-23:hover {
+  filter: opacity(0.8) grayscale(0.5);
+}</code></pre><button class="copy-btn mt-2 bg-blue-500 text-white px-2 py-1 rounded hover:bg-blue-600 text-xs">Copy</button></div>
+    </div>
+    <div class="flex flex-col sm:flex-columb gap-4 items-start">
+      <div class="effect effect-24" data-snippet=".effect-24 { transition: transform 0.5s; }\n.effect-24:hover { transform: rotateY(180deg); }">Y-Axis Flip Hover</div>
+      <div class="code-container"><pre class="bg-gray-800 text-white p-2 rounded text-xs"><code>.effect-24 {
+  transition: transform 0.5s;
+}
+.effect-24:hover {
+  transform: rotateY(180deg);
+}</code></pre><button class="copy-btn mt-2 bg-blue-500 text-white px-2 py-1 rounded hover:bg-blue-600 text-xs">Copy</button></div>
+    </div>
+    <div class="flex flex-col sm:flex-columb gap-4 items-start">
+      <div class="effect effect-25" data-snippet=".effect-25 { position: relative; }\n.effect-25::after { content: ''; position: absolute; bottom: 0; left: 0; width: 100%; height: 2px; background: url('data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 20 4\"><path d=\"M0 2h20\" stroke=\"#000\" stroke-width=\"2\" stroke-dasharray=\"4 4\"/></svg>'); transition: transform 0.3s; }\n.effect-25:hover::after { transform: scaleY(1.5); }">Zigzag Hover</div>
+      <div class="code-container"><pre class="bg-gray-800 text-white p-2 rounded text-xs"><code>.effect-25 {
+  position: relative;
+}
+.effect-25::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 4"><path d="M0 2h20" stroke="#000" stroke-width="2" stroke-dasharray="4 4"/></svg>');
+  transition: transform 0.3s;
+}
+.effect-25:hover::after {
+  transform: scaleY(1.5);
+}</code></pre><button class="copy-btn mt-2 bg-blue-500 text-white px-2 py-1 rounded hover:bg-blue-600 text-xs">Copy</button></div>
+    </div>
+    <div class="flex flex-col sm:flex-columb gap-4 items-start">
+      <div class="effect effect-26" data-snippet=".effect-26 { transition: opacity 0.3s; }\n.effect-26:hover { opacity: 0.5; }">Alpha Fade Hover</div>
+      <div class="code-container"><pre class="bg-gray-800 text-white p-2 rounded text-xs"><code>.effect-26 {
+  transition: opacity 0.3s;
+}
+.effect-26:hover {
+  opacity: 0.5;
+}</code></pre><button class="copy-btn mt-2 bg-blue-500 text-white px-2 py-1 rounded hover:bg-blue-600 text-xs">Copy</button></div>
+    </div>
+    <div class="flex flex-col sm:flex-columb gap-4 items-start">
+      <div class="effect effect-27" data-snippet=".effect-27 { transition: box-shadow 0.3s; }\n.effect-27:hover { box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2); }">Bevel Hover</div>
+      <div class="code-container"><pre class="bg-gray-800 text-white p-2 rounded text-xs"><code>.effect-27 {
+  transition: box-shadow 0.3s;
+}
+.effect-27:hover {
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
+}</code></pre><button class="copy-btn mt-2 bg-blue-500 text-white px-2 py-1 rounded hover:bg-blue-600 text-xs">Copy</button></div>
+    </div>
+    <div class="flex flex-col sm:flex-columb gap-4 items-start">
+      <div class="effect effect-28" data-snippet=".effect-28 { transition: background 0.3s; }\n.effect-28:hover { background: linear-gradient(90deg, #ff6b6b, #4ecdc4); }">Color Swipe Hover</div>
+      <div class="code-container"><pre class="bg-gray-800 text-white p-2 rounded text-xs"><code>.effect-28 {
+  transition: background 0.3s;
+}
+.effect-28:hover {
+  background: linear-gradient(90deg, #ff6b6b, #4ecdc4);
+}</code></pre><button class="copy-btn mt-2 bg-blue-500 text-white px-2 py-1 rounded hover:bg-blue-600 text-xs">Copy</button></div>
+    </div>
+    <div class="flex flex-col sm:flex-columb gap-4 items-start">
+      <div class="effect effect-29" data-snippet=".effect-29 { position: relative; overflow: hidden; }\n.effect-29::after { content: ''; position: absolute; bottom: 0; left: 0; width: 100%; height: 0; background: rgba(0, 0, 0, 0.3); transition: height 0.3s; }\n.effect-29:hover::after { height: 100%; }">Drip Hover</div>
+      <div class="code-container"><pre class="bg-gray-800 text-white p-2 rounded text-xs"><code>.effect-29 {
+  position: relative;
+  overflow: hidden;
+}
+.effect-29::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  background: rgba(0, 0, 0, 0.3);
+  transition: height 0.3s;
+}
+.effect-29:hover26 {
+  height: 100%;
+}</code></pre><button class="copy-btn mt-2 bg-blue-500 text-white px-2 py-1 rounded hover:bg-blue-600 text-xs">Copy</button></div>
+    </div>
+    <div class="flex flex-col sm:flex-columb gap-4 items-start">
+      <div class="effect effect-30" data-snippet=".effect-30 { position: relative; }\n.effect-30::after { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.2); transition: opacity 0.3s; opacity: 0; }\n.effect-30:hover::after { opacity: 1; }">Echo Hover</div>
+      <div class="code-container"><pre class="bg-gray-800 text-white p-2 rounded text-xs"><code>.effect-30 {
+  position: relative;
+}
+.effect-30::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2);
+  transition: opacity 0.3s;
+  opacity: 0;
+}
+.effect-30:hover::after {
+  opacity: 1;
+}</code></pre><button class="copy-btn mt-2 bg-blue-500 text-white px-2 py-1 rounded hover:bg-blue-600 text-xs">Copy</button></div>
+    </div>
+    <div class="flex flex-col sm:flex-columb gap-4 items-start">
+      <div class="effect effect-31" data-snippet=".effect-31 { transition: transform 0.5s; }\n.effect-31:hover { transform: rotateX(180deg); }">Flip Hover</div>
+      <div class="code-container"><pre class="bg-gray-800 text-white p-2 rounded text-xs"><code>.effect-31 {
+  transition: transform 0.5s;
+}
+.effect-31:hover {
+  transform: rotateX(180deg);
+}</code></pre><button class="copy-btn mt-2 bg-blue-500 text-white px-2 py-1 rounded hover:bg-blue-600 text-xs">Copy</button></div>
+    </div>
+    <div class="flex flex-col sm:flex-columb gap-4 items-start">
+      <div class="effect effect-32" data-snippet=".effect-32 { transition: filter 0.3s; }\n.effect-32:hover { filter: grayscale(100%); }">Grayscale Hover</div>
+      <div class="code-container"><pre class="bg-gray-800 text-white p-2 rounded text-xs"><code>.effect-32 {
+  transition: filter 0.3s;
+}
+.effect-32:hover {
+  filter: grayscale(100%);
+}</code></pre><button class="copy-btn mt-2 bg-blue-500 text-white px-2 py-1 rounded hover:bg-blue-600 text-xs">Copy</button></div>
+    </div>
+    <div class="flex flex-col sm:flex-columb gap-4 items-start">
+      <div class="effect effect-33" data-snippet=".effect-33 { transition: box-shadow 0.3s; }\n.effect-33:hover { box-shadow: 0 0 15px rgba(255, 255, 255, 0.7); animation: pulse 1s infinite; }\n@keyframes pulse { 0% { box-shadow: 0 0 15px rgba(255, 255, 255, 0.7); } 50% { box-shadow: 0 0 20px rgba(255, 255, 255, 1); } }">Highlight Pulse Hover</div>
+      <div class="code-container"><pre class="bg-gray-800 text-white p-2 rounded text-xs"><code>.effect-33 {
+  transition: box-shadow 0.3s;
+}
+.effect-33:hover {
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.7);
+  animation: pulse 1s infinite;
+}
+@keyframes pulse {
+  0% { box-shadow: 0 0 15px rgba(255, 255, 255, 0.7); }
+  50% { box-shadow: 0 0 20px rgba(255, 255, 255, 1); }
+}</code></pre><button class="copy-btn mt-2 bg-blue-500 text-white px-2 py-1 rounded hover:bg-blue-600 text-xs">Copy</button></div>
+    </div>
+    <div class="flex flex-col sm:flex-columb gap-4 items-start">
+      <div class="effect effect-34" data-snippet=".effect-34 { position: relative; overflow: hidden; }\n.effect-34::after { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.3); transition: transform 0.3s; transform: scale(0); }\n.effect-34:hover::after { transform: scale(1); }">Ink Spread Hover</div>
+      <div class="code-container"><pre class="bg-gray-800 text-white p-2 rounded text-xs"><code>.effect-34 {
+  position: relative;
+  overflow: hidden;
+}
+.effect-34::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s;
+  transform: scale(0);
+}
+.effect-34:hover::after {
+  transform: scale(1);
+}</code></pre><button class="copy-btn mt-2 bg-blue-500 text-white px-2 py-1 rounded hover:bg-blue-600 text-xs">Copy</button></div>
+    </div>
+    <div class="flex flex-col sm:flex-columb gap-4 items-start">
+      <div class="effect effect-35" data-snippet=".effect-35 { transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55); }\n.effect-35:hover { transform: scale(1.2, 0.8); }">Jelly Hover</div>
+      <div class="code-container"><pre class="bg-gray-800 text-white p-2 rounded text-xs"><code>.effect-35 {
+  transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.effect-35:hover {
+  transform: scale(1.2, 0.8);
+}</code></pre><button class="copy-btn mt-2 bg-blue-500 text-white px-2 py-1 rounded hover:bg-blue-600 text-xs">Copy</button></div>
+    </div>
+    <div class="flex flex-col sm:flex-columb gap-4 items-start">
+      <div class="effect effect-36" data-snippet=".effect-36 { position: relative; }\n.effect-36::after { content: ''; position: absolute; top: 50%; left: 50%; width: 5px; height: 5px; background: rgba(255, 255, 255, 0.5); border-radius: 50%; animation: dots 1s infinite; }\n@keyframes dots { 0% { transform: translate(-50%, -50%) scale(1); } 50% { transform: translate(-50%, -50%) scale(2); } }">Kinetic Dots Hover</div>
+      <div class="code-container"><pre class="bg-gray-800 text-white p-2 rounded text-xs"><code>.effect-36 {
+  position: relative;
+}
+.effect-36::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 5px;
+  height: 5px;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  animation: dots 1s infinite;
+}
+@keyframes dots {
+  0% { transform: translate(-50%, -50%) scale(1); }
+  50% { transform: translate(-50%, -50%) scale(2); }
+}</code></pre><button class="copy-btn mt-2 bg-blue-500 text-white px-2 py-1 rounded hover:bg-blue-600 text-xs">Copy</button></div>
+    </div>
+    <div class="flex flex-col sm:flex-columb gap-4 items-start">
+      <div class="effect effect-37" data-snippet=".effect-37 { position: relative; }\n.effect-37::after { content: ''; position: absolute; top: 0; left: -100%; width: 50%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.5)); transition: left 0.5s; }\n.effect-37:hover::after { left: 100%; }">Light Trail Hover</div>
+      <div class="code-container"><pre class="bg-gray-800 text-white p-2 rounded text-xs"><code>.effect-37 {
+  position: relative;
+}
+.effect-37::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.5));
+  transition: left 0.5s;
+}
+.effect-37:hover::after {
+  left: 100%;
+}</code></pre><button class="copy-btn mt-2 bg-blue-500 text-white px-2 py-1 rounded hover:bg-blue-600 text-xs">Copy</button></div>
+    </div>
+    <div class="flex flex-col sm:flex-columb gap-4 items-start">
+      <div class="effect effect-38" data-snippet=".effect-38 { transition: filter 0.3s; }\n.effect-38:hover { filter: blur(2px); }">Melt Hover</div>
+      <div class="code-container"><pre class="bg-gray-800 text-white p-2 rounded text-xs"><code>.effect-38 {
+  transition: filter 0.3s;
+}
+.effect-38:hover {
+  filter: blur(2px);
+}</code></pre><button class="copy-btn mt-2 bg-blue-500 text-white px-2 py-1 rounded hover:bg-blue-600 text-xs">Copy</button></div>
+    </div>
+    <div class="flex flex-col sm:flex-columb gap-4 items-start">
+      <div class="effect effect-39" data-snippet=".effect-39 { transition: filter 0.3s; }\n.effect-39:hover { filter: contrast(1.5) brightness(1.2); }">Noise Glitch Hover</div>
+      <div class="code-container"><pre class="bg-gray-800 text-white p-2 rounded text-xs"><code>.effect-39 {
+  transition: filter 0.3s;
+}
+.effect-39:hover {
+  filter: contrast(1.5) brightness(1.2);
+}</code></pre><button class="copy-btn mt-2 bg-blue-500 text-white px-2 py-1 rounded hover:bg-blue-600 text-xs">Copy</button></div>
+    </div>
+    <div class="flex flex-col sm:flex-columb gap-4 items-start">
+      <div class="effect effect-40" data-snippet=".effect-40 { transition: opacity 0.3s; }\n.effect-40:hover { opacity: 0.8; }">Opacity Hover</div>
+      <div class="code-container"><pre class="bg-gray-800 text-white p-2 rounded text-xs"><code>.effect-40 {
+  transition: opacity 0.3s;
+}
+.effect-40:hover {
+  opacity: 0.8;
+}</code></pre><button class="copy-btn mt-2 bg-blue-500 text-white px-2 py-1 rounded hover:bg-blue-600 text-xs">Copy</button></div>
+    </div>
+    <div class="flex flex-col sm:flex-columb gap-4 items-start">
+      <div class="effect effect-41" data-snippet=".effect-41 { position: relative; }\n.effect-41::after { content: ''; position: absolute; top: 50%; left: 50%; width: 0; height: 0; border: 2px solid #00ff88; border-radius: 50%; transform: translate(-50%, -50%); transition: width 0.3s, height 0.3s; }\n.effect-41:hover::after { width: 100%; height: 100%; }">Pulse Ring Hover</div>
+      <div class="code-container"><pre class="bg-gray-800 text-white p-2 rounded text-xs"><code>.effect-41 {
+  position: relative;
+}
+.effect-41::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border: 2px solid #00ff88;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.3s, height 0.3s;
+}
+.effect-41:hover::after {
+  width: 100%;
+  height: 100%;
+}</code></pre><button class="copy-btn mt-2 bg-blue-500 text-white px-2 py-1 rounded hover:bg-blue-600 text-xs">Copy</button></div>
+    </div>
+    <div class="flex flex-col sm:flex-columb gap-4 items-start">
+      <div class="effect effect-42" data-snippet=".effect-42 { transition: transform 0.3s; }\n.effect-42:hover { transform: scale(1.1) rotate(5deg); }">Quantum Hover</div>
+      <div class="code-container"><pre class="bg-gray-800 text-white p-2 rounded text-xs"><code>.effect-42 {
+  transition: transform 0.3s;
+}
+.effect-42:hover {
+  transform: scale(1.1) rotate(5deg);
+}</code></pre><button class="copy-btn mt-2 bg-blue-500 text-white px-2 py-1 rounded hover:bg-blue-600 text-xs">Copy</button></div>
+    </div>
+    <div class="flex flex-col sm:flex-columb gap-4 items-start">
+      <div class="effect effect-43" data-snippet=".effect-43 { position: relative; }\n.effect-43::after { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(45deg, #ff6b6b, transparent); transition: opacity 0.3s; opacity: 0; }\n.effect-43:hover::after { opacity: 1; }">Ribbon Hover</div>
+      <div class="code-container"><pre class="bg-gray-800 text-white p-2 rounded text-xs"><code>.effect-43 {
+  position: relative;
+}
+.effect-43::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, #ff6b6b, transparent);
+  transition: opacity 0.3s;
+  opacity: 0;
+}
+.effect-43:hover::after {
+  opacity: 1;
+}</code></pre><button class="copy-btn mt-2 bg-blue-500 text-white px-2 py-1 rounded hover:bg-blue-600 text-xs">Copy</button></div>
+    </div>
+    <div class="flex flex-col sm:flex-columb gap-4 items-start">
+      <div class="effect effect-44" data-snippet=".effect-44 { transition: transform 0.5s; }\n.effect-44:hover { transform: rotate(360deg); }">Spiral Hover</div>
+      <div class="code-container"><pre class="bg-gray-800 text-white p-2 rounded text-xs"><code>.effect-44 {
+  transition: transform 0.5s;
+}
+.effect-44:hover {
+  transform: rotate(360deg);
+}</code></pre><button class="copy-btn mt-2 bg-blue-500 text-white px-2 py-1 rounded hover:bg-blue-600 text-xs">Copy</button></div>
+    </div>
+    <div class="flex flex-col sm:flex-columb gap-4 items-start">
+      <div class="effect effect-45" data-snippet=".effect-45 { transition: filter 0.3s; }\n.effect-45:hover { filter: hue-rotate(90deg); }">Thermal Hover</div>
+      <div class="code-container"><pre class="bg-gray-800 text-white p-2 rounded text-xs"><code>.effect-45 {
+  transition: filter 0.3s;
+}
+.effect-45:hover {
+  filter: hue-rotate(90deg);
+}</code></pre><button class="copy-btn mt-2 bg-blue-500 text-white px-2 py-1 rounded hover:bg-blue-600 text-xs">Copy</button></div>
+    </div>
+    <div class="flex flex-col sm:flex-columb gap-4 items-start">
+      <div class="effect effect-46" data-snippet=".effect-46 { position: relative; }\n.effect-46::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 2px; background: #000; transition: width 0.3s; }\n.effect-46:hover::after { width: 100%; }">Underline Draw Hover</div>
+      <div class="code-container"><pre class="bg-gray-800 text-white p-2 rounded text-xs"><code>.effect-46 {
+  position: relative;
+}
+.effect-46::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #000;
+  transition: width 0.3s;
+}
+.effect-46:hover::after {
+  width: 100%;
+}</code></pre><button class="copy-btn mt-2 bg-blue-500 text-white px-2 py-1 rounded hover:bg-blue-600 text-xs">Copy</button></div>
+    </div>
+    <div class="flex flex-col sm:flex-columb gap-4 items-start">
+      <div class="effect effect-47" data-snippet=".effect-47 { position: relative; }\n.effect-47:hover::after { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); }">Video Mask Hover</div>
+      <div class="code-container"><pre class="bg-gray-800 text-white p-2 rounded text-xs"><code>.effect-47 {
+  position: relative;
+}
+.effect-47:hover::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}</code></pre><button class="copy-btn mt-2 bg-blue-500 text-white px-2 py-1 rounded hover:bg-blue-600 text-xs">Copy</button></div>
+    </div>
+    <div class="flex flex-col sm:flex-columb gap-4 items-start">
+      <div class="effect effect-48" data-snippet=".effect-48 { transition: filter 0.3s; }\n.effect-48:hover { filter: contrast(1.5); }">Warp Hover</div>
+      <div class="code-container"><pre class="bg-gray-800 text-white p-2 rounded text-xs"><code>.effect-48 {
+  transition: filter 0.3s;
+}
+.effect-48:hover {
+  filter: contrast(1.5);
+}</code></pre><button class="copy-btn mt-2 bg-blue-500 text-white px-2 py-1 rounded hover:bg-blue-600 text-xs">Copy</button></div>
+    </div>
+    <div class="flex flex-col sm:flex-columb gap-4 items-start">
+      <div class="effect effect-49" data-snippet=".effect-49 { position: relative; }\n.effect-49::after { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(90deg, #ff6b6b, #4ecdc4); transition: opacity 0.3s; opacity: 0; }\n.effect-49:hover::after { opacity: 0.3; }">Xylophone Hover</div>
+      <div class="code-container"><pre class="bg-gray-800 text-white p-2 rounded text-xs"><code>.effect-49 {
+  position: relative;
+}
+.effect-49::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, #ff6b6b, #4ecdc4);
+  transition: opacity 0.3s;
+  opacity: 0;
+}
+.effect-49:hover::after {
+  opacity: 0.3;
+}</code></pre><button class="copy-btn mt-2 bg-blue-500 text-white px-2 py-1 rounded hover:bg-blue-600 text-xs">Copy</button></div>
+    </div>
+    <div class="flex flex-col sm:flex-columb gap-4 items-start">
+      <div class="effect effect-50" data-snippet=".effect-50 { transition: transform 0.3s; }\n.effect-50:hover { transform: scale(1.2); }">Zoom Hover</div>
+      <div class="code-container"><pre class="bg-gray-800 text-white p-2 rounded text-xs"><code>.effect-50 {
+  transition: transform 0.3s;
+}
+.effect-50:hover {
+  transform: scale(1.2);
+}</code></pre><button class="copy-btn mt-2 bg-blue-500 text-white px-2 py-1 rounded hover:bg-blue-600 text-xs">Copy</button></div>
+    </div>
+  </main>
+  <script src="scripts.js"></script>
+</body>
+</html>

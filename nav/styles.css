@@ -1,0 +1,557 @@
+/* General Navbar Styles */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 50px;
+  padding: 0 1rem;
+  font-family: 'Inter', sans-serif;
+}
+
+.nav-link {
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.burger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 24px;
+  height: 20px;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.burger span {
+  width: 100%;
+  height: 3px;
+  background: #ffffff;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .navbar:not(.navbar-3, .navbar-4, .navbar-5, .navbar-17, .navbar-22, .navbar-24) .burger {
+    display: flex;
+  }
+  .navbar:not(.navbar-3, .navbar-4, .navbar-5, .navbar-17, .navbar-22, .navbar-24) .nav-menu {
+    display: none;
+    position: fixed;
+    top: 50px;
+    right: 0;
+    background: #1e293b;
+    flex-direction: column;
+    width: 200px;
+    padding: 1rem;
+  }
+  .navbar:not(.navbar-3, .navbar-4, .navbar-5, .navbar-17, .navbar-22, .navbar-24).open .nav-menu {
+    display: flex;
+  }
+}
+
+/* SVG Filters for Blobby and Glitch Effects */
+svg#filters {
+  position: absolute;
+  width: 0;
+  height: 0;
+}
+
+/* Navbar 1: Glassmorphic Nav */
+.navbar-1 {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  padding: 0 1rem;
+}
+.navbar-1 .nav-link {
+  color: #ffffff;
+  padding: 0.5rem 1rem;
+  transition: color 0.3s ease-in-out;
+}
+.navbar-1 .nav-link:hover {
+  color: #60a5fa;
+}
+
+/* Navbar 2: Sticky Scroll Nav */
+.navbar-2 {
+  position: sticky;
+  top: 0;
+  background: #1e293b;
+  padding: 0 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+.navbar-2 .nav-link {
+  color: #ffffff;
+  padding: 0.5rem 1rem;
+  transition: background 0.3s ease-in-out;
+}
+.navbar-2 .nav-link:hover {
+  background: #3b82f6;
+}
+
+/* Navbar 3: Slide-In Side Nav */
+.navbar-3 {
+  position: relative;
+}
+.navbar-3 .nav-menu {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  height: 100vh;
+  background: #1e293b;
+  transition: left 0.3s ease-in-out;
+}
+.navbar-3.open .nav-menu {
+  left: 0;
+}
+.navbar-3 .nav-link {
+  color: #ffffff;
+  padding: 1rem;
+  display: block;
+}
+
+/* Navbar 4: Full-Screen Overlay Nav */
+.navbar-4 .nav-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+.navbar-4.open .nav-menu {
+  opacity: 1;
+}
+.navbar-4 .nav-link {
+  color: #ffffff;
+  font-size: 1.5rem;
+  padding: 1rem;
+}
+/* Navbar 5: Morphing Burger Nav */
+.navbar-5 .burger span {
+  transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out;
+}
+.navbar-5.open .burger span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+  background: #ef4444;
+}
+.navbar-5.open .burger span:nth-child(2) {
+  opacity: 0;
+}
+.navbar-5.open .burger span:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -7px);
+  background: #ef4444;
+}
+.navbar-5 .nav-menu {
+  position: fixed;
+  top: 50px;
+  right: 0;
+  background: #1e293b;
+  padding: 1rem;
+}
+
+/* Navbar 6: Neon Pulse Nav */
+.navbar-6 .nav-link {
+  color: #22c55e;
+  text-shadow: 0 0 10px #22c55e;
+  animation: neon-pulse 1.5s infinite ease-in-out;
+}
+@keyframes neon-pulse {
+  0% { text-shadow: 0 0 10px #22c55e, 0 0 20px #22c55e; }
+  50% { text-shadow: 0 0 15px #22c55e, 0 0 30px #22c55e; }
+  100% { text-shadow: 0 0 10px #22c55e, 0 0 20px #22c55e; }
+}
+
+/* Navbar 7: Hover Underline Nav */
+.navbar-7 .nav-link {
+  position: relative;
+}
+.navbar-7 .nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #facc15;
+  transition: width 0.3s ease-in-out;
+}
+.navbar-7 .nav-link:hover::after {
+  width: 100%;
+}
+
+/* Navbar 8: Elastic Bounce Nav */
+.navbar-8 .nav-link {
+  transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.navbar-8 .nav-link:hover {
+  transform: scale(1.1);
+}
+
+/* Navbar 9: Parallax Background Nav */
+.navbar-9 {
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 50"><rect width="100" height="50" fill="url(#grad)"/><defs><linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" style="stop-color:#ef4444;stop-opacity:1"/><stop offset="100%" style="stop-color:#3b82f6;stop-opacity:1"/></linearGradient></defs></svg>') no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+/* Navbar 10: Retro Pixel Nav */
+.navbar-10 {
+  image-rendering: pixelated;
+  background: #1e293b;
+}
+.navbar-10 .nav-link {
+  font-family: 'Fira Code', monospace;
+  color: #10b981;
+}
+
+/* Navbar 11: Minimalist Flat Nav */
+.navbar-11 {
+  background: #ffffff;
+}
+.navbar-11 .nav-link {
+  color: #1e293b;
+}
+
+/* Navbar 12: Claymorphic Curved Nav */
+.navbar-12 {
+  background: #e5e7eb;
+  box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.2), -6px -6px 12px rgba(255, 255, 255, 0.5);
+  border-radius: 20px;
+}
+.navbar-12 .nav-link {
+  color: #1e293b;
+}
+
+/* Navbar 13: Brutalist Block Nav */
+.navbar-13 {
+  background: #000000;
+  border: 4px solid #ffffff;
+}
+.navbar-13 .nav-link {
+  color: #ffffff;
+  font-weight: bold;
+}
+
+/* Navbar 14: Floating Card Nav */
+.navbar-14 .nav-link {
+  background: #ffffff;
+  color: #1e293b;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease-in-out;
+}
+.navbar-14 .nav-link:hover {
+  transform: translateY(-4px);
+}
+
+/* Navbar 15: Gradient Swipe Nav */
+.navbar-15 .nav-link {
+  position: relative;
+}
+.navbar-15 .nav-link::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, #ef4444);
+  transition: left 0.3s ease-in-out;
+}
+.navbar-15 .nav-link:hover::after {
+  left: 100%;
+}
+
+/* Navbar 16: Icon-Only Tooltip Nav */
+.navbar-16 .nav-link {
+  position: relative;
+  color: #ffffff;
+}
+.navbar-16 .nav-link::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #1e293b;
+  color: #ffffff;
+  padding: 0.5rem;
+  border-radius: 4px;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+.navbar-16 .nav-link:hover::after {
+  opacity: 1;
+}
+
+/* Navbar 17: Vertical Accordion Nav */
+.navbar-17 .nav-menu {
+  position: fixed;
+  top: 50px;
+  left: 0;
+  background: #1e293b;
+  flex-direction: column;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-in-out;
+}
+.navbar-17.open .nav-menu {
+  max-height: 400px;
+}
+.navbar-17 .nav-link {
+  color: #ffffff;
+  padding: 1rem;
+}
+
+/* Navbar 18: Magic Line Cursor Nav */
+.navbar-18 {
+  position: relative;
+}
+.navbar-18::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #3b82f6;
+  transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
+}
+.navbar-18 .nav-link:hover ~ .navbar-18::after {
+  width: 100px;
+}
+
+/* Navbar 19: Skewed Angle Nav */
+.navbar-19 .nav-link {
+  transform: skew(-15deg);
+}
+.navbar-19 .nav-link:hover {
+  transform: skew(0deg);
+}
+
+/* Navbar 20: Aurora Glow Nav */
+.navbar-20 {
+  background: linear-gradient(45deg, #10b981, #8b5cf6);
+}
+.navbar-20 .nav-link {
+  color: #ffffff;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
+
+/* Navbar 21: Dropdown Fade-In Nav */
+.navbar-21 .dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #1e293b;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+.navbar-21 li:hover .dropdown {
+  opacity: 1;
+}
+.navbar-21 .dropdown-link {
+  color: #ffffff;
+  padding: 0.5rem 1rem;
+  display: block;
+}
+
+/* Navbar 22: Accordion Collapse Nav */
+.navbar-22 .nav-menu {
+  position: fixed;
+  top: 50px;
+  left: 0;
+  background: #1e293b;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-in-out;
+}
+.navbar-22.open .nav-menu {
+  max-height: 400px;
+}
+.navbar-22 .nav-link {
+  color: #ffffff;
+  padding: 1rem;
+}
+
+/* Navbar 23: Blobby Background Nav */
+.navbar-23 {
+  filter: url(#gooey);
+  background: #f59e0b;
+}
+
+/* Navbar 24: Circular Radial Nav */
+.navbar-24 .nav-menu {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #1e293b;
+  border-radius: 50%;
+  padding: 2rem;
+}
+.navbar-24.open .nav-menu {
+  display: flex;
+  flex-direction: column;
+}
+.navbar-24 .nav-link {
+  color: #ffffff;
+}
+
+/* Navbar 25: Transparent Scroll-Aware Nav */
+.navbar-25 {
+  background: transparent;
+}
+.navbar-25.scrolled {
+  background: #1e293b;
+}
+.navbar-25 .nav-link {
+  color: #ffffff;
+}
+
+/* Navbar 26: Flip-Text Nav */
+.navbar-26 .nav-link {
+  transition: transform 0.3s ease-in-out;
+}
+.navbar-26 .nav-link:hover {
+  transform: rotateX(360deg);
+}
+
+/* Navbar 27: Slide Reveal Link Nav */
+.navbar-27 .nav-link {
+  transform: translateY(100%);
+  opacity: 0;
+}
+.navbar-27 .nav-link.active {
+  transform: translateY(0);
+  opacity: 1;
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+/* Navbar 28: Glitch Distortion Nav */
+.navbar-28 .nav-link {
+  position: relative;
+}
+.navbar-28 .nav-link:hover {
+  animation: glitch 0.3s infinite;
+}
+@keyframes glitch {
+  0% { transform: translate(0); }
+  20% { transform: translate(-2px, 2px); }
+  40% { transform: translate(2px, -2px); }
+  60% { transform: translate(-2px, 2px); }
+  80% { transform: translate(2px, -2px); }
+  100% { transform: translate(0); }
+}
+
+/* Navbar 29: 3D Depth-Shadow Nav */
+.navbar-29 .nav-link {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease-in-out;
+}
+.navbar-29 .nav-link:hover {
+  transform: translateZ(10px);
+}
+
+/* Navbar 30: Typewriter Animate Nav */
+.navbar-30 .nav-link {
+  overflow: hidden;
+  white-space: nowrap;
+  animation: typewriter 2s steps(40) infinite;
+}
+@keyframes typewriter {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+/* Navbar 31: Hover Blur-Backdrop Nav */
+.navbar-31 .nav-link {
+  backdrop-filter: blur(0px);
+}
+.navbar-31 .nav-link:hover {
+  backdrop-filter: blur(5px);
+}
+
+/* Navbar 32: Expand-On-Scroll Nav */
+.navbar-32 {
+  height: 40px;
+  transition: height 0.3s ease-in-out;
+}
+.navbar-32.scrolled {
+  height: 60px;
+}
+.navbar-32 .nav-link {
+  color: #ffffff;
+}
+
+/* Navbar 33: Icon-Morph Nav */
+.navbar-33 .nav-link svg {
+  transition: transform 0.3s ease-in-out;
+}
+.navbar-33 .nav-link:hover svg {
+  transform: scale(1.2);
+}
+
+/* Navbar 34: Wave Divider Nav */
+.navbar-34 {
+  position: relative;
+}
+.navbar-34::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 5"><path d="M0 5 C 25 0, 75 0, 100 5" fill="none" stroke="%23facc15" stroke-width="2"/></svg>');
+}
+
+/* Navbar 35: Color-Shift Gradient Nav */
+.navbar-35 {
+  background: linear-gradient(90deg, #ef4444, #3b82f6);
+  background-size: 200%;
+  animation: color-shift 5s infinite;
+}
+@keyframes color-shift {
+  0% { background-position: 0%; }
+  50% { background-position: 100%; }
+  100% { background-position: 0%; }
+}
+
+/* Navbar 36: Split-Screen Dual Nav */
+.navbar-36 {
+  background: linear-gradient(90deg, #ef4444 50%, #10b981 50%);
+}
+
+/* Navbar 37: Scroll-Spy Highlight Nav */
+.navbar-37 .nav-link.active {
+  background: #3b82f6;
+  color: #ffffff;
+}
+
+/* Navbar 38: Sequential Fade-In Nav */
+.navbar-38 .nav-link {
+  opacity: 0;
+  animation: fade-in 0.5s ease-in-out forwards;
+}
+.navbar-38 .nav-link:nth-child(1) { animation-delay: 0.1s; }
+.navbar-38 .nav-link:nth-child(2) { animation-delay: 0.2s; }
+.navbar-38 .nav-link:nth-child(3) { animation-delay: 0.3s; }
+.navbar-38 .nav-link:nth-child(4) { animation-delay: 0.4s; }
+@keyframes fade-in {
+  to { opacity: 1; }
+}
+body {
+    background: linear-gradient(45deg, #3b82f6, #ef4444);
+    min-height: 100vh;
+}

@@ -1,0 +1,444 @@
+/* General Text Styles */
+span {
+  font-size: 24px;
+  color: #fff;
+  font-family: 'Inter', sans-serif;
+  transition: all 0.3s ease-in-out;
+  display: inline-block;
+}
+span:focus {
+  outline: 2px solid #facc15;
+  outline-offset: 2px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  span {
+    font-size: 18px;
+  }
+}
+
+/* Text-Specific Styles */
+.text-1 {
+  animation: typewriter 2s steps(10) infinite;
+  overflow: hidden;
+  white-space: nowrap;
+}
+@keyframes typewriter {
+  0% { width: 0; }
+  50% { width: 100%; }
+  100% { width: 0; }
+}
+.text-2:hover {
+  animation: glitch 0.3s infinite;
+}
+@keyframes glitch {
+  0% { transform: translate(2px, -2px); }
+  50% { transform: translate(-2px, 2px); }
+}
+.text-3 {
+  background: linear-gradient(45deg, #ef4444, #3b82f6);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.text-4:hover {
+  transform: scale(1.2);
+  text-shadow: 0 0 10px #facc15;
+}
+.text-5:hover {
+  transform: rotateX(180deg);
+}
+.text-5 {
+  transition: transform 0.3s;
+}
+.text-6 {
+  text-shadow: 0 0 10px #facc15;
+}
+.text-6:hover {
+  text-shadow: 0 0 20px #facc15;
+}
+.text-7:hover {
+  background: #facc15;
+  color: #000;
+  padding: 2px 4px;
+  border-radius: 4px;
+}
+.text-8 {
+  position: relative;
+}
+.text-8:hover:after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: #3b82f6;
+  animation: drip 0.5s;
+}
+@keyframes drip {
+  0% { height: 0; }
+  100% { height: 5px; }
+}
+.text-9:hover {
+  animation: jelly 0.5s;
+}
+@keyframes jelly {
+  25% { transform: scale(1.2, 0.8); }
+  75% { transform: scale(0.8, 1.2); }
+}
+.text-10:hover {
+  transform: translate(5px, -5px);
+}
+.text-10 {
+  transition: transform 0.3s;
+}
+.text-11:hover {
+  letter-spacing: 4px;
+}
+.text-11 {
+  transition: letter-spacing 0.3s;
+}
+.text-12:hover {
+  transform: translate(3px, -3px);
+  text-shadow: 2px 2px 5px #3b82f6;
+}
+.text-12 {
+  transition: transform 0.3s, text-shadow 0.3s;
+}
+.text-13 {
+  color: transparent;
+  -webkit-text-stroke: 1px #ef4444;
+}
+.text-13:hover {
+  -webkit-text-stroke: 1px #facc15;
+}
+.text-14 {
+  color: transparent;
+  -webkit-text-stroke: 1px #3b82f6;
+  background: repeating-linear-gradient(45deg, transparent, transparent 5px, #3b82f6 5px, #3b82f6 10px);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+.text-15 {
+  position: relative;
+  perspective: 100px;
+}
+.text-15:hover {
+  transform: translateZ(10px);
+}
+.text-15 {
+  transition: transform 0.3s;
+}
+.text-16:hover {
+  animation: quake 0.3s infinite;
+}
+@keyframes quake {
+  25% { transform: translateX(-2px); }
+  75% { transform: translateX(2px); }
+}
+.text-17 {
+  animation: rainbow 2s infinite;
+}
+@keyframes rainbow {
+  0% { color: #ef4444; }
+  50% { color: #3b82f6; }
+  100% { color: #facc15; }
+}
+.text-18 {
+  position: relative;
+}
+.text-18:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.5), transparent);
+  animation: shimmer 2s infinite;
+}
+@keyframes shimmer {
+  0% { left: -100%; }
+  100% { left: 100%; }
+}
+.text-19:after {
+  content: '|';
+  animation: cursor 0.7s infinite;
+}
+@keyframes cursor {
+  50% { opacity: 0; }
+}
+.text-20 {
+  position: relative;
+}
+.text-20:after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #facc15;
+  transition: width 0.3s;
+}
+.text-20:hover:after {
+  width: 100%;
+}
+.text-21:hover {
+  animation: voice-wave 0.5s infinite;
+}
+@keyframes voice-wave {
+  0% { transform: translateY(0); }
+  25% { transform: translateY(-2px); }
+  75% { transform: translateY(2px); }
+}
+.text-22:hover {
+  transform: skewX(15deg);
+}
+.text-22 {
+  transition: transform 0.3s;
+}
+.text-23:hover {
+  filter: contrast(1.5);
+}
+.text-23 {
+  transition: filter 0.3s;
+}
+.text-24 {
+  background: radial-gradient(circle at 30%, #fff 20%, #000 20%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.text-25 {
+  position: relative;
+}
+.text-25:after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(45deg, #3b82f6, #ef4444);
+  clip-path: polygon(0 0, 5% 100%, 10% 0, 15% 100%, 20% 0, 100% 0);
+}
+.text-26 {
+  font-family: 'Courier New', monospace;
+  letter-spacing: 2px;
+}
+.text-26:hover {
+  letter-spacing: 4px;
+}
+.text-27:hover {
+  animation: bounce 0.5s;
+}
+@keyframes bounce {
+  50% { transform: translateY(-5px); }
+}
+.text-28 {
+  color: #000;
+  text-shadow: 0 0 5px #ef4444, 0 0 10px #000;
+}
+.text-28:hover {
+  text-shadow: 0 0 10px #ef4444, 0 0 15px #000;
+}
+.text-29 {
+  position: relative;
+}
+.text-29:after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 100%;
+  height: 10px;
+  background: #ef4444;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 80% 80%, 60% 100%, 40% 80%, 20% 100%, 0 80%);
+  animation: drip-paint 1s infinite;
+}
+@keyframes drip-paint {
+  50% { transform: translateY(5px); }
+}
+.text-30:hover {
+  animation: elastic 0.5s;
+}
+@keyframes elastic {
+  50% { transform: scale(1.3); }
+}
+.text-31 {
+  animation: flicker 0.5s infinite;
+}
+@keyframes flicker {
+  50% { opacity: 0.5; }
+}
+.text-32 {
+  color: transparent;
+  -webkit-text-stroke: 1px;
+  -webkit-text-stroke-color: linear-gradient(45deg, #ef4444, #3b82f6);
+}
+.text-33:hover {
+  background: #facc15;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.text-33 {
+  transition: background 0.3s;
+}
+.text-34 {
+  font-style: italic;
+}
+.text-34:hover {
+  animation: wave 0.5s infinite;
+}
+@keyframes wave {
+  50% { transform: translateY(-2px); }
+}
+.text-35:hover {
+  animation: jello 0.5s;
+}
+@keyframes jello {
+  25% { transform: skewX(-10deg); }
+  75% { transform: skewX(10deg); }
+}
+.text-36.scrolled {
+  transform: translateX(10px);
+  color: #facc15;
+}
+.text-36 {
+  transition: transform 0.3s, color 0.3s;
+}
+.text-37 {
+  text-shadow: 0 0 15px #8b5cf6;
+}
+.text-37:hover {
+  text-shadow: 0 0 25px #8b5cf6;
+}
+.text-38:hover {
+  font-stretch: 150%;
+}
+.text-38 {
+  transition: font-stretch 0.3s;
+}
+.text-39 {
+  text-shadow: 0 0 10px #ef4444;
+}
+.text-39:hover {
+  animation: neon-glow 1s infinite;
+}
+@keyframes neon-glow {
+  50% { text-shadow: 0 0 20px #ef4444; }
+}
+.text-40 {
+  position: relative;
+}
+.text-40:after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #3b82f6;
+  transition: width 0.3s;
+}
+.text-40:hover:after {
+  width: 100%;
+}
+.text-41 {
+  animation: pulse 1s infinite;
+}
+@keyframes pulse {
+  50% { transform: scale(1.1); }
+}
+.text-42:hover {
+  opacity: 0.5;
+}
+.text-42 {
+  transition: opacity 0.2s;
+}
+.text-43 {
+  position: relative;
+}
+.text-43:hover:after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(250, 204, 21, 0.3);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  animation: ripple 0.5s;
+}
+@keyframes ripple {
+  to { width: 100px; height: 100px; opacity: 0; }
+}
+.text-44 {
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+.text-44:hover {
+  animation: shadow-pulse 1s infinite;
+}
+@keyframes shadow-pulse {
+  50% { text-shadow: 0 0 10px rgba(0, 0, 0, 0.5); }
+}
+.text-45:hover {
+  transform: rotate(5deg);
+}
+.text-45 {
+  transition: transform 0.3s;
+}
+.text-46 {
+  text-shadow: 0 0 10px #8b5cf6;
+}
+.text-46:hover {
+  text-shadow: 0 0 20px #8b5cf6;
+}
+.text-47:hover {
+  background: linear-gradient(to right, #facc15, transparent);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.text-47 {
+  transition: background 0.3s;
+}
+.text-48:hover {
+  animation: xylophone 0.5s;
+}
+@keyframes xylophone {
+  0% { color: #ef4444; }
+  50% { color: #3b82f6; }
+  100% { color: #facc15; }
+}
+.text-49 {
+  background: linear-gradient(45deg, #ef4444, #facc15);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.text-49:hover {
+  background: linear-gradient(45deg, #facc15, #ef4444);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+.text-50:hover {
+  transform: scale(1.2);
+}
+.text-50 {
+  transition: transform 0.3s;
+}
+
+/* Additional Global Styles */
+.code-container pre {
+  max-height: 200px;
+  overflow-y: auto;
+}
+.copy-btn {
+  transition: background-color 0.3s ease-in-out;
+}

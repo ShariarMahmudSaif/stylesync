@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>StyleSync</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- LOADER -->
+  <div id="loader" class="loader glass">
+    <div class="spinner"></div>
+  </div>
+
+  <!-- BACK-TO-TOP -->
+  <button id="backToTop" aria-label="Back to top">↑</button>
+
+  <!-- HEADER + NAV -->
+  <header id="site-header" class="glass">
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
+      <div class="logo">Style</div>
+      <ul class="nav-links">
+        <li><a href="/div/div.html">Div</a></li>
+        <li><a href="/button/button.html">Buttons</a></li>
+        <li><a href="/inputs/input.html">Inputs</a></li>
+        <li><a href="/font/font.html">Fonts</a></li>
+        <li><a href="/hover/hover.html">Hover</a></li>
+        <li><a href="/loading/load.html">Loading</a></li>
+        <li><a href="/nav/nav.html">Nav</a></li>
+        <li><a href="/burger/burger.html">Burger</a></li>
+        <li><a href="/text/text.html">Text</a></li>
+        <li><a href="/modal/modal.html">Modal</a></li>
+        <li><a href="#cta">Contribute</a></li>
+        <li>
+          <a
+            href="https://github.com/shariarmahmudsaif/stylesync"
+            target="_blank"
+            rel="noopener"
+            >GitHub</a
+          >
+        </li>
+        <li><button id="settingsBtn" class="settings-btn">⚙️ Options</button></li>
+      </ul>
+      <button
+        id="theme-toggle"
+        class="theme-toggle"
+        aria-label="Toggle light/dark theme"
+      >
+        🌙
+      </button>
+      <button
+        id="burger"
+        class="burger"
+        aria-label="Toggle mobile menu"
+        aria-expanded="false"
+      >
+        <canvas id="burgerCanvas"></canvas>
+        <svg viewBox="0 0 100 100" width="32" height="32">
+          <path class="line line1" d="M20,30 H80" />
+          <path class="line line2" d="M20,50 H80" />
+          <path class="line line3" d="M20,70 H80" />
+        </svg>
+      </button>
+    </nav>
+  </header>
+
+  <!-- MOBILE FULLSCREEN MENU -->
+  <div id="mobile-menu" class="mobile-menu glass" aria-hidden="true">
+    <button id="mobile-close" class="mobile-close" aria-label="Close menu">
+      &times;
+    </button>
+    <ul>
+        <li><a href="/div/div.html">Div</a></li>
+        <li><a href="/button/button.html">Buttons</a></li>
+        <li><a href="/inputs/input.html">Inputs</a></li>
+        <li><a href="/font/font.html">Fonts</a></li>
+        <li><a href="/hover/hover.html">Hover</a></li>
+        <li><a href="/loading/load.html">Loading</a></li>
+        <li><a href="/nav/nav.html">Nav</a></li>
+        <li><a href="/burger/burger.html">Burger</a></li>
+        <li><a href="/text/text.html">Text</a></li>
+        <li><a href="/modal/modal.html">Modal</a></li>
+        <li><a href="#cta">Contribute</a></li>
+      <li>
+        <a
+          href="https://github.com/shariarmahmudsaif/stylesync"
+          target="_blank"
+          rel="noopener"
+          >GitHub</a
+        >
+      </li>
+    </ul>
+  </div>
+
+  <!-- SETTINGS MODAL -->
+  <div id="settingsModal" class="settings-modal glass" aria-hidden="true">
+    <div class="settings-content">
+      <h3>⚙️ Options</h3>
+      <ul class="settings-list">
+        <li><label><input type="checkbox" data-opt="burger" checked /> Liquid burger</label></li>
+        <li><label><input type="checkbox" data-opt="nav" checked /> Shrink-on-scroll nav</label></li>
+        <li><label><input type="checkbox" data-opt="textAnim" checked /> Text animations</label></li>
+        <li><label><input type="checkbox" data-opt="fonts" checked /> Alternate font</label></li>
+        <li><label><input type="checkbox" data-opt="buttons" checked /> Canvas buttons</label></li>
+        <li><label><input type="checkbox" data-opt="div" checked /> Div hover effects</label></li>
+        <li><label><input type="checkbox" data-opt="hover" checked /> Link hover glow</label></li>
+        <li><label><input type="checkbox" data-opt="inputs" checked /> Glass inputs</label></li>
+        <li><label><input type="checkbox" data-opt="loading" checked /> Loader screen</label></li>
+        <li><label><input type="checkbox" data-opt="modal" checked /> modal</label></li>
+      </ul>
+      <button id="closeSettings" class="btn btn-primary">Close</button>
+    </div>
+  </div>
+
+  <!-- SAMPLE MODAL -->
+  <div id="sampleModal" class="modal glass" aria-hidden="true">
+    <div class="modal-content glass">
+      <h3>Modal</h3>
+      <p>This is a Dev Front-end Resource Pack. Close me.</p>
+      <button id="closeSampleModal" class="btn btn-primary">Close</button>
+    </div>
+  </div>
+
+  <main>
+    <!-- HERO -->
+    <section id="hero" class="hero glass">
+      <canvas id="heroCanvas" aria-hidden="true"></canvas>
+      <div class="hero-content">
+        <h1>Project StyleSync Web UI Helper</h1>
+        <p>StyleSync is an open-source toolkit of sleek, responsive UI components and interactive effects designed for modern web projects.</p>
+        <a href="#cta" class="btn btn-primary" data-tooltip="Get started">Get Started</a>
+      </div>
+    </section>
+
+    <!-- WAVE DIVIDER -->
+    <div class="divider">
+      <svg viewBox="0 0 1440 100" preserveAspectRatio="none">
+        <defs>
+          <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#ff0055"/>
+            <stop offset="100%" stop-color="#5500ff"/>
+          </linearGradient>
+        </defs>
+        <path
+          d="M0,100 C360,0 1080,200 1440,100 L1440,0 L0,0 Z"
+          fill="url(#grad1)"
+        />
+      </svg>
+    </div>
+
+    <!-- DIV EFFECTS -->
+    <section id="div-effects" class="section div-effects glass">
+      <h2>Div Effects</h2>
+      <div class="effects-grid">
+        <div class="effect-card neon-glow" tabindex="0" aria-label="Neon Glow">Neon Glow</div>
+        <div class="effect-card gradient-fade" tabindex="0" aria-label="Gradient Fade">Gradient Fade</div>
+        <div class="effect-card pulse-effect" tabindex="0" aria-label="Pulse">Pulse</div>
+        <div class="effect-card shape-morph" tabindex="0" aria-label="Shape Morph">Shape Morph</div>
+        <div class="effect-card ripple-effect" tabindex="0" aria-label="Ripple">Ripple</div>
+      </div>
+    </section>
+
+    <div class="divider flip">
+      <svg viewBox="0 0 1440 100" preserveAspectRatio="none">
+        <path
+          d="M0,100 C360,0 1080,200 1440,100 L1440,0 L0,0 Z"
+          fill="url(#grad1)"
+        />
+      </svg>
+    </div>
+
+    <!-- BUTTONS -->
+    <section id="buttons" class="section buttons-section glass">
+      <h2>Buttons</h2>
+      <div class="buttons-grid">
+        <button class="btn btn-neon ripple" aria-label="Canvas ripple button">
+          <canvas class="btnCanvas"></canvas>
+          <span>Click Me</span>
+        </button>
+        <button class="btn btn-neon pulse" aria-label="Canvas pulse button">
+          <canvas class="btnCanvas"></canvas>
+          <span>Hover Me</span>
+        </button>
+      </div>
+    </section>
+
+    <div class="divider">
+      <svg viewBox="0 0 1440 100" preserveAspectRatio="none">
+        <path
+          d="M0,100 C360,0 1080,200 1440,100 L1440,0 L0,0 Z"
+          fill="url(#grad1)"
+        />
+      </svg>
+    </div>
+
+    <!-- CTA -->
+    <section id="cta" class="section cta-section glass">
+      <h2>Join the Movement</h2>
+      <p>Contribute to StyleSync on GitHub and shape the future of web UI.</p>
+      <a
+        href="https://github.com/shariarmahmudsaif/stylesync"
+        target="_blank"
+        rel="noopener"
+        class="btn btn-primary"
+        data-tooltip="Contribute on GitHub"
+        >Contribute on GitHub</a
+      >
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer glass">
+    <div class="footer-content">
+      <div class="social-media">
+        <a href="https://github.com/shariarmahmudsaif" aria-label="GitHub"><!-- SVG --></a>
+        <a href="https://instagram.com/shariarmahmudsaif" aria-label="Instagram"><!-- SVG --></a>
+        <a href="https://facebook.com/ignacio.hyper" aria-label="Facebook"><!-- SVG --></a>
+      </div>
+
+      <ul class="footer-links">
+        <li><a href="https://shariarmahmudsaif.github.io/Ignacio-portfolio/">Contact</a></li>
+        <li><a
+            href="https://github.com/shariarmahmudsaif/"
+            target="_blank"
+            rel="noopener"
+            >Ask For Commission</a
+          ></li>
+        <li>
+          <a
+            href="https://github.com/shariarmahmudsaif/stylesync"
+            target="_blank"
+            rel="noopener"
+            >GitHub</a
+          >
+        </li>
+      </ul>
+    </div>
+    <p class="footer-copy">© 2025 IGNACIO-StyleSync</p>
+  </footer>
+
+  <script defer src="scripts.js"></script>
+</body>
+</html>

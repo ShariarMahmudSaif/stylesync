@@ -1,0 +1,435 @@
+/* General Input Styles */
+input {
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #d1d5db;
+  width: 100%;
+  font-family: 'Inter', sans-serif;
+  transition: all 0.3s ease-in-out;
+}
+input:focus {
+  outline: none;
+  border-color: #3b82f6;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  input {
+    padding: 8px;
+  }
+}
+
+/* Input-Specific Styles */
+.input-container-1 {
+  position: relative;
+}
+.input-container-1 label {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  transition: all 0.3s;
+  color: #6b7280;
+}
+.input-1:focus + label,
+.input-1:not(:placeholder-shown) + label {
+  transform: translateY(-20px);
+  font-size: 12px;
+  color: #3b82f6;
+}
+.input-2:focus {
+  border: 2px solid #ef4444;
+  box-shadow: 0 0 10px #ef4444;
+}
+.input-container-3 {
+  position: relative;
+}
+.input-container-3 .icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%) translateX(10px);
+  opacity: 0;
+  transition: all 0.3s;
+}
+.input-3:focus + .icon {
+  opacity: 1;
+  transform: translateY(-50%) translateX(0);
+}
+.input-4 {
+  border: none;
+  border-bottom: 2px solid #3b82f6;
+}
+.input-4:focus {
+  border-bottom-width: 4px;
+}
+.input-container-5 {
+  position: relative;
+}
+.clear-btn {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.input-5:not(:placeholder-shown) + .clear-btn {
+  display: block;
+}
+.input-container-6 {
+  position: relative;
+}
+.toggle-btn {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.input-container-7 {
+  position: relative;
+}
+.counter {
+  position: absolute;
+  bottom: -20px;
+  right: 0;
+  font-size: 12px;
+  color: #6b7280;
+}
+.input-8 {
+  border: 2px solid #3b82f6;
+  transition: border-radius 0.3s;
+}
+.input-8:focus {
+  border-radius: 20px;
+}
+.input-9:focus {
+  box-shadow: 0 0 10px #facc15;
+}
+.input-10::placeholder {
+  animation: shimmer 2s infinite;
+}
+@keyframes shimmer {
+  50% { opacity: 0.5; }
+}
+.input-11::placeholder {
+  transform: translateY(0);
+  transition: transform 0.3s;
+}
+.input-11:focus::placeholder {
+  transform: translateY(-10px);
+}
+.input-12:focus {
+  transform: scale(1.05);
+}
+.input-13 {
+  border: 2px solid #3b82f6;
+}
+.input-13:focus {
+  border-width: 4px;
+  animation: elastic 0.5s;
+}
+@keyframes elastic {
+  50% { border-width: 6px; }
+}
+.input-14.invalid {
+  animation: shake 0.3s;
+}
+@keyframes shake {
+  25% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
+}
+.input-container-15 {
+  position: relative;
+}
+.input-container-15 .tooltip {
+  position: absolute;
+  top: -30px;
+  left: 0;
+  background: #374151;
+  color: #fff;
+  padding: 4px 8px;
+  border-radius: 4px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.input-15:focus + .tooltip {
+  opacity: 1;
+}
+.input-16:-webkit-autofill {
+  background: #fef3c7;
+}
+.input-17::placeholder {
+  opacity: 1;
+  transition: opacity 0.3s;
+}
+.input-17:focus::placeholder {
+  opacity: 0;
+}
+.input-18 {
+  background: linear-gradient(45deg, #ef4444, #3b82f6);
+  color: #fff;
+}
+.input-18::placeholder {
+  color: #e5e7eb;
+}
+.input-19 {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+.input-20 {
+  border: none;
+  background: transparent;
+}
+.input-20:focus {
+  outline: none;
+  border-bottom: 1px solid #fff;
+}
+.input-21 {
+  border: 2px solid #3b82f6;
+  border-radius: 20px;
+}
+.input-21:focus {
+  box-shadow: 0 0 5px #3b82f6;
+}
+.input-22:focus {
+  transform: scale(1.05);
+  animation: kinetic 0.5s;
+}
+@keyframes kinetic {
+  50% { transform: scale(1.1); }
+}
+.input-container-23 {
+  position: relative;
+}
+.input26  {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  transition: transform 0.3s;
+  color: #6b7280;
+}
+.input-23:focus + label,
+.input-23:not(:placeholder-shown) + label {
+  transform: translateX(-20px);
+  color: #3b82f6;
+}
+.input-24 {
+  font-family: monospace;
+}
+.input-25:focus {
+  box-shadow: 0 0 15px #ef4444;
+  animation: neon 1s infinite;
+}
+@keyframes neon {
+  50% { box-shadow: 0 0 20px #ef4444; }
+}
+.input-26 {
+  background: linear-gradient(45deg, #ef4444, #3b82f6) fixed;
+  color: #fff;
+}
+.input-26::placeholder {
+  color: #e5e7eb;
+}
+.input-27:focus {
+  background: #fef3c7;
+}
+.input-container-28 {
+  position: relative;
+}
+.input-container-28 label {
+  background: #ef4444;
+  transform: skew(-20deg);
+  position: absolute;
+  top: -10px;
+  left: 10px;
+  padding: 2px 8px;
+  color: #fff;
+}
+.input-29.scrolled {
+  border-color: #facc15;
+}
+.input-30 {
+  border: none;
+  border-bottom: 2px solid #3b82f6;
+}
+.input-30:focus {
+  animation: split 0.5s forwards;
+}
+@keyframes split {
+  to { border-bottom-width: 4px; }
+}
+.input-container-31 {
+  position: relative;
+}
+.input-container-31 label {
+  position: sticky;
+  top: -10px;
+  background: #fff;
+  padding: 0 4px;
+  color: #6b7280;
+}
+.input-32 {
+  background: linear-gradient(45deg, #ff0000, #0000ff);
+  animation: thermal 2s infinite;
+  color: #fff;
+}
+@keyframes thermal {
+  50% { background: linear-gradient(45deg, #0000ff, #ff0000); }
+}
+.input-33 {
+  border: none;
+  border-bottom: 2px solid #3b82f6;
+}
+.input-33:focus {
+  animation: swipe 0.5s forwards;
+}
+@keyframes swipe {
+  to { border-bottom-color: #ef4444; }
+}
+.input-container-34 {
+  position: relative;
+}
+.input-34 {
+  background: transparent;
+  color: #fff;
+}
+.bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+.input-35 {
+  border: none;
+  border-bottom: 2px solid #3b82f6;
+}
+.input-35:focus {
+  border-image: linear-gradient(to right, #3b82f6, #ef4444) 1;
+  animation: wave 1s infinite;
+}
+@keyframes wave {
+  50% { border-image-slice: 1; }
+}
+.input-36:focus {
+  filter: contrast(1.5);
+}
+.input-37 {
+  appearance: none;
+  width: 40px;
+  height: 20px;
+  background: #d1d5db;
+  border-radius: 20px;
+  position: relative;
+  cursor: pointer;
+}
+.input-37:checked {
+  background: #3b82f6;
+}
+.input-37:before {
+  content: '';
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  background: #fff;
+  border-radius: 50%;
+  top: 2px;
+  left: 2px;
+  transition: transform 0.2s;
+}
+.input-37:checked:before {
+  transform: translateX(20px);
+}
+.input-container-37 label {
+  margin-left: 10px;
+}
+.input-38 {
+  border: none;
+  border-bottom: 2px solid #3b82f6;
+}
+.input-38:focus {
+  border-image: linear-gradient(to right, #3b82f6, #ef4444) 1;
+}
+.input-39::placeholder {
+  transform: scale(0.8);
+  transition: transform 0.3s;
+}
+.input-39:focus::placeholder {
+  transform: scale(1);
+}
+.input-40:focus {
+  animation: bounce 0.5s;
+}
+@keyframes bounce {
+  50% { transform: translateY(-5px); }
+}
+.input-41 {
+  clip-path: circle(0% at center);
+}
+.input-41:focus {
+  clip-path: circle(100% at center);
+}
+.input-42:focus {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+.input-43:focus {
+  animation: echo 0.5s;
+}
+@keyframes echo {
+  50% { opacity: 0.5; }
+}
+.input-container-44 {
+  position: relative;
+}
+.input-container-44 label {
+  position: absolute;
+  top: -10px;
+  left: 10px;
+  transform: rotateX(90deg);
+  transition: transform 0.3s;
+  color: #6b7280;
+}
+.input-44:focus + label,
+.input-44:not(:placeholder-shown) + label {
+  transform: rotateX(0);
+}
+.input-45 {
+  border: 2px solid;
+  border-image: linear-gradient(45deg, #ef4444, #3b82f6) 1;
+}
+.input-46:focus {
+  box-shadow: 0 0 15px #facc15, inset 0 0 5px #facc15;
+}
+.input-47:focus {
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+}
+.input-48:focus {
+  outline: 2px dashed #ef4444;
+  outline-offset: 2px;
+}
+.input-49:focus {
+  background: radial-gradient(circle, #ef4444, #3b82f6, #facc15);
+  color: #fff;
+}
+.input-50:focus {
+  background: linear-gradient(45deg, #ef4444, #3b82f6);
+  color: #fff;
+}
+
+/* Additional Global Styles */
+.code-container pre {
+  max-height: 200px;
+  overflow-y: auto;
+}
+.copy-btn {
+  transition: background-color 0.3s ease-in-out;
+}

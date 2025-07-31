@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>50 Enhanced Burger Menus - StyleSync</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Fira+Code&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="p-8 font-inter bg-gradient-to-br from-indigo-900 to-rose-600">
+  <header class="text-center mb-12">
+    <h1 class="text-4xl font-bold text-white">50 Enhanced Burger Menu Styles</h1>
+    <p class="text-xl text-gray-100 mt-3">Vibrant, animated burger menus for developers</p>
+    <a href="../index.html" class="text-white underline hover:text-gray-200">Back to Home</a>
+  </header>
+  <main class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+    <!-- Burger 1: Morphing Burger -->
+    <div class="flex flex-col gap-4 items-center">
+      <h3 class="text-lg font-semibold text-white">Morphing Burger</h3>
+      <button class="burger burger-1" role="button" aria-label="Morphing Burger Icon" tabindex="0"><span></span><span></span><span></span></button>
+      <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.burger-1 {
+  position: relative;
+}
+.burger-1 span {
+  transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out;
+}
+.burger-1.open span:nth-child(1) {
+  transform: rotate(45deg) translate(6px, 6px);
+  background: #ef4444;
+}
+.burger-1.open span:nth-child(2) {
+  opacity: 0;
+}
+.burger-1.open span:nth-child(3) {
+  transform: rotate(-45deg) translate(8px, -8px);
+  background: #ef4444;
+}</code></pre><button class="copy-btn mt-3 bg-blue-600 text-white px-3 py-1 rounded-full hover:bg-blue-700 text-sm" aria-label="Copy Morphing Burger Icon CSS">Copy</button></div>
+    </div>
+    <!-- Burger 2: Slide-In Burger -->
+    <div class="flex flex-col gap-4 items-center">
+      <h3 class="text-lg font-semibold text-white">Slide-In Burger</h3>
+      <button class="burger burger-2" role="button" aria-label="Slide-In Burger Icon" tabindex="0"><span></span><span></span><span></span></button>
+      <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.burger-2 {
+  position: relative;
+}
+.burger-2 span {
+  transform-origin: left;
+  transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out;
+}
+.burger-2.open span:nth-child(1) {
+  transform: translateX(12px) rotate(45deg);
+  background: #10b981;
+}
+.burger-2.open span:nth-child(2) {
+  opacity: 0;
+}
+.burger-2.open span:nth-child(3) {
+  transform: translateX(12px) rotate(-45deg);
+  background: #10b981;
+}</code></pre><button class="copy-btn mt-3 bg-blue-600 text-white px-3 py-1 rounded-full hover:bg-blue-700 text-sm" aria-label="Copy Slide-In Burger Icon CSS">Copy</button></div>
+    </div>
+    <!-- Burger 3: Gooey Burger -->
+    <div class="flex flex-col gap-4 items-center">
+      <h3 class="text-lg font-semibold text-white">Gooey Burger</h3>
+      <button class="burger burger-3" role="button" aria-label="Gooey Burger Icon" tabindex="0"><span></span><span></span><span></span></button>
+      <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.burger-3 {
+  position: relative;
+  filter: url(#gooey);
+}
+.burger-3 span {
+  transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out;
+}
+.burger-3.open span:nth-child(1) {
+  transform: rotate(45deg) translate(6px, 6px);
+  background: #8b5cf6;
+}
+.burger-3.open span:nth-child(2) {
+  opacity: 0;
+}
+.burger-3.open span:nth-child(3) {
+  transform: rotate(-45deg) translate(8px, -8px);
+  background: #8b5cf6;
+}</code></pre><button class="copy-btn mt-3 bg-blue-600 text-white px-3 py-1 rounded-full hover:bg-blue-700 text-sm" aria-label="Copy Gooey Burger Icon CSS">Copy</button></div>
+    </div>
+    <!-- Burger 4: Elastic Burger -->
+    <div class="flex flex-col gap-4 items-center">
+      <h3 class="text-lg font-semibold text-white">Elastic Burger</h3>
+      <button class="burger burger-4" role="button" aria-label="Elastic Burger Icon" tabindex="0"><span></span><span></span><span></span></button>
+      <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.burger-4 {
+  position: relative;
+}
+.burger-4 span {
+  transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.burger-4.open span:nth-child(1) {
+  transform: rotate(45deg) translate(6px, 6px);
+  background: #f59e0b;
+}
+.burger-4.open span:nth-child(2) {
+  opacity: 0;
+}
+.burger-4.open span:nth-child(3) {
+  transform: rotate(-45deg) translate(8px, -8px);
+  background: #f59e0b;
+}</code></pre><button class="copy-btn mt-3 bg-blue-600 text-white px-3 py-1 rounded-full hover:bg-blue-700 text-sm" aria-label="Copy Elastic Burger Icon CSS">Copy</button></div>
+    </div>
+    <!-- Burger 5: Full-Screen Burger -->
+    <div class="flex flex-col gap-4 items-center">
+      <h3 class="text-lg font-semibold text-white">Full-Screen Burger</h3>
+      <button class="burger burger-5" role="button" aria-label="Full-Screen Burger Icon" tabindex="0"><span></span><span></span><span></span></button>
+      <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.burger-5 {
+  position: relative;
+}
+.burger-5.open {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.9);
+  z-index: 50;
+}
+.burger-5 span {
+  transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out;
+}
+.burger-5.open span:nth-child(1) {
+  transform: rotate(45deg) translate(6px, 6px);
+  background: #ffffff;
+}
+.burger-5.open span:nth-child(2) {
+  opacity: 0;
+}
+.burger-5.open span:nth-child(3) {
+  transform: rotate(-45deg) translate(8px, -8px);
+  background: #ffffff;
+}</code></pre><button class="copy-btn mt-3 bg-blue-600 text-white px-3 py-1 rounded-full hover:bg-blue-700 text-sm" aria-label="Copy Full-Screen Burger Icon CSS">Copy</button></div>
+    </div>
+    <!-- Burger 6: Hover Pulse Burger -->
+    <div class="flex flex-col gap-4 items-center">
+      <h3 class="text-lg font-semibold text-white">Hover Pulse Burger</h3>
+      <button class="burger burger-6" role="button" aria-label="Hover Pulse Burger Icon" tabindex="0"><span></span><span></span><span></span></button>
+      <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.burger-6 {
+  position: relative;
+}
+.burger-6:hover {
+  animation: pulse 0.6s infinite ease-in-out;
+}
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+  100% { transform: scale(1); }
+}</code></pre><button class="copy-btn mt-3 bg-blue-600 text-white px-3 py-1 rounded-full hover:bg-blue-700 text-sm" aria-label="Copy Hover Pulse Burger Icon CSS">Copy</button></div>
+    </div>
+    <!-- Burger 7: Iconic Burger -->
+    <div class="flex flex-col gap-4 items-center">
+      <h3 class="text-lg font-semibold text-white">Iconic Burger</h3>
+      <button class="burger burger-7" role="button" aria-label="Iconic Burger Icon" tabindex="0"><span></span><span></span><span></span></button>
+      <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.burger-7 {
+  position: relative;
+}
+.burger-7 span {
+  border-radius: 4px;
+  background: #6b7280;
+}</code></pre><button class="copy-btn mt-3 bg-blue-600 text-white px-3 py-1 rounded-full hover:bg-blue-700 text-sm" aria-label="Copy Iconic Burger Icon CSS">Copy</button></div>
+    </div>
+    <!-- Burger 8: Jelly Burger -->
+    <div class="flex flex-col gap-4 items-center">
+      <h3 class="text-lg font-semibold text-white">Jelly Burger</h3>
+      <button class="burger burger-8" role="button" aria-label="Jelly Burger Icon" tabindex="0"><span></span><span></span><span></span></button>
+      <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.burger-8 {
+  position: relative;
+}
+.burger-8 span {
+  transition: transform 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.burger-8.open span:nth-child(1) {
+  transform: rotate(45deg) translate(6px, 6px);
+  background: #ec4899;
+}
+.burger-8.open span:nth-child(2) {
+  opacity: 0;
+}
+.burger-8.open span:nth-child(3) {
+  transform: rotate(-45deg) translate(8px, -8px);
+  background: #ec4899;
+}</code></pre><button class="copy-btn mt-3 bg-blue-600 text-white px-3 py-1 rounded-full hover:bg-blue-700 text-sm" aria-label="Copy Jelly Burger Icon CSS">Copy</button></div>
+    </div>
+    <!-- Burger 9: Kinetic Burger -->
+    <div class="flex flex-col gap-4 items-center">
+      <h3 class="text-lg font-semibold text-white">Kinetic Burger</h3>
+      <button class="burger burger-9" role="button" aria-label="Kinetic Burger Icon" tabindex="0"><span></span><span></span><span></span></button>
+      <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.burger-9 {
+  position: relative;
+}
+.burger-9 span {
+  animation: kinetic 1.2s infinite ease-in-out;
+}
+@keyframes kinetic {
+  0% { transform: translateX(0); }
+  50% { transform: translateX(8px); }
+  100% { transform: translateX(0); }
+}</code></pre><button class="copy-btn mt-3 bg-blue-600 text-white px-3 py-1 rounded-full hover:bg-blue-700 text-sm" aria-label="Copy Kinetic Burger Icon CSS">Copy</button></div>
+    </div>
+    <!-- Burger 10: Liquid Burger -->
+    <div class="flex flex-col gap-4 items-center">
+      <h3 class="text-lg font-semibold text-white">Liquid Burger</h3>
+      <button class="burger burger-10" role="button" aria-label="Liquid Burger Icon" tabindex="0"><span></span><span></span><span></span></button>
+      <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.burger-10 {
+  position: relative;
+}
+.burger-10 span {
+  border-radius: 50%;
+  background: #22d3ee;
+}</code></pre><button class="copy-btn mt-3 bg-blue-600 text-white px-3 py-1 rounded-full hover:bg-blue-700 text-sm" aria-label="Copy Liquid Burger Icon CSS">Copy</button></div>
+    </div>
+    <!-- Burger 11: Magnetic Burger -->
+    <div class="flex flex-col gap-4 items-center">
+      <h3 class="text-lg font-semibold text-white">Magnetic Burger</h3>
+      <button class="burger burger-11" role="button" aria-label="Magnetic Burger Icon" tabindex="0"><span></span><span></span><span></span></button>
+      <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.burger-11 {
+  position: relative;
+}
+.burger-11:hover span {
+  transform: translateX(8px);
+  background: #f97316;
+}</code></pre><button class="copy-btn mt-3 bg-blue-600 text-white px-3 py-1 rounded-full hover:bg-blue-700 text-sm" aria-label="Copy Magnetic Burger Icon CSS">Copy</button></div>
+    </div>
+    <!-- Burger 12: Neon Burger -->
+    <div class="flex flex-col gap-4 items-center">
+      <h3 class="text-lg font-semibold text-white">Neon Burger</h3>
+      <button class="burger burger-12" role="button" aria-label="Neon Burger Icon" tabindex="0"><span></span><span></span><span></span></button>
+      <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.burger-12 {
+  position: relative;
+}
+.burger-12 span {
+  box-shadow: 0 0 12px #22c55e, 0 0 24px #22c55e;
+  background: #22c55e;
+}</code></pre><button class="copy-btn mt-3 bg-blue-600 text-white px-3 py-1 rounded-full hover:bg-blue-700 text-sm" aria-label="Copy Neon Burger Icon CSS">Copy</button></div>
+    </div>
+    <!-- Burger 13: Overflow Fade Burger -->
+    <div class="flex flex-col gap-4 items-center">
+      <h3 class="text-lg font-semibold text-white">Overflow Fade Burger</h3>
+      <button class="burger burger-13" role="button" aria-label="Overflow Fade Burger Icon" tabindex="0"><span></span><span></span><span></span></button>
+      <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.burger-13 {
+  position: relative;
+  overflow: hidden;
+}
+.burger-13::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.6), transparent);
+  transition: left 0.5s ease-in-out;
+}
+.burger-13:hover::after {
+  left: 100%;
+}</code></pre><button class="copy-btn mt-3 bg-blue-600 text-white px-3 py-1 rounded-full hover:bg-blue-700 text-sm" aria-label="Copy Overflow Fade Burger Icon CSS">Copy</button></div>
+    </div>
+    <!-- Burger 14: Pixel Burger -->
+    <div class="flex flex-col gap-4 items-center">
+      <h3 class="text-lg font-semibold text-white">Pixel Burger</h3>
+      <button class="burger burger-14" role="button" aria-label="Pixel Burger Icon" tabindex="0"><span></span><span></span><span></span></button>
+      <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.burger-14 {
+  position: relative;
+}
+.burger-14 span {
+  image-rendering: pixelated;
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 1"><rect width="8" height="1" fill="%231e293b"/></svg>');
+}</code></pre><button class="copy-btn mt-3 bg-blue-600 text-white px-3 py-1 rounded-full hover:bg-blue-700 text-sm" aria-label="Copy Pixel Burger Icon CSS">Copy</button></div>
+    </div>
+    <!-- Burger 15: Quick Swipe Burger -->
+    <div class="flex flex-col gap-4 items-center">
+      <h3 class="text-lg font-semibold text-white">Quick Swipe Burger</h3>
+      <button class="burger burger-15" role="button" aria-label="Quick Swipe Burger Icon" tabindex="0"><span></span><span></span><span></span></button>
+      <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.burger-15 {
+  position: relative;
+}
+.burger-15 span {
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+.burger-15.open span:nth-child(1) {
+  transform: translateX(10px);
+  background: #3b82f6;
+}
+.burger-15.open span:nth-child(2) {
+  opacity: 0;
+}
+.burger-15.open span:nth-child(3) {
+  transform: translateX(10px);
+  background: #3b82f6;
+}</code></pre><button class="copy-btn mt-3 bg-blue-600 text-white px-3 py-1 rounded-full hover:bg-blue-700 text-sm" aria-label="Copy Quick Swipe Burger Icon CSS">Copy</button></div>
+    </div>
+    <!-- Burger 16: Ripple Burger -->
+    <div class="flex flex-col gap-4 items-center">
+      <h3 class="text-lg font-semibold text-white">Ripple Burger</h3>
+      <button class="burger burger-16" role="button" aria-label="Ripple Burger Icon" tabindex="0"><span></span><span></span><span></span></button>
+      <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.burger-16 {
+  position: relative;
+}
+.burger-16::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.5s ease-in-out, height 0.5s ease-in-out;
+}
+.burger-16:hover::after {
+  width: 250%;
+  height: 250%;
+}</code></pre><button class="copy-btn mt-3 bg-blue-600 text-white px-3 py-1 rounded-full hover:bg-blue-700 text-sm" aria-label="Copy Ripple Burger Icon CSS">Copy</button></div>
+    </div>
+    <!-- Burger 17: Shimmer Burger -->
+    <div class="flex flex-col gap-4 items-center">
+      <h3 class="text-lg font-semibold text-white">Shimmer Burger</h3>
+      <button class="burger burger-17" role="button" aria-label="Shimmer Burger Icon" tabindex="0"><span></span><span></span><span></span></button>
+      <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.burger-17 {
+  position: relative;
+}
+.burger-17::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.6), transparent);
+  transition: left 0.5s ease-in-out;
+}
+.burger-17:hover::after {
+  left: 100%;
+}</code></pre><button class="copy-btn mt-3 bg-blue-600 text-white px-3 py-1 rounded-full hover:bg-blue-700 text-sm" aria-label="Copy Shimmer Burger Icon CSS">Copy</button></div>
+    </div>
+    <!-- Burger 18: Tilt Burger -->
+    <div class="flex flex-col gap-4 items-center">
+      <h3 class="text-lg font-semibold text-white">Tilt Burger</h3>
+      <button class="burger burger-18" role="button" aria-label="Tilt Burger Icon" tabindex="0"><span></span><span></span><span></span></button>
+      <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.burger-18 {
+  position: relative;
+}
+.burger-18:hover {
+  transform: perspective(1000px) rotateY(15deg);
+}</code></pre><button class="copy-btn mt-3 bg-blue-600 text-white px-3 py-1 rounded-full hover:bg-blue-700 text-sm" aria-label="Copy Tilt Burger Icon CSS">Copy</button></div>
+    </div>
+    <!-- Burger 19: Underline Burger -->
+    <div class="flex flex-col gap-4 items-center">
+      <h3 class="text-lg font-semibold text-white">Underline Burger</h3>
+      <button class="burger burger-19" role="button" aria-label="Underline Burger Icon" tabindex="0"><span></span><span></span><span></span></button>
+      <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.burger-19 {
+  position: relative;
+}
+.burger-19::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background: #facc15;
+  transition: width 0.4s ease-in-out;
+}
+.burger-19:hover::after {
+  width: 100%;
+}</code></pre><button class="copy-btn mt-3 bg-blue-600 text-white px-3 py-1 rounded-full hover:bg-blue-700 text-sm" aria-label="Copy Underline Burger Icon CSS">Copy</button></div>
+    </div>
+    <!-- Burger 20: Voice-Activated Burger -->
+    <div class="flex flex-col gap-4 items-center">
+      <h3 class="text-lg font-semibold text-white">Voice-Activated Burger</h3>
+      <button class="burger burger-20" role="button" aria-label="Voice-Activated Burger Icon" tabindex="0"><span></span><span></span><span></span></button>
+      <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.burger-20 {
+  position: relative;
+}
+.burger-20 span {
+  animation: voice-wave 1s infinite ease-in-out;
+}
+@keyframes voice-wave {
+  0% { transform: scaleY(1); }
+  50% { transform: scaleY(1.3); }
+  100% { transform: scaleY(1); }
+}</code></pre><button class="copy-btn mt-3 bg-blue-600 text-white px-3 py-1 rounded-full hover:bg-blue-700 text-sm" aria-label="Copy Voice-Activated Burger Icon CSS">Copy</button></div>
+    </div>
+    <!-- Burger 21: Wavy Burger -->
+    <div class="flex flex-col gap-4 items-center">
+      <h3 class="text-lg font-semibold text-white">Wavy Burger</h3>
+      <button class="burger burger-21" role="button" aria-label="Wavy Burger Icon" tabindex="0"><span></span><span></span><span></span></button>
+      <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.burger-21 {
+  position: relative;
+}
+.burger-21 span {
+  animation: wavy 1s infinite ease-in-out;
+}
+@keyframes wavy {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(3px); }
+  100% { transform: translateY(0); }
+}</code></pre><button class="copy-btn mt-3 bg-blue-600 text-white px-3 py-1 rounded-full hover:bg-blue-700 text-sm" aria-label="Copy Wavy Burger Icon CSS">Copy</button></div>
+    </div>
+    <!-- Burger 22: Xylophone Burger -->
+    <div class="flex flex-col gap-4 items-center">
+      <h3 class="text-lg font-semibold text-white">Xylophone Burger</h3>
+      <button class="burger burger-22" role="button" aria-label="Xylophone Burger Icon" tabindex="0"><span></span><span></span><span></span></button>
+      <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.burger-22 {
+  position: relative;
+}
+.burger-22 span {
+  background: linear-gradient(90deg, #ef4444, #10b981, #3b82f6);
+}</code></pre><button class="copy-btn mt-3 bg-blue-600 text-white px-3 py-1 rounded-full hover:bg-blue-700 text-sm" aria-label="Copy Xylophone Burger Icon CSS">Copy</button></div>
+    </div>
+    <!-- Burger 23: Yoyo Burger -->
+    <div class="flex flex-col gap-4 items-center">
+      <h3 class="text-lg font-semibold text-white">Yoyo Burger</h3>
+      <button class="burger burger-23" role="button" aria-label="Yoyo Burger Icon" tabindex="0"><span></span><span></span><span></span></button>
+      <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.burger-23 {
+  position: relative;
+}
+.burger-23 span {
+  animation: yoyo 0.6s infinite ease-in-out;
+}
+@keyframes yoyo {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+  100% { transform: translateY(0); }
+}</code></pre><button class="copy-btn mt-3 bg-blue-600 text-white px-3 py-1 rounded-full hover:bg-blue-700 text-sm" aria-label="Copy Yoyo Burger Icon CSS">Copy</button></div>
+    </div>
+    <!-- Burger 24: Zoom Burger -->
+    <div class="flex flex-col gap-4 items-center">
+      <h3 class="text-lg font-semibold text-white">Zoom Burger</h3>
+      <button class="burger burger-24" role="button" aria-label="Zoom Burger Icon" tabindex="0"><span></span><span></span><span></span></button>
+      <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.burger-24 {
+  position: relative;
+}
+.burger-24:hover {
+  transform: scale(1.3);
+}</code></pre><button class="copy-btn mt-3 bg-blue-600 text-white px-3 py-1 rounded-full hover:bg-blue-700 text-sm" aria-label="Copy Zoom Burger Icon CSS">Copy</button></div>
+    </div>
+    <!-- Burger 25: Accordion Burger -->
+    <div class="flex flex-col gap-4 items-center">
+      <h3 class="text-lg font-semibold text-white">Accordion Burger</h3>
+      <button class="burger burger-25" role="button" aria-label="Accordion Burger Icon" tabindex="0"><span></span><span></span><span></span></button>
+      <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.burger-25 {
+  position: relative;
+}
+.burger-25.open span:nth-child(1) {
+  transform: translateY(12px);
+  background: #d946ef;
+}
+.burger-25.open span:nth-child(2) {
+  transform: translateY(0);
+}
+.burger-25.open span:nth-child(3) {
+  transform: translateY(-12px);
+  background: #d946ef;
+}</code></pre><button class="copy-btn mt-3 bg-blue-600 text-white px-3 py-1 rounded-full hover:bg-blue-700 text-sm" aria-label="Copy Accordion Burger Icon CSS">Copy</button></div>
+    </div>
+    <!-- Burger 26: Blobby Burger -->
+    <div class="flex flex-col gap-4 items-center">
+      <h3 class="text-lg font-semibold text-white">Blobby Burger</h3>
+      <button class="burger burger-26" role="button" aria-label="Blobby Burger Icon" tabindex="0"><span></span><span></span><span></span></button>
+      <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.burger-26 {
+  position: relative;
+  filter: url(#gooey);
+}
+.burger-26 span {
+  border-radius: 50%;
+  background: #f59e0b;
+}</code></pre><button class="copy-btn mt-3 bg-blue-600 text-white px-3 py-1 rounded-full hover:bg-blue-700 text-sm" aria-label="Copy Blobby Burger Icon CSS">Copy</button></div>
+    </div>
+    <!-- Burger 27: Clip-Path Burger -->
+    <div class="flex flex-col gap-4 items-center">
+      <h3 class="text-lg font-semibold text-white">Clip-Path Burger</h3>
+      <button class="burger burger-27" role="button" aria-label="Clip-Path Burger Icon" tabindex="0"><span></span><span></span><span></span></button>
+      <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.burger-27 {
+  position: relative;
+}
+.burger-27 span {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  transition: clip-path 0.4s ease-in-out, opacity 0.4s ease-in-out;
+}
+.burger-27.open span:nth-child(1) {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  transform: rotate(45deg) translate(6px, 6px);
+  background: #14b8a6;
+}
+.burger-14.open span:nth-child(2) {
+  opacity: 0;
+}
+.burger-14.open span:nth-child(3) {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  transform: rotate(-45deg) translate(8px, -8px);
+  background: #14b8a6;
+}</code></pre><button class="copy-btn mt-3 bg-blue-600 text-white px-3 py-1 rounded-full hover:bg-blue-700 text-sm" aria-label="Copy Clip-Path Burger Icon CSS">Copy</button></div>
+    </div>
+    <!-- Burger 28: Drift Burger -->
+    <div class="flex flex-col gap-4 items-center">
+      <h3 class="text-lg font-semibold text-white">Drift Burger</h3>
+      <button class="burger burger-28" role="button" aria-label="Drift Burger Icon" tabindex="0"><span></span><span></span><span></span></button>
+      <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.burger-28 {
+  position: relative;
+}
+.burger-28 span {
+  animation: drift 1.5s infinite ease-in-out;
+}
+@keyframes drift {
+  0% { transform: translateX(0); }
+  50% { transform: translateX(8px); }
+  100% { transform: translateX(0); }
+}</code></pre><button class="copy-btn mt-3 bg-blue-600 text-white px-3 py-1 rounded-full hover:bg-blue-700 text-sm" aria-label="Copy Drift Burger Icon CSS">Copy</button></div>
+    </div>
+    <!-- Burger 29: Echo Burger -->
+    <div class="flex flex-col gap-4 items-center">
+      <h3 class="text-lg font-semibold text-white">Echo Burger</h3>
+      <button class="burger burger-29" role="button" aria-label="Echo Burger Icon" tabindex="0"><span></span><span></span><span></span></button>
+      <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.burger-29 {
+  position: relative;
+}
+.burger-29::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.3);
+  animation: echo 1.2s infinite ease-in-out;
+}
+@keyframes echo {
+  0% { transform: scale(1); opacity: 0.6; }
+  100% { transform: scale(1.6); opacity: 0; }
+}</code></pre><button class="copy-btn mt-3 bg-blue-600 text-white px-3 py-1 rounded-full hover:bg-blue-700 text-sm" aria-label="Copy Echo Burger Icon CSS">Copy</button></div>
+    </div>
+    <!-- Burger 30: Flip Burger -->
+    <div class="flex flex-col gap-4 items-center">
+      <h3 class="text-lg font-semibold text-white">Flip Burger</h3>
+      <button class="burger burger-30" role="button" aria-label="Flip Burger Icon" tabindex="0"><span></span><span></span><span></span></button>
+      <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.burger-30 {
+  position: relative;
+}
+.burger-30 span {
+  transition: transform 0.5s ease-in-out;
+}
+.burger-30.open span:nth-child(1) {
+  transform: rotateX(180deg);
+  background: #8b5cf6;
+}
+.burger-30.open span:nth-child(2) {
+  opacity: 0;
+}
+.burger-30.open span:nth-child(3) {
+  transform: rotateX(-180deg);
+  background: #8b5cf6;
+}</code></pre><button class="copy-btn mt-3 bg-blue-600 text-white px-3 py-1 rounded-full hover:bg-blue-700 text-sm" aria-label="Copy Flip Burger Icon CSS">Copy</button></div>
+    </div>
+    <!-- Burger 31: Gradient Burger -->
+    <div class="flex flex-col gap-4 items-center">
+      <h3 class="text-lg font-semibold text-white">Gradient Burger</h3>
+      <button class="burger burger-31" role="button" aria-label="Gradient Burger Icon" tabindex="0"><span></span><span></span><span></span></button>
+      <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.burger-31 {
+  position: relative;
+}
+.burger-31 span {
+  background: linear-gradient(90deg, #ef4444, #10b981);
+}</code></pre><button class="copy-btn mt-3 bg-blue-600 text-white px-3 py-1 rounded-full hover:bg-blue-700 text-sm" aria-label="Copy Gradient Burger Icon CSS">Copy</button></div>
+    </div>
+    <!-- Burger 32: Hover Burst Burger -->
+    <div class="flex flex-col gap-4 items-center">
+      <h3 class="text-lg font-semibold text-white">Hover Burst Burger</h3>
+      <button class="burger burger-32" role="button" aria-label="Hover Burst Burger Icon" tabindex="0"><span></span><span></span><span></span></button>
+      <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.burger-32 {
+  position: relative;
+}
+.burger-32:hover::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  animation: burst 0.5s forwards;
+}
+@keyframes burst {
+  0% { width: 0; height: 0; }
+  100% { width: 250%; height: 250%; }
+}</code></pre><button class="copy-btn mt-3 bg-blue-600 text-white px-3 py-1 rounded-full hover:bg-blue-700 text-sm" aria-label="Copy Hover Burst Burger Icon CSS">Copy</button></div>
+    </div>
+    <!-- Burger 33: Invert Burger -->
+    <div class="flex flex-col gap-4 items-center">
+      <h3 class="text-lg font-semibold text-white">Invert Burger</h3>
+      <button class="burger burger-33" role="button" aria-label="Invert Burger Icon" tabindex="0"><span></span><span></span><span></span></button>
+      <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.burger-33 {
+  position: relative;
+}
+.burger-33:hover {
+  filter: invert(1);
+}</code></pre><button class="copy-btn mt-3 bg-blue-600 text-white px-3 py-1 rounded-full hover:bg-blue-700 text-sm" aria-label="Copy Invert Burger Icon CSS">Copy</button></div>
+    </div>
+    <!-- Burger 34: Jump Burger -->
+    <div class="flex flex-col gap-4 items-center">
+      <h3 class="text-lg font-semibold text-white">Jump Burger</h3>
+      <button class="burger burger-34" role="button" aria-label="Jump Burger Icon" tabindex="0"><span></span><span></span><span></span></button>
+      <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.burger-34 {
+  position: relative;
+}
+.burger-34 span {
+  animation: jump 0.6s infinite ease-in-out;
+}
+@keyframes jump {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+  100% { transform: translateY(0); }
+}</code></pre><button class="copy-btn mt-3 bg-blue-600 text-white px-3 py-1 rounded-full hover:bg-blue-700 text-sm" aria-label="Copy Jump Burger Icon CSS">Copy</button></div>
+    </div>
+    <!-- Burger 35: Kaleidoscope Burger -->
+    <div class="flex flex-col gap-4 items-center">
+      <h3 class="text-lg font-semibold text-white">Kaleidoscope Burger</h3>
+      <button class="burger burger-35" role="button" aria-label="Kaleidoscope Burger Icon" tabindex="0"><span></span><span></span><span></span></button>
+      <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.burger-35 {
+  position: relative;
+}
+.burger-35 span {
+  background: linear-gradient(45deg, #ef4444, #3b82f6, #10b981, #facc15);
+}</code></pre><button class="copy-btn mt-3 bg-blue-600 text-white px-3 py-1 rounded-full hover:bg-blue-700 text-sm" aria-label="Copy Kaleidoscope Burger Icon CSS">Copy</button></div>
+    </div>
+    <!-- Burger 36: Loop Burger -->
+    <div class="flex flex-col gap-4 items-center">
+      <h3 class="text-lg font-semibold text-white">Loop Burger</h3>
+      <button class="burger burger-36" role="button" aria-label="Loop Burger Icon" tabindex="0"><span></span><span></span><span></span></button>
+      <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.burger-36 {
+  position: relative;
+}
+.burger-36 span {
+  animation: loop 1.2s infinite linear;
+}
+@keyframes loop {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}</code></pre><button class="copy-btn mt-3 bg-blue-600 text-white px-3 py-1 rounded-full hover:bg-blue-700 text-sm" aria-label="Copy Loop Burger Icon CSS">Copy</button></div>
+    </div>
+    <!-- Burger 37: Metaball Burger -->
+    <div class="flex flex-col gap-4 items-center">
+      <h3 class="text-lg font-semibold text-white">Metaball Burger</h3>
+      <button class="burger burger-37" role="button" aria-label="Metaball Burger Icon" tabindex="0"><span></span><span></span><span></span></button>
+      <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.burger-37 {
+  position: relative;
+  filter: url(#gooey);
+}
+.burger-37 span {
+  border-radius: 50%;
+  background: #d946ef;
+}</code></pre><button class="copy-btn mt-3 bg-blue-600 text-white px-3 py-1 rounded-full hover:bg-blue-700 text-sm" aria-label="Copy Metaball Burger Icon CSS">Copy</button></div>
+    </div>
+    <!-- Burger 38: Nested Burger -->
+    <div class="flex flex-col gap-4 items-center">
+      <h3 class="text-lg font-semibold text-white">Nested Burger</h3>
+      <button class="burger burger-38" role="button" aria-label="Nested Burger Icon" tabindex="0"><span></span><span></span><span></span></button>
+      <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.burger-38 {
+  position: relative;
+}
+.burger-38.open span:nth-child(1) {
+  transform: translateY(12px);
+  background: #f59e0b;
+}
+.burger-38.open span:nth-child(2) {
+  transform: translateY(0);
+}
+.burger-38.open span:nth-child(3) {
+  transform: translateY(-12px);
+  background: #f59e0b;
+}</code></pre><button class="copy-btn mt-3 bg-blue-600 text-white px-3 py-1 rounded-full hover:bg-blue-700 text-sm" aria-label="Copy Nested Burger Icon CSS">Copy</button></div>
+    </div>
+    <!-- Burger 39: Overlay Burger -->
+    <div class="flex flex-col gap-4 items-center">
+      <h3 class="text-lg font-semibold text-white">Overlay Burger</h3>
+      <button class="burger burger-39" role="button" aria-label="Overlay Burger Icon" tabindex="0"><span></span><span></span><span></span></button>
+      <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.burger-39 {
+  position: relative;
+}
+.burger-39::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  opacity: 0;
+  transition: opacity 0.4s ease-in-out;
+}
+.burger-39:hover::after {
+  opacity: 1;
+}</code></pre><button class="copy-btn mt-3 bg-blue-600 text-white px-3 py-1 rounded-full hover:bg-blue-700 text-sm" aria-label="Copy Overlay Burger Icon CSS">Copy</button></div>
+    </div>
+    <!-- Burger 40: Parallax Burger -->
+    <div class="flex flex-col gap-4 items-center">
+      <h3 class="text-lg font-semibold text-white">Parallax Burger</h3>
+      <button class="burger burger-40" role="button" aria-label="Parallax Burger Icon" tabindex="0"><span></span><span></span><span></span></button>
+      <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.burger-40 {
+  position: relative;
+}
+.burger-40:hover {
+  transform: perspective(1000px) translateZ(30px);
+}</code></pre><button class="copy-btn mt-3 bg-blue-600 text-white px-3 py-1 rounded-full hover:bg-blue-700 text-sm" aria-label="Copy Parallax Burger Icon CSS">Copy</button></div>
+    </div>
+    <!-- Burger 41: Quiet Burger -->
+    <div class="flex flex-col gap-4 items-center">
+      <h3 class="text-lg font-semibold text-white">Quiet Burger</h3>
+      <button class="burger burger-41" role="button" aria-label="Quiet Burger Icon" tabindex="0"><span></span><span></span><span></span></button>
+      <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.burger-41 {
+  position: relative;
+}
+.burger-41 span {
+  background: rgba(0, 0, 0, 0.6);
+}</code></pre><button class="copy-btn mt-3 bg-blue-600 text-white px-3 py-1 rounded-full hover:bg-blue-700 text-sm" aria-label="Copy Quiet Burger Icon CSS">Copy</button></div>
+    </div>
+    <!-- Burger 42: Rotate Burger -->
+    <div class="flex flex-col gap-4 items-center">
+      <h3 class="text-lg font-semibold text-white">Rotate Burger</h3>
+      <button class="burger burger-42" role="button" aria-label="Rotate Burger Icon" tabindex="0"><span></span><span></span><span></span></button>
+      <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.burger-42 {
+  position: relative;
+}
+.burger-42:hover {
+  transform: rotate(180deg);
+}</code></pre><button class="copy-btn mt-3 bg-blue-600 text-white px-3 py-1 rounded-full hover:bg-blue-700 text-sm" aria-label="Copy Rotate Burger Icon CSS">Copy</button></div>
+    </div>
+    <!-- Burger 43: Swipe-Border Burger -->
+    <div class="flex flex-col gap-4 items-center">
+      <h3 class="text-lg font-semibold text-white">Swipe-Border Burger</h3>
+      <button class="burger burger-43" role="button" aria-label="Swipe-Border Burger Icon" tabindex="0"><span></span><span></span><span></span></button>
+      <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.burger-43 {
+  position: relative;
+}
+.burger-43::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  border: 3px solid #facc15;
+  transition: left 0.4s ease-in-out;
+}
+.burger-43:hover::after {
+  left: 100%;
+}</code></pre><button class="copy-btn mt-3 bg-blue-600 text-white px-3 py-1 rounded-full hover:bg-blue-700 text-sm" aria-label="Copy Swipe-Border Burger Icon CSS">Copy</button></div>
+    </div>
+    <!-- Burger 44: Thermal Burger -->
+    <div class="flex flex-col gap-4 items-center">
+      <h3 class="text-lg font-semibold text-white">Thermal Burger</h3>
+      <button class="burger burger-44" role="button" aria-label="Thermal Burger Icon" tabindex="0"><span></span><span></span><span></span></button>
+      <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.burger-44 {
+  position: relative;
+}
+.burger-44 span {
+  background: linear-gradient(90deg, #ef4444, #1e40af);
+}</code></pre><button class="copy-btn mt-3 bg-blue-600 text-white px-3 py-1 rounded-full hover:bg-blue-700 text-sm" aria-label="Copy Thermal Burger Icon CSS">Copy</button></div>
+    </div>
+    <!-- Burger 45: Unfolding Burger -->
+    <div class="flex flex-col gap-4 items-center">
+      <h3 class="text-lg font-semibold text-white">Unfolding Burger</h3>
+      <button class="burger burger-45" role="button" aria-label="Unfolding Burger Icon" tabindex="0"><span></span><span></span><span></span></button>
+      <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.burger-45 {
+  position: relative;
+}
+.burger-45.open span:nth-child(1) {
+  transform: translateY(12px);
+  background: #10b981;
+}
+.burger-45.open span:nth-child(2) {
+  opacity: 0;
+}
+.burger-45.open span:nth-child(3) {
+  transform: translateY(-12px);
+  background: #10b981;
+}</code></pre><button class="copy-btn mt-3 bg-blue-600 text-white px-3 py-1 rounded-full hover:bg-blue-700 text-sm" aria-label="Copy Unfolding Burger Icon CSS">Copy</button></div>
+    </div>
+    <!-- Burger 46: Vortex Burger -->
+    <div class="flex flex-col gap-4 items-center">
+      <h3 class="text-lg font-semibold text-white">Vortex Burger</h3>
+      <button class="burger burger-46" role="button" aria-label="Vortex Burger Icon" tabindex="0"><span></span><span></span><span></span></button>
+      <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.burger-46 {
+  position: relative;
+}
+.burger-46 span {
+  animation: vortex 1.2s infinite linear;
+}
+@keyframes vortex {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}</code></pre><button class="copy-btn mt-3 bg-blue-600 text-white px-3 py-1 rounded-full hover:bg-blue-700 text-sm" aria-label="Copy Vortex Burger Icon CSS">Copy</button></div>
+    </div>
+    <!-- Burger 47: Wave Burger -->
+    <div class="flex flex-col gap-4 items-center">
+      <h3 class="text-lg font-semibold text-white">Wave Burger</h3>
+      <button class="burger burger-47" role="button" aria-label="Wave Burger Icon" tabindex="0"><span></span><span></span><span></span></button>
+      <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.burger-47 {
+  position: relative;
+}
+.burger-47 span {
+  animation: wave 1s infinite ease-in-out;
+}
+@keyframes wave {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(3px); }
+  100% { transform: translateY(0); }
+}</code></pre><button class="copy-btn mt-3 bg-blue-600 text-white px-3 py-1 rounded-full hover:bg-blue-700 text-sm" aria-label="Copy Wave Burger Icon CSS">Copy</button></div>
+    </div>
+    <!-- Burger 48: Xtreme Burger -->
+    <div class="flex flex-col gap-4 items-center">
+      <h3 class="text-lg font-semibold text-white">Xtreme Burger</h3>
+      <button class="burger burger-48" role="button" aria-label="Xtreme Burger Icon" tabindex="0"><span></span><span></span><span></span></button>
+      <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.burger-48 {
+  position: relative;
+}
+.burger-48:hover {
+  transform: scale(1.6);
+}</code></pre><button class="copy-btn mt-3 bg-blue-600 text-white px-3 py-1 rounded-full hover:bg-blue-700 text-sm" aria-label="Copy Xtreme Burger Icon CSS">Copy</button></div>
+    </div>
+    <!-- Burger 49: Yarn Burger -->
+    <div class="flex flex-col gap-4 items-center">
+      <h3 class="text-lg font-semibold text-white">Yarn Burger</h3>
+      <button class="burger burger-49" role="button" aria-label="Yarn Burger Icon" tabindex="0"><span></span><span></span><span></span></button>
+      <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.burger-49 {
+  position: relative;
+}
+.burger-49 span {
+  box-shadow: 3px 3px 6px #000;
+  background: #ec4899;
+}</code></pre><button class="copy-btn mt-3 bg-blue-600 text-white px-3 py-1 rounded-full hover:bg-blue-700 text-sm" aria-label="Copy Yarn Burger Icon CSS">Copy</button></div>
+    </div>
+    <!-- Burger 50: Zipper Burger -->
+    <div class="flex flex-col gap-4 items-center">
+      <h3 class="text-lg font-semibold text-white">Zipper Burger</h3>
+      <button class="burger burger-50" role="button" aria-label="Zipper Burger Icon" tabindex="0"><span></span><span></span><span></span></button>
+      <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.burger-50 {
+  position: relative;
+}
+.burger-50 span {
+  transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out;
+}
+.burger-50.open span:nth-child(1) {
+  transform: translateY(12px) rotate(45deg);
+  background: #f97316;
+}
+.burger-50.open span:nth-child(2) {
+  opacity: 0;
+}
+.burger-50.open span:nth-child(3) {
+  transform: translateY(-12px) rotate(-45deg);
+  background: #f97316;
+}</code></pre><button class="copy-btn mt-3 bg-blue-600 text-white px-3 py-1 rounded-full hover:bg-blue-700 text-sm" aria-label="Copy Zipper Burger Icon CSS">Copy</button></div>
+    </div>
+  </main>
+  <footer class="text-center mt-12 text-gray-100">
+    <p>StyleSync &copy; 2025 | Licensed under <a href="https://opensource.org/licenses/MIT" class="underline hover:text-white">MIT License</a></p>
+    <p><a href="https://github.com/stylesync/stylesync" class="underline hover:text-white">Contribute on GitHub</a></p>
+  </footer>
+  <svg id="filters">
+    <defs>
+      <filter id="gooey">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="3" result="blur" />
+        <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="gooey" />
+        <feBlend in="SourceGraphic" in2="gooey" />
+      </filter>
+    </defs>
+  </svg>
+  <script src="scripts.js"></script>
+</body>
+</html>

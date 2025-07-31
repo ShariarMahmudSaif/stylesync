@@ -1,0 +1,940 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>38 Navbar Design Styles - StyleSync</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Fira+Code&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="p-6 font-inter">
+  <header class="text-center mb-12">
+    <h1 class="text-4xl font-bold text-white">Navbar Design Styles</h1>
+    <p class="text-xl text-gray-100 mt-3">Explore vibrant, animated navigation bars for modern web design</p>
+    <a href="../index.html" class="text-white underline hover:text-gray-200">Back to Home</a>
+  </header>
+  <main class="max-w-7xl mx-auto grid grid-cols-1 gap-12">
+    <!-- Navbar 1: Glassmorphic Nav -->
+    <div class="flex flex-col gap-4">
+      <h3 class="text-lg font-semibold text-white">Glassmorphic Nav</h3>
+      <nav class="navbar navbar-1" role="navigation" aria-label="Glassmorphic Navigation">
+        <ul class="flex space-x-4">
+          <li><a href="#" class="nav-link">Home</a></li>
+          <li><a href="#" class="nav-link">About</a></li>
+          <li><a href="#" class="nav-link">Services</a></li>
+          <li><a href="#" class="nav-link">Contact</a></li>
+        </ul>
+        <button class="burger hidden" aria-label="Toggle Glassmorphic Navigation" tabindex="0"><span></span><span></span><span></span></button>
+      </nav>
+      <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.navbar-1 {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  padding: 0 1rem;
+}
+.navbar-1 .nav-link {
+  color: #ffffff;
+  padding: 0.5rem 1rem;
+  transition: color 0.3s ease-in-out;
+}
+.navbar-1 .nav-link:hover {
+  color: #60a5fa;
+}</code></pre><button class="copy-btn mt-3 bg-blue-600 text-white px-3 py-1 rounded-full hover:bg-blue-700 text-sm" aria-label="Copy Glassmorphic Nav CSS">Copy</button></div>
+    </div>
+    <!-- Navbar 2: Sticky Scroll Nav -->
+    <div class="flex flex-col gap-4">
+      <h3 class="text-lg font-semibold text-white">Sticky Scroll Nav</h3>
+      <nav class="navbar navbar-2" role="navigation" aria-label="Sticky Scroll Navigation">
+        <ul class="flex space-x-4">
+          <li><a href="#" class="nav-link">Home</a></li>
+          <li><a href="#" class="nav-link">About</a></li>
+          <li><a href="#" class="nav-link">Services</a></li>
+          <li><a href="#" class="nav-link">Contact</a></li>
+        </ul>
+        <button class="burger hidden" aria-label="Toggle Sticky Scroll Navigation" tabindex="0"><span></span><span></span><span></span></button>
+      </nav>
+      <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.navbar-2 {
+  position: sticky;
+  top: 0;
+  background: #1e293b;
+  padding: 0 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+.navbar-2 .nav-link {
+  color: #ffffff;
+  padding: 0.5rem 1rem;
+  transition: background 0.3s ease-in-out;
+}
+.navbar-2 .nav-link:hover {
+  background: #3b82f6;
+}</code></pre><button class="copy-btn mt-3 bg-blue-600 text-white px-3 py-1 rounded-full hover:bg-blue-700 text-sm" aria-label="Copy Sticky Scroll Nav CSS">Copy</button></div>
+    </div>
+    <!-- Navbar 3: Slide-In Side Nav -->
+    <div class="flex flex-col gap-4">
+      <h3 class="text-lg font-semibold text-white">Slide-In Side Nav</h3>
+      <nav class="navbar navbar-3" role="navigation" aria-label="Slide-In Side Navigation">
+        <button class="burger" aria-label="Toggle Slide-In Side Navigation" tabindex="0"><span></span><span></span><span></span></button>
+        <ul class="nav-menu hidden">
+          <li><a href="#" class="nav-link">Home</a></li>
+          <li><a href="#" class="nav-link">About</a></li>
+          <li><a href="#" class="nav-link">Services</a></li>
+          <li><a href="#" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.navbar-3 {
+  position: relative;
+}
+.navbar-3 .nav-menu {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  height: 100vh;
+  background: #1e293b;
+  transition: left 0.3s ease-in-out;
+}
+.navbar-3.open .nav-menu {
+  left: 0;
+}
+.navbar-3 .nav-link {
+  color: #ffffff;
+  padding: 1rem;
+  display: block;
+}</code></pre><button class="copy-btn mt-3 bg-blue-600 text-white px-3 py-1 rounded-full hover:bg-blue-700 text-sm" aria-label="Copy Slide-In Side Nav CSS">Copy</button></div>
+    </div>
+    <!-- Navbar 4: Full-Screen Overlay Nav -->
+    <div class="flex flex-col gap-4">
+      <h3 class="text-lg font-semibold text-white">Full-Screen Overlay Nav</h3>
+      <nav class="navbar navbar-4" role="navigation" aria-label="Full-Screen Overlay Navigation">
+        <button class="burger" aria-label="Toggle Full-Screen Overlay Navigation" tabindex="0"><span></span><span></span><span></span></button>
+        <ul class="nav-menu hidden">
+          <li><a href="#" class="nav-link">Home</a></li>
+          <li><a href="#" class="nav-link">About</a></li>
+          <li><a href="#" class="nav-link">Services</a></li>
+          <li><a href="#" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.navbar-4 .nav-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+.navbar-4.open .nav-menu {
+  opacity: 1;
+}
+.navbar-4 .nav-link {
+  color: #ffffff;
+  font-size: 1.5rem;
+  padding: 1rem;
+}</code></pre><button class="copy-btn mt-3 bg-blue-600 text-white px-3 py-1 rounded-full hover:bg-blue-700 text-sm" aria-label="Copy Full-Screen Overlay Nav CSS">Copy</button></div>
+    </div>
+    <!-- Navbar 5: Morphing Burger Nav -->
+    <div class="flex flex-col gap-4">
+      <h3 class="text-lg font-semibold text-white">Morphing Burger Nav</h3>
+      <nav class="navbar navbar-5" role="navigation" aria-label="Morphing Burger Navigation">
+        <button class="burger" aria-label="Toggle Morphing Burger Navigation" tabindex="0"><span></span><span></span><span></span></button>
+        <ul class="nav-menu hidden">
+          <li><a href="#" class="nav-link">Home</a></li>
+          <li><a href="#" class="nav-link">About</a></li>
+          <li><a href="#" class="nav-link">Services</a></li>
+          <li><a href="#" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.navbar-5 .burger span {
+  transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out;
+}
+.navbar-5.open .burger span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+  background: #ef4444;
+}
+.navbar-5.open .burger span:nth-child(2) {
+  opacity: 0;
+}
+.navbar-5.open .burger span:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -7px);
+  background: #ef4444;
+}
+.navbar-5 .nav-menu {
+  position: fixed;
+  top: 50px;
+  right: 0;
+  background: #1e293b;
+  padding: 1rem;
+}</code></pre><button class="copy-btn mt-3 bg-blue-600 text-white px-3 py-1 rounded-full hover:bg-blue-700 text-sm" aria-label="Copy Morphing Burger Nav CSS">Copy</button></div>
+    </div>
+    <!-- Navbar 6: Neon Pulse Nav -->
+    <div class="flex flex-col gap-4">
+      <h3 class="text-lg font-semibold text-white">Neon Pulse Nav</h3>
+      <nav class="navbar navbar-6" role="navigation" aria-label="Neon Pulse Navigation">
+        <ul class="flex space-x-4">
+          <li><a href="#" class="nav-link">Home</a></li>
+          <li><a href="#" class="nav-link">About</a></li>
+          <li><a href="#" class="nav-link">Services</a></li>
+          <li><a href="#" class="nav-link">Contact</a></li>
+        </ul>
+        <button class="burger hidden" aria-label="Toggle Neon Pulse Navigation" tabindex="0"><span></span><span></span><span></span></button>
+      </nav>
+      <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.navbar-6 .nav-link {
+  color: #22c55e;
+  text-shadow: 0 0 10px #22c55e;
+  animation: neon-pulse 1.5s infinite ease-in-out;
+}
+@keyframes neon-pulse {
+  0% { text-shadow: 0 0 10px #22c55e, 0 0 20px #22c55e; }
+  50% { text-shadow: 0 0 15px #22c55e, 0 0 30px #22c55e; }
+  100% { text-shadow: 0 0 10px #22c55e, 0 0 20px #22c55e; }
+}</code></pre><button class="copy-btn mt-3 bg-blue-600 text-white px-3 py-1 rounded-full hover:bg-blue-700 text-sm" aria-label="Copy Neon Pulse Nav CSS">Copy</button></div>
+    </div>
+    <!-- Navbar 7: Hover Underline Nav -->
+    <div class="flex flex-col gap-4">
+      <h3 class="text-lg font-semibold text-white">Hover Underline Nav</h3>
+      <nav class="navbar navbar-7" role="navigation" aria-label="Hover Underline Navigation">
+        <ul class="flex space-x-4">
+          <li><a href="#" class="nav-link">Home</a></li>
+          <li><a href="#" class="nav-link">About</a></li>
+          <li><a href="#" class="nav-link">Services</a></li>
+          <li><a href="#" class="nav-link">Contact</a></li>
+        </ul>
+        <button class="burger hidden" aria-label="Toggle Hover Underline Navigation" tabindex="0"><span></span><span></span><span></span></button>
+      </nav>
+      <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.navbar-7 .nav-link {
+  position: relative;
+}
+.navbar-7 .nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #facc15;
+  transition: width 0.3s ease-in-out;
+}
+.navbar-7 .nav-link:hover::after {
+  width: 100%;
+}</code></pre><button class="copy-btn mt-3 bg-blue-600 text-white px-3 py-1 rounded-full hover:bg-blue-700 text-sm" aria-label="Copy Hover Underline Nav CSS">Copy</button></div>
+    </div>
+    <!-- Navbar 8: Elastic Bounce Nav -->
+    <div class="flex flex-col gap-4">
+      <h3 class="text-lg font-semibold text-white">Elastic Bounce Nav</h3>
+      <nav class="navbar navbar-8" role="navigation" aria-label="Elastic Bounce Navigation">
+        <ul class="flex space-x-4">
+          <li><a href="#" class="nav-link">Home</a></li>
+          <li><a href="#" class="nav-link">About</a></li>
+          <li><a href="#" class="nav-link">Services</a></li>
+          <li><a href="#" class="nav-link">Contact</a></li>
+        </ul>
+        <button class="burger hidden" aria-label="Toggle Elastic Bounce Navigation" tabindex="0"><span></span><span></span><span></span></button>
+      </nav>
+      <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.navbar-8 .nav-link {
+  transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.navbar-8 .nav-link:hover {
+  transform: scale(1.1);
+}</code></pre><button class="copy-btn mt-3 bg-blue-600 text-white px-3 py-1 rounded-full hover:bg-blue-700 text-sm" aria-label="Copy Elastic Bounce Nav CSS">Copy</button></div>
+    </div>
+    <!-- Navbar 9: Parallax Background Nav -->
+    <div class="flex flex-col gap-4">
+      <h3 class="text-lg font-semibold text-white">Parallax Background Nav</h3>
+      <nav class="navbar navbar-9" role="navigation" aria-label="Parallax Background Navigation">
+        <ul class="flex space-x-4">
+          <li><a href="#" class="nav-link">Home</a></li>
+          <li><a href="#" class="nav-link">About</a></li>
+          <li><a href="#" class="nav-link">Services</a></li>
+          <li><a href="#" class="nav-link">Contact</a></li>
+        </ul>
+        <button class="burger hidden" aria-label="Toggle Parallax Background Navigation" tabindex="0"><span></span><span></span><span></span></button>
+      </nav>
+      <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.navbar-9 {
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 50"><rect width="100" height="50" fill="url(#grad)"/><defs><linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" style="stop-color:#ef4444;stop-opacity:1"/><stop offset="100%" style="stop-color:#3b82f6;stop-opacity:1"/></linearGradient></defs></svg>') no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}</code></pre><button class="copy-btn mt-3 bg-blue-600 text-white px-3 py-1 rounded-full hover:bg-blue-700 text-sm" aria-label="Copy Parallax Background Nav CSS">Copy</button></div>
+    </div>
+    <!-- Navbar 10: Retro Pixel Nav -->
+    <div class="flex flex-col gap-4">
+      <h3 class="text-lg font-semibold text-white">Retro Pixel Nav</h3>
+      <nav class="navbar navbar-10" role="navigation" aria-label="Retro Pixel Navigation">
+        <ul class="flex space-x-4">
+          <li><a href="#" class="nav-link">Home</a></li>
+          <li><a href="#" class="nav-link">About</a></li>
+          <li><a href="#" class="nav-link">Services</a></li>
+          <li><a href="#" class="nav-link">Contact</a></li>
+        </ul>
+        <button class="burger hidden" aria-label="Toggle Retro Pixel Navigation" tabindex="0"><span></span><span></span><span></span></button>
+      </nav>
+      <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.navbar-10 {
+  image-rendering: pixelated;
+  background: #1e293b;
+}
+.navbar-10 .nav-link {
+  font-family: 'Fira Code', monospace;
+  color: #10b981;
+}</code></pre><button class="copy-btn mt-3 bg-blue-600 text-white px-3 py-1 rounded-full hover:bg-blue-700 text-sm" aria-label="Copy Retro Pixel Nav CSS">Copy</button></div>
+    </div>
+    <!-- Navbar 11: Minimalist Flat Nav -->
+    <div class="flex flex-col gap-4">
+      <h3 class="text-lg font-semibold text-white">Minimalist Flat Nav</h3>
+      <nav class="navbar navbar-11" role="navigation" aria-label="Minimalist Flat Navigation">
+        <ul class="flex space-x-4">
+          <li><a href="#" class="nav-link">Home</a></li>
+          <li><a href="#" class="nav-link">About</a></li>
+          <li><a href="#" class="nav-link">Services</a></li>
+          <li><a href="#" class="nav-link">Contact</a></li>
+        </ul>
+        <button class="burger hidden" aria-label="Toggle Minimalist Flat Navigation" tabindex="0"><span></span><span></span><span></span></button>
+      </nav>
+      <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.navbar-11 {
+  background: #ffffff;
+}
+.navbar-11 .nav-link {
+  color: #1e293b;
+}</code></pre><button class="copy-btn mt-3 bg-blue-600 text-white px-3 py-1 rounded-full hover:bg-blue-700 text-sm" aria-label="Copy Minimalist Flat Nav CSS">Copy</button></div>
+    </div>
+    <!-- Navbar 12: Claymorphic Curved Nav -->
+    <div class="flex flex-col gap-4">
+      <h3 class="text-lg font-semibold text-white">Claymorphic Curved Nav</h3>
+      <nav class="navbar navbar-12" role="navigation" aria-label="Claymorphic Curved Navigation">
+        <ul class="flex space-x-4">
+          <li><a href="#" class="nav-link">Home</a></li>
+          <li><a href="#" class="nav-link">About</a></li>
+          <li><a href="#" class="nav-link">Services</a></li>
+          <li><a href="#" class="nav-link">Contact</a></li>
+        </ul>
+        <button class="burger hidden" aria-label="Toggle Claymorphic Curved Navigation" tabindex="0"><span></span><span></span><span></span></button>
+      </nav>
+      <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.navbar-12 {
+  background: #e5e7eb;
+  box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.2), -6px -6px 12px rgba(255, 255, 255, 0.5);
+  border-radius: 20px;
+}
+.navbar-12 .nav-link {
+  color: #1e293b;
+}</code></pre><button class="copy-btn mt-3 bg-blue-600 text-white px-3 py-1 rounded-full hover:bg-blue-700 text-sm" aria-label="Copy Claymorphic Curved Nav CSS">Copy</button></div>
+    </div>
+    <!-- Navbar 13: Brutalist Block Nav -->
+    <div class="flex flex-col gap-4">
+      <h3 class="text-lg font-semibold text-white">Brutalist Block Nav</h3>
+      <nav class="navbar navbar-13" role="navigation" aria-label="Brutalist Block Navigation">
+        <ul class="flex space-x-4">
+          <li><a href="#" class="nav-link">Home</a></li>
+          <li><a href="#" class="nav-link">About</a></li>
+          <li><a href="#" class="nav-link">Services</a></li>
+          <li><a href="#" class="nav-link">Contact</a></li>
+        </ul>
+        <button class="burger hidden" aria-label="Toggle Brutalist Block Navigation" tabindex="0"><span></span><span></span><span></span></button>
+      </nav>
+      <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.navbar-13 {
+  background: #000000;
+  border: 4px solid #ffffff;
+}
+.navbar-13 .nav-link {
+  color: #ffffff;
+  font-weight: bold;
+}</code></pre><button class="copy-btn mt-3 bg-blue-600 text-white px-3 py-1 rounded-full hover:bg-blue-700 text-sm" aria-label="Copy Brutalist Block Nav CSS">Copy</button></div>
+    </div>
+    <!-- Navbar 14: Floating Card Nav -->
+    <div class="flex flex-col gap-4">
+      <h3 class="text-lg font-semibold text-white">Floating Card Nav</h3>
+      <nav class="navbar navbar-14" role="navigation" aria-label="Floating Card Navigation">
+        <ul class="flex space-x-4">
+          <li><a href="#" class="nav-link">Home</a></li>
+          <li><a href="#" class="nav-link">About</a></li>
+          <li><a href="#" class="nav-link">Services</a></li>
+          <li><a href="#" class="nav-link">Contact</a></li>
+        </ul>
+        <button class="burger hidden" aria-label="Toggle Floating Card Navigation" tabindex="0"><span></span><span></span><span></span></button>
+      </nav>
+      <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.navbar-14 .nav-link {
+  background: #ffffff;
+  color: #1e293b;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease-in-out;
+}
+.navbar-14 .nav-link:hover {
+  transform: translateY(-4px);
+}</code></pre><button class="copy-btn mt-3 bg-blue-600 text-white px-3 py-1 rounded-full hover:bg-blue-700 text-sm" aria-label="Copy Floating Card Nav CSS">Copy</button></div>
+    </div>
+    <!-- Navbar 15: Gradient Swipe Nav -->
+    <div class="flex flex-col gap-4">
+      <h3 class="text-lg font-semibold text-white">Gradient Swipe Nav</h3>
+      <nav class="navbar navbar-15" role="navigation" aria-label="Gradient Swipe Navigation">
+        <ul class="flex space-x-4">
+          <li><a href="#" class="nav-link">Home</a></li>
+          <li><a href="#" class="nav-link">About</a></li>
+          <li><a href="#" class="nav-link">Services</a></li>
+          <li><a href="#" class="nav-link">Contact</a></li>
+        </ul>
+        <button class="burger hidden" aria-label="Toggle Gradient Swipe Navigation" tabindex="0"><span></span><span></span><span></span></button>
+      </nav>
+      <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.navbar-15 .nav-link {
+  position: relative;
+}
+.navbar-15 .nav-link::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, #ef4444);
+  transition: left 0.3s ease-in-out;
+}
+.navbar-15 .nav-link:hover::after {
+  left: 100%;
+}</code></pre><button class="copy-btn mt-3 bg-blue-600 text-white px-3 py-1 rounded-full hover:bg-blue-700 text-sm" aria-label="Copy Gradient Swipe Nav CSS">Copy</button></div>
+    </div>
+    <!-- Navbar 16: Icon-Only Tooltip Nav -->
+    <div class="flex flex-col gap-4">
+      <h3 class="text-lg font-semibold text-white">Icon-Only Tooltip Nav</h3>
+      <nav class="navbar navbar-16" role="navigation" aria-label="Icon-Only Tooltip Navigation">
+        <ul class="flex space-x-4">
+          <li><a href="#" class="nav-link" data-tooltip="Home"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg></a></li>
+          <li><a href="#" class="nav-link" data-tooltip="About"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></a></li>
+          <li><a href="#" class="nav-link" data-tooltip="Services"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></a></li>
+          <li><a href="#" class="nav-link" data-tooltip="Contact"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg></a></li>
+        </ul>
+        <button class="burger hidden" aria-label="Toggle Icon-Only Tooltip Navigation" tabindex="0"><span></span><span></span><span></span></button>
+      </nav>
+      <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.navbar-16 .nav-link {
+  position: relative;
+  color: #ffffff;
+}
+.navbar-16 .nav-link::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #1e293b;
+  color: #ffffff;
+  padding: 0.5rem;
+  border-radius: 4px;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+.navbar-16 .nav-link:hover::after {
+  opacity: 1;
+}</code></pre><button class="copy-btn mt-3 bg-blue-600 text-white px-3 py-1 rounded-full hover:bg-blue-700 text-sm" aria-label="Copy Icon-Only Tooltip Nav CSS">Copy</button></div>
+    </div>
+    <!-- Navbar 17: Vertical Accordion Nav -->
+    <div class="flex flex-col gap-4">
+      <h3 class="text-lg font-semibold text-white">Vertical Accordion Nav</h3>
+      <nav class="navbar navbar-17" role="navigation" aria-label="Vertical Accordion Navigation">
+        <button class="burger" aria-label="Toggle Vertical Accordion Navigation" tabindex="0"><span></span><span></span><span></span></button>
+        <ul class="nav-menu hidden">
+          <li><a href="#" class="nav-link">Home</a></li>
+          <li><a href="#" class="nav-link">About</a></li>
+          <li><a href="#" class="nav-link">Services</a></li>
+          <li><a href="#" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.navbar-17 .nav-menu {
+  position: fixed;
+  top: 50px;
+  left: 0;
+  background: #1e293b;
+  flex-direction: column;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-in-out;
+}
+.navbar-17.open .nav-menu {
+  max-height: 400px;
+}
+.navbar-17 .nav-link {
+  color: #ffffff;
+  padding: 1rem;
+}</code></pre><button class="copy-btn mt-3 bg-blue-600 text-white px-3 py-1 rounded-full hover:bg-blue-700 text-sm" aria-label="Copy Vertical Accordion Nav CSS">Copy</button></div>
+    </div>
+    <!-- Navbar 18: Magic Line Cursor Nav -->
+    <div class="flex flex-col gap-4">
+      <h3 class="text-lg font-semibold text-white">Magic Line Cursor Nav</h3>
+      <nav class="navbar navbar-18" role="navigation" aria-label="Magic Line Cursor Navigation">
+        <ul class="flex space-x-4">
+          <li><a href="#" class="nav-link">Home</a></li>
+          <li><a href="#" class="nav-link">About</a></li>
+          <li><a href="#" class="nav-link">Services</a></li>
+          <li><a href="#" class="nav-link">Contact</a></li>
+        </ul>
+        <button class="burger hidden" aria-label="Toggle Magic Line Cursor Navigation" tabindex="0"><span></span><span></span><span></span></button>
+      </nav>
+      <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.navbar-18 {
+  position: relative;
+}
+.navbar-18::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #3b82f6;
+  transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
+}
+.navbar-18 .nav-link:hover ~ .navbar-18::after {
+  width: 100px;
+}</code></pre><button class="copy-btn mt-3 bg-blue-600 text-white px-3 py-1 rounded-full hover:bg-blue-700 text-sm" aria-label="Copy Magic Line Cursor Nav CSS">Copy</button></div>
+    </div>
+    <!-- Navbar 19: Skewed Angle Nav -->
+    <div class="flex flex-col gap-4">
+      <h3 class="text-lg font-semibold text-white">Skewed Angle Nav</h3>
+      <nav class="navbar navbar-19" role="navigation" aria-label="Skewed Angle Navigation">
+        <ul class="flex space-x-4">
+          <li><a href="#" class="nav-link">Home</a></li>
+          <li><a href="#" class="nav-link">About</a></li>
+          <li><a href="#" class="nav-link">Services</a></li>
+          <li><a href="#" class="nav-link">Contact</a></li>
+        </ul>
+        <button class="burger hidden" aria-label="Toggle Skewed Angle Navigation" tabindex="0"><span></span><span></span><span></span></button>
+      </nav>
+      <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.navbar-19 .nav-link {
+  transform: skew(-15deg);
+}
+.navbar-19 .nav-link:hover {
+  transform: skew(0deg);
+}</code></pre><button class="copy-btn mt-3 bg-blue-600 text-white px-3 py-1 rounded-full hover:bg-blue-700 text-sm" aria-label="Copy Skewed Angle Nav CSS">Copy</button></div>
+    </div>
+    <!-- Navbar 20: Aurora Glow Nav -->
+    <div class="flex flex-col gap-4">
+      <h3 class="text-lg font-semibold text-white">Aurora Glow Nav</h3>
+      <nav class="navbar navbar-20" role="navigation" aria-label="Aurora Glow Navigation">
+        <ul class="flex space-x-4">
+          <li><a href="#" class="nav-link">Home</a></li>
+          <li><a href="#" class="nav-link">About</a></li>
+          <li><a href="#" class="nav-link">Services</a></li>
+          <li><a href="#" class="nav-link">Contact</a></li>
+        </ul>
+        <button class="burger hidden" aria-label="Toggle Aurora Glow Navigation" tabindex="0"><span></span><span></span><span></span></button>
+      </nav>
+      <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.navbar-20 {
+  background: linear-gradient(45deg, #10b981, #8b5cf6);
+}
+.navbar-20 .nav-link {
+  color: #ffffff;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}</code></pre><button class="copy-btn mt-3 bg-blue-600 text-white px-3 py-1 rounded-full hover:bg-blue-700 text-sm" aria-label="Copy Aurora Glow Nav CSS">Copy</button></div>
+    </div>
+    <!-- Navbar 21: Dropdown Fade-In Nav -->
+    <div class="flex flex-col gap-4">
+      <h3 class="text-lg font-semibold text-white">Dropdown Fade-In Nav</h3>
+      <nav class="navbar navbar-21" role="navigation" aria-label="Dropdown Fade-In Navigation">
+        <ul class="flex space-x-4">
+          <li class="relative">
+            <a href="#" class="nav-link">Home</a>
+            <ul class="dropdown hidden">
+              <li><a href="#" class="dropdown-link">Subitem 1</a></li>
+              <li><a href="#" class="dropdown-link">Subitem 2</a></li>
+            </ul>
+          </li>
+          <li><a href="#" class="nav-link">About</a></li>
+          <li><a href="#" class="nav-link">Services</a></li>
+          <li><a href="#" class="nav-link">Contact</a></li>
+        </ul>
+        <button class="burger hidden" aria-label="Toggle Dropdown Fade-In Navigation" tabindex="0"><span></span><span></span><span></span></button>
+      </nav>
+      <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.navbar-21 .dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #1e293b;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+.navbar-21 li:hover .dropdown {
+  opacity: 1;
+}
+.navbar-21 .dropdown-link {
+  color: #ffffff;
+  padding: 0.5rem 1rem;
+  display: block;
+}</code></pre><button class="copy-btn mt-3 bg-blue-600 text-white px-3 py-1 rounded-full hover:bg-blue-700 text-sm" aria-label="Copy Dropdown Fade-In Nav CSS">Copy</button></div>
+    </div>
+    <!-- Navbar 22: Accordion Collapse Nav -->
+    <div class="flex flex-col gap-4">
+      <h3 class="text-lg font-semibold text-white">Accordion Collapse Nav</h3>
+      <nav class="navbar navbar-22" role="navigation" aria-label="Accordion Collapse Navigation">
+        <button class="burger" aria-label="Toggle Accordion Collapse Navigation" tabindex="0"><span></span><span></span><span></span></button>
+        <ul class="nav-menu hidden">
+          <li><a href="#" class="nav-link">Home</a></li>
+          <li><a href="#" class="nav-link">About</a></li>
+          <li><a href="#" class="nav-link">Services</a></li>
+          <li><a href="#" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.navbar-22 .nav-menu {
+  position: fixed;
+  top: 50px;
+  left: 0;
+  background: #1e293b;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-in-out;
+}
+.navbar-22.open .nav-menu {
+  max-height: 400px;
+}
+.navbar-22 .nav-link {
+  color: #ffffff;
+  padding: 1rem;
+}</code></pre><button class="copy-btn mt-3 bg-blue-600 text-white px-3 py-1 rounded-full hover:bg-blue-700 text-sm" aria-label="Copy Accordion Collapse Nav CSS">Copy</button></div>
+    </div>
+    <!-- Navbar 23: Blobby Background Nav -->
+    <div class="flex flex-col gap-4">
+      <h3 class="text-lg font-semibold text-white">Blobby Background Nav</h3>
+      <nav class="navbar navbar-23" role="navigation" aria-label="Blobby Background Navigation">
+        <ul class="flex space-x-4">
+          <li><a href="#" class="nav-link">Home</a></li>
+          <li><a href="#" class="nav-link">About</a></li>
+          <li><a href="#" class="nav-link">Services</a></li>
+          <li><a href="#" class="nav-link">Contact</a></li>
+        </ul>
+        <button class="burger hidden" aria-label="Toggle Blobby Background Navigation" tabindex="0"><span></span><span></span><span></span></button>
+      </nav>
+      <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.navbar-23 {
+  filter: url(#gooey);
+  background: #f59e0b;
+}</code></pre><button class="copy-btn mt-3 bg-blue-600 text-white px-3 py-1 rounded-full hover:bg-blue-700 text-sm" aria-label="Copy Blobby Background Nav CSS">Copy</button></div>
+    </div>
+    <!-- Navbar 24: Circular Radial Nav -->
+    <div class="flex flex-col gap-4">
+      <h3 class="text-lg font-semibold text-white">Circular Radial Nav</h3>
+      <nav class="navbar navbar-24" role="navigation" aria-label="Circular Radial Navigation">
+        <button class="burger" aria-label="Toggle Circular Radial Navigation" tabindex="0"><span></span><span></span><span></span></button>
+        <ul class="nav-menu hidden">
+          <li><a href="#" class="nav-link">Home</a></li>
+          <li><a href="#" class="nav-link">About</a></li>
+          <li><a href="#" class="nav-link">Services</a></li>
+          <li><a href="#" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.navbar-24 .nav-menu {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #1e293b;
+  border-radius: 50%;
+  padding: 2rem;
+}
+.navbar-24.open .nav-menu {
+  display: flex;
+  flex-direction: column;
+}
+.navbar-24 .nav-link {
+  color: #ffffff;
+}</code></pre><button class="copy-btn mt-3 bg-blue-600 text-white px-3 py-1 rounded-full hover:bg-blue-700 text-sm" aria-label="Copy Circular Radial Nav CSS">Copy</button></div>
+    </div>
+    <!-- Navbar 25: Transparent Scroll-Aware Nav -->
+    <div class="flex flex-col gap-4">
+      <h3 class="text-lg font-semibold text-white">Transparent Scroll-Aware Nav</h3>
+      <nav class="navbar navbar-25" role="navigation" aria-label="Transparent Scroll-Aware Navigation">
+        <ul class="flex space-x-4">
+          <li><a href="#" class="nav-link">Home</a></li>
+          <li><a href="#" class="nav-link">About</a></li>
+          <li><a href="#" class="nav-link">Services</a></li>
+          <li><a href="#" class="nav-link">Contact</a></li>
+        </ul>
+        <button class="burger hidden" aria-label="Toggle Transparent Scroll-Aware Navigation" tabindex="0"><span></span><span></span><span></span></button>
+      </nav>
+      <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.navbar-25 {
+  background: transparent;
+}
+.navbar-25.scrolled {
+  background: #1e293b;
+}
+.navbar-25 .nav-link {
+  color: #ffffff;
+}</code></pre><button class="copy-btn mt-3 bg-blue-600 text-white px-3 py-1 rounded-full hover:bg-blue-700 text-sm" aria-label="Copy Transparent Scroll-Aware Nav CSS">Copy</button></div>
+    </div>
+    <!-- Navbar 26: Flip-Text Nav -->
+    <div class="flex flex-col gap-4">
+      <h3 class="text-lg font-semibold text-white">Flip-Text Nav</h3>
+      <nav class="navbar navbar-26" role="navigation" aria-label="Flip-Text Navigation">
+        <ul class="flex space-x-4">
+          <li><a href="#" class="nav-link">Home</a></li>
+          <li><a href="#" class="nav-link">About</a></li>
+          <li><a href="#" class="nav-link">Services</a></li>
+          <li><a href="#" class="nav-link">Contact</a></li>
+        </ul>
+        <button class="burger hidden" aria-label="Toggle Flip-Text Navigation" tabindex="0"><span></span><span></span><span></span></button>
+      </nav>
+      <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.navbar-26 .nav-link {
+  transition: transform 0.3s ease-in-out;
+}
+.navbar-26 .nav-link:hover {
+  transform: rotateX(360deg);
+}</code></pre><button class="copy-btn mt-3 bg-blue-600 text-white px-3 py-1 rounded-full hover:bg-blue-700 text-sm" aria-label="Copy Flip-Text Nav CSS">Copy</button></div>
+    </div>
+    <!-- Navbar 27: Slide Reveal Link Nav -->
+    <div class="flex flex-col gap-4">
+      <h3 class="text-lg font-semibold text-white">Slide Reveal Link Nav</h3>
+      <nav class="navbar navbar-27" role="navigation" aria-label="Slide Reveal Link Navigation">
+        <ul class="flex space-x-4">
+          <li><a href="#" class="nav-link">Home</a></li>
+          <li><a href="#" class="nav-link">About</a></li>
+          <li><a href="#" class="nav-link">Services</a></li>
+          <li><a href="#" class="nav-link">Contact</a></li>
+        </ul>
+        <button class="burger hidden" aria-label="Toggle Slide Reveal Link Navigation" tabindex="0"><span></span><span></span><span></span></button>
+      </nav>
+      <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.navbar-27 .nav-link {
+  transform: translateY(100%);
+  opacity: 0;
+}
+.navbar-27 .nav-link.active {
+  transform: translateY(0);
+  opacity: 1;
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}</code></pre><button class="copy-btn mt-3 bg-blue-600 text-white px-3 py-1 rounded-full hover:bg-blue-700 text-sm" aria-label="Copy Slide Reveal Link Nav CSS">Copy</button></div>
+    </div>
+    <!-- Navbar 28: Glitch Distortion Nav -->
+    <div class="flex flex-col gap-4">
+      <h3 class="text-lg font-semibold text-white">Glitch Distortion Nav</h3>
+      <nav class="navbar navbar-28" role="navigation" aria-label="Glitch Distortion Navigation">
+        <ul class="flex space-x-4">
+          <li><a href="#" class="nav-link">Home</a></li>
+          <li><a href="#" class="nav-link">About</a></li>
+          <li><a href="#" class="nav-link">Services</a></li>
+          <li><a href="#" class="nav-link">Contact</a></li>
+        </ul>
+        <button class="burger hidden" aria-label="Toggle Glitch Distortion Navigation" tabindex="0"><span></span><span></span><span></span></button>
+      </nav>
+      <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.navbar-28 .nav-link {
+  position: relative;
+}
+.navbar-28 .nav-link:hover {
+  animation: glitch 0.3s infinite;
+}
+@keyframes glitch {
+  0% { transform: translate(0); }
+  20% { transform: translate(-2px, 2px); }
+  40% { transform: translate(2px, -2px); }
+  60% { transform: translate(-2px, 2px); }
+  80% { transform: translate(2px, -2px); }
+  100% { transform: translate(0); }
+}</code></pre><button class="copy-btn mt-3 bg-blue-600 text-white px-3 py-1 rounded-full hover:bg-blue-700 text-sm" aria-label="Copy Glitch Distortion Nav CSS">Copy</button></div>
+    </div>
+    <!-- Navbar 29: 3D Depth-Shadow Nav -->
+    <div class="flex flex-col gap-4">
+      <h3 class="text-lg font-semibold text-white">3D Depth-Shadow Nav</h3>
+      <nav class="navbar navbar-29" role="navigation" aria-label="3D Depth-Shadow Navigation">
+        <ul class="flex space-x-4">
+          <li><a href="#" class="nav-link">Home</a></li>
+          <li><a href="#" class="nav-link">About</a></li>
+          <li><a href="#" class="nav-link">Services</a></li>
+          <li><a href="#" class="nav-link">Contact</a></li>
+        </ul>
+        <button class="burger hidden" aria-label="Toggle 3D Depth-Shadow Navigation" tabindex="0"><span></span><span></span><span></span></button>
+      </nav>
+      <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.navbar-29 .nav-link {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease-in-out;
+}
+.navbar-29 .nav-link:hover {
+  transform: translateZ(10px);
+}</code></pre><button class="copy-btn mt-3 bg-blue-600 text-white px-3 py-1 rounded-full hover:bg-blue-700 text-sm" aria-label="Copy 3D Depth-Shadow Nav CSS">Copy</button></div>
+    </div>
+    <!-- Navbar 30: Typewriter Animate Nav -->
+    <div class="flex flex-col gap-4">
+      <h3 class="text-lg font-semibold text-white">Typewriter Animate Nav</h3>
+      <nav class="navbar navbar-30" role="navigation" aria-label="Typewriter Animate Navigation">
+        <ul class="flex space-x-4">
+          <li><a href="#" class="nav-link">Home</a></li>
+          <li><a href="#" class="nav-link">About</a></li>
+          <li><a href="#" class="nav-link">Services</a></li>
+          <li><a href="#" class="nav-link">Contact</a></li>
+        </ul>
+        <button class="burger hidden" aria-label="Toggle Typewriter Animate Navigation" tabindex="0"><span></span><span></span><span></span></button>
+      </nav>
+      <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.navbar-30 .nav-link {
+  overflow: hidden;
+  white-space: nowrap;
+  animation: typewriter 2s steps(40) infinite;
+}
+@keyframes typewriter {
+  from { width: 0; }
+  to { width: 100%; }
+}</code></pre><button class="copy-btn mt-3 bg-blue-600 text-white px-3 py-1 rounded-full hover:bg-blue-700 text-sm" aria-label="Copy Typewriter Animate Nav CSS">Copy</button></div>
+    </div>
+    <!-- Navbar 31: Hover Blur-Backdrop Nav -->
+    <div class="flex flex-col gap-4">
+      <h3 class="text-lg font-semibold text-white">Hover Blur-Backdrop Nav</h3>
+      <nav class="navbar navbar-31" role="navigation" aria-label="Hover Blur-Backdrop Navigation">
+        <ul class="flex space-x-4">
+          <li><a href="#" class="nav-link">Home</a></li>
+          <li><a href="#" class="nav-link">About</a></li>
+          <li><a href="#" class="nav-link">Services</a></li>
+          <li><a href="#" class="nav-link">Contact</a></li>
+        </ul>
+        <button class="burger hidden" aria-label="Toggle Hover Blur-Backdrop Navigation" tabindex="0"><span></span><span></span><span></span></button>
+      </nav>
+      <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.navbar-31 .nav-link {
+  backdrop-filter: blur(0px);
+}
+.navbar-31 .nav-link:hover {
+  backdrop-filter: blur(5px);
+}</code></pre><button class="copy-btn mt-3 bg-blue-600 text-white px-3 py-1 rounded-full hover:bg-blue-700 text-sm" aria-label="Copy Hover Blur-Backdrop Nav CSS">Copy</button></div>
+    </div>
+    <!-- Navbar 32: Expand-On-Scroll Nav -->
+    <div class="flex flex-col gap-4">
+      <h3 class="text-lg font-semibold text-white">Expand-On-Scroll Nav</h3>
+      <nav class="navbar navbar-32" role="navigation" aria-label="Expand-On-Scroll Navigation">
+        <ul class="flex space-x-4">
+          <li><a href="#" class="nav-link">Home</a></li>
+          <li><a href="#" class="nav-link">About</a></li>
+          <li><a href="#" class="nav-link">Services</a></li>
+          <li><a href="#" class="nav-link">Contact</a></li>
+        </ul>
+        <button class="burger hidden" aria-label="Toggle Expand-On-Scroll Navigation" tabindex="0"><span></span><span></span><span></span></button>
+      </nav>
+      <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.navbar-32 {
+  height: 40px;
+  transition: height 0.3s ease-in-out;
+}
+.navbar-32.scrolled {
+  height: 60px;
+}
+.navbar-32 .nav-link {
+  color: #ffffff;
+}</code></pre><button class="copy-btn mt-3 bg-blue-600 text-white px-3 py-1 rounded-full hover:bg-blue-700 text-sm" aria-label="Copy Expand-On-Scroll Nav CSS">Copy</button></div>
+    </div>
+    <!-- Navbar 33: Icon-Morph Nav -->
+    <div class="flex flex-col gap-4">
+      <h3 class="text-lg font-semibold text-white">Icon-Morph Nav</h3>
+      <nav class="navbar navbar-33" role="navigation" aria-label="Icon-Morph Navigation">
+        <ul class="flex space-x-4">
+          <li><a href="#" class="nav-link"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg></a></li>
+          <li><a href="#" class="nav-link"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></a></li>
+          <li><a href="#" class="nav-link"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></a></li>
+          <li><a href="#" class="nav-link"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg></a></li>
+        </ul>
+        <button class="burger hidden" aria-label="Toggle Icon-Morph Navigation" tabindex="0"><span></span><span></span><span></span></button>
+      </nav>
+      <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.navbar-33 .nav-link svg {
+  transition: transform 0.3s ease-in-out;
+}
+.navbar-33 .nav-link:hover svg {
+  transform: scale(1.2);
+}</code></pre><button class="copy-btn mt-3 bg-blue-600 text-white px-3 py-1 rounded-full hover:bg-blue-700 text-sm" aria-label="Copy Icon-Morph Nav CSS">Copy</button></div>
+    </div>
+    <!-- Navbar 34: Wave Divider Nav -->
+    <div class="flex flex-col gap-4">
+      <h3 class="text-lg font-semibold text-white">Wave Divider Nav</h3>
+      <nav class="navbar navbar-34" role="navigation" aria-label="Wave Divider Navigation">
+        <ul class="flex space-x-4">
+          <li><a href="#" class="nav-link">Home</a></li>
+          <li><a href="#" class="nav-link">About</a></li>
+          <li><a href="#" class="nav-link">Services</a></li>
+          <li><a href="#" class="nav-link">Contact</a></li>
+        </ul>
+        <button class="burger hidden" aria-label="Toggle Wave Divider Navigation" tabindex="0"><span></span><span></span><span></span></button>
+      </nav>
+      <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.navbar-34 {
+  position: relative;
+}
+.navbar-34::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 5"><path d="M0 5 C 25 0, 75 0, 100 5" fill="none" stroke="%23facc15" stroke-width="2"/></svg>');
+}</code></pre><button class="copy-btn mt-3 bg-blue-600 text-white px-3 py-1 rounded-full hover:bg-blue-700 text-sm" aria-label="Copy Wave Divider Nav CSS">Copy</button></div>
+    </div>
+    <!-- Navbar 35: Color-Shift Gradient Nav -->
+    <div class="flex flex-col gap-4">
+      <h3 class="text-lg font-semibold text-white">Color-Shift Gradient Nav</h3>
+      <nav class="navbar navbar-35" role="navigation" aria-label="Color-Shift Gradient Navigation">
+        <ul class="flex space-x-4">
+          <li><a href="#" class="nav-link">Home</a></li>
+          <li><a href="#" class="nav-link">About</a></li>
+          <li><a href="#" class="nav-link">Services</a></li>
+          <li><a href="#" class="nav-link">Contact</a></li>
+        </ul>
+        <button class="burger hidden" aria-label="Toggle Color-Shift Gradient Navigation" tabindex="0"><span></span><span></span><span></span></button>
+      </nav>
+      <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.navbar-35 {
+  background: linear-gradient(90deg, #ef4444, #3b82f6);
+  background-size: 200%;
+  animation: color-shift 5s infinite;
+}
+@keyframes color-shift {
+  0% { background-position: 0%; }
+  50% { background-position: 100%; }
+  100% { background-position: 0%; }
+}</code></pre><button class="copy-btn mt-3 bg-blue-600 text-white px-3 py-1 rounded-full hover:bg-blue-700 text-sm" aria-label="Copy Color-Shift Gradient Nav CSS">Copy</button></div>
+    </div>
+    <!-- Navbar 36: Split-Screen Dual Nav -->
+    <div class="flex flex-col gap-4">
+      <h3 class="text-lg font-semibold text-white">Split-Screen Dual Nav</h3>
+      <nav class="navbar navbar-36" role="navigation" aria-label="Split-Screen Dual Navigation">
+        <ul class="flex space-x-4">
+          <li><a href="#" class="nav-link">Home</a></li>
+          <li><a href="#" class="nav-link">About</a></li>
+          <li><a href="#" class="nav-link">Services</a></li>
+          <li><a href="#" class="nav-link">Contact</a></li>
+        </ul>
+        <button class="burger hidden" aria-label="Toggle Split-Screen Dual Navigation" tabindex="0"><span></span><span></span><span></span></button>
+      </nav>
+      <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.navbar-36 {
+  background: linear-gradient(90deg, #ef4444 50%, #10b981 50%);
+}</code></pre><button class="copy-btn mt-3 bg-blue-600 text-white px-3 py-1 rounded-full hover:bg-blue-700 text-sm" aria-label="Copy Split-Screen Dual Nav CSS">Copy</button></div>
+    </div>
+    <!-- Navbar 37: Scroll-Spy Highlight Nav -->
+    <div class="flex flex-col gap-4">
+      <h3 class="text-lg font-semibold text-white">Scroll-Spy Highlight Nav</h3>
+      <nav class="navbar navbar-37" role="navigation" aria-label="Scroll-Spy Highlight Navigation">
+        <ul class="flex space-x-4">
+          <li><a href="#" class="nav-link">Home</a></li>
+          <li><a href="#" class="nav-link">About</a></li>
+          <li><a href="#" class="nav-link">Services</a></li>
+          <li><a href="#" class="nav-link">Contact</a></li>
+        </ul>
+        <button class="burger hidden" aria-label="Toggle Scroll-Spy Highlight Navigation" tabindex="0"><span></span><span></span><span></span></button>
+      </nav>
+      <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.navbar-37 .nav-link.active {
+  background: #3b82f6;
+  color: #ffffff;
+}</code></pre><button class="copy-btn mt-3 bg-blue-600 text-white px-3 py-1 rounded-full hover:bg-blue-700 text-sm" aria-label="Copy Scroll-Spy Highlight Nav CSS">Copy</button></div>
+    </div>
+    <!-- Navbar 38: Sequential Fade-In Nav -->
+    <div class="flex flex-col gap-4">
+      <h3 class="text-lg font-semibold text-white">Sequential Fade-In Nav</h3>
+      <nav class="navbar navbar-38" role="navigation" aria-label="Sequential Fade-In Navigation">
+        <ul class="flex space-x-4">
+          <li><a href="#" class="nav-link">Home</a></li>
+          <li><a href="#" class="nav-link">About</a></li>
+          <li><a href="#" class="nav-link">Services</a></li>
+          <li><a href="#" class="nav-link">Contact</a></li>
+        </ul>
+        <button class="burger hidden" aria-label="Toggle Sequential Fade-In Navigation" tabindex="0"><span></span><span></span><span></span></button>
+      </nav>
+      <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.navbar-38 .nav-link {
+  opacity: 0;
+  animation: fade-in 0.5s ease-in-out forwards;
+}
+.navbar-38 .nav-link:nth-child(1) { animation-delay: 0.1s; }
+.navbar-38 .nav-link:nth-child(2) { animation-delay: 0.2s; }
+.navbar-38 .nav-link:nth-child(3) { animation-delay: 0.3s; }
+.navbar-38 .nav-link:nth-child(4) { animation-delay: 0.4s; }
+@keyframes fade-in {
+  to { opacity: 1; }
+}</code></pre><button class="copy-btn mt-3 bg-blue-600 text-white px-3 py-1 rounded-full hover:bg-blue-700 text-sm" aria-label="Copy Sequential Fade-In Nav CSS">Copy</button></div>
+    </div>
+  </main>
+  <script src="scripts.js"></script>
+</body>
+</html>

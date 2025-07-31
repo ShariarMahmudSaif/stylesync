@@ -1,0 +1,577 @@
+/* General Div Styles */
+div {
+  width: 100%;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-family: 'Inter', sans-serif;
+  border-radius: 8px;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+div:focus {
+  outline: 2px solid #facc15;
+  outline-offset: 2px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  div {
+    height: 80px;
+    font-size: 16px;
+  }
+}
+
+/* Div-Specific Styles */
+.div-1:hover {
+  height: 100px;
+}
+.div-1 {
+  height: 50px;
+  overflow: hidden;
+  background: #3b82f6;
+  color: #fff;
+}
+.div-2:hover {
+  filter: blur(0);
+}
+.div-2 {
+  filter: blur(5px);
+  background: #ef4444;
+  color: #fff;
+}
+.div-3:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+.div-3 {
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  background: #facc15;
+  color: #000;
+}
+.div-4:hover {
+  grid-template-columns: 2fr 1fr;
+}
+.div-4 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: #3b82f6;
+  color: #fff;
+}
+.div-5:hover {
+  transform: scale(1.1);
+  animation: elastic 0.5s;
+}
+@keyframes elastic {
+  50% { transform: scale(0.9); }
+}
+.div-5 {
+  background: #ef4444;
+  color: #fff;
+}
+.div-6.scrolled {
+  opacity: 1;
+  transform: translateY(0);
+}
+.div-6 {
+  opacity: 0;
+  transform: translateY(20px);
+  background: #facc15;
+  color: #000;
+}
+.div-7 {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #fff;
+}
+.div-7:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+.div-8:hover {
+  border-radius: 20px;
+}
+.div-8 {
+  background: #3b82f6;
+  color: #fff;
+}
+.div-9:hover {
+  transform: translateZ(20px);
+}
+.div-9 {
+  perspective: 100px;
+  background: #ef4444;
+  color: #fff;
+}
+.div-10:hover {
+  animation: jelly 0.5s;
+}
+@keyframes jelly {
+  25% { transform: scale(1.2, 0.8); }
+  75% { transform: scale(0.8, 1.2); }
+}
+.div-10 {
+  background: #facc15;
+  color: #000;
+}
+.div-11:hover {
+  box-shadow: 0 0 15px #facc15;
+}
+.div-11 {
+  background: #3b82f6;
+  color: #fff;
+}
+.div-12 {
+  position: relative;
+  background: #ef4444;
+  color: #fff;
+  perspective: 100px;
+}
+.div-12:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2);
+  transform: translateZ(-10px);
+}
+.div-12:hover {
+  transform: translateZ(10px);
+}
+.div-13:hover {
+  box-shadow: 0 0 15px #ef4444;
+  border: 2px solid #ef4444;
+}
+.div-13 {
+  background: #3b82f6;
+  color: #fff;
+}
+.div-14:hover {
+  opacity: 1;
+}
+.div-14 {
+  opacity: 0.5;
+  background: #facc15;
+  color: #000;
+}
+.div-15 {
+  position: relative;
+  overflow: hidden;
+  background: #3b82f6;
+  color: #fff;
+}
+.div-15:after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+.div-15.clicked:after {
+  animation: ripple 0.5s;
+}
+@keyframes ripple {
+  to { width: 200px; height: 200px; opacity: 0; }
+}
+.div-16:hover {
+  transform: skewX(10deg);
+}
+.div-16 {
+  background: #ef4444;
+  color: #fff;
+}
+.div-17 {
+  position: relative;
+  overflow: hidden;
+  background: #facc15;
+  color: #000;
+}
+.div-17:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background: #3b82f6;
+  transition: transform 0.3s;
+}
+.div-17:hover:after {
+  transform: translateX(-100%);
+}
+.div-18 {
+  position: relative;
+  background: #3b82f6;
+  color: #fff;
+}
+.div-18:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 20px;
+  background: #ef4444;
+  clip-path: polygon(0 0, 10% 100%, 20% 0, 30% 100%, 40% 0, 100% 0);
+}
+.div-19:hover {
+  transform: scale(1.1);
+}
+.div-19 {
+  background: #facc15;
+  color: #000;
+}
+.div-20:hover {
+  z-index: 10;
+  transform: rotateY(180deg);
+}
+.div-20 {
+  background: #3b82f6;
+  color: #fff;
+}
+.div-21:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+.div-21 {
+  background: #ef4444;
+  color: #fff;
+}
+.div-22 {
+  clip-path: polygon(0 0, 100% 0, 100% 80%, 80% 100%, 0 100%);
+}
+.div-22:hover {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+.div-22 {
+  background: #facc15;
+  color: #000;
+}
+.div-23 {
+  mask: url(#circle-mask);
+  background: #3b82f6;
+  color: #fff;
+}
+.div-23:hover {
+  mask: none;
+}
+.div-24:hover {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+.div-24 {
+  background: #ef4444;
+  color: #fff;
+}
+.div-25 {
+  background: url('https://www.transparenttextures.com/patterns/canvas.png'), #3b82f6;
+  color: #fff;
+}
+.div-25:hover {
+  background: url('https://www.transparenttextures.com/patterns/canvas.png'), #facc15;
+}
+.div-26:hover {
+  transform: rotateX(10deg);
+}
+.div-26 {
+  perspective: 200px;
+  background: #facc15;
+  color: #000;
+}
+.div-27 {
+  position: relative;
+  background: #3b82f6;
+  color: #fff;
+}
+.div-27:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, rgba(239, 68, 68, 0.5), transparent);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.div-27:hover:after {
+  opacity: 1;
+}
+.div-28:hover {
+  transform: translate(5px, -5px);
+}
+.div-28 {
+  background: #ef4444;
+  color: #fff;
+}
+.div-29:hover {
+  background: radial-gradient(circle, #facc15, #3b82f6);
+}
+.div-29 {
+  background: #3b82f6;
+  color: #fff;
+}
+.div-30:hover {
+  filter: url(#chromatic);
+}
+.div-30 {
+  background: #facc15;
+  color: #000;
+}
+.div-31:hover {
+  box-shadow: 0 0 20px #8b5cf6;
+}
+.div-31 {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #fff;
+}
+.div-32:hover {
+  animation: bounce 0.5s;
+}
+@keyframes bounce {
+  50% { transform: translateY(-10px); }
+}
+.div-32 {
+  background: #3b82f6;
+  color: #fff;
+}
+.div-33 {
+  position: relative;
+  overflow: hidden;
+  background: #ef4444;
+  color: #fff;
+}
+.div-33:after {
+  content: '';
+  position: absolute;
+  top: -100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #facc15;
+  transition: top 0.3s;
+}
+.div-33:hover:after {
+  top: 0;
+}
+.div-34:hover {
+  transform: scale(1.1);
+  animation: elastic 0.5s;
+}
+.div-34 {
+  background: #facc15;
+  color: #000;
+}
+.div-35:hover {
+  background: #ef4444;
+  color: #fff;
+}
+.div-35 {
+  background: #3b82f6;
+  color: #fff;
+}
+.div-36 {
+  position: relative;
+  background: #3b82f6;
+  color: #fff;
+}
+.div-36:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg"><circle cx="5" cy="5" r="2" fill="white" opacity="0.5"/></svg>') repeat;
+  animation: particle 5s infinite;
+}
+@keyframes particle {
+  0% { background-position: 0 0; }
+  100% { background-position: 20px 20px; }
+}
+.div-37 {
+  background: url('https://www.transparenttextures.com/patterns/noise.png'), #ef4444;
+  color: #fff;
+}
+.div-37:hover {
+  background: url('https://www.transparenttextures.com/patterns/noise.png'), #facc15;
+}
+.div-38 {
+  position: relative;
+  color: #fff;
+}
+.div-38 video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+.div-38:hover video {
+  filter: brightness(1.2);
+}
+.div-39.scrolled {
+  transform: translateY(-20px);
+}
+.div-39 {
+  position: relative;
+  background: #3b82f6;
+  color: #fff;
+  perspective: 100px;
+}
+.div-39:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2);
+  transform: translateZ(-10px);
+}
+.div-40:hover {
+  clip-path: circle(50% at 50% 50%);
+}
+.div-40 {
+  clip-path: circle(30% at 50% 50%);
+  background: #ef4444;
+  color: #fff;
+}
+.div-41:hover {
+  grid-template-columns: 3fr 1fr;
+}
+.div-41 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: #facc15;
+  color: #000;
+}
+.div-42 svg path {
+  stroke-dasharray: 100;
+  stroke-dashoffset: 100;
+}
+.div-42:hover svg path {
+  stroke-dashoffset: 0;
+}
+.div-42 {
+  background: #3b82f6;
+  color: #fff;
+}
+.div-43 {
+  position: relative;
+  background: url('https://picsum.photos/200/100');
+}
+.div-43:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('https://picsum.photos/200/100?grayscale');
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.div-43:hover:after {
+  opacity: 1;
+}
+.div-44:hover {
+  border: 2px dashed #ef4444;
+}
+.div-44 {
+  border: 2px solid #3b82f6;
+  background: #facc15;
+  color: #000;
+}
+.div-45:hover {
+  box-shadow: 0 0 20px #ef4444;
+}
+.div-45 {
+  background: #3b82f6;
+  color: #fff;
+}
+.div-46:hover {
+  filter: hue-rotate(90deg);
+}
+.div-46 {
+  background: linear-gradient(45deg, #0000ff, #ff0000);
+  color: #fff;
+}
+.div-47:hover {
+  transform: scaleX(-1);
+}
+.div-47 {
+  background: #facc15;
+  color: #000;
+}
+.div-48 {
+  position: relative;
+  background: #3b82f6;
+  color: #fff;
+}
+.div-48:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(transparent, transparent 2px, rgba(0, 0, 0, 0.2) 2px, rgba(0, 0, 0, 0.2) 4px);
+  animation: scanline 2s infinite;
+}
+@keyframes scanline {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(4px); }
+}
+.div-49 {
+  position: relative;
+  background: #ef4444;
+  color: #fff;
+}
+.div-49:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.5);
+}
+.div-50 {
+  position: relative;
+  background: #3b82f6;
+  color: #fff;
+}
+.div-50 canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.div-50:hover canvas {
+  opacity: 1;
+}
+
+/* Additional Global Styles */
+.code-container pre {
+  max-height: 200px;
+  overflow-y: auto;
+}
+.copy-btn {
+  transition: background-color 0.3s ease-in-out;
+}
+main.gap-12 {
+    gap: 4rem;
+}

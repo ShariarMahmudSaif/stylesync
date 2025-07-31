@@ -1,0 +1,1075 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Loading Animations - StyleSync</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Fira+Code&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="p-8 font-inter bg-gradient-to-br from-indigo-900 to-rose-600">
+  <header class="text-center mb-12">
+    <h1 class="text-4xl font-bold text-white">Loading Animations</h1>
+    <p class="text-xl text-gray-100 mt-3">Vibrant, animated, and responsive loading indicators</p>
+    <a href="../index.html" class="text-white underline hover:text-gray-200">Back to Home</a>
+  </header>
+  <main class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+    <!-- Loader 1: Spinner Ring -->
+    <div class="flex flex-col gap-4">
+      <h3 class="text-lg font-semibold text-white">Spinner Ring</h3>
+      <div class="loader loader-1" role="status" aria-label="Spinner Ring Loading Animation"></div>
+      <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.loader-1 {
+  width: 50px;
+  height: 50px;
+  border: 5px solid transparent;
+  border-top-color: #ef4444;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}</code></pre><button class="copy-btn mt-3 bg-blue-600 text-white px-3 py-1 rounded-full hover:bg-blue-700 text-sm" aria-label="Copy Spinner Ring CSS">Copy</button></div>
+    </div>
+    <!-- Loader 2: Dot Bounce -->
+    <div class="flex flex-col gap-4">
+      <h3 class="text-lg font-semibold text-white">Dot Bounce</h3>
+      <div class="loader loader-2" role="status" aria-label="Dot Bounce Loading Animation">
+        <span></span><span></span><span></span>
+      </div>
+      <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.loader-2 {
+  display: flex;
+  gap: 8px;
+}
+.loader-2 span {
+  width: 12px;
+  height: 12px;
+  background: #3b82f6;
+  border-radius: 50%;
+  animation: bounce 0.6s infinite alternate;
+}
+.loader-2 span:nth-child(2) { animation-delay: 0.2s; }
+.loader-2 span:nth-child(3) { animation-delay: 0.4s; }
+@keyframes bounce {
+  to { transform: translateY(-20px); }
+}</code></pre><button class="copy-btn mt-3 bg-blue-600 text-white px-3 py-1 rounded-full hover:bg-blue-700 text-sm" aria-label="Copy Dot Bounce CSS">Copy</button></div>
+    </div>
+    <!-- Loader 3: Liquid Fill Loader -->
+    <div class="flex flex-col gap-4">
+      <h3 class="text-lg font-semibold text-white">Liquid Fill Loader</h3>
+      <div class="loader loader-3" role="status" aria-label="Liquid Fill Loading Animation"></div>
+      <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.loader-3 {
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(45deg, #ef4444, #3b82f6);
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+}
+.loader-3::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #ffffff;
+  transform: translateY(100%);
+  animation: liquid-fill 2s ease-in-out infinite;
+}
+@keyframes liquid-fill {
+  50% { transform: translateY(0); }
+  100% { transform: translateY(-100%); }
+}</code></pre><button class="copy-btn mt-3 bg-blue-600 text-white px-3 py-1 rounded-full hover:bg-blue-700 text-sm" aria-label="Copy Liquid Fill Loader CSS">Copy</button></div>
+    </div>
+    <!-- Loader 4: Aurora Pulse Loader -->
+    <div class="flex flex-col gap-4">
+      <h3 class="text-lg font-semibold text-white">Aurora Pulse Loader</h3>
+      <div class="loader loader-4" role="status" aria-label="Aurora Pulse Loading Animation"></div>
+      <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.loader-4 {
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(45deg, #10b981, #8b5cf6);
+  border-radius: 50%;
+  animation: aurora-pulse 1.5s ease-in-out infinite;
+}
+@keyframes aurora-pulse {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.3); opacity: 0.5; }
+  100% { transform: scale(1); opacity: 1; }
+}</code></pre><button class="copy-btn mt-3 bg-blue-600 text-white px-3 py-1 rounded-full hover:bg-blue-700 text-sm" aria-label="Copy Aurora Pulse Loader CSS">Copy</button></div>
+    </div>
+    <!-- Loader 5: Ribbon Loader -->
+    <div class="flex flex-col gap-4">
+      <h3 class="text-lg font-semibold text-white">Ribbon Loader</h3>
+      <div class="loader loader-5" role="status" aria-label="Ribbon Loading Animation"></div>
+      <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.loader-5 {
+  width: 50px;
+  height: 10px;
+  background: #facc15;
+  position: relative;
+}
+.loader-5::before, .loader-5::after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: #facc15;
+  transform: rotate(45deg);
+}
+.loader-5::before { left: -10px; animation: ribbon-left 1s infinite; }
+.loader-5::after { right: -10px; animation: ribbon-right 1s infinite; }
+@keyframes ribbon-left {
+  50% { transform: rotate(45deg) translateX(-10px); }
+}
+@keyframes ribbon-right {
+  50% { transform: rotate(45deg) translateX(10px); }
+}</code></pre><button class="copy-btn mt-3 bg-blue-600 text-white px-3 py-1 rounded-full hover:bg-blue-700 text-sm" aria-label="Copy Ribbon Loader CSS">Copy</button></div>
+    </div>
+    <!-- Loader 6: Bar Progress Loader -->
+    <div class="flex flex-col gap-4">
+      <h3 class="text-lg font-semibold text-white">Bar Progress Loader</h3>
+      <div class="loader loader-6" role="status" aria-label="Bar Progress Loading Animation"></div>
+      <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.loader-6 {
+  width: 50px;
+  height: 8px;
+  background: #e5e7eb;
+  position: relative;
+  overflow: hidden;
+}
+.loader-6::after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 100%;
+  background: linear-gradient(90deg, #ef4444, #3b82f6);
+  animation: bar-progress 1.5s linear infinite;
+}
+@keyframes bar-progress {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(250%); }
+}</code></pre><button class="copy-btn mt-3 bg-blue-600 text-white px-3 py-1 rounded-full hover:bg-blue-700 text-sm" aria-label="Copy Bar Progress Loader CSS">Copy</button></div>
+    </div>
+    <!-- Loader 7: Circle Slice Loader -->
+    <div class="flex flex-col gap-4">
+      <h3 class="text-lg font-semibold text-white">Circle Slice Loader</h3>
+      <div class="loader loader-7" role="status" aria-label="Circle Slice Loading Animation"></div>
+      <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.loader-7 {
+  width: 50px;
+  height: 50px;
+  border: 5px solid #3b82f6;
+  border-radius: 50%;
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+  animation: spin 0.8s linear infinite;
+}
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}</code></pre><button class="copy-btn mt-3 bg-blue-600 text-white px-3 py-1 rounded-full hover:bg-blue-700 text-sm" aria-label="Copy Circle Slice Loader CSS">Copy</button></div>
+    </div>
+    <!-- Loader 8: Cube Grid Loader -->
+    <div class="flex flex-col gap-4">
+      <h3 class="text-lg font-semibold text-white">Cube Grid Loader</h3>
+      <div class="loader loader-8" role="status" aria-label="Cube Grid Loading Animation">
+        <span></span><span></span><span></span>
+        <span></span><span></span><span></span>
+        <span></span><span></span><span></span>
+      </div>
+      <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.loader-8 {
+  display: grid;
+  grid-template-columns: repeat(3, 12px);
+  gap: 4px;
+  width: 50px;
+  height: 50px;
+}
+.loader-8 span {
+  background: #10b981;
+  animation: cube-grid 1.2s infinite;
+}
+.loader-8 span:nth-child(1) { animation-delay: 0.1s; }
+.loader-8 span:nth-child(2) { animation-delay: 0.2s; }
+.loader-8 span:nth-child(3) { animation-delay: 0.3s; }
+.loader-8 span:nth-child(4) { animation-delay: 0.4s; }
+.loader-8 span:nth-child(5) { animation-delay: 0.5s; }
+.loader-8 span:nth-child(6) { animation-delay: 0.6s; }
+.loader-8 span:nth-child(7) { animation-delay: 0.7s; }
+.loader-8 span:nth-child(8) { animation-delay: 0.8s; }
+.loader-8 span:nth-child(9) { animation-delay: 0.9s; }
+@keyframes cube-grid {
+  0%, 70%, 100% { transform: scale(1); }
+  35% { transform: scale(0.5); }
+}</code></pre><button class="copy-btn mt-3 bg-blue-600 text-white px-3 py-1 rounded-full hover:bg-blue-700 text-sm" aria-label="Copy Cube Grid Loader CSS">Copy</button></div>
+    </div>
+    <!-- Loader 9: Dual Ring Loader -->
+    <div class="flex flex-col gap-4">
+      <h3 class="text-lg font-semibold text-white">Dual Ring Loader</h3>
+      <div class="loader loader-9" role="status" aria-label="Dual Ring Loading Animation"></div>
+      <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.loader-9 {
+  width: 50px;
+  height: 50px;
+  position: relative;
+}
+.loader-9::before, .loader-9::after {
+  content: '';
+  position: absolute;
+  border: 4px solid #ef4444;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+.loader-9::after {
+  border-color: #3b82f6;
+  animation-direction: reverse;
+}
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}</code></pre><button class="copy-btn mt-3 bg-blue-600 text-white px-3 py-1 rounded-full hover:bg-blue-700 text-sm" aria-label="Copy Dual Ring Loader CSS">Copy</button></div>
+    </div>
+    <!-- Loader 10: Elastic Dot Loader -->
+    <div class="flex flex-col gap-4">
+      <h3 class="text-lg font-semibold text-white">Elastic Dot Loader</h3>
+      <div class="loader loader-10" role="status" aria-label="Elastic Dot Loading Animation">
+        <span></span><span></span><span></span>
+      </div>
+      <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.loader-10 {
+  display: flex;
+  gap: 8px;
+}
+.loader-10 span {
+  width: 12px;
+  height: 12px;
+  background: #facc15;
+  border-radius: 50%;
+  animation: elastic-dot 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55) infinite;
+}
+.loader-10 span:nth-child(2) { animation-delay: 0.2s; }
+.loader-10 span:nth-child(3) { animation-delay: 0.4s; }
+@keyframes elastic-dot {
+  50% { transform: scale(1.5); }
+}</code></pre><button class="copy-btn mt-3 bg-blue-600 text-white px-3 py-1 rounded-full hover:bg-blue-700 text-sm" aria-label="Copy Elastic Dot Loader CSS">Copy</button></div>
+    </div>
+    <!-- Loader 11: Fourier Loader -->
+    <div class="flex flex-col gap-4">
+      <h3 class="text-lg font-semibold text-white">Fourier Loader</h3>
+      <div class="loader loader-11" role="status" aria-label="Fourier Loading Animation"><canvas id="fourier-canvas"></canvas></div>
+      <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.loader-11 {
+  width: 50px;
+  height: 50px;
+}
+.loader-11 canvas {
+  width: 100%;
+  height: 100%;
+}</code></pre><button class="copy-btn mt-3 bg-blue-600 text-white px-3 py-1 rounded-full hover:bg-blue-700 text-sm" aria-label="Copy Fourier Loader CSS">Copy</button></div>
+    </div>
+    <!-- Loader 12: Gear Loader -->
+    <div class="flex flex-col gap-4">
+      <h3 class="text-lg font-semibold text-white">Gear Loader</h3>
+      <div class="loader loader-12" role="status" aria-label="Gear Loading Animation"></div>
+      <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.loader-12 {
+  width: 50px;
+  height: 50px;
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="%23ef4444" d="M12 1v2.09c-1.14.12-2.19.45-3.15.97l-1.45-1.45-1.41 1.41 1.45 1.45c-.52.96-.85 2.01-.97 3.15H3V11h2.09c.12 1.14.45 2.19.97 3.15l-1.45 1.45 1.41 1.41 1.45-1.45c.96.52 2.01.85 3.15.97V21h2v-2.09c1.14-.12 2.19-.45 3.15-.97l1.45 1.45 1.41-1.41-1.45-1.45c.52-.96.85-2.01.97-3.15H21V9h-2.09c-.12-1.14-.45-2.19-.97-3.15l1.45-1.45-1.41-1.41-1.45 1.45c-.96-.52-2.01-.85-3.15-.97V1h-2zm0 4c3.31 0 6 2.69 6 6s-2.69 6-6 6-6-2.69-6-6 2.69-6 6-6z"/></svg>');
+  animation: spin 2s linear infinite;
+}
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}</code></pre><button class="copy-btn mt-3 bg-blue-600 text-white px-3 py-1 rounded-full hover:bg-blue-700 text-sm" aria-label="Copy Gear Loader CSS">Copy</button></div>
+    </div>
+    <!-- Loader 13: Helix Spinner -->
+    <div class="flex flex-col gap-4">
+      <h3 class="text-lg font-semibold text-white">Helix Spinner</h3>
+      <div class="loader loader-13" role="status" aria-label="Helix Spinner Loading Animation">
+        <span></span><span></span>
+      </div>
+      <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.loader-13 {
+  width: 50px;
+  height: 50px;
+  position: relative;
+}
+.loader-13 span {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: #3b82f6;
+  border-radius: 50%;
+  animation: helix 1.5s ease-in-out infinite;
+}
+.loader-13 span:nth-child(2) { animation-delay: 0.75s; }
+@keyframes helix {
+  0% { transform: translate(0, 0); }
+  25% { transform: translate(20px, 20px); }
+  50% { transform: translate(0, 40px); }
+  75% { transform: translate(-20px, 20px); }
+}</code></pre><button class="copy-btn mt-3 bg-blue-600 text-white px-3 py-1 rounded-full hover:bg-blue-700 text-sm" aria-label="Copy Helix Spinner CSS">Copy</button></div>
+    </div>
+    <!-- Loader 14: Infinite Bar Loader -->
+    <div class="flex flex-col gap-4">
+      <h3 class="text-lg font-semibold text-white">Infinite Bar Loader</h3>
+      <div class="loader loader-14" role="status" aria-label="Infinite Bar Loading Animation"></div>
+      <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.loader-14 {
+  width: 50px;
+  height: 8px;
+  background: #e5e7eb;
+  position: relative;
+  overflow: hidden;
+}
+.loader-14::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, #ef4444, transparent);
+  animation: infinite-bar 1s linear infinite;
+}
+@keyframes infinite-bar {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}</code></pre><button class="copy-btn mt-3 bg-blue-600 text-white px-3 py-1 rounded-full hover:bg-blue-700 text-sm" aria-label="Copy Infinite Bar Loader CSS">Copy</button></div>
+    </div>
+    <!-- Loader 15: Jelly Loader -->
+    <div class="flex flex-col gap-4">
+      <h3 class="text-lg font-semibold text-white">Jelly Loader</h3>
+      <div class="loader loader-15" role="status" aria-label="Jelly Loading Animation"></div>
+      <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.loader-15 {
+  width: 50px;
+  height: 50px;
+  background: #f59e0b;
+  border-radius: 10px;
+  animation: jelly 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55) infinite;
+}
+@keyframes jelly {
+  0%, 100% { transform: scale(1, 1); }
+  50% { transform: scale(1.3, 0.7); }
+}</code></pre><button class="copy-btn mt-3 bg-blue-600 text-white px-3 py-1 rounded-full hover:bg-blue-700 text-sm" aria-label="Copy Jelly Loader CSS">Copy</button></div>
+    </div>
+    <!-- Loader 16: Kinetic Dots Loader -->
+    <div class="flex flex-col gap-4">
+      <h3 class="text-lg font-semibold text-white">Kinetic Dots Loader</h3>
+      <div class="loader loader-16" role="status" aria-label="Kinetic Dots Loading Animation">
+        <span></span><span></span><span></span>
+      </div>
+      <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.loader-16 {
+  display: flex;
+  gap: 8px;
+}
+.loader-16 span {
+  width: 12px;
+  height: 12px;
+  background: #10b981;
+  border-radius: 50%;
+  animation: kinetic-dots 1s ease-in-out infinite;
+}
+.loader-16 span:nth-child(2) { animation-delay: 0.2s; }
+.loader-16 span:nth-child(3) { animation-delay: 0.4s; }
+@keyframes kinetic-dots {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}</code></pre><button class="copy-btn mt-3 bg-blue-600 text-white px-3 py-1 rounded-full hover:bg-blue-700 text-sm" aria-label="Copy Kinetic Dots Loader CSS">Copy</button></div>
+    </div>
+    <!-- Loader 17: Laser Loader -->
+    <div class="flex flex-col gap-4">
+      <h3 class="text-lg font-semibold text-white">Laser Loader</h3>
+      <div class="loader loader-17" role="status" aria-label="Laser Loading Animation"></div>
+      <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.loader-17 {
+  width: 50px;
+  height: 8px;
+  background: #e5e7eb;
+  position: relative;
+}
+.loader-17::after {
+  content: '';
+  position: absolute;
+  width: 10px;
+  height: 100%;
+  background: #ef4444;
+  box-shadow: 0 0 10px #ef4444;
+  animation: laser 0.8s linear infinite;
+}
+@keyframes laser {
+  0% { transform: translateX(-10px); }
+  100% { transform: translateX(50px); }
+}</code></pre><button class="copy-btn mt-3 bg-blue-600 text-white px-3 py-1 rounded-full hover:bg-blue-700 text-sm" aria-label="Copy Laser Loader CSS">Copy</button></div>
+    </div>
+    <!-- Loader 18: Moveable Lines Loader -->
+    <div class="flex flex-col gap-4">
+      <h3 class="text-lg font-semibold text-white">Moveable Lines Loader</h3>
+      <div class="loader loader-18" role="status" aria-label="Moveable Lines Loading Animation">
+        <span></span><span></span><span></span>
+      </div>
+      <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.loader-18 {
+  display: flex;
+  gap: 4px;
+  height: 50px;
+}
+.loader-18 span {
+  width: 8px;
+  height: 100%;
+  background: #3b82f6;
+  animation: moveable-lines 1s ease-in-out infinite;
+}
+.loader-18 span:nth-child(2) { animation-delay: 0.2s; }
+.loader-18 span:nth-child(3) { animation-delay: 0.4s; }
+@keyframes moveable-lines {
+  0% { transform: scaleY(1); }
+  50% { transform: scaleY(0.3); }
+}</code></pre><button class="copy-btn mt-3 bg-blue-600 text-white px-3 py-1 rounded-full hover:bg-blue-700 text-sm" aria-label="Copy Moveable Lines Loader CSS">Copy</button></div>
+    </div>
+    <!-- Loader 19: Neon Strobe Loader -->
+    <div class="flex flex-col gap-4">
+      <h3 class="text-lg font-semibold text-white">Neon Strobe Loader</h3>
+      <div class="loader loader-19" role="status" aria-label="Neon Strobe Loading Animation"></div>
+      <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.loader-19 {
+  width: 50px;
+  height: 50px;
+  background: #22c55e;
+  border-radius: 50%;
+  box-shadow: 0 0 20px #22c55e;
+  animation: neon-strobe 0.5s infinite;
+}
+@keyframes neon-strobe {
+  50% { opacity: 0.3; }
+}</code></pre><button class="copy-btn mt-3 bg-blue-600 text-white px-3 py-1 rounded-full hover:bg-blue-700 text-sm" aria-label="Copy Neon Strobe Loader CSS">Copy</button></div>
+    </div>
+    <!-- Loader 20: Orbit Loader -->
+    <div class="flex flex-col gap-4">
+      <h3 class="text-lg font-semibold text-white">Orbit Loader</h3>
+      <div class="loader loader-20" role="status" aria-label="Orbit Loading Animation">
+        <span></span>
+      </div>
+      <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.loader-20 {
+  width: 50px;
+  height: 50px;
+  position: relative;
+}
+.loader-20 span {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: #facc15;
+  border-radius: 50%;
+  animation: orbit 1.5s linear infinite;
+}
+@keyframes orbit {
+  0% { transform: rotate(0deg) translateX(20px); }
+  100% { transform: rotate(360deg) translateX(20px); }
+}</code></pre><button class="copy-btn mt-3 bg-blue-600 text-white px-3 py-1 rounded-full hover:bg-blue-700 text-sm" aria-label="Copy Orbit Loader CSS">Copy</button></div>
+    </div>
+    <!-- Loader 21: Pulse Loader -->
+    <div class="flex flex-col gap-4">
+      <h3 class="text-lg font-semibold text-white">Pulse Loader</h3>
+      <div class="loader loader-21" role="status" aria-label="Pulse Loading Animation"></div>
+      <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.loader-21 {
+  width: 50px;
+  height: 50px;
+  background: #ef4444;
+  border-radius: 50%;
+  animation: pulse 1s ease-in-out infinite;
+}
+@keyframes pulse {
+  0% { transform: scale(0.8); opacity: 0.7; }
+  50% { transform: scale(1.2); opacity: 1; }
+  100% { transform: scale(0.8); opacity: 0.7; }
+}</code></pre><button class="copy-btn mt-3 bg-blue-600 text-white px-3 py-1 rounded-full hover:bg-blue-700 text-sm" aria-label="Copy Pulse Loader CSS">Copy</button></div>
+    </div>
+    <!-- Loader 22: Quick Flip Loader -->
+    <div class="flex flex-col gap-4">
+      <h3 class="text-lg font-semibold text-white">Quick Flip Loader</h3>
+      <div class="loader loader-22" role="status" aria-label="Quick Flip Loading Animation"></div>
+      <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.loader-22 {
+  width: 50px;
+  height: 50px;
+  background: #3b82f6;
+  animation: quick-flip 0.5s linear infinite;
+}
+@keyframes quick-flip {
+  0% { transform: rotateY(0deg); }
+  50% { transform: rotateY(180deg); }
+}</code></pre><button class="copy-btn mt-3 bg-blue-600 text-white px-3 py-1 rounded-full hover:bg-blue-700 text-sm" aria-label="Copy Quick Flip Loader CSS">Copy</button></div>
+    </div>
+    <!-- Loader 23: Ripple Loader -->
+    <div class="flex flex-col gap-4">
+      <h3 class="text-lg font-semibold text-white">Ripple Loader</h3>
+      <div class="loader loader-23" role="status" aria-label="Ripple Loading Animation">
+        <span></span><span></span>
+      </div>
+      <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.loader-23 {
+  width: 50px;
+  height: 50px;
+  position: relative;
+}
+.loader-23 span {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: 2px solid #10b981;
+  border-radius: 50%;
+  animation: ripple 1.5s ease-out infinite;
+}
+.loader-23 span:nth-child(2) { animation-delay: 0.5s; }
+@keyframes ripple {
+  0% { transform: scale(0); opacity: 1; }
+  100% { transform: scale(2); opacity: 0; }
+}</code></pre><button class="copy-btn mt-3 bg-blue-600 text-white px-3 py-1 rounded-full hover:bg-blue-700 text-sm" aria-label="Copy Ripple Loader CSS">Copy</button></div>
+    </div>
+    <!-- Loader 24: Spinner Arc Loader -->
+    <div class="flex flex-col gap-4">
+      <h3 class="text-lg font-semibold text-white">Spinner Arc Loader</h3>
+      <div class="loader loader-24" role="status" aria-label="Spinner Arc Loading Animation"></div>
+      <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.loader-24 {
+  width: 50px;
+  height: 50px;
+  border: 5px solid #e5e7eb;
+  border-radius: 50%;
+  border-top: 5px solid #facc15;
+  animation: spin 0.8s linear infinite;
+}
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}</code></pre><button class="copy-btn mt-3 bg-blue-600 text-white px-3 py-1 rounded-full hover:bg-blue-700 text-sm" aria-label="Copy Spinner Arc Loader CSS">Copy</button></div>
+    </div>
+    <!-- Loader 25: Sliding Bars Loader -->
+    <div class="flex flex-col gap-4">
+      <h3 class="text-lg font-semibold text-white">Sliding Bars Loader</h3>
+      <div class="loader loader-25" role="status" aria-label="Sliding Bars Loading Animation">
+        <span></span><span></span><span></span>
+      </div>
+      <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.loader-25 {
+  display: flex;
+  gap: 4px;
+  height: 50px;
+}
+.loader-25 span {
+  width: 8px;
+  height: 100%;
+  background: #ef4444;
+  animation: sliding-bars 1s ease-in-out infinite;
+}
+.loader-25 span:nth-child(2) { animation-delay: 0.2s; }
+.loader-25 span:nth-child(3) { animation-delay: 0.4s; }
+@keyframes sliding-bars {
+  0% { transform: translateX(0); }
+  50% { transform: translateX(20px); }
+}</code></pre><button class="copy-btn mt-3 bg-blue-600 text-white px-3 py-1 rounded-full hover:bg-blue-700 text-sm" aria-label="Copy Sliding Bars Loader CSS">Copy</button></div>
+    </div>
+    <!-- Loader 26: Three Dots Loader -->
+    <div class="flex flex-col gap-4">
+      <h3 class="text-lg font-semibold text-white">Three Dots Loader</h3>
+      <div class="loader loader-26" role="status" aria-label="Three Dots Loading Animation">
+        <span></span><span></span><span></span>
+      </div>
+      <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.loader-26 {
+  display: flex;
+  gap: 8px;
+}
+.loader-26 span {
+  width: 12px;
+  height: 12px;
+  background: #3b82f6;
+  border-radius: 50%;
+  animation: three-dots 0.6s ease-in-out infinite;
+}
+.loader-26 span:nth-child(2) { animation-delay: 0.2s; }
+.loader-26 span:nth-child(3) { animation-delay: 0.4s; }
+@keyframes three-dots {
+  50% { opacity: 0.3; }
+}</code></pre><button class="copy-btn mt-3 bg-blue-600 text-white px-3 py-1 rounded-full hover:bg-blue-700 text-sm" aria-label="Copy Three Dots Loader CSS">Copy</button></div>
+    </div>
+    <!-- Loader 27: U-Loader -->
+    <div class="flex flex-col gap-4">
+      <h3 class="text-lg font-semibold text-white">U-Loader</h3>
+      <div class="loader loader-27" role="status" aria-label="U-Loader Loading Animation"></div>
+      <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.loader-27 {
+  width: 50px;
+  height: 30px;
+  border: 5px solid #facc15;
+  border-top: none;
+  border-radius: 0 0 25px 25px;
+  animation: spin 1s linear infinite;
+}
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}</code></pre><button class="copy-btn mt-3 bg-blue-600 text-white px-3 py-1 rounded-full hover:bg-blue-700 text-sm" aria-label="Copy U-Loader CSS">Copy</button></div>
+    </div>
+    <!-- Loader 28: Vortex Spinner -->
+    <div class="flex flex-col gap-4">
+      <h3 class="text-lg font-semibold text-white">Vortex Spinner</h3>
+      <div class="loader loader-28" role="status" aria-label="Vortex Spinner Loading Animation">
+        <span></span><span></span>
+      </div>
+      <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.loader-28 {
+  width: 50px;
+  height: 50px;
+  position: relative;
+}
+.loader-28 span {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: #10b981;
+  border-radius: 50%;
+  animation: vortex 1.2s linear infinite;
+}
+.loader-28 span:nth-child(2) { animation-delay: 0.6s; }
+@keyframes vortex {
+  0% { transform: rotate(0deg) translateX(15px); }
+  100% { transform: rotate(360deg) translateX(15px); }
+}</code></pre><button class="copy-btn mt-3 bg-blue-600 text-white px-3 py-1 rounded-full hover:bg-blue-700 text-sm" aria-label="Copy Vortex Spinner CSS">Copy</button></div>
+    </div>
+    <!-- Loader 29: Wave Loader -->
+    <div class="flex flex-col gap-4">
+      <h3 class="text-lg font-semibold text-white">Wave Loader</h3>
+      <div class="loader loader-29" role="status" aria-label="Wave Loading Animation">
+        <span></span><span></span><span></span><span></span><span></span>
+      </div>
+      <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.loader-29 {
+  display: flex;
+  gap: 4px;
+  height: 50px;
+}
+.loader-29 span {
+  width: 8px;
+  height: 100%;
+  background: #ef4444;
+  animation: wave 0.8s ease-in-out infinite;
+}
+.loader-29 span:nth-child(2) { animation-delay: 0.1s; }
+.loader-29 span:nth-child(3) { animation-delay: 0.2s; }
+.loader-29 span:nth-child(4) { animation-delay: 0.3s; }
+.loader-29 span:nth-child(5) { animation-delay: 0.4s; }
+@keyframes wave {
+  0%, 40%, 100% { transform: scaleY(1); }
+  20% { transform: scaleY(2); }
+}</code></pre><button class="copy-btn mt-3 bg-blue-600 text-white px-3 py-1 rounded-full hover:bg-blue-700 text-sm" aria-label="Copy Wave Loader CSS">Copy</button></div>
+    </div>
+    <!-- Loader 30: X-Bar Loader -->
+    <div class="flex flex-col gap-4">
+      <h3 class="text-lg font-semibold text-white">X-Bar Loader</h3>
+      <div class="loader loader-30" role="status" aria-label="X-Bar Loading Animation"></div>
+      <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.loader-30 {
+  width: 50px;
+  height: 50px;
+  position: relative;
+}
+.loader-30::before, .loader-30::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 8px;
+  background: #3b82f6;
+}
+.loader-30::before { transform: rotate(45deg); animation: x-bar 1s infinite; }
+.loader-30::after { transform: rotate(-45deg); animation: x-bar 1s infinite 0.5s; }
+@keyframes x-bar {
+  50% { transform: rotate(0deg); }
+}</code></pre><button class="copy-btn mt-3 bg-blue-600 text-white px-3 py-1 rounded-full hover:bg-blue-700 text-sm" aria-label="Copy X-Bar Loader CSS">Copy</button></div>
+    </div>
+    <!-- Loader 31: Y-Ball Loader -->
+    <div class="flex flex-col gap-4">
+      <h3 class="text-lg font-semibold text-white">Y-Ball Loader</h3>
+      <div class="loader loader-31" role="status" aria-label="Y-Ball Loading Animation"></div>
+      <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.loader-31 {
+  width: 50px;
+  height: 50px;
+  position: relative;
+}
+.loader-31::before {
+  content: '';
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background: #facc15;
+  border-radius: 50%;
+  animation: y-ball 1.2s ease-in-out infinite;
+}
+@keyframes y-ball {
+  0% { transform: translate(0, 0); }
+  25% { transform: translate(-15px, 20px); }
+  50% { transform: translate(0, 40px); }
+  75% { transform: translate(15px, 20px); }
+}</code></pre><button class="copy-btn mt-3 bg-blue-600 text-white px-3 py-1 rounded-full hover:bg-blue-700 text-sm" aria-label="Copy Y-Ball Loader CSS">Copy</button></div>
+    </div>
+    <!-- Loader 32: Zigzag Ball Loader -->
+    <div class="flex flex-col gap-4">
+      <h3 class="text-lg font-semibold text-white">Zigzag Ball Loader</h3>
+      <div class="loader loader-32" role="status" aria-label="Zigzag Ball Loading Animation"></div>
+      <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.loader-32 {
+  width: 50px;
+  height: 50px;
+  position: relative;
+}
+.loader-32::before {
+  content: '';
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background: #10b981;
+  border-radius: 50%;
+  animation: zigzag-ball 1.5s ease-in-out infinite;
+}
+@keyframes zigzag-ball {
+  0% { transform: translate(0, 0); }
+  25% { transform: translate(20px, 10px); }
+  50% { transform: translate(0, 20px); }
+  75% { transform: translate(-20px, 30px); }
+}</code></pre><button class="copy-btn mt-3 bg-blue-600 text-white px-3 py-1 rounded-full hover:bg-blue-700 text-sm" aria-label="Copy Zigzag Ball Loader CSS">Copy</button></div>
+    </div>
+    <!-- Loader 33: Alpha Fade Loader -->
+    <div class="flex flex-col gap-4">
+      <h3 class="text-lg font-semibold text-white">Alpha Fade Loader</h3>
+      <div class="loader loader-33" role="status" aria-label="Alpha Fade Loading Animation"></div>
+      <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.loader-33 {
+  width: 50px;
+  height: 50px;
+  background: #ef4444;
+  border-radius: 50%;
+  animation: alpha-fade 1s ease-in-out infinite;
+}
+@keyframes alpha-fade {
+  50% { opacity: 0.3; }
+}</code></pre><button class="copy-btn mt-3 bg-blue-600 text-white px-3 py-1 rounded-full hover:bg-blue-700 text-sm" aria-label="Copy Alpha Fade Loader CSS">Copy</button></div>
+    </div>
+    <!-- Loader 34: Bounce Loader -->
+    <div class="flex flex-col gap-4">
+      <h3 class="text-lg font-semibold text-white">Bounce Loader</h3>
+      <div class="loader loader-34" role="status" aria-label="Bounce Loading Animation"></div>
+      <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.loader-34 {
+  width: 50px;
+  height: 50px;
+  background: #3b82f6;
+  border-radius: 50%;
+  animation: bounce 0.6s ease-in-out infinite;
+}
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}</code></pre><button class="copy-btn mt-3 bg-blue-600 text-white px-3 py-1 rounded-full hover:bg-blue-700 text-sm" aria-label="Copy Bounce Loader CSS">Copy</button></div>
+    </div>
+    <!-- Loader 35: Chasing Dots Loader -->
+    <div class="flex flex-col gap-4">
+      <h3 class="text-lg font-semibold text-white">Chasing Dots Loader</h3>
+      <div class="loader loader-35" role="status" aria-label="Chasing Dots Loading Animation">
+        <span></span><span></span>
+      </div>
+      <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.loader-35 {
+  width: 50px;
+  height: 50px;
+  position: relative;
+}
+.loader-35 span {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: #facc15;
+  border-radius: 50%;
+  animation: chasing-dots 1s linear infinite;
+}
+.loader-35 span:nth-child(2) { animation-delay: 0.5s; }
+@keyframes chasing-dots {
+  0% { transform: rotate(0deg) translateX(15px); }
+  100% { transform: rotate(360deg) translateX(15px); }
+}</code></pre><button class="copy-btn mt-3 bg-blue-600 text-white px-3 py-1 rounded-full hover:bg-blue-700 text-sm" aria-label="Copy Chasing Dots Loader CSS">Copy</button></div>
+    </div>
+    <!-- Loader 36: Dot Grid Loader -->
+    <div class="flex flex-col gap-4">
+      <h3 class="text-lg font-semibold text-white">Dot Grid Loader</h3>
+      <div class="loader loader-36" role="status" aria-label="Dot Grid Loading Animation">
+        <span></span><span></span><span></span>
+        <span></span><span></span><span></span>
+        <span></span><span></span><span></span>
+      </div>
+      <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.loader-36 {
+  display: grid;
+  grid-template-columns: repeat(3, 12px);
+  gap: 4px;
+  width: 50px;
+  height: 50px;
+}
+.loader-36 span {
+  background: #10b981;
+  border-radius: 50%;
+  animation: dot-grid 1.2s ease-in-out infinite;
+}
+.loader-36 span:nth-child(1) { animation-delay: 0.1s; }
+.loader-36 span:nth-child(2) { animation-delay: 0.2s; }
+.loader-36 span:nth-child(3) { animation-delay: 0.3s; }
+.loader-36 span:nth-child(4) { animation-delay: 0.4s; }
+.loader-36 span:nth-child(5) { animation-delay: 0.5s; }
+.loader-36 span:nth-child(6) { animation-delay: 0.6s; }
+.loader-36 span:nth-child(7) { animation-delay: 0.7s; }
+.loader-36 span:nth-child(8) { animation-delay: 0.8s; }
+.loader-36 span:nth-child(9) { animation-delay: 0.9s; }
+@keyframes dot-grid {
+  50% { opacity: 0.3; }
+}</code></pre><button class="copy-btn mt-3 bg-blue-600 text-white px-3 py-1 rounded-full hover:bg-blue-700 text-sm" aria-label="Copy Dot Grid Loader CSS">Copy</button></div>
+    </div>
+    <!-- Loader 37: Elastic Arc Loader -->
+    <div class="flex flex-col gap-4">
+      <h3 class="text-lg font-semibold text-white">Elastic Arc Loader</h3>
+      <div class="loader loader-37" role="status" aria-label="Elastic Arc Loading Animation"></div>
+      <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.loader-37 {
+  width: 50px;
+  height: 50px;
+  border: 5px solid #ef4444;
+  border-radius: 50%;
+  border-top-color: transparent;
+  animation: elastic-arc 1s cubic-bezier(0.68, -0.55, 0.265, 1.55) infinite;
+}
+@keyframes elastic-arc {
+  0% { transform: rotate(0deg); }
+  50% { transform: rotate(180deg); }
+  100% { transform: rotate(360deg); }
+}</code></pre><button class="copy-btn mt-3 bg-blue-600 text-white px-3 py-1 rounded-full hover:bg-blue-700 text-sm" aria-label="Copy Elastic Arc Loader CSS">Copy</button></div>
+    </div>
+    <!-- Loader 38: Flip Circle Loader -->
+    <div class="flex flex-col gap-4">
+      <h3 class="text-lg font-semibold text-white">Flip Circle Loader</h3>
+      <div class="loader loader-38" role="status" aria-label="Flip Circle Loading Animation"></div>
+      <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.loader-38 {
+  width: 50px;
+  height: 50px;
+  background: #3b82f6;
+  border-radius: 50%;
+  animation: flip-circle 0.5s linear infinite;
+}
+@keyframes flip-circle {
+  0% { transform: rotateX(0deg); }
+  50% { transform: rotateX(180deg); }
+}</code></pre><button class="copy-btn mt-3 bg-blue-600 text-white px-3 py-1 rounded-full hover:bg-blue-700 text-sm" aria-label="Copy Flip Circle Loader CSS">Copy</button></div>
+    </div>
+    <!-- Loader 39: Glow Spinner -->
+    <div class="flex flex-col gap-4">
+      <h3 class="text-lg font-semibold text-white">Glow Spinner</h3>
+      <div class="loader loader-39" role="status" aria-label="Glow Spinner Loading Animation"></div>
+      <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.loader-39 {
+  width: 50px;
+  height: 50px;
+  border: 5px solid #22c55e;
+  border-radius: 50%;
+  box-shadow: 0 0 20px #22c55e;
+  animation: spin 1s linear infinite;
+}
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}</code></pre><button class="copy-btn mt-3 bg-blue-600 text-white px-3 py-1 rounded-full hover:bg-blue-700 text-sm" aria-label="Copy Glow Spinner CSS">Copy</button></div>
+    </div>
+    <!-- Loader 40: Heart Beat Loader -->
+    <div class="flex flex-col gap-4">
+      <h3 class="text-lg font-semibold text-white">Heart Beat Loader</h3>
+      <div class="loader loader-40" role="status" aria-label="Heart Beat Loading Animation"></div>
+      <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.loader-40 {
+  width: 50px;
+  height: 50px;
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="%23ef4444" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>');
+  animation: heart-beat 1s ease-in-out infinite;
+}
+@keyframes heart-beat {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.3); }
+}</code></pre><button class="copy-btn mt-3 bg-blue-600 text-white px-3 py-1 rounded-full hover:bg-blue-700 text-sm" aria-label="Copy Heart Beat Loader CSS">Copy</button></div>
+    </div>
+    <!-- Loader 41: Infini Spiral Loader -->
+    <div class="flex flex-col gap-4">
+      <h3 class="text-lg font-semibold text-white">Infini Spiral Loader</h3>
+      <div class="loader loader-41" role="status" aria-label="Infini Spiral Loading Animation"></div>
+      <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.loader-41 {
+  width: 50px;
+  height: 50px;
+  border: 5px solid #facc15;
+  border-radius: 50%;
+  border-top-color: transparent;
+  animation: infini-spiral 1s linear infinite;
+}
+@keyframes infini-spiral {
+  0% { transform: rotate(0deg) scale(1); }
+  50% { transform: rotate(180deg) scale(0.8); }
+  100% { transform: rotate(360deg) scale(1); }
+}</code></pre><button class="copy-btn mt-3 bg-blue-600 text-white px-3 py-1 rounded-full hover:bg-blue-700 text-sm" aria-label="Copy Infini Spiral Loader CSS">Copy</button></div>
+    </div>
+    <!-- Loader 42: Jump Dots Loader -->
+    <div class="flex flex-col gap-4">
+      <h3 class="text-lg font-semibold text-white">Jump Dots Loader</h3>
+      <div class="loader loader-42" role="status" aria-label="Jump Dots Loading Animation">
+        <span></span><span></span><span></span>
+      </div>
+      <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.loader-42 {
+  display: flex;
+  gap: 8px;
+}
+.loader-42 span {
+  width: 12px;
+  height: 12px;
+  background: #3b82f6;
+  border-radius: 50%;
+  animation: jump-dots 0.6s ease-in-out infinite;
+}
+.loader-42 span:nth-child(2) { animation-delay: 0.2s; }
+.loader-42 span:nth-child(3) { animation-delay: 0.4s; }
+@keyframes jump-dots {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}</code></pre><button class="copy-btn mt-3 bg-blue-600 text-white px-3 py-1 rounded-full hover:bg-blue-700 text-sm" aria-label="Copy Jump Dots Loader CSS">Copy</button></div>
+    </div>
+    <!-- Loader 43: Kinetoscope Loader -->
+    <div class="flex flex-col gap-4">
+      <h3 class="text-lg font-semibold text-white">Kinetoscope Loader</h3>
+      <div class="loader loader-43" role="status" aria-label="Kinetoscope Loading Animation"><canvas id="kinetoscope-canvas"></canvas></div>
+      <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.loader-43 {
+  width: 50px;
+  height: 50px;
+}
+.loader-43 canvas {
+  width: 100%;
+  height: 100%;
+}</code></pre><button class="copy-btn mt-3 bg-blue-600 text-white px-3 py-1 rounded-full hover:bg-blue-700 text-sm" aria-label="Copy Kinetoscope Loader CSS">Copy</button></div>
+    </div>
+    <!-- Loader 44: Liquid Wave Loader -->
+    <div class="flex flex-col gap-4">
+      <h3 class="text-lg font-semibold text-white">Liquid Wave Loader</h3>
+      <div class="loader loader-44" role="status" aria-label="Liquid Wave Loading Animation"></div>
+      <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.loader-44 {
+  width: 50px;
+  height: 50px;
+  position: relative;
+  overflow: hidden;
+  background: #e5e7eb;
+}
+.loader-44::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, #ef4444, #3b82f6);
+  animation: liquid-wave 2s ease-in-out infinite;
+}
+@keyframes liquid-wave {
+  0% { transform: translateY(50%) skew(0deg); }
+  50% { transform: translateY(0) skew(10deg); }
+  100% { transform: translateY(-50%) skew(0deg); }
+}</code></pre><button class="copy-btn mt-3 bg-blue-600 text-white px-3 py-1 rounded-full hover:bg-blue-700 text-sm" aria-label="Copy Liquid Wave Loader CSS">Copy</button></div>
+    </div>
+    <!-- Loader 45: Morphing Circle Loader -->
+    <div class="flex flex-col gap-4">
+      <h3 class="text-lg font-semibold text-white">Morphing Circle Loader</h3>
+      <div class="loader loader-45" role="status" aria-label="Morphing Circle Loading Animation"></div>
+      <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.loader-45 {
+  width: 50px;
+  height: 50px;
+  background: #10b981;
+  border-radius: 50%;
+  animation: morphing-circle 1s ease-in-out infinite;
+}
+@keyframes morphing-circle {
+  0% { border-radius: 50%; }
+  50% { border-radius: 10px; }
+}</code></pre><button class="copy-btn mt-3 bg-blue-600 text-white px-3 py-1 rounded-full hover:bg-blue-700 text-sm" aria-label="Copy Morphing Circle Loader CSS">Copy</button></div>
+    </div>
+    <!-- Loader 46: Noise Loader -->
+    <div class="flex flex-col gap-4">
+      <h3 class="text-lg font-semibold text-white">Noise Loader</h3>
+      <div class="loader loader-46" role="status" aria-label="Noise Loading Animation"></div>
+      <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.loader-46 {
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(45deg, #ef4444, #3b82f6);
+  filter: url(#noise);
+}
+@keyframes noise {
+  0% { transform: translate(0, 0); }
+  10% { transform: translate(-5px, 5px); }
+  20% { transform: translate(5px, -5px); }
+  30% { transform: translate(-5px, 5px); }
+  40% { transform: translate(5px, -5px); }
+}</code></pre><button class="copy-btn mt-3 bg-blue-600 text-white px-3 py-1 rounded-full hover:bg-blue-700 text-sm" aria-label="Copy Noise Loader CSS">Copy</button></div>
+    </div>
+    <!-- Loader 47: Outline Bubbles Loader -->
+    <div class="flex flex-col gap-4">
+      <h3 class="text-lg font-semibold text-white">Outline Bubbles Loader</h3>
+      <div class="loader loader-47" role="status" aria-label="Outline Bubbles Loading Animation">
+        <span></span><span></span><span></span>
+      </div>
+      <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.loader-47 {
+  width: 50px;
+  height: 50px;
+  position: relative;
+}
+.loader-47 span {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border: 2px solid #facc15;
+  border-radius: 50%;
+  animation: outline-bubbles 1.5s ease-out infinite;
+}
+.loader-47 span:nth-child(2) { animation-delay: 0.3s; }
+.loader-47 span:nth-child(3) { animation-delay: 0.6s; }
+@keyframes outline-bubbles {
+  0% { transform: scale(0); opacity: 1; }
+  100% { transform: scale(2); opacity: 0; }
+}</code></pre><button class="copy-btn mt-3 bg-blue-600 text-white px-3 py-1 rounded-full hover:bg-blue-700 text-sm" aria-label="Copy Outline Bubbles Loader CSS">Copy</button></div>
+    </div>
+    <!-- Loader 48: Paper Plane Loader -->
+    <div class="flex flex-col gap-4">
+      <h3 class="text-lg font-semibold text-white">Paper Plane Loader</h3>
+      <div class="loader loader-48" role="status" aria-label="Paper Plane Loading Animation"></div>
+      <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.loader-48 {
+  width: 50px;
+  height: 50px;
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="%233b82f6" d="M2 12l18-10v20L2 12z"/></svg>');
+  animation: paper-plane 1.5s ease-in-out infinite;
+}
+@keyframes paper-plane {
+  0% { transform: translate(0, 0); }
+  50% { transform: translate(20px, -10px); }
+}</code></pre><button class="copy-btn mt-3 bg-blue-600 text-white px-3 py-1 rounded-full hover:bg-blue-700 text-sm" aria-label="Copy Paper Plane Loader CSS">Copy</button></div>
+    </div>
+    <!-- Loader 49: Quick Sweep Loader -->
+    <div class="flex flex-col gap-4">
+      <h3 class="text-lg font-semibold text-white">Quick Sweep Loader</h3>
+      <div class="loader loader-49" role="status" aria-label="Quick Sweep Loading Animation"></div>
+      <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.loader-49 {
+  width: 50px;
+  height: 8px;
+  background: #e5e7eb;
+  position: relative;
+}
+.loader-49::after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 100%;
+  background: #ef4444;
+  animation: quick-sweep 0.5s linear infinite;
+}
+@keyframes quick-sweep {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(250%); }
+}</code></pre><button class="copy-btn mt-3 bg-blue-600 text-white px-3 py-1 rounded-full hover:bg-blue-700 text-sm" aria-label="Copy Quick Sweep Loader CSS">Copy</button></div>
+    </div>
+    <!-- Loader 50: Quantum Pulse Loader -->
+    <div class="flex flex-col gap-4">
+      <h3 class="text-lg font-semibold text-white">Quantum Pulse Loader</h3>
+      <div class="loader loader-50" role="status" aria-label="Quantum Pulse Loading Animation"></div>
+      <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.loader-50 {
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(45deg, #ef4444, #3b82f6);
+  border-radius: 50%;
+  animation: quantum-pulse 1.5s ease-in-out infinite;
+}
+@keyframes quantum-pulse {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.5); opacity: 0.5; }
+  100% { transform: scale(1); opacity: 1; }
+}</code></pre><button class="copy-btn mt-3 bg-blue-600 text-white px-3 py-1 rounded-full hover:bg-blue-700 text-sm" aria-label="Copy Quantum Pulse Loader CSS">Copy</button></div>
+    </div>
+  </main>
+  <svg>
+    <defs>
+      <filter id="noise">
+        <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/>
+        <feDisplacementMap in="SourceGraphic" scale="20"/>
+      </filter>
+    </defs>
+  </svg>
+  <script src="scripts.js"></script>
+</body>
+</html>
