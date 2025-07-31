@@ -39,29 +39,6 @@ StyleSync is an open-source collection of modern, clean UI components for web de
 - **Other Components**: Access loaders, fonts, modals, inputs, buttons, and text styles via navigation links.
 - **Customization**: Copy CSS/JS from `div-effects` snippets to integrate components.
 
-## Deployment on GitHub Pages
-
-1. **Create a Repository**:
-   - Create a repository named `stylesync` on GitHub under `shariarmahmudsaif`.
-   - Initialize with a README and make it public.
-
-2. **Push Files**:
-   - Add `index.html`, `styles.css`, `scripts.js`, and subdirectories (`div-effects`, etc.).
-   - Commit and push:
-     ```bash
-     git add .
-     git commit -m "Rebuilt StyleSync UI"
-     git push origin main
-     ```
-
-3. **Enable GitHub Pages**:
-   - Go to **Settings** > **Pages**.
-   - Set source to `main` branch, root directory, and click **Save**.
-   - Visit `https://shariarmahmudsaif.github.io/stylesync` (may take ~10 minutes).
-
-4. **Verify Deployment**:
-   - Check **Actions** tab for build status.
-   - Ensure `index.html` is in the root and the repository is public.
 
 ## Contributing
 
