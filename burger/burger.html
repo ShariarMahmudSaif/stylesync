@@ -3,21 +3,103 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>50 Enhanced Burger Menus - StyleSync</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Fira+Code&display=swap" rel="stylesheet">
+  <title>60 Enhanced Burger Menus - StyleSync</title>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            cream: { DEFAULT: '#f5f0e8', dark: '#e8dcc8' },
+            accent: { DEFAULT: '#ff8c00', light: '#ffb347', dark: '#cc7000' },
+            surface: '#1a1a1a',
+          },
+          fontFamily: {
+            grotesk: ['"Space Grotesk"', 'system-ui', 'sans-serif'],
+            mono: ['"Space Mono"', 'monospace'],
+          }
+        }
+      }
+    }
+  </script>
+  <style type="text/tailwindcss">
+    ::selection { background: #ff8c00; color: #0a0a0a; }
+    .code-container { border: 2px solid rgba(255,140,0,0.2) !important; background: rgba(10,10,10,0.8) !important; }
+    .code-container code { color: #f5f0e8 !important; }
+    .copy-btn { background: #ff8c00 !important; color: #0a0a0a !important; border: 2px solid #0a0a0a !important; font-weight: 700 !important; text-transform: uppercase !important; letter-spacing: 0.05em !important; font-size: 0.75rem !important; }
+    .copy-btn:hover { background: #ffb347 !important; transform: translate(-1px,-1px) !important; box-shadow: 3px 3px 0 #0a0a0a !important; }
+    .cross-nav { display: flex; flex-wrap: wrap; gap: 0.4rem; justify-content: center; margin-top: 1rem; }
+    .cross-nav a { font-family: 'Space Mono', monospace; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.08em; padding: 0.35rem 0.7rem; border: 2px solid rgba(255,140,0,0.25); color: #a89f91; text-decoration: none; transition: all 0.15s; background: rgba(26,26,26,0.5); }
+    .cross-nav a:hover { background: #ff8c00; color: #0a0a0a; border-color: #ff8c00; box-shadow: 2px 2px 0 #cc7000; }
+    .cross-nav a.current { background: #ff8c00; color: #0a0a0a; border-color: #ff8c00; pointer-events: none; }
+    /* Theme toggle */
+    .theme-toggle { position: fixed; top: 1rem; right: 1rem; z-index: 999; background: rgba(26,26,26,0.8); border: 2px solid rgba(255,140,0,0.3); width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; color: #a89f91; cursor: pointer; transition: all 0.2s; backdrop-filter: blur(10px); }
+    .theme-toggle:hover { border-color: #ff8c00; color: #ff8c00; }
+    .icon-moon { display: block; }
+    .icon-sun { display: none; }
+    [data-theme="light"] .icon-moon { display: none; }
+    [data-theme="light"] .icon-sun { display: block; }
+    [data-theme="light"] .theme-toggle { background: rgba(255,248,238,0.8); border-color: rgba(224,120,0,0.3); color: #6b6155; }
+    [data-theme="light"] .theme-toggle:hover { border-color: #e07800; color: #e07800; }
+    /* Light mode overrides */
+    [data-theme="light"] body { background: #f5f0e8 !important; }
+    [data-theme="light"] header h1, [data-theme="light"] header h3 { color: #1a1a1a !important; }
+    [data-theme="light"] header p { color: #6b6155 !important; }
+    [data-theme="light"] main h3 { color: #1a1a1a !important; }
+    [data-theme="light"] main .text-white { color: #1a1a1a !important; }
+    [data-theme="light"] main .text-gray-200 { color: #6b6155 !important; }
+    [data-theme="light"] main .text-cream { color: #1a1a1a !important; }
+    [data-theme="light"] main .bg-gray-800 { background: #e8e0d4 !important; }
+    [data-theme="light"] .code-container .bg-gray-800 { background: rgba(26,26,26,0.95) !important; }
+    [data-theme="light"] .copy-btn { background: #e07800 !important; color: #fff !important; }
+    [data-theme="light"] .cross-nav a { background: rgba(255,248,238,0.6); color: #6b6155; border-color: rgba(224,120,0,0.25); }
+    [data-theme="light"] .cross-nav a:hover { background: #e07800; color: #f5f0e8; border-color: #e07800; }
+    [data-theme="light"] .cross-nav a.current { background: #e07800; color: #f5f0e8; border-color: #e07800; }
+    [data-theme="light"] .code-container { background: rgba(26,26,26,0.9) !important; }
+    [data-theme="light"] .code-container code { color: #f5f0e8 !important; }
+  </style>
   <link rel="stylesheet" href="styles.css">
+  <script>
+    (function(){
+      var KEY="stylesync-theme";
+      var root=document.documentElement;
+      function get(){var s=localStorage.getItem(KEY);if(s)return s;return window.matchMedia("(prefers-color-scheme:light)").matches?"light":"dark";}
+      function apply(t){root.setAttribute("data-theme",t);localStorage.setItem(KEY,t);if(document.body){document.body.classList.toggle("light-mode",t==="light");document.body.classList.toggle("dark-mode",t==="dark");}}
+      apply(get());
+      document.addEventListener("DOMContentLoaded",function(){
+        apply(get());
+        var btn=document.getElementById("theme-toggle");
+        if(btn)btn.addEventListener("click",function(){apply(root.getAttribute("data-theme")==="dark"?"light":"dark");});
+      });
+    })();
+  </script>
 </head>
-<body class="p-8 font-inter bg-gradient-to-br from-indigo-900 to-rose-600">
+<body class="p-8 font-grotesk dark-mode">
   <header class="text-center mb-12">
-    <h1 class="text-4xl font-bold text-white">50 Enhanced Burger Menu Styles</h1>
-    <p class="text-xl text-gray-100 mt-3">Vibrant, animated burger menus for developers</p>
-    <a href="../index.html" class="text-white underline hover:text-gray-200">Back to Home</a>
-  </header>
+    <a href="../index.html" class="inline-block mb-4 text-accent hover:text-accent-light font-mono text-xs uppercase tracking-widest border-2 border-accent px-4 py-2 hover:bg-accent hover:text-[#0a0a0a] transition-all">&larr; Back to Home</a>
+    <h1 class="text-4xl font-bold text-cream font-grotesk">60 Enhanced Burger Menu Styles</h1>
+    <p class="text-lg text-cream-dark/70 mt-3 font-grotesk">Vibrant, animated burger menus for developers</p>
+    <nav class="cross-nav mt-6">
+      <a href="../div/div.html">Div Effects</a>
+      <a href="../button/button.html">Button Effects</a>
+      <a href="../inputs/input.html">Input Styles</a>
+      <a href="../font/font.html">Font Showcase</a>
+      <a href="../hover/hover.html">Hover Effects</a>
+      <a href="../loading/load.html">Loading Anims</a>
+      <a href="../nav/nav.html">Navbar Styles</a>
+      <a href="#" class="current">Burger Menus</a>
+      <a href="../text/text.html">Text Anims</a>
+      <a href="../modal/modal.html">Modal Styles</a>
+    </nav>
+    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+      <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+      <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+    </button>  </header>
   <main class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
     <!-- Burger 1: Morphing Burger -->
     <div class="flex flex-col gap-4 items-center">
-      <h3 class="text-lg font-semibold text-white">Morphing Burger</h3>
+      <h3 class="text-lg font-semibold text-cream">Morphing Burger</h3>
       <button class="burger burger-1" role="button" aria-label="Morphing Burger Icon" tabindex="0"><span></span><span></span><span></span></button>
       <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.burger-1 {
   position: relative;
@@ -39,7 +121,7 @@
     </div>
     <!-- Burger 2: Slide-In Burger -->
     <div class="flex flex-col gap-4 items-center">
-      <h3 class="text-lg font-semibold text-white">Slide-In Burger</h3>
+      <h3 class="text-lg font-semibold text-cream">Slide-In Burger</h3>
       <button class="burger burger-2" role="button" aria-label="Slide-In Burger Icon" tabindex="0"><span></span><span></span><span></span></button>
       <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.burger-2 {
   position: relative;
@@ -62,7 +144,7 @@
     </div>
     <!-- Burger 3: Gooey Burger -->
     <div class="flex flex-col gap-4 items-center">
-      <h3 class="text-lg font-semibold text-white">Gooey Burger</h3>
+      <h3 class="text-lg font-semibold text-cream">Gooey Burger</h3>
       <button class="burger burger-3" role="button" aria-label="Gooey Burger Icon" tabindex="0"><span></span><span></span><span></span></button>
       <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.burger-3 {
   position: relative;
@@ -85,7 +167,7 @@
     </div>
     <!-- Burger 4: Elastic Burger -->
     <div class="flex flex-col gap-4 items-center">
-      <h3 class="text-lg font-semibold text-white">Elastic Burger</h3>
+      <h3 class="text-lg font-semibold text-cream">Elastic Burger</h3>
       <button class="burger burger-4" role="button" aria-label="Elastic Burger Icon" tabindex="0"><span></span><span></span><span></span></button>
       <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.burger-4 {
   position: relative;
@@ -107,7 +189,7 @@
     </div>
     <!-- Burger 5: Full-Screen Burger -->
     <div class="flex flex-col gap-4 items-center">
-      <h3 class="text-lg font-semibold text-white">Full-Screen Burger</h3>
+      <h3 class="text-lg font-semibold text-cream">Full-Screen Burger</h3>
       <button class="burger burger-5" role="button" aria-label="Full-Screen Burger Icon" tabindex="0"><span></span><span></span><span></span></button>
       <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.burger-5 {
   position: relative;
@@ -138,7 +220,7 @@
     </div>
     <!-- Burger 6: Hover Pulse Burger -->
     <div class="flex flex-col gap-4 items-center">
-      <h3 class="text-lg font-semibold text-white">Hover Pulse Burger</h3>
+      <h3 class="text-lg font-semibold text-cream">Hover Pulse Burger</h3>
       <button class="burger burger-6" role="button" aria-label="Hover Pulse Burger Icon" tabindex="0"><span></span><span></span><span></span></button>
       <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.burger-6 {
   position: relative;
@@ -154,7 +236,7 @@
     </div>
     <!-- Burger 7: Iconic Burger -->
     <div class="flex flex-col gap-4 items-center">
-      <h3 class="text-lg font-semibold text-white">Iconic Burger</h3>
+      <h3 class="text-lg font-semibold text-cream">Iconic Burger</h3>
       <button class="burger burger-7" role="button" aria-label="Iconic Burger Icon" tabindex="0"><span></span><span></span><span></span></button>
       <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.burger-7 {
   position: relative;
@@ -166,7 +248,7 @@
     </div>
     <!-- Burger 8: Jelly Burger -->
     <div class="flex flex-col gap-4 items-center">
-      <h3 class="text-lg font-semibold text-white">Jelly Burger</h3>
+      <h3 class="text-lg font-semibold text-cream">Jelly Burger</h3>
       <button class="burger burger-8" role="button" aria-label="Jelly Burger Icon" tabindex="0"><span></span><span></span><span></span></button>
       <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.burger-8 {
   position: relative;
@@ -188,7 +270,7 @@
     </div>
     <!-- Burger 9: Kinetic Burger -->
     <div class="flex flex-col gap-4 items-center">
-      <h3 class="text-lg font-semibold text-white">Kinetic Burger</h3>
+      <h3 class="text-lg font-semibold text-cream">Kinetic Burger</h3>
       <button class="burger burger-9" role="button" aria-label="Kinetic Burger Icon" tabindex="0"><span></span><span></span><span></span></button>
       <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.burger-9 {
   position: relative;
@@ -204,7 +286,7 @@
     </div>
     <!-- Burger 10: Liquid Burger -->
     <div class="flex flex-col gap-4 items-center">
-      <h3 class="text-lg font-semibold text-white">Liquid Burger</h3>
+      <h3 class="text-lg font-semibold text-cream">Liquid Burger</h3>
       <button class="burger burger-10" role="button" aria-label="Liquid Burger Icon" tabindex="0"><span></span><span></span><span></span></button>
       <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.burger-10 {
   position: relative;
@@ -216,7 +298,7 @@
     </div>
     <!-- Burger 11: Magnetic Burger -->
     <div class="flex flex-col gap-4 items-center">
-      <h3 class="text-lg font-semibold text-white">Magnetic Burger</h3>
+      <h3 class="text-lg font-semibold text-cream">Magnetic Burger</h3>
       <button class="burger burger-11" role="button" aria-label="Magnetic Burger Icon" tabindex="0"><span></span><span></span><span></span></button>
       <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.burger-11 {
   position: relative;
@@ -228,7 +310,7 @@
     </div>
     <!-- Burger 12: Neon Burger -->
     <div class="flex flex-col gap-4 items-center">
-      <h3 class="text-lg font-semibold text-white">Neon Burger</h3>
+      <h3 class="text-lg font-semibold text-cream">Neon Burger</h3>
       <button class="burger burger-12" role="button" aria-label="Neon Burger Icon" tabindex="0"><span></span><span></span><span></span></button>
       <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.burger-12 {
   position: relative;
@@ -240,7 +322,7 @@
     </div>
     <!-- Burger 13: Overflow Fade Burger -->
     <div class="flex flex-col gap-4 items-center">
-      <h3 class="text-lg font-semibold text-white">Overflow Fade Burger</h3>
+      <h3 class="text-lg font-semibold text-cream">Overflow Fade Burger</h3>
       <button class="burger burger-13" role="button" aria-label="Overflow Fade Burger Icon" tabindex="0"><span></span><span></span><span></span></button>
       <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.burger-13 {
   position: relative;
@@ -262,7 +344,7 @@
     </div>
     <!-- Burger 14: Pixel Burger -->
     <div class="flex flex-col gap-4 items-center">
-      <h3 class="text-lg font-semibold text-white">Pixel Burger</h3>
+      <h3 class="text-lg font-semibold text-cream">Pixel Burger</h3>
       <button class="burger burger-14" role="button" aria-label="Pixel Burger Icon" tabindex="0"><span></span><span></span><span></span></button>
       <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.burger-14 {
   position: relative;
@@ -274,7 +356,7 @@
     </div>
     <!-- Burger 15: Quick Swipe Burger -->
     <div class="flex flex-col gap-4 items-center">
-      <h3 class="text-lg font-semibold text-white">Quick Swipe Burger</h3>
+      <h3 class="text-lg font-semibold text-cream">Quick Swipe Burger</h3>
       <button class="burger burger-15" role="button" aria-label="Quick Swipe Burger Icon" tabindex="0"><span></span><span></span><span></span></button>
       <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.burger-15 {
   position: relative;
@@ -296,7 +378,7 @@
     </div>
     <!-- Burger 16: Ripple Burger -->
     <div class="flex flex-col gap-4 items-center">
-      <h3 class="text-lg font-semibold text-white">Ripple Burger</h3>
+      <h3 class="text-lg font-semibold text-cream">Ripple Burger</h3>
       <button class="burger burger-16" role="button" aria-label="Ripple Burger Icon" tabindex="0"><span></span><span></span><span></span></button>
       <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.burger-16 {
   position: relative;
@@ -320,7 +402,7 @@
     </div>
     <!-- Burger 17: Shimmer Burger -->
     <div class="flex flex-col gap-4 items-center">
-      <h3 class="text-lg font-semibold text-white">Shimmer Burger</h3>
+      <h3 class="text-lg font-semibold text-cream">Shimmer Burger</h3>
       <button class="burger burger-17" role="button" aria-label="Shimmer Burger Icon" tabindex="0"><span></span><span></span><span></span></button>
       <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.burger-17 {
   position: relative;
@@ -341,7 +423,7 @@
     </div>
     <!-- Burger 18: Tilt Burger -->
     <div class="flex flex-col gap-4 items-center">
-      <h3 class="text-lg font-semibold text-white">Tilt Burger</h3>
+      <h3 class="text-lg font-semibold text-cream">Tilt Burger</h3>
       <button class="burger burger-18" role="button" aria-label="Tilt Burger Icon" tabindex="0"><span></span><span></span><span></span></button>
       <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.burger-18 {
   position: relative;
@@ -352,7 +434,7 @@
     </div>
     <!-- Burger 19: Underline Burger -->
     <div class="flex flex-col gap-4 items-center">
-      <h3 class="text-lg font-semibold text-white">Underline Burger</h3>
+      <h3 class="text-lg font-semibold text-cream">Underline Burger</h3>
       <button class="burger burger-19" role="button" aria-label="Underline Burger Icon" tabindex="0"><span></span><span></span><span></span></button>
       <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.burger-19 {
   position: relative;
@@ -373,7 +455,7 @@
     </div>
     <!-- Burger 20: Voice-Activated Burger -->
     <div class="flex flex-col gap-4 items-center">
-      <h3 class="text-lg font-semibold text-white">Voice-Activated Burger</h3>
+      <h3 class="text-lg font-semibold text-cream">Voice-Activated Burger</h3>
       <button class="burger burger-20" role="button" aria-label="Voice-Activated Burger Icon" tabindex="0"><span></span><span></span><span></span></button>
       <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.burger-20 {
   position: relative;
@@ -389,7 +471,7 @@
     </div>
     <!-- Burger 21: Wavy Burger -->
     <div class="flex flex-col gap-4 items-center">
-      <h3 class="text-lg font-semibold text-white">Wavy Burger</h3>
+      <h3 class="text-lg font-semibold text-cream">Wavy Burger</h3>
       <button class="burger burger-21" role="button" aria-label="Wavy Burger Icon" tabindex="0"><span></span><span></span><span></span></button>
       <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.burger-21 {
   position: relative;
@@ -405,7 +487,7 @@
     </div>
     <!-- Burger 22: Xylophone Burger -->
     <div class="flex flex-col gap-4 items-center">
-      <h3 class="text-lg font-semibold text-white">Xylophone Burger</h3>
+      <h3 class="text-lg font-semibold text-cream">Xylophone Burger</h3>
       <button class="burger burger-22" role="button" aria-label="Xylophone Burger Icon" tabindex="0"><span></span><span></span><span></span></button>
       <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.burger-22 {
   position: relative;
@@ -416,7 +498,7 @@
     </div>
     <!-- Burger 23: Yoyo Burger -->
     <div class="flex flex-col gap-4 items-center">
-      <h3 class="text-lg font-semibold text-white">Yoyo Burger</h3>
+      <h3 class="text-lg font-semibold text-cream">Yoyo Burger</h3>
       <button class="burger burger-23" role="button" aria-label="Yoyo Burger Icon" tabindex="0"><span></span><span></span><span></span></button>
       <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.burger-23 {
   position: relative;
@@ -432,7 +514,7 @@
     </div>
     <!-- Burger 24: Zoom Burger -->
     <div class="flex flex-col gap-4 items-center">
-      <h3 class="text-lg font-semibold text-white">Zoom Burger</h3>
+      <h3 class="text-lg font-semibold text-cream">Zoom Burger</h3>
       <button class="burger burger-24" role="button" aria-label="Zoom Burger Icon" tabindex="0"><span></span><span></span><span></span></button>
       <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.burger-24 {
   position: relative;
@@ -443,7 +525,7 @@
     </div>
     <!-- Burger 25: Accordion Burger -->
     <div class="flex flex-col gap-4 items-center">
-      <h3 class="text-lg font-semibold text-white">Accordion Burger</h3>
+      <h3 class="text-lg font-semibold text-cream">Accordion Burger</h3>
       <button class="burger burger-25" role="button" aria-label="Accordion Burger Icon" tabindex="0"><span></span><span></span><span></span></button>
       <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.burger-25 {
   position: relative;
@@ -462,7 +544,7 @@
     </div>
     <!-- Burger 26: Blobby Burger -->
     <div class="flex flex-col gap-4 items-center">
-      <h3 class="text-lg font-semibold text-white">Blobby Burger</h3>
+      <h3 class="text-lg font-semibold text-cream">Blobby Burger</h3>
       <button class="burger burger-26" role="button" aria-label="Blobby Burger Icon" tabindex="0"><span></span><span></span><span></span></button>
       <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.burger-26 {
   position: relative;
@@ -475,7 +557,7 @@
     </div>
     <!-- Burger 27: Clip-Path Burger -->
     <div class="flex flex-col gap-4 items-center">
-      <h3 class="text-lg font-semibold text-white">Clip-Path Burger</h3>
+      <h3 class="text-lg font-semibold text-cream">Clip-Path Burger</h3>
       <button class="burger burger-27" role="button" aria-label="Clip-Path Burger Icon" tabindex="0"><span></span><span></span><span></span></button>
       <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.burger-27 {
   position: relative;
@@ -500,7 +582,7 @@
     </div>
     <!-- Burger 28: Drift Burger -->
     <div class="flex flex-col gap-4 items-center">
-      <h3 class="text-lg font-semibold text-white">Drift Burger</h3>
+      <h3 class="text-lg font-semibold text-cream">Drift Burger</h3>
       <button class="burger burger-28" role="button" aria-label="Drift Burger Icon" tabindex="0"><span></span><span></span><span></span></button>
       <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.burger-28 {
   position: relative;
@@ -516,7 +598,7 @@
     </div>
     <!-- Burger 29: Echo Burger -->
     <div class="flex flex-col gap-4 items-center">
-      <h3 class="text-lg font-semibold text-white">Echo Burger</h3>
+      <h3 class="text-lg font-semibold text-cream">Echo Burger</h3>
       <button class="burger burger-29" role="button" aria-label="Echo Burger Icon" tabindex="0"><span></span><span></span><span></span></button>
       <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.burger-29 {
   position: relative;
@@ -538,7 +620,7 @@
     </div>
     <!-- Burger 30: Flip Burger -->
     <div class="flex flex-col gap-4 items-center">
-      <h3 class="text-lg font-semibold text-white">Flip Burger</h3>
+      <h3 class="text-lg font-semibold text-cream">Flip Burger</h3>
       <button class="burger burger-30" role="button" aria-label="Flip Burger Icon" tabindex="0"><span></span><span></span><span></span></button>
       <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.burger-30 {
   position: relative;
@@ -560,7 +642,7 @@
     </div>
     <!-- Burger 31: Gradient Burger -->
     <div class="flex flex-col gap-4 items-center">
-      <h3 class="text-lg font-semibold text-white">Gradient Burger</h3>
+      <h3 class="text-lg font-semibold text-cream">Gradient Burger</h3>
       <button class="burger burger-31" role="button" aria-label="Gradient Burger Icon" tabindex="0"><span></span><span></span><span></span></button>
       <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.burger-31 {
   position: relative;
@@ -571,7 +653,7 @@
     </div>
     <!-- Burger 32: Hover Burst Burger -->
     <div class="flex flex-col gap-4 items-center">
-      <h3 class="text-lg font-semibold text-white">Hover Burst Burger</h3>
+      <h3 class="text-lg font-semibold text-cream">Hover Burst Burger</h3>
       <button class="burger burger-32" role="button" aria-label="Hover Burst Burger Icon" tabindex="0"><span></span><span></span><span></span></button>
       <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.burger-32 {
   position: relative;
@@ -595,7 +677,7 @@
     </div>
     <!-- Burger 33: Invert Burger -->
     <div class="flex flex-col gap-4 items-center">
-      <h3 class="text-lg font-semibold text-white">Invert Burger</h3>
+      <h3 class="text-lg font-semibold text-cream">Invert Burger</h3>
       <button class="burger burger-33" role="button" aria-label="Invert Burger Icon" tabindex="0"><span></span><span></span><span></span></button>
       <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.burger-33 {
   position: relative;
@@ -606,7 +688,7 @@
     </div>
     <!-- Burger 34: Jump Burger -->
     <div class="flex flex-col gap-4 items-center">
-      <h3 class="text-lg font-semibold text-white">Jump Burger</h3>
+      <h3 class="text-lg font-semibold text-cream">Jump Burger</h3>
       <button class="burger burger-34" role="button" aria-label="Jump Burger Icon" tabindex="0"><span></span><span></span><span></span></button>
       <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.burger-34 {
   position: relative;
@@ -622,7 +704,7 @@
     </div>
     <!-- Burger 35: Kaleidoscope Burger -->
     <div class="flex flex-col gap-4 items-center">
-      <h3 class="text-lg font-semibold text-white">Kaleidoscope Burger</h3>
+      <h3 class="text-lg font-semibold text-cream">Kaleidoscope Burger</h3>
       <button class="burger burger-35" role="button" aria-label="Kaleidoscope Burger Icon" tabindex="0"><span></span><span></span><span></span></button>
       <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.burger-35 {
   position: relative;
@@ -633,7 +715,7 @@
     </div>
     <!-- Burger 36: Loop Burger -->
     <div class="flex flex-col gap-4 items-center">
-      <h3 class="text-lg font-semibold text-white">Loop Burger</h3>
+      <h3 class="text-lg font-semibold text-cream">Loop Burger</h3>
       <button class="burger burger-36" role="button" aria-label="Loop Burger Icon" tabindex="0"><span></span><span></span><span></span></button>
       <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.burger-36 {
   position: relative;
@@ -648,7 +730,7 @@
     </div>
     <!-- Burger 37: Metaball Burger -->
     <div class="flex flex-col gap-4 items-center">
-      <h3 class="text-lg font-semibold text-white">Metaball Burger</h3>
+      <h3 class="text-lg font-semibold text-cream">Metaball Burger</h3>
       <button class="burger burger-37" role="button" aria-label="Metaball Burger Icon" tabindex="0"><span></span><span></span><span></span></button>
       <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.burger-37 {
   position: relative;
@@ -661,7 +743,7 @@
     </div>
     <!-- Burger 38: Nested Burger -->
     <div class="flex flex-col gap-4 items-center">
-      <h3 class="text-lg font-semibold text-white">Nested Burger</h3>
+      <h3 class="text-lg font-semibold text-cream">Nested Burger</h3>
       <button class="burger burger-38" role="button" aria-label="Nested Burger Icon" tabindex="0"><span></span><span></span><span></span></button>
       <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.burger-38 {
   position: relative;
@@ -680,7 +762,7 @@
     </div>
     <!-- Burger 39: Overlay Burger -->
     <div class="flex flex-col gap-4 items-center">
-      <h3 class="text-lg font-semibold text-white">Overlay Burger</h3>
+      <h3 class="text-lg font-semibold text-cream">Overlay Burger</h3>
       <button class="burger burger-39" role="button" aria-label="Overlay Burger Icon" tabindex="0"><span></span><span></span><span></span></button>
       <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.burger-39 {
   position: relative;
@@ -702,7 +784,7 @@
     </div>
     <!-- Burger 40: Parallax Burger -->
     <div class="flex flex-col gap-4 items-center">
-      <h3 class="text-lg font-semibold text-white">Parallax Burger</h3>
+      <h3 class="text-lg font-semibold text-cream">Parallax Burger</h3>
       <button class="burger burger-40" role="button" aria-label="Parallax Burger Icon" tabindex="0"><span></span><span></span><span></span></button>
       <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.burger-40 {
   position: relative;
@@ -713,7 +795,7 @@
     </div>
     <!-- Burger 41: Quiet Burger -->
     <div class="flex flex-col gap-4 items-center">
-      <h3 class="text-lg font-semibold text-white">Quiet Burger</h3>
+      <h3 class="text-lg font-semibold text-cream">Quiet Burger</h3>
       <button class="burger burger-41" role="button" aria-label="Quiet Burger Icon" tabindex="0"><span></span><span></span><span></span></button>
       <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.burger-41 {
   position: relative;
@@ -724,7 +806,7 @@
     </div>
     <!-- Burger 42: Rotate Burger -->
     <div class="flex flex-col gap-4 items-center">
-      <h3 class="text-lg font-semibold text-white">Rotate Burger</h3>
+      <h3 class="text-lg font-semibold text-cream">Rotate Burger</h3>
       <button class="burger burger-42" role="button" aria-label="Rotate Burger Icon" tabindex="0"><span></span><span></span><span></span></button>
       <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.burger-42 {
   position: relative;
@@ -735,7 +817,7 @@
     </div>
     <!-- Burger 43: Swipe-Border Burger -->
     <div class="flex flex-col gap-4 items-center">
-      <h3 class="text-lg font-semibold text-white">Swipe-Border Burger</h3>
+      <h3 class="text-lg font-semibold text-cream">Swipe-Border Burger</h3>
       <button class="burger burger-43" role="button" aria-label="Swipe-Border Burger Icon" tabindex="0"><span></span><span></span><span></span></button>
       <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.burger-43 {
   position: relative;
@@ -756,7 +838,7 @@
     </div>
     <!-- Burger 44: Thermal Burger -->
     <div class="flex flex-col gap-4 items-center">
-      <h3 class="text-lg font-semibold text-white">Thermal Burger</h3>
+      <h3 class="text-lg font-semibold text-cream">Thermal Burger</h3>
       <button class="burger burger-44" role="button" aria-label="Thermal Burger Icon" tabindex="0"><span></span><span></span><span></span></button>
       <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.burger-44 {
   position: relative;
@@ -767,7 +849,7 @@
     </div>
     <!-- Burger 45: Unfolding Burger -->
     <div class="flex flex-col gap-4 items-center">
-      <h3 class="text-lg font-semibold text-white">Unfolding Burger</h3>
+      <h3 class="text-lg font-semibold text-cream">Unfolding Burger</h3>
       <button class="burger burger-45" role="button" aria-label="Unfolding Burger Icon" tabindex="0"><span></span><span></span><span></span></button>
       <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.burger-45 {
   position: relative;
@@ -786,7 +868,7 @@
     </div>
     <!-- Burger 46: Vortex Burger -->
     <div class="flex flex-col gap-4 items-center">
-      <h3 class="text-lg font-semibold text-white">Vortex Burger</h3>
+      <h3 class="text-lg font-semibold text-cream">Vortex Burger</h3>
       <button class="burger burger-46" role="button" aria-label="Vortex Burger Icon" tabindex="0"><span></span><span></span><span></span></button>
       <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.burger-46 {
   position: relative;
@@ -801,7 +883,7 @@
     </div>
     <!-- Burger 47: Wave Burger -->
     <div class="flex flex-col gap-4 items-center">
-      <h3 class="text-lg font-semibold text-white">Wave Burger</h3>
+      <h3 class="text-lg font-semibold text-cream">Wave Burger</h3>
       <button class="burger burger-47" role="button" aria-label="Wave Burger Icon" tabindex="0"><span></span><span></span><span></span></button>
       <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.burger-47 {
   position: relative;
@@ -817,7 +899,7 @@
     </div>
     <!-- Burger 48: Xtreme Burger -->
     <div class="flex flex-col gap-4 items-center">
-      <h3 class="text-lg font-semibold text-white">Xtreme Burger</h3>
+      <h3 class="text-lg font-semibold text-cream">Xtreme Burger</h3>
       <button class="burger burger-48" role="button" aria-label="Xtreme Burger Icon" tabindex="0"><span></span><span></span><span></span></button>
       <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.burger-48 {
   position: relative;
@@ -828,7 +910,7 @@
     </div>
     <!-- Burger 49: Yarn Burger -->
     <div class="flex flex-col gap-4 items-center">
-      <h3 class="text-lg font-semibold text-white">Yarn Burger</h3>
+      <h3 class="text-lg font-semibold text-cream">Yarn Burger</h3>
       <button class="burger burger-49" role="button" aria-label="Yarn Burger Icon" tabindex="0"><span></span><span></span><span></span></button>
       <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.burger-49 {
   position: relative;
@@ -840,7 +922,7 @@
     </div>
     <!-- Burger 50: Zipper Burger -->
     <div class="flex flex-col gap-4 items-center">
-      <h3 class="text-lg font-semibold text-white">Zipper Burger</h3>
+      <h3 class="text-lg font-semibold text-cream">Zipper Burger</h3>
       <button class="burger burger-50" role="button" aria-label="Zipper Burger Icon" tabindex="0"><span></span><span></span><span></span></button>
       <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.burger-50 {
   position: relative;
@@ -859,6 +941,110 @@
   transform: translateY(-12px) rotate(-45deg);
   background: #f97316;
 }</code></pre><button class="copy-btn mt-3 bg-blue-600 text-white px-3 py-1 rounded-full hover:bg-blue-700 text-sm" aria-label="Copy Zipper Burger Icon CSS">Copy</button></div>
+    </div>
+    <!-- Burger 51: Glassmorphic Burger -->
+    <div class="flex flex-col gap-4 items-center">
+      <h3 class="text-lg font-semibold text-cream">Glassmorphic Burger</h3>
+      <button class="burger burger-51" role="button" aria-label="Glassmorphic Burger" tabindex="0"><span></span><span></span><span></span></button>
+      <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.burger-51 {
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.12);
+  padding: 10px; border-radius: 8px;
+}</code></pre><button class="copy-btn mt-3 bg-blue-600 text-white px-3 py-1 rounded-full hover:bg-blue-700 text-sm" aria-label="Copy CSS">Copy</button></div>
+    </div>
+    <!-- Burger 52: Neumorphic Burger -->
+    <div class="flex flex-col gap-4 items-center">
+      <h3 class="text-lg font-semibold text-cream">Neumorphic Burger</h3>
+      <button class="burger burger-52" role="button" aria-label="Neumorphic Burger" tabindex="0"><span></span><span></span><span></span></button>
+      <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.burger-52 {
+  background: #1a1a1a;
+  box-shadow: 4px 4px 8px #0d0d0d, -4px -4px 8px #272727;
+  padding: 10px; border-radius: 12px;
+}</code></pre><button class="copy-btn mt-3 bg-blue-600 text-white px-3 py-1 rounded-full hover:bg-blue-700 text-sm" aria-label="Copy CSS">Copy</button></div>
+    </div>
+    <!-- Burger 53: Brutalist Burger -->
+    <div class="flex flex-col gap-4 items-center">
+      <h3 class="text-lg font-semibold text-cream">Brutalist Burger</h3>
+      <button class="burger burger-53" role="button" aria-label="Brutalist Burger" tabindex="0"><span></span><span></span><span></span></button>
+      <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.burger-53 {
+  background: #ff8c00;
+  border: 3px solid #0a0a0a;
+  box-shadow: 4px 4px 0 #0a0a0a;
+}</code></pre><button class="copy-btn mt-3 bg-blue-600 text-white px-3 py-1 rounded-full hover:bg-blue-700 text-sm" aria-label="Copy CSS">Copy</button></div>
+    </div>
+    <!-- Burger 54: Neon Burger -->
+    <div class="flex flex-col gap-4 items-center">
+      <h3 class="text-lg font-semibold text-cream">Neon Burger</h3>
+      <button class="burger burger-54" role="button" aria-label="Neon Burger" tabindex="0"><span></span><span></span><span></span></button>
+      <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.burger-54 {
+  background: #0a0a0a;
+  border: 1px solid #0ff;
+  box-shadow: 0 0 8px rgba(0,255,255,0.3);
+}</code></pre><button class="copy-btn mt-3 bg-blue-600 text-white px-3 py-1 rounded-full hover:bg-blue-700 text-sm" aria-label="Copy CSS">Copy</button></div>
+    </div>
+    <!-- Burger 55: Arrow Transform -->
+    <div class="flex flex-col gap-4 items-center">
+      <h3 class="text-lg font-semibold text-cream">Arrow Transform</h3>
+      <button class="burger burger-55" role="button" aria-label="Arrow Transform Burger" tabindex="0"><span></span><span></span><span></span></button>
+      <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.burger-55.open span:nth-child(1) {
+  transform: rotate(45deg) translate(2px,8px) scaleX(0.6);
+}
+.burger-55.open span:nth-child(3) {
+  transform: rotate(-45deg) translate(2px,-8px) scaleX(0.6);
+}</code></pre><button class="copy-btn mt-3 bg-blue-600 text-white px-3 py-1 rounded-full hover:bg-blue-700 text-sm" aria-label="Copy CSS">Copy</button></div>
+    </div>
+    <!-- Burger 56: Collapse Dot -->
+    <div class="flex flex-col gap-4 items-center">
+      <h3 class="text-lg font-semibold text-cream">Collapse Dot</h3>
+      <button class="burger burger-56" role="button" aria-label="Collapse Dot Burger" tabindex="0"><span></span><span></span><span></span></button>
+      <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.burger-56 span { background: #ff8c00; }
+.burger-56.open span {
+  width: 6px; height: 6px;
+  border-radius: 50%; margin: 0 auto;
+}</code></pre><button class="copy-btn mt-3 bg-blue-600 text-white px-3 py-1 rounded-full hover:bg-blue-700 text-sm" aria-label="Copy CSS">Copy</button></div>
+    </div>
+    <!-- Burger 57: Rotate Square -->
+    <div class="flex flex-col gap-4 items-center">
+      <h3 class="text-lg font-semibold text-cream">Rotate Square</h3>
+      <button class="burger burger-57" role="button" aria-label="Rotate Square Burger" tabindex="0"><span></span><span></span><span></span></button>
+      <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.burger-57.open {
+  transform: rotate(180deg);
+}
+.burger-57.open span:nth-child(1) {
+  transform: rotate(45deg) translate(5px,5px);
+}</code></pre><button class="copy-btn mt-3 bg-blue-600 text-white px-3 py-1 rounded-full hover:bg-blue-700 text-sm" aria-label="Copy CSS">Copy</button></div>
+    </div>
+    <!-- Burger 58: Pill Burger -->
+    <div class="flex flex-col gap-4 items-center">
+      <h3 class="text-lg font-semibold text-cream">Pill Burger</h3>
+      <button class="burger burger-58" role="button" aria-label="Pill Burger" tabindex="0"><span></span><span></span><span></span></button>
+      <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.burger-58 {
+  background: rgba(255,140,0,0.1);
+  border: 1px solid rgba(255,140,0,0.3);
+  border-radius: 50px; padding: 10px 14px;
+}</code></pre><button class="copy-btn mt-3 bg-blue-600 text-white px-3 py-1 rounded-full hover:bg-blue-700 text-sm" aria-label="Copy CSS">Copy</button></div>
+    </div>
+    <!-- Burger 59: Stagger Slide -->
+    <div class="flex flex-col gap-4 items-center">
+      <h3 class="text-lg font-semibold text-cream">Stagger Slide</h3>
+      <button class="burger burger-59" role="button" aria-label="Stagger Slide Burger" tabindex="0"><span></span><span></span><span></span></button>
+      <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.burger-59 span:nth-child(1) { transition-delay: 0s; }
+.burger-59 span:nth-child(2) { transition-delay: 0.1s; }
+.burger-59 span:nth-child(3) { transition-delay: 0.2s; }
+.burger-59.open span:nth-child(2) { transform: rotate(45deg); }</code></pre><button class="copy-btn mt-3 bg-blue-600 text-white px-3 py-1 rounded-full hover:bg-blue-700 text-sm" aria-label="Copy CSS">Copy</button></div>
+    </div>
+    <!-- Burger 60: Scale X -->
+    <div class="flex flex-col gap-4 items-center">
+      <h3 class="text-lg font-semibold text-cream">Scale X</h3>
+      <button class="burger burger-60" role="button" aria-label="Scale X Burger" tabindex="0"><span></span><span></span><span></span></button>
+      <div class="code-container"><pre class="bg-gray-900 text-white p-4 rounded-lg text-sm"><code>.burger-60.open span:nth-child(1) {
+  transform: scaleX(0.5) translateX(-8px);
+}
+.burger-60.open span:nth-child(2) { transform: scaleX(0); }
+.burger-60.open span:nth-child(3) {
+  transform: scaleX(0.5) translateX(8px);
+}</code></pre><button class="copy-btn mt-3 bg-blue-600 text-white px-3 py-1 rounded-full hover:bg-blue-700 text-sm" aria-label="Copy CSS">Copy</button></div>
     </div>
   </main>
   <footer class="text-center mt-12 text-gray-100">

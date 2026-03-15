@@ -1,4 +1,9 @@
 /* General Loader Styles */
+body {
+  background: #0a0a0a;
+  min-height: 100vh;
+  color: #ffffff;
+}
 .loader {
   display: flex;
   justify-content: center;
@@ -821,4 +826,171 @@
   0% { transform: scale(1); opacity: 1; }
   50% { transform: scale(1.5); opacity: 0.5; }
   100% { transform: scale(1); opacity: 1; }
+}
+/* === NEW STARTUP-STYLE LOADERS === */
+
+/* Loader 51: Glassmorphic Spinner */
+.loader-51 {
+  width: 50px; height: 50px;
+  border: 3px solid rgba(255, 255, 255, 0.1);
+  border-top-color: rgba(255, 140, 0, 0.8);
+  border-radius: 50%;
+  backdrop-filter: blur(8px);
+  animation: spin-51 1s linear infinite;
+}
+@keyframes spin-51 { 100% { transform: rotate(360deg); } }
+
+/* Loader 52: Neumorphic Pulse */
+.loader-52 {
+  width: 50px; height: 50px;
+  border-radius: 50%;
+  background: #1a1a1a;
+  box-shadow: 6px 6px 12px #0d0d0d, -6px -6px 12px #272727;
+  animation: neu-pulse 1.5s ease-in-out infinite;
+}
+@keyframes neu-pulse {
+  0%, 100% { box-shadow: 6px 6px 12px #0d0d0d, -6px -6px 12px #272727; }
+  50% { box-shadow: inset 4px 4px 8px #0d0d0d, inset -4px -4px 8px #272727; }
+}
+
+/* Loader 53: Aurora Ring */
+.loader-53 {
+  width: 50px; height: 50px;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  background: conic-gradient(from 0deg, transparent, #ff8c00, #764ba2, transparent) border-box;
+  -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: destination-out;
+  mask-composite: exclude;
+  animation: spin-51 1.2s linear infinite;
+}
+
+/* Loader 54: Brutalist Blocks */
+.loader-54 {
+  display: flex; gap: 4px;
+}
+.loader-54 span {
+  width: 12px; height: 12px;
+  background: #ff8c00;
+  border: 2px solid #0a0a0a;
+  animation: brutal-bounce 0.6s ease-in-out infinite alternate;
+}
+.loader-54 span:nth-child(2) { animation-delay: 0.2s; }
+.loader-54 span:nth-child(3) { animation-delay: 0.4s; }
+@keyframes brutal-bounce {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-12px); }
+}
+
+/* Loader 55: DNA Helix */
+.loader-55 {
+  display: flex; gap: 6px; align-items: center; height: 40px;
+}
+.loader-55 span {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: #ff8c00;
+  animation: dna-wave 1.2s ease-in-out infinite;
+}
+.loader-55 span:nth-child(2) { animation-delay: 0.15s; }
+.loader-55 span:nth-child(3) { animation-delay: 0.3s; }
+.loader-55 span:nth-child(4) { animation-delay: 0.45s; }
+.loader-55 span:nth-child(5) { animation-delay: 0.6s; }
+@keyframes dna-wave {
+  0%, 100% { transform: translateY(-10px); background: #ff8c00; }
+  50% { transform: translateY(10px); background: #764ba2; }
+}
+
+/* Loader 56: Neon Ring */
+.loader-56 {
+  width: 50px; height: 50px;
+  border: 2px solid rgba(0, 255, 255, 0.1);
+  border-top-color: #0ff;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+  animation: spin-51 1s linear infinite;
+}
+
+/* Loader 57: Morphing Shape */
+.loader-57 {
+  width: 40px; height: 40px;
+  background: #ff8c00;
+  animation: morph-load 2s ease-in-out infinite;
+}
+@keyframes morph-load {
+  0% { border-radius: 0; transform: rotate(0deg); }
+  25% { border-radius: 50% 0 50% 0; transform: rotate(90deg); }
+  50% { border-radius: 50%; transform: rotate(180deg); }
+  75% { border-radius: 0 50% 0 50%; transform: rotate(270deg); }
+  100% { border-radius: 0; transform: rotate(360deg); }
+}
+
+/* Loader 58: Skeleton Shimmer */
+.loader-58 {
+  width: 200px; height: 16px;
+  border-radius: 4px;
+  background: linear-gradient(110deg, #1a1a1a 30%, #2a2a2a 50%, #1a1a1a 70%);
+  background-size: 200% 100%;
+  animation: shimmer-load 1.5s linear infinite;
+}
+@keyframes shimmer-load {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* Loader 59: Orbit Dots */
+.loader-59 {
+  width: 50px; height: 50px;
+  position: relative;
+  animation: spin-51 2s linear infinite;
+}
+.loader-59::before, .loader-59::after {
+  content: '';
+  position: absolute;
+  width: 10px; height: 10px;
+  border-radius: 50%;
+}
+.loader-59::before {
+  top: 0; left: 50%;
+  transform: translateX(-50%);
+  background: #ff8c00;
+}
+.loader-59::after {
+  bottom: 0; left: 50%;
+  transform: translateX(-50%);
+  background: #764ba2;
+}
+
+/* Loader 60: Progress Bar */
+.loader-60 {
+  width: 200px; height: 4px;
+  background: #1a1a1a;
+  border-radius: 2px;
+  overflow: hidden;
+  position: relative;
+}
+.loader-60::after {
+  content: '';
+  position: absolute;
+  top: 0; left: -40%;
+  width: 40%; height: 100%;
+  background: linear-gradient(90deg, transparent, #ff8c00, transparent);
+  animation: progress-slide 1.5s ease-in-out infinite;
+}
+@keyframes progress-slide {
+  0% { left: -40%; }
+  100% { left: 100%; }
+}
+
+/* --- LIGHT MODE --- */
+[data-theme="light"] body { background: #f5f0e8; }
+[data-theme="light"] .component-card,
+[data-theme="light"] .flex.flex-col.gap-4.items-center {
+  background: transparent;
+}
+[data-theme="light"] [class*="loader-"] {
+  border-color: rgba(10,10,10,0.15);
+}
+[data-theme="light"] [class*="loader-"] span {
+  background: #1a1a1a;
 }

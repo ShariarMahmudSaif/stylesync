@@ -1,10 +1,15 @@
 /* General Button Styles */
+body {
+  background: #0a0a0a;
+  min-height: 100vh;
+  color: #ffffff;
+}
 button {
   padding: 10px 20px;
   border-radius: 4px;
   border: none;
   background: #3b82f6;
-  color: #fff;
+  color: #f5f0e8;
   font-family: 'Inter', sans-serif;
   font-size: 16px;
   cursor: pointer;
@@ -439,3 +444,210 @@ button:focus {
 .copy-btn {
   transition: background-color 0.3s ease-in-out;
 }
+/* === NEW STARTUP-STYLE BUTTONS === */
+
+/* Btn 51: Glassmorphic Button */
+.btn-51 {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #f5f0e8;
+  padding: 12px 28px;
+  transition: all 0.3s;
+}
+.btn-51:hover {
+  background: rgba(255, 140, 0, 0.2);
+  border-color: rgba(255, 140, 0, 0.5);
+  box-shadow: 0 8px 32px rgba(255, 140, 0, 0.15);
+}
+
+/* Btn 52: Neumorphic Button */
+.btn-52 {
+  background: #1a1a1a;
+  color: #f5f0e8;
+  border: none;
+  padding: 12px 28px;
+  box-shadow: 6px 6px 12px #0d0d0d, -6px -6px 12px #272727;
+  transition: all 0.2s;
+}
+.btn-52:hover {
+  box-shadow: 2px 2px 6px #0d0d0d, -2px -2px 6px #272727;
+}
+.btn-52:active {
+  box-shadow: inset 3px 3px 6px #0d0d0d, inset -3px -3px 6px #272727;
+}
+
+/* Btn 53: Aurora Gradient Button */
+.btn-53 {
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 300% 300%;
+  animation: aurora-btn 4s ease infinite;
+  color: #fff;
+  border: none;
+  padding: 12px 28px;
+  font-weight: 700;
+}
+@keyframes aurora-btn {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Btn 54: Brutalist CTA */
+.btn-54 {
+  background: #ff8c00;
+  color: #0a0a0a;
+  border: 3px solid #0a0a0a;
+  padding: 14px 32px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  box-shadow: 6px 6px 0 #0a0a0a;
+  transition: all 0.15s;
+}
+.btn-54:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: 9px 9px 0 #0a0a0a;
+}
+.btn-54:active {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0 #0a0a0a;
+}
+
+/* Btn 55: Magnetic Pull Button */
+.btn-55 {
+  background: transparent;
+  color: #ff8c00;
+  border: 2px solid #ff8c00;
+  padding: 12px 28px;
+  position: relative;
+  overflow: hidden;
+  transition: color 0.4s;
+}
+.btn-55::before {
+  content: '';
+  position: absolute;
+  top: 50%; left: 50%;
+  width: 0; height: 0;
+  background: #ff8c00;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.5s, height 0.5s;
+}
+.btn-55:hover::before {
+  width: 300px; height: 300px;
+}
+.btn-55:hover {
+  color: #0a0a0a;
+}
+
+/* Btn 56: Liquid Fill Button */
+.btn-56 {
+  background: transparent;
+  color: #f5f0e8;
+  border: 2px solid #f5f0e8;
+  padding: 12px 28px;
+  position: relative;
+  overflow: hidden;
+  transition: color 0.4s;
+}
+.btn-56::after {
+  content: '';
+  position: absolute;
+  bottom: -100%; left: 0;
+  width: 100%; height: 100%;
+  background: #f5f0e8;
+  transition: bottom 0.4s ease;
+}
+.btn-56:hover::after {
+  bottom: 0;
+}
+.btn-56:hover {
+  color: #0a0a0a;
+}
+
+/* Btn 57: Neon Outline Button */
+.btn-57 {
+  background: transparent;
+  color: #0ff;
+  border: 1px solid #0ff;
+  padding: 12px 28px;
+  text-shadow: 0 0 8px #0ff;
+  box-shadow: 0 0 8px rgba(0, 255, 255, 0.3);
+  transition: all 0.3s;
+}
+.btn-57:hover {
+  background: rgba(0, 255, 255, 0.1);
+  box-shadow: 0 0 16px rgba(0, 255, 255, 0.5), inset 0 0 16px rgba(0, 255, 255, 0.1);
+}
+
+/* Btn 58: Pill Gradient Button */
+.btn-58 {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: #fff;
+  border: none;
+  padding: 12px 32px;
+  border-radius: 50px;
+  font-weight: 600;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+  transition: all 0.3s;
+}
+.btn-58:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.5);
+}
+
+/* Btn 59: Split Hover Button */
+.btn-59 {
+  background: #1a1a1a;
+  color: #f5f0e8;
+  border: 2px solid #ff8c00;
+  padding: 12px 28px;
+  position: relative;
+  overflow: hidden;
+  transition: color 0.3s;
+}
+.btn-59::before, .btn-59::after {
+  content: '';
+  position: absolute;
+  width: 50%; height: 100%;
+  background: #ff8c00;
+  transition: transform 0.3s;
+}
+.btn-59::before { top: 0; left: 0; transform: translateY(-100%); }
+.btn-59::after { bottom: 0; right: 0; transform: translateY(100%); }
+.btn-59:hover::before { transform: translateY(0); }
+.btn-59:hover::after { transform: translateY(0); }
+.btn-59:hover { color: #0a0a0a; }
+
+/* Btn 60: Shimmer Button */
+.btn-60 {
+  background: linear-gradient(110deg, #1a1a1a 40%, #2a2a2a 50%, #1a1a1a 60%);
+  background-size: 200% 100%;
+  color: #f5f0e8;
+  border: 1px solid rgba(255, 140, 0, 0.3);
+  padding: 12px 28px;
+  animation: shimmer-btn 3s linear infinite;
+}
+@keyframes shimmer-btn {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* --- LIGHT MODE --- */
+[data-theme="light"] body { background: #f5f0e8; }
+[data-theme="light"] .btn-container {
+  background: #fff8ee !important;
+  border-color: rgba(10,10,10,0.12) !important;
+}
+[data-theme="light"] button[class*="btn-"] {
+  color: #f5f0e8;
+}
+[data-theme="light"] .btn-51 { background: rgba(0,0,0,0.08) !important; border-color: rgba(0,0,0,0.12) !important; color: #1a1a1a !important; }
+[data-theme="light"] .btn-52 { background: #e8e0d4 !important; box-shadow: 3px 3px 6px #ccc, -3px -3px 6px #fff !important; color: #1a1a1a !important; }
+[data-theme="light"] .btn-55 { border-color: #1a1a1a !important; color: #1a1a1a !important; }
+[data-theme="light"] .btn-56 { border-color: #1a1a1a !important; color: #1a1a1a !important; }
+[data-theme="light"] .btn-57 { border-color: #1a1a1a !important; color: #1a1a1a !important; }
+[data-theme="light"] .btn-59 { background: #1a1a1a !important; }
+[data-theme="light"] .btn-60 { background: #1a1a1a !important; }

@@ -1,28 +1,34 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>StyleSync</title>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap"
-    rel="stylesheet"
-  />
+  <title>StyleSync — Brutalist UI Toolkit</title>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <!-- LOADER -->
-  <div id="loader" class="loader glass">
-    <div class="spinner"></div>
+  <div id="loader" class="loader">
+    <div class="loader-inner">
+      <div class="loader-block"></div>
+      <div class="loader-block"></div>
+      <div class="loader-block"></div>
+      <span class="loader-text">STYLESYNC</span>
+    </div>
   </div>
 
   <!-- BACK-TO-TOP -->
-  <button id="backToTop" aria-label="Back to top">↑</button>
+  <button id="backToTop" class="back-to-top" aria-label="Back to top">
+    <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 3L3 12h4v5h6v-5h4L10 3z" fill="currentColor"/></svg>
+  </button>
 
   <!-- HEADER + NAV -->
-  <header id="site-header" class="glass">
+  <header id="site-header">
     <nav class="navbar" role="navigation" aria-label="Main navigation">
-      <div class="logo">Style</div>
+      <a href="#" class="logo">
+        <span class="logo-bracket">[</span>Style<span class="logo-accent">Sync</span><span class="logo-bracket">]</span>
+      </a>
       <ul class="nav-links">
         <li><a href="div/div.html">Div</a></li>
         <li><a href="button/button.html">Buttons</a></li>
@@ -34,46 +40,29 @@
         <li><a href="burger/burger.html">Burger</a></li>
         <li><a href="text/text.html">Text</a></li>
         <li><a href="modal/modal.html">Modal</a></li>
-        <li><a href="#cta">Contribute</a></li>
-        <li>
-          <a
-            href="https://github.com/shariarmahmudsaif/stylesync"
-            target="_blank"
-            rel="noopener"
-            >GitHub</a
-          >
-        </li>
-        <li><button id="settingsBtn" class="settings-btn">⚙️ Options</button></li>
+        <li><a href="#library" class="nav-library">Library</a></li>
       </ul>
-      <button
-        id="theme-toggle"
-        class="theme-toggle"
-        aria-label="Toggle light/dark theme"
-      >
-        🌙
-      </button>
-      <button
-        id="burger"
-        class="burger"
-        aria-label="Toggle mobile menu"
-        aria-expanded="false"
-      >
-        <canvas id="burgerCanvas"></canvas>
-        <svg viewBox="0 0 100 100" width="32" height="32">
-          <path class="line line1" d="M20,30 H80" />
-          <path class="line line2" d="M20,50 H80" />
-          <path class="line line3" d="M20,70 H80" />
-        </svg>
-      </button>
+      <div class="nav-actions">
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+          <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+          <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+        </button>
+        <a href="https://github.com/shariarmahmudsaif/stylesync" target="_blank" rel="noopener" class="btn btn-outline btn-sm" aria-label="GitHub">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+          GitHub
+        </a>
+        <button id="burger" class="burger" aria-label="Toggle mobile menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
     </nav>
   </header>
 
   <!-- MOBILE FULLSCREEN MENU -->
-  <div id="mobile-menu" class="mobile-menu glass" aria-hidden="true">
-    <button id="mobile-close" class="mobile-close" aria-label="Close menu">
-      &times;
-    </button>
-    <ul>
+  <div id="mobile-menu" class="mobile-menu" aria-hidden="true">
+    <div class="mobile-menu-inner">
+      <button id="mobile-close" class="mobile-close" aria-label="Close menu">&times;</button>
+      <ul>
         <li><a href="div/div.html">Div</a></li>
         <li><a href="button/button.html">Buttons</a></li>
         <li><a href="inputs/input.html">Inputs</a></li>
@@ -84,162 +73,915 @@
         <li><a href="burger/burger.html">Burger</a></li>
         <li><a href="text/text.html">Text</a></li>
         <li><a href="modal/modal.html">Modal</a></li>
-        <li><a href="#cta">Contribute</a></li>
-      <li>
-        <a
-          href="https://github.com/shariarmahmudsaif/stylesync"
-          target="_blank"
-          rel="noopener"
-          >GitHub</a
-        >
-      </li>
-    </ul>
-  </div>
-
-  <!-- SETTINGS MODAL -->
-  <div id="settingsModal" class="settings-modal glass" aria-hidden="true">
-    <div class="settings-content">
-      <h3>⚙️ Options</h3>
-      <ul class="settings-list">
-        <li><label><input type="checkbox" data-opt="burger" checked /> Liquid burger</label></li>
-        <li><label><input type="checkbox" data-opt="nav" checked /> Shrink-on-scroll nav</label></li>
-        <li><label><input type="checkbox" data-opt="textAnim" checked /> Text animations</label></li>
-        <li><label><input type="checkbox" data-opt="fonts" checked /> Alternate font</label></li>
-        <li><label><input type="checkbox" data-opt="buttons" checked /> Canvas buttons</label></li>
-        <li><label><input type="checkbox" data-opt="div" checked /> Div hover effects</label></li>
-        <li><label><input type="checkbox" data-opt="hover" checked /> Link hover glow</label></li>
-        <li><label><input type="checkbox" data-opt="inputs" checked /> Glass inputs</label></li>
-        <li><label><input type="checkbox" data-opt="loading" checked /> Loader screen</label></li>
-        <li><label><input type="checkbox" data-opt="modal" checked /> modal</label></li>
       </ul>
-      <button id="closeSettings" class="btn btn-primary">Close</button>
-    </div>
-  </div>
-
-  <!-- SAMPLE MODAL -->
-  <div id="sampleModal" class="modal glass" aria-hidden="true">
-    <div class="modal-content glass">
-      <h3>Modal</h3>
-      <p>This is a Dev Front-end Resource Pack. Close me.</p>
-      <button id="closeSampleModal" class="btn btn-primary">Close</button>
+      <a href="https://github.com/shariarmahmudsaif/stylesync" target="_blank" rel="noopener" class="btn btn-primary btn-block">View on GitHub</a>
     </div>
   </div>
 
   <main>
     <!-- HERO -->
-    <section id="hero" class="hero glass">
+    <section id="hero" class="hero">
       <canvas id="heroCanvas" aria-hidden="true"></canvas>
       <div class="hero-content">
-        <h1>Project StyleSync Web UI Helper</h1>
-        <p>StyleSync is an open-source toolkit of sleek, responsive UI components and interactive effects designed for modern web projects.</p>
-        <a href="#cta" class="btn btn-primary" data-tooltip="Get started">Get Started</a>
+        <div class="hero-badge">OPEN SOURCE UI TOOLKIT</div>
+        <h1><span class="hero-line">Style</span><span class="hero-line accent">Sync</span></h1>
+        <p class="hero-desc">Sleek, responsive UI components and interactive effects — brutalist aesthetics meets glassmorphic design for modern web projects.</p>
+        <div class="hero-actions">
+          <a href="#showcases" class="btn btn-primary btn-lg">Explore Components</a>
+          <a href="https://github.com/shariarmahmudsaif/stylesync" target="_blank" rel="noopener" class="btn btn-outline btn-lg">View Source</a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat"><span class="stat-num">10</span><span class="stat-label">Categories</span></div>
+          <div class="stat"><span class="stat-num">588</span><span class="stat-label">Components</span></div>
+          <div class="stat"><span class="stat-num">0</span><span class="stat-label">Dependencies</span></div>
+        </div>
+      </div>
+      <div class="hero-grid-overlay" aria-hidden="true"></div>
+    </section>
+
+    <!-- SHOWCASES -->
+    <section id="showcases" class="section showcase-section">
+      <div class="section-header">
+        <span class="section-tag">COMPONENTS</span>
+        <h2>Component Showcases</h2>
+        <p class="section-desc">Browse our collection of handcrafted UI elements. Each category includes 50+ variations.</p>
+      </div>
+
+      <div class="showcase-grid">
+        <a href="div/div.html" class="showcase-card" data-category="div">
+          <div class="showcase-preview">
+            <div class="mini-div mini-1"></div>
+            <div class="mini-div mini-2"></div>
+            <div class="mini-div mini-3"></div>
+          </div>
+          <div class="showcase-info">
+            <h3>Div Effects</h3>
+            <p>Neon glows, shape morphs, gradients, ripples & pulse animations.</p>
+            <span class="showcase-count">50 effects</span>
+          </div>
+        </a>
+
+        <a href="button/button.html" class="showcase-card" data-category="button">
+          <div class="showcase-preview">
+            <button class="mini-btn mini-btn-1" tabindex="-1">Click</button>
+            <button class="mini-btn mini-btn-2" tabindex="-1">Hover</button>
+            <button class="mini-btn mini-btn-3" tabindex="-1">Press</button>
+          </div>
+          <div class="showcase-info">
+            <h3>Buttons</h3>
+            <p>Ripple, neon, gradient, canvas & glassmorphic button styles.</p>
+            <span class="showcase-count">50 styles</span>
+          </div>
+        </a>
+
+        <a href="inputs/input.html" class="showcase-card" data-category="inputs">
+          <div class="showcase-preview">
+            <div class="mini-input"></div>
+            <div class="mini-input active"></div>
+          </div>
+          <div class="showcase-info">
+            <h3>Inputs</h3>
+            <p>Glass, floating-label, underline & bordered input field designs.</p>
+            <span class="showcase-count">50 designs</span>
+          </div>
+        </a>
+
+        <a href="font/font.html" class="showcase-card" data-category="font">
+          <div class="showcase-preview">
+            <span class="mini-font f1">Aa</span>
+            <span class="mini-font f2">Bb</span>
+            <span class="mini-font f3">Cc</span>
+          </div>
+          <div class="showcase-info">
+            <h3>Fonts</h3>
+            <p>Typography showcases with unique font pairings and text treatments.</p>
+            <span class="showcase-count">50 pairings</span>
+          </div>
+        </a>
+
+        <a href="hover/hover.html" class="showcase-card" data-category="hover">
+          <div class="showcase-preview">
+            <div class="mini-hover-box">
+              <div class="mini-hover-fill"></div>
+            </div>
+          </div>
+          <div class="showcase-info">
+            <h3>Hover Effects</h3>
+            <p>Interactive hover states, underlines, scales & color transitions.</p>
+            <span class="showcase-count">50 effects</span>
+          </div>
+        </a>
+
+        <a href="loading/load.html" class="showcase-card" data-category="loading">
+          <div class="showcase-preview">
+            <div class="mini-spinner"></div>
+          </div>
+          <div class="showcase-info">
+            <h3>Loading</h3>
+            <p>Spinners, progress bars, skeleton screens & pulse loaders.</p>
+            <span class="showcase-count">50 animations</span>
+          </div>
+        </a>
+
+        <a href="nav/nav.html" class="showcase-card" data-category="nav">
+          <div class="showcase-preview">
+            <div class="mini-nav">
+              <div class="mini-nav-logo"></div>
+              <div class="mini-nav-links"><span></span><span></span><span></span></div>
+            </div>
+          </div>
+          <div class="showcase-info">
+            <h3>Navbars</h3>
+            <p>Sticky, transparent, glassmorphic & animated navigation bars.</p>
+            <span class="showcase-count">38 layouts</span>
+          </div>
+        </a>
+
+        <a href="burger/burger.html" class="showcase-card" data-category="burger">
+          <div class="showcase-preview">
+            <div class="mini-burger"><span></span><span></span><span></span></div>
+          </div>
+          <div class="showcase-info">
+            <h3>Burger Menus</h3>
+            <p>Animated hamburger icons with morphing, rotation & liquid effects.</p>
+            <span class="showcase-count">50 animations</span>
+          </div>
+        </a>
+
+        <a href="text/text.html" class="showcase-card" data-category="text">
+          <div class="showcase-preview">
+            <span class="mini-text-anim">Text</span>
+          </div>
+          <div class="showcase-info">
+            <h3>Text Animations</h3>
+            <p>Typewriter, glitch, fade, wave & scramble text effects.</p>
+            <span class="showcase-count">50 animations</span>
+          </div>
+        </a>
+
+        <a href="modal/modal.html" class="showcase-card" data-category="modal">
+          <div class="showcase-preview">
+            <div class="mini-modal">
+              <div class="mini-modal-bar"></div>
+              <div class="mini-modal-body"></div>
+            </div>
+          </div>
+          <div class="showcase-info">
+            <h3>Modals</h3>
+            <p>Dialog boxes, bottom sheets, fullscreen & glassmorphic overlays.</p>
+            <span class="showcase-count">50 styles</span>
+          </div>
+        </a>
       </div>
     </section>
 
-    <!-- WAVE DIVIDER -->
-    <div class="divider">
-      <svg viewBox="0 0 1440 100" preserveAspectRatio="none">
-        <defs>
-          <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" stop-color="#ff0055"/>
-            <stop offset="100%" stop-color="#5500ff"/>
-          </linearGradient>
-        </defs>
-        <path
-          d="M0,100 C360,0 1080,200 1440,100 L1440,0 L0,0 Z"
-          fill="url(#grad1)"
-        />
-      </svg>
-    </div>
+    <!-- FULL COMPONENT LIBRARY — 588 Components -->
+    <section id="library" class="section library-section">
+      <div class="section-header">
+        <span class="section-tag">FULL LIBRARY</span>
+        <h2>588 Components</h2>
+        <p class="section-desc">Every component at a glance. Click any item to jump to its live demo.</p>
+      </div>
 
-    <!-- DIV EFFECTS -->
-    <section id="div-effects" class="section div-effects glass">
-      <h2>Div Effects</h2>
-      <div class="effects-grid">
-        <div class="effect-card neon-glow" tabindex="0" aria-label="Neon Glow">Neon Glow</div>
-        <div class="effect-card gradient-fade" tabindex="0" aria-label="Gradient Fade">Gradient Fade</div>
-        <div class="effect-card pulse-effect" tabindex="0" aria-label="Pulse">Pulse</div>
-        <div class="effect-card shape-morph" tabindex="0" aria-label="Shape Morph">Shape Morph</div>
-        <div class="effect-card ripple-effect" tabindex="0" aria-label="Ripple">Ripple</div>
+      <!-- Filter Bar -->
+      <div class="library-filter">
+        <button class="filter-btn active" data-filter="all">All <span class="filter-count">588</span></button>
+        <button class="filter-btn" data-filter="div">Div <span class="filter-count">60</span></button>
+        <button class="filter-btn" data-filter="button">Buttons <span class="filter-count">60</span></button>
+        <button class="filter-btn" data-filter="input">Inputs <span class="filter-count">60</span></button>
+        <button class="filter-btn" data-filter="font">Fonts <span class="filter-count">60</span></button>
+        <button class="filter-btn" data-filter="hover">Hover <span class="filter-count">60</span></button>
+        <button class="filter-btn" data-filter="loading">Loading <span class="filter-count">60</span></button>
+        <button class="filter-btn" data-filter="nav">Nav <span class="filter-count">48</span></button>
+        <button class="filter-btn" data-filter="burger">Burger <span class="filter-count">60</span></button>
+        <button class="filter-btn" data-filter="text">Text <span class="filter-count">60</span></button>
+        <button class="filter-btn" data-filter="modal">Modal <span class="filter-count">60</span></button>
+      </div>
+
+      <div class="library-grid" id="libraryGrid">
+        <div class="lib-category" data-cat="div">Div Effects — 60</div>
+        <a href="div/div.html#1" class="lib-item" data-cat="div"><span class="lib-num">01</span>Accordion Reveal</a>
+        <a href="div/div.html#2" class="lib-item" data-cat="div"><span class="lib-num">02</span>Blur Reveal</a>
+        <a href="div/div.html#3" class="lib-item" data-cat="div"><span class="lib-num">03</span>Card Stack</a>
+        <a href="div/div.html#4" class="lib-item" data-cat="div"><span class="lib-num">04</span>Dynamic Grid</a>
+        <a href="div/div.html#5" class="lib-item" data-cat="div"><span class="lib-num">05</span>Elastic Expand</a>
+        <a href="div/div.html#6" class="lib-item" data-cat="div"><span class="lib-num">06</span>Fade-In Scroll</a>
+        <a href="div/div.html#7" class="lib-item" data-cat="div"><span class="lib-num">07</span>Glass Panel</a>
+        <a href="div/div.html#8" class="lib-item" data-cat="div"><span class="lib-num">08</span>Hover Morph</a>
+        <a href="div/div.html#9" class="lib-item" data-cat="div"><span class="lib-num">09</span>Interactive Depth</a>
+        <a href="div/div.html#10" class="lib-item" data-cat="div"><span class="lib-num">10</span>Jelly Bounce</a>
+        <a href="div/div.html#11" class="lib-item" data-cat="div"><span class="lib-num">11</span>Kinetic Spark</a>
+        <a href="div/div.html#12" class="lib-item" data-cat="div"><span class="lib-num">12</span>Layered Parallax</a>
+        <a href="div/div.html#13" class="lib-item" data-cat="div"><span class="lib-num">13</span>Neon Border</a>
+        <a href="div/div.html#14" class="lib-item" data-cat="div"><span class="lib-num">14</span>Opacity Reveal</a>
+        <a href="div/div.html#15" class="lib-item" data-cat="div"><span class="lib-num">15</span>Ripple Click</a>
+        <a href="div/div.html#16" class="lib-item" data-cat="div"><span class="lib-num">16</span>Skewed Layout</a>
+        <a href="div/div.html#17" class="lib-item" data-cat="div"><span class="lib-num">17</span>Split Reveal</a>
+        <a href="div/div.html#18" class="lib-item" data-cat="div"><span class="lib-num">18</span>Wave Divider</a>
+        <a href="div/div.html#19" class="lib-item" data-cat="div"><span class="lib-num">19</span>Zoom Hover</a>
+        <a href="div/div.html#20" class="lib-item" data-cat="div"><span class="lib-num">20</span>Z-Index Flip</a>
+        <a href="div/div.html#21" class="lib-item" data-cat="div"><span class="lib-num">21</span>Floating Card</a>
+        <a href="div/div.html#22" class="lib-item" data-cat="div"><span class="lib-num">22</span>Clip-Path Shape</a>
+        <a href="div/div.html#23" class="lib-item" data-cat="div"><span class="lib-num">23</span>SVG Mask Reveal</a>
+        <a href="div/div.html#24" class="lib-item" data-cat="div"><span class="lib-num">24</span>Hover Shadow-Drop</a>
+        <a href="div/div.html#25" class="lib-item" data-cat="div"><span class="lib-num">25</span>Textured Backdrop</a>
+        <a href="div/div.html#26" class="lib-item" data-cat="div"><span class="lib-num">26</span>Perspective Tilt</a>
+        <a href="div/div.html#27" class="lib-item" data-cat="div"><span class="lib-num">27</span>Gradient Overlay</a>
+        <a href="div/div.html#28" class="lib-item" data-cat="div"><span class="lib-num">28</span>Magnetic Pull</a>
+        <a href="div/div.html#29" class="lib-item" data-cat="div"><span class="lib-num">29</span>Starburst Hover</a>
+        <a href="div/div.html#30" class="lib-item" data-cat="div"><span class="lib-num">30</span>Chromatic Aberration</a>
+        <a href="div/div.html#31" class="lib-item" data-cat="div"><span class="lib-num">31</span>Glass Glow Panel</a>
+        <a href="div/div.html#32" class="lib-item" data-cat="div"><span class="lib-num">32</span>Bounce-In</a>
+        <a href="div/div.html#33" class="lib-item" data-cat="div"><span class="lib-num">33</span>Slide-Down Reveal</a>
+        <a href="div/div.html#34" class="lib-item" data-cat="div"><span class="lib-num">34</span>Elastic Constraint</a>
+        <a href="div/div.html#35" class="lib-item" data-cat="div"><span class="lib-num">35</span>Color Flip</a>
+        <a href="div/div.html#36" class="lib-item" data-cat="div"><span class="lib-num">36</span>Particle Background</a>
+        <a href="div/div.html#37" class="lib-item" data-cat="div"><span class="lib-num">37</span>Noise Texture</a>
+        <a href="div/div.html#38" class="lib-item" data-cat="div"><span class="lib-num">38</span>Video Background</a>
+        <a href="div/div.html#39" class="lib-item" data-cat="div"><span class="lib-num">39</span>Parallax Layered</a>
+        <a href="div/div.html#40" class="lib-item" data-cat="div"><span class="lib-num">40</span>Morphing Shape</a>
+        <a href="div/div.html#41" class="lib-item" data-cat="div"><span class="lib-num">41</span>CSS Grid Reflow</a>
+        <a href="div/div.html#42" class="lib-item" data-cat="div"><span class="lib-num">42</span>SVG Line Draw</a>
+        <a href="div/div.html#43" class="lib-item" data-cat="div"><span class="lib-num">43</span>Crossfade Image</a>
+        <a href="div/div.html#44" class="lib-item" data-cat="div"><span class="lib-num">44</span>Hostile Border</a>
+        <a href="div/div.html#45" class="lib-item" data-cat="div"><span class="lib-num">45</span>Neon Glow</a>
+        <a href="div/div.html#46" class="lib-item" data-cat="div"><span class="lib-num">46</span>Thermal Imagery</a>
+        <a href="div/div.html#47" class="lib-item" data-cat="div"><span class="lib-num">47</span>Mirrored Hover</a>
+        <a href="div/div.html#48" class="lib-item" data-cat="div"><span class="lib-num">48</span>Retro Scanline</a>
+        <a href="div/div.html#49" class="lib-item" data-cat="div"><span class="lib-num">49</span>Vignette Frame</a>
+        <a href="div/div.html#50" class="lib-item" data-cat="div"><span class="lib-num">50</span>Hover Canvas</a>
+        <a href="div/div.html#51" class="lib-item" data-cat="div"><span class="lib-num">51</span>Glassmorphic Card</a>
+        <a href="div/div.html#52" class="lib-item" data-cat="div"><span class="lib-num">52</span>Neumorphic Box</a>
+        <a href="div/div.html#53" class="lib-item" data-cat="div"><span class="lib-num">53</span>Aurora Gradient</a>
+        <a href="div/div.html#54" class="lib-item" data-cat="div"><span class="lib-num">54</span>Brutalist Block</a>
+        <a href="div/div.html#55" class="lib-item" data-cat="div"><span class="lib-num">55</span>Bento Cell</a>
+        <a href="div/div.html#56" class="lib-item" data-cat="div"><span class="lib-num">56</span>Cyberpunk Neon</a>
+        <a href="div/div.html#57" class="lib-item" data-cat="div"><span class="lib-num">57</span>3D Flip Card</a>
+        <a href="div/div.html#58" class="lib-item" data-cat="div"><span class="lib-num">58</span>Grain Texture</a>
+        <a href="div/div.html#59" class="lib-item" data-cat="div"><span class="lib-num">59</span>Morphing Blob</a>
+        <a href="div/div.html#60" class="lib-item" data-cat="div"><span class="lib-num">60</span>Holographic</a>
+
+        <div class="lib-category" data-cat="button">Buttons — 60</div>
+        <a href="button/button.html#1" class="lib-item" data-cat="button"><span class="lib-num">01</span>Aura Glow</a>
+        <a href="button/button.html#2" class="lib-item" data-cat="button"><span class="lib-num">02</span>Border Draw</a>
+        <a href="button/button.html#3" class="lib-item" data-cat="button"><span class="lib-num">03</span>Conic Gradient</a>
+        <a href="button/button.html#4" class="lib-item" data-cat="button"><span class="lib-num">04</span>Flip Text</a>
+        <a href="button/button.html#5" class="lib-item" data-cat="button"><span class="lib-num">05</span>Gooey</a>
+        <a href="button/button.html#6" class="lib-item" data-cat="button"><span class="lib-num">06</span>Hover Lift</a>
+        <a href="button/button.html#7" class="lib-item" data-cat="button"><span class="lib-num">07</span>Icon Slide</a>
+        <a href="button/button.html#8" class="lib-item" data-cat="button"><span class="lib-num">08</span>Jelly Press</a>
+        <a href="button/button.html#9" class="lib-item" data-cat="button"><span class="lib-num">09</span>Liquid Fill</a>
+        <a href="button/button.html#10" class="lib-item" data-cat="button"><span class="lib-num">10</span>Morphing</a>
+        <a href="button/button.html#11" class="lib-item" data-cat="button"><span class="lib-num">11</span>Neon Flicker</a>
+        <a href="button/button.html#12" class="lib-item" data-cat="button"><span class="lib-num">12</span>Outline Swipe</a>
+        <a href="button/button.html#13" class="lib-item" data-cat="button"><span class="lib-num">13</span>Ripple</a>
+        <a href="button/button.html#14" class="lib-item" data-cat="button"><span class="lib-num">14</span>Shadow Pulse</a>
+        <a href="button/button.html#15" class="lib-item" data-cat="button"><span class="lib-num">15</span>Stretch Hover</a>
+        <a href="button/button.html#16" class="lib-item" data-cat="button"><span class="lib-num">16</span>Tilt</a>
+        <a href="button/button.html#17" class="lib-item" data-cat="button"><span class="lib-num">17</span>Underline Reveal</a>
+        <a href="button/button.html#18" class="lib-item" data-cat="button"><span class="lib-num">18</span>Wave Hover</a>
+        <a href="button/button.html#19" class="lib-item" data-cat="button"><span class="lib-num">19</span>Zoom Click</a>
+        <a href="button/button.html#20" class="lib-item" data-cat="button"><span class="lib-num">20</span>Zebra Stripe</a>
+        <a href="button/button.html#21" class="lib-item" data-cat="button"><span class="lib-num">21</span>Bevel Press</a>
+        <a href="button/button.html#22" class="lib-item" data-cat="button"><span class="lib-num">22</span>Color Warp</a>
+        <a href="button/button.html#23" class="lib-item" data-cat="button"><span class="lib-num">23</span>Disco Light</a>
+        <a href="button/button.html#24" class="lib-item" data-cat="button"><span class="lib-num">24</span>Elastic Orbit</a>
+        <a href="button/button.html#25" class="lib-item" data-cat="button"><span class="lib-num">25</span>Fade-In</a>
+        <a href="button/button.html#26" class="lib-item" data-cat="button"><span class="lib-num">26</span>Ghost</a>
+        <a href="button/button.html#27" class="lib-item" data-cat="button"><span class="lib-num">27</span>Hover Jello</a>
+        <a href="button/button.html#28" class="lib-item" data-cat="button"><span class="lib-num">28</span>Iconic Pop</a>
+        <a href="button/button.html#29" class="lib-item" data-cat="button"><span class="lib-num">29</span>Light Brush</a>
+        <a href="button/button.html#30" class="lib-item" data-cat="button"><span class="lib-num">30</span>Magnetic</a>
+        <a href="button/button.html#31" class="lib-item" data-cat="button"><span class="lib-num">31</span>Pulse Ring</a>
+        <a href="button/button.html#32" class="lib-item" data-cat="button"><span class="lib-num">32</span>Quantum</a>
+        <a href="button/button.html#33" class="lib-item" data-cat="button"><span class="lib-num">33</span>Radiant Flare</a>
+        <a href="button/button.html#34" class="lib-item" data-cat="button"><span class="lib-num">34</span>Spiral</a>
+        <a href="button/button.html#35" class="lib-item" data-cat="button"><span class="lib-num">35</span>Stop Motion</a>
+        <a href="button/button.html#36" class="lib-item" data-cat="button"><span class="lib-num">36</span>Triple Border</a>
+        <a href="button/button.html#37" class="lib-item" data-cat="button"><span class="lib-num">37</span>UV Glow</a>
+        <a href="button/button.html#38" class="lib-item" data-cat="button"><span class="lib-num">38</span>Vibrate</a>
+        <a href="button/button.html#39" class="lib-item" data-cat="button"><span class="lib-num">39</span>Wink</a>
+        <a href="button/button.html#40" class="lib-item" data-cat="button"><span class="lib-num">40</span>X-Ray</a>
+        <a href="button/button.html#41" class="lib-item" data-cat="button"><span class="lib-num">41</span>Yen</a>
+        <a href="button/button.html#42" class="lib-item" data-cat="button"><span class="lib-num">42</span>Zigzag Border</a>
+        <a href="button/button.html#43" class="lib-item" data-cat="button"><span class="lib-num">43</span>Yarn</a>
+        <a href="button/button.html#44" class="lib-item" data-cat="button"><span class="lib-num">44</span>Zipper</a>
+        <a href="button/button.html#45" class="lib-item" data-cat="button"><span class="lib-num">45</span>Flame</a>
+        <a href="button/button.html#46" class="lib-item" data-cat="button"><span class="lib-num">46</span>Frost</a>
+        <a href="button/button.html#47" class="lib-item" data-cat="button"><span class="lib-num">47</span>Glass</a>
+        <a href="button/button.html#48" class="lib-item" data-cat="button"><span class="lib-num">48</span>Hologram</a>
+        <a href="button/button.html#49" class="lib-item" data-cat="button"><span class="lib-num">49</span>Ink Spread</a>
+        <a href="button/button.html#50" class="lib-item" data-cat="button"><span class="lib-num">50</span>Kinetic</a>
+        <a href="button/button.html#51" class="lib-item" data-cat="button"><span class="lib-num">51</span>Glassmorphic</a>
+        <a href="button/button.html#52" class="lib-item" data-cat="button"><span class="lib-num">52</span>Neumorphic</a>
+        <a href="button/button.html#53" class="lib-item" data-cat="button"><span class="lib-num">53</span>Aurora Gradient</a>
+        <a href="button/button.html#54" class="lib-item" data-cat="button"><span class="lib-num">54</span>Brutalist CTA</a>
+        <a href="button/button.html#55" class="lib-item" data-cat="button"><span class="lib-num">55</span>Magnetic Pull</a>
+        <a href="button/button.html#56" class="lib-item" data-cat="button"><span class="lib-num">56</span>Liquid Fill</a>
+        <a href="button/button.html#57" class="lib-item" data-cat="button"><span class="lib-num">57</span>Neon Outline</a>
+        <a href="button/button.html#58" class="lib-item" data-cat="button"><span class="lib-num">58</span>Pill Gradient</a>
+        <a href="button/button.html#59" class="lib-item" data-cat="button"><span class="lib-num">59</span>Split Hover</a>
+        <a href="button/button.html#60" class="lib-item" data-cat="button"><span class="lib-num">60</span>Shimmer</a>
+
+        <div class="lib-category" data-cat="input">Inputs — 60</div>
+        <a href="inputs/input.html#1" class="lib-item" data-cat="input"><span class="lib-num">01</span>Floating Label</a>
+        <a href="inputs/input.html#2" class="lib-item" data-cat="input"><span class="lib-num">02</span>Underline Slide</a>
+        <a href="inputs/input.html#3" class="lib-item" data-cat="input"><span class="lib-num">03</span>Glass Input</a>
+        <a href="inputs/input.html#4" class="lib-item" data-cat="input"><span class="lib-num">04</span>Neon Border</a>
+        <a href="inputs/input.html#5" class="lib-item" data-cat="input"><span class="lib-num">05</span>Material Fill</a>
+        <a href="inputs/input.html#6" class="lib-item" data-cat="input"><span class="lib-num">06</span>Gradient Border</a>
+        <a href="inputs/input.html#7" class="lib-item" data-cat="input"><span class="lib-num">07</span>Pulse Focus</a>
+        <a href="inputs/input.html#8" class="lib-item" data-cat="input"><span class="lib-num">08</span>Shake Error</a>
+        <a href="inputs/input.html#9" class="lib-item" data-cat="input"><span class="lib-num">09</span>Expand Width</a>
+        <a href="inputs/input.html#10" class="lib-item" data-cat="input"><span class="lib-num">10</span>Bordered Thick</a>
+        <a href="inputs/input.html#11" class="lib-item" data-cat="input"><span class="lib-num">11</span>Icon Prefix</a>
+        <a href="inputs/input.html#12" class="lib-item" data-cat="input"><span class="lib-num">12</span>Tag Input</a>
+        <a href="inputs/input.html#13" class="lib-item" data-cat="input"><span class="lib-num">13</span>Search Bar</a>
+        <a href="inputs/input.html#14" class="lib-item" data-cat="input"><span class="lib-num">14</span>Textarea Auto</a>
+        <a href="inputs/input.html#15" class="lib-item" data-cat="input"><span class="lib-num">15</span>Password Toggle</a>
+        <a href="inputs/input.html#16" class="lib-item" data-cat="input"><span class="lib-num">16</span>Color Picker</a>
+        <a href="inputs/input.html#17" class="lib-item" data-cat="input"><span class="lib-num">17</span>Range Slider</a>
+        <a href="inputs/input.html#18" class="lib-item" data-cat="input"><span class="lib-num">18</span>Toggle Switch</a>
+        <a href="inputs/input.html#19" class="lib-item" data-cat="input"><span class="lib-num">19</span>Checkbox Custom</a>
+        <a href="inputs/input.html#20" class="lib-item" data-cat="input"><span class="lib-num">20</span>Radio Styled</a>
+        <a href="inputs/input.html#21" class="lib-item" data-cat="input"><span class="lib-num">21</span>Date Picker</a>
+        <a href="inputs/input.html#22" class="lib-item" data-cat="input"><span class="lib-num">22</span>File Upload</a>
+        <a href="inputs/input.html#23" class="lib-item" data-cat="input"><span class="lib-num">23</span>OTP Input</a>
+        <a href="inputs/input.html#24" class="lib-item" data-cat="input"><span class="lib-num">24</span>Phone Number</a>
+        <a href="inputs/input.html#25" class="lib-item" data-cat="input"><span class="lib-num">25</span>Credit Card</a>
+        <a href="inputs/input.html#26" class="lib-item" data-cat="input"><span class="lib-num">26</span>Autocomplete</a>
+        <a href="inputs/input.html#27" class="lib-item" data-cat="input"><span class="lib-num">27</span>Multi-Select</a>
+        <a href="inputs/input.html#28" class="lib-item" data-cat="input"><span class="lib-num">28</span>Chip Input</a>
+        <a href="inputs/input.html#29" class="lib-item" data-cat="input"><span class="lib-num">29</span>Inline Edit</a>
+        <a href="inputs/input.html#30" class="lib-item" data-cat="input"><span class="lib-num">30</span>Pin Code</a>
+        <a href="inputs/input.html#31" class="lib-item" data-cat="input"><span class="lib-num">31</span>Currency Input</a>
+        <a href="inputs/input.html#32" class="lib-item" data-cat="input"><span class="lib-num">32</span>Quantity Stepper</a>
+        <a href="inputs/input.html#33" class="lib-item" data-cat="input"><span class="lib-num">33</span>Rating Star</a>
+        <a href="inputs/input.html#34" class="lib-item" data-cat="input"><span class="lib-num">34</span>Emoji Picker</a>
+        <a href="inputs/input.html#35" class="lib-item" data-cat="input"><span class="lib-num">35</span>Voice Input</a>
+        <a href="inputs/input.html#36" class="lib-item" data-cat="input"><span class="lib-num">36</span>Signature Pad</a>
+        <a href="inputs/input.html#37" class="lib-item" data-cat="input"><span class="lib-num">37</span>Code Input</a>
+        <a href="inputs/input.html#38" class="lib-item" data-cat="input"><span class="lib-num">38</span>Masked Input</a>
+        <a href="inputs/input.html#39" class="lib-item" data-cat="input"><span class="lib-num">39</span>Combobox</a>
+        <a href="inputs/input.html#40" class="lib-item" data-cat="input"><span class="lib-num">40</span>Tree Select</a>
+        <a href="inputs/input.html#41" class="lib-item" data-cat="input"><span class="lib-num">41</span>Mention Input</a>
+        <a href="inputs/input.html#42" class="lib-item" data-cat="input"><span class="lib-num">42</span>Hashtag Input</a>
+        <a href="inputs/input.html#43" class="lib-item" data-cat="input"><span class="lib-num">43</span>URL Validator</a>
+        <a href="inputs/input.html#44" class="lib-item" data-cat="input"><span class="lib-num">44</span>Email Validator</a>
+        <a href="inputs/input.html#45" class="lib-item" data-cat="input"><span class="lib-num">45</span>Draggable Sort</a>
+        <a href="inputs/input.html#46" class="lib-item" data-cat="input"><span class="lib-num">46</span>Contextual Help</a>
+        <a href="inputs/input.html#47" class="lib-item" data-cat="input"><span class="lib-num">47</span>Character Count</a>
+        <a href="inputs/input.html#48" class="lib-item" data-cat="input"><span class="lib-num">48</span>Strength Meter</a>
+        <a href="inputs/input.html#49" class="lib-item" data-cat="input"><span class="lib-num">49</span>Split Input</a>
+        <a href="inputs/input.html#50" class="lib-item" data-cat="input"><span class="lib-num">50</span>Brutal Input</a>
+        <a href="inputs/input.html#51" class="lib-item" data-cat="input"><span class="lib-num">51</span>Glassmorphic</a>
+        <a href="inputs/input.html#52" class="lib-item" data-cat="input"><span class="lib-num">52</span>Neumorphic</a>
+        <a href="inputs/input.html#53" class="lib-item" data-cat="input"><span class="lib-num">53</span>Floating Label</a>
+        <a href="inputs/input.html#54" class="lib-item" data-cat="input"><span class="lib-num">54</span>Brutalist</a>
+        <a href="inputs/input.html#55" class="lib-item" data-cat="input"><span class="lib-num">55</span>Underline Reveal</a>
+        <a href="inputs/input.html#56" class="lib-item" data-cat="input"><span class="lib-num">56</span>Pill Search</a>
+        <a href="inputs/input.html#57" class="lib-item" data-cat="input"><span class="lib-num">57</span>Neon Glow</a>
+        <a href="inputs/input.html#58" class="lib-item" data-cat="input"><span class="lib-num">58</span>Dark Premium</a>
+        <a href="inputs/input.html#59" class="lib-item" data-cat="input"><span class="lib-num">59</span>Tag Input</a>
+        <a href="inputs/input.html#60" class="lib-item" data-cat="input"><span class="lib-num">60</span>Morphing Border</a>
+
+        <div class="lib-category" data-cat="font">Fonts — 60</div>
+        <a href="font/font.html#1" class="lib-item" data-cat="font"><span class="lib-num">01</span>Serif Elegant</a>
+        <a href="font/font.html#2" class="lib-item" data-cat="font"><span class="lib-num">02</span>Sans Display</a>
+        <a href="font/font.html#3" class="lib-item" data-cat="font"><span class="lib-num">03</span>Monospace Code</a>
+        <a href="font/font.html#4" class="lib-item" data-cat="font"><span class="lib-num">04</span>Handwritten Script</a>
+        <a href="font/font.html#5" class="lib-item" data-cat="font"><span class="lib-num">05</span>Slab Bold</a>
+        <a href="font/font.html#6" class="lib-item" data-cat="font"><span class="lib-num">06</span>Geometric Modern</a>
+        <a href="font/font.html#7" class="lib-item" data-cat="font"><span class="lib-num">07</span>Condensed Narrow</a>
+        <a href="font/font.html#8" class="lib-item" data-cat="font"><span class="lib-num">08</span>Rounded Soft</a>
+        <a href="font/font.html#9" class="lib-item" data-cat="font"><span class="lib-num">09</span>Gothic Heavy</a>
+        <a href="font/font.html#10" class="lib-item" data-cat="font"><span class="lib-num">10</span>Thin Ultralight</a>
+        <a href="font/font.html#11" class="lib-item" data-cat="font"><span class="lib-num">11</span>Retro Pixel</a>
+        <a href="font/font.html#12" class="lib-item" data-cat="font"><span class="lib-num">12</span>Futuristic Tech</a>
+        <a href="font/font.html#13" class="lib-item" data-cat="font"><span class="lib-num">13</span>Calligraphy</a>
+        <a href="font/font.html#14" class="lib-item" data-cat="font"><span class="lib-num">14</span>Stencil Cut</a>
+        <a href="font/font.html#15" class="lib-item" data-cat="font"><span class="lib-num">15</span>Outline Only</a>
+        <a href="font/font.html#16" class="lib-item" data-cat="font"><span class="lib-num">16</span>3D Extrude</a>
+        <a href="font/font.html#17" class="lib-item" data-cat="font"><span class="lib-num">17</span>Gradient Fill</a>
+        <a href="font/font.html#18" class="lib-item" data-cat="font"><span class="lib-num">18</span>Shadow Drop</a>
+        <a href="font/font.html#19" class="lib-item" data-cat="font"><span class="lib-num">19</span>Neon Glow</a>
+        <a href="font/font.html#20" class="lib-item" data-cat="font"><span class="lib-num">20</span>Typewriter</a>
+        <a href="font/font.html#21" class="lib-item" data-cat="font"><span class="lib-num">21</span>Variable Weight</a>
+        <a href="font/font.html#22" class="lib-item" data-cat="font"><span class="lib-num">22</span>Italic Slant</a>
+        <a href="font/font.html#23" class="lib-item" data-cat="font"><span class="lib-num">23</span>Small Caps</a>
+        <a href="font/font.html#24" class="lib-item" data-cat="font"><span class="lib-num">24</span>All Caps Bold</a>
+        <a href="font/font.html#25" class="lib-item" data-cat="font"><span class="lib-num">25</span>Ligature Rich</a>
+        <a href="font/font.html#26" class="lib-item" data-cat="font"><span class="lib-num">26</span>Brush Stroke</a>
+        <a href="font/font.html#27" class="lib-item" data-cat="font"><span class="lib-num">27</span>Distressed</a>
+        <a href="font/font.html#28" class="lib-item" data-cat="font"><span class="lib-num">28</span>Grunge Texture</a>
+        <a href="font/font.html#29" class="lib-item" data-cat="font"><span class="lib-num">29</span>Chrome Metal</a>
+        <a href="font/font.html#30" class="lib-item" data-cat="font"><span class="lib-num">30</span>Wood Grain</a>
+        <a href="font/font.html#31" class="lib-item" data-cat="font"><span class="lib-num">31</span>Ice Crystal</a>
+        <a href="font/font.html#32" class="lib-item" data-cat="font"><span class="lib-num">32</span>Fire Ember</a>
+        <a href="font/font.html#33" class="lib-item" data-cat="font"><span class="lib-num">33</span>Watercolor</a>
+        <a href="font/font.html#34" class="lib-item" data-cat="font"><span class="lib-num">34</span>Chalk Board</a>
+        <a href="font/font.html#35" class="lib-item" data-cat="font"><span class="lib-num">35</span>LED Display</a>
+        <a href="font/font.html#36" class="lib-item" data-cat="font"><span class="lib-num">36</span>Matrix Code</a>
+        <a href="font/font.html#37" class="lib-item" data-cat="font"><span class="lib-num">37</span>Comic Book</a>
+        <a href="font/font.html#38" class="lib-item" data-cat="font"><span class="lib-num">38</span>Art Deco</a>
+        <a href="font/font.html#39" class="lib-item" data-cat="font"><span class="lib-num">39</span>Victorian</a>
+        <a href="font/font.html#40" class="lib-item" data-cat="font"><span class="lib-num">40</span>Minimalist</a>
+        <a href="font/font.html#41" class="lib-item" data-cat="font"><span class="lib-num">41</span>Brutalist Mono</a>
+        <a href="font/font.html#42" class="lib-item" data-cat="font"><span class="lib-num">42</span>Japanese Inspired</a>
+        <a href="font/font.html#43" class="lib-item" data-cat="font"><span class="lib-num">43</span>Arabic Style</a>
+        <a href="font/font.html#44" class="lib-item" data-cat="font"><span class="lib-num">44</span>Cyrillic Display</a>
+        <a href="font/font.html#45" class="lib-item" data-cat="font"><span class="lib-num">45</span>Devanagari Modern</a>
+        <a href="font/font.html#46" class="lib-item" data-cat="font"><span class="lib-num">46</span>Emoji Font</a>
+        <a href="font/font.html#47" class="lib-item" data-cat="font"><span class="lib-num">47</span>Symbol Set</a>
+        <a href="font/font.html#48" class="lib-item" data-cat="font"><span class="lib-num">48</span>Kerning Tight</a>
+        <a href="font/font.html#49" class="lib-item" data-cat="font"><span class="lib-num">49</span>Letter Space Wide</a>
+        <a href="font/font.html#50" class="lib-item" data-cat="font"><span class="lib-num">50</span>Mixed Weight</a>
+        <a href="font/font.html#51" class="lib-item" data-cat="font"><span class="lib-num">51</span>Sora</a>
+        <a href="font/font.html#52" class="lib-item" data-cat="font"><span class="lib-num">52</span>Outfit</a>
+        <a href="font/font.html#53" class="lib-item" data-cat="font"><span class="lib-num">53</span>Plus Jakarta Sans</a>
+        <a href="font/font.html#54" class="lib-item" data-cat="font"><span class="lib-num">54</span>DM Sans</a>
+        <a href="font/font.html#55" class="lib-item" data-cat="font"><span class="lib-num">55</span>Lexend</a>
+        <a href="font/font.html#56" class="lib-item" data-cat="font"><span class="lib-num">56</span>Archivo</a>
+        <a href="font/font.html#57" class="lib-item" data-cat="font"><span class="lib-num">57</span>Urbanist</a>
+        <a href="font/font.html#58" class="lib-item" data-cat="font"><span class="lib-num">58</span>Figtree</a>
+        <a href="font/font.html#59" class="lib-item" data-cat="font"><span class="lib-num">59</span>Nunito Sans</a>
+        <a href="font/font.html#60" class="lib-item" data-cat="font"><span class="lib-num">60</span>Albert Sans</a>
+
+        <div class="lib-category" data-cat="hover">Hover Effects — 60</div>
+        <a href="hover/hover.html#1" class="lib-item" data-cat="hover"><span class="lib-num">01</span>Ripple Click</a>
+        <a href="hover/hover.html#2" class="lib-item" data-cat="hover"><span class="lib-num">02</span>Hover Lift</a>
+        <a href="hover/hover.html#3" class="lib-item" data-cat="hover"><span class="lib-num">03</span>Shimmer Swipe</a>
+        <a href="hover/hover.html#4" class="lib-item" data-cat="hover"><span class="lib-num">04</span>Morphing Hover</a>
+        <a href="hover/hover.html#5" class="lib-item" data-cat="hover"><span class="lib-num">05</span>Parallax Hover</a>
+        <a href="hover/hover.html#6" class="lib-item" data-cat="hover"><span class="lib-num">06</span>Bounce Hover</a>
+        <a href="hover/hover.html#7" class="lib-item" data-cat="hover"><span class="lib-num">07</span>Clip-Path Hover</a>
+        <a href="hover/hover.html#8" class="lib-item" data-cat="hover"><span class="lib-num">08</span>Direction-Aware</a>
+        <a href="hover/hover.html#9" class="lib-item" data-cat="hover"><span class="lib-num">09</span>Elastic Hover</a>
+        <a href="hover/hover.html#10" class="lib-item" data-cat="hover"><span class="lib-num">10</span>Glow Hover</a>
+        <a href="hover/hover.html#11" class="lib-item" data-cat="hover"><span class="lib-num">11</span>Magnetic Hover</a>
+        <a href="hover/hover.html#12" class="lib-item" data-cat="hover"><span class="lib-num">12</span>Neon Flicker</a>
+        <a href="hover/hover.html#13" class="lib-item" data-cat="hover"><span class="lib-num">13</span>Particle Burst</a>
+        <a href="hover/hover.html#14" class="lib-item" data-cat="hover"><span class="lib-num">14</span>Quick Fade</a>
+        <a href="hover/hover.html#15" class="lib-item" data-cat="hover"><span class="lib-num">15</span>Rotate Hover</a>
+        <a href="hover/hover.html#16" class="lib-item" data-cat="hover"><span class="lib-num">16</span>Scale Hover</a>
+        <a href="hover/hover.html#17" class="lib-item" data-cat="hover"><span class="lib-num">17</span>Shadow Glow</a>
+        <a href="hover/hover.html#18" class="lib-item" data-cat="hover"><span class="lib-num">18</span>Swipe Underline</a>
+        <a href="hover/hover.html#19" class="lib-item" data-cat="hover"><span class="lib-num">19</span>Tilt Hover</a>
+        <a href="hover/hover.html#20" class="lib-item" data-cat="hover"><span class="lib-num">20</span>Underline Reveal</a>
+        <a href="hover/hover.html#21" class="lib-item" data-cat="hover"><span class="lib-num">21</span>Vibration Hover</a>
+        <a href="hover/hover.html#22" class="lib-item" data-cat="hover"><span class="lib-num">22</span>Wave Distortion</a>
+        <a href="hover/hover.html#23" class="lib-item" data-cat="hover"><span class="lib-num">23</span>X-Ray Hover</a>
+        <a href="hover/hover.html#24" class="lib-item" data-cat="hover"><span class="lib-num">24</span>Y-Axis Flip</a>
+        <a href="hover/hover.html#25" class="lib-item" data-cat="hover"><span class="lib-num">25</span>Zigzag Hover</a>
+        <a href="hover/hover.html#26" class="lib-item" data-cat="hover"><span class="lib-num">26</span>Alpha Fade</a>
+        <a href="hover/hover.html#27" class="lib-item" data-cat="hover"><span class="lib-num">27</span>Bevel Hover</a>
+        <a href="hover/hover.html#28" class="lib-item" data-cat="hover"><span class="lib-num">28</span>Color Swipe</a>
+        <a href="hover/hover.html#29" class="lib-item" data-cat="hover"><span class="lib-num">29</span>Drip Hover</a>
+        <a href="hover/hover.html#30" class="lib-item" data-cat="hover"><span class="lib-num">30</span>Echo Hover</a>
+        <a href="hover/hover.html#31" class="lib-item" data-cat="hover"><span class="lib-num">31</span>Flip Hover</a>
+        <a href="hover/hover.html#32" class="lib-item" data-cat="hover"><span class="lib-num">32</span>Grayscale Hover</a>
+        <a href="hover/hover.html#33" class="lib-item" data-cat="hover"><span class="lib-num">33</span>Highlight Pulse</a>
+        <a href="hover/hover.html#34" class="lib-item" data-cat="hover"><span class="lib-num">34</span>Ink Spread</a>
+        <a href="hover/hover.html#35" class="lib-item" data-cat="hover"><span class="lib-num">35</span>Jelly Hover</a>
+        <a href="hover/hover.html#36" class="lib-item" data-cat="hover"><span class="lib-num">36</span>Kinetic Dots</a>
+        <a href="hover/hover.html#37" class="lib-item" data-cat="hover"><span class="lib-num">37</span>Light Trail</a>
+        <a href="hover/hover.html#38" class="lib-item" data-cat="hover"><span class="lib-num">38</span>Melt Hover</a>
+        <a href="hover/hover.html#39" class="lib-item" data-cat="hover"><span class="lib-num">39</span>Noise Glitch</a>
+        <a href="hover/hover.html#40" class="lib-item" data-cat="hover"><span class="lib-num">40</span>Opacity Hover</a>
+        <a href="hover/hover.html#41" class="lib-item" data-cat="hover"><span class="lib-num">41</span>Pulse Ring</a>
+        <a href="hover/hover.html#42" class="lib-item" data-cat="hover"><span class="lib-num">42</span>Quantum Hover</a>
+        <a href="hover/hover.html#43" class="lib-item" data-cat="hover"><span class="lib-num">43</span>Ribbon Hover</a>
+        <a href="hover/hover.html#44" class="lib-item" data-cat="hover"><span class="lib-num">44</span>Spiral Hover</a>
+        <a href="hover/hover.html#45" class="lib-item" data-cat="hover"><span class="lib-num">45</span>Thermal Hover</a>
+        <a href="hover/hover.html#46" class="lib-item" data-cat="hover"><span class="lib-num">46</span>Underline Draw</a>
+        <a href="hover/hover.html#47" class="lib-item" data-cat="hover"><span class="lib-num">47</span>Video Mask</a>
+        <a href="hover/hover.html#48" class="lib-item" data-cat="hover"><span class="lib-num">48</span>Warp Hover</a>
+        <a href="hover/hover.html#49" class="lib-item" data-cat="hover"><span class="lib-num">49</span>Xylophone</a>
+        <a href="hover/hover.html#50" class="lib-item" data-cat="hover"><span class="lib-num">50</span>Zoom Hover</a>
+        <a href="hover/hover.html#51" class="lib-item" data-cat="hover"><span class="lib-num">51</span>Glassmorphic Hover</a>
+        <a href="hover/hover.html#52" class="lib-item" data-cat="hover"><span class="lib-num">52</span>Neumorphic Press</a>
+        <a href="hover/hover.html#53" class="lib-item" data-cat="hover"><span class="lib-num">53</span>Aurora Reveal</a>
+        <a href="hover/hover.html#54" class="lib-item" data-cat="hover"><span class="lib-num">54</span>Brutalist Shift</a>
+        <a href="hover/hover.html#55" class="lib-item" data-cat="hover"><span class="lib-num">55</span>Magnetic Tilt</a>
+        <a href="hover/hover.html#56" class="lib-item" data-cat="hover"><span class="lib-num">56</span>Neon Border Chase</a>
+        <a href="hover/hover.html#57" class="lib-item" data-cat="hover"><span class="lib-num">57</span>Scale Bloom</a>
+        <a href="hover/hover.html#58" class="lib-item" data-cat="hover"><span class="lib-num">58</span>Underline Expand</a>
+        <a href="hover/hover.html#59" class="lib-item" data-cat="hover"><span class="lib-num">59</span>Gradient Wipe</a>
+        <a href="hover/hover.html#60" class="lib-item" data-cat="hover"><span class="lib-num">60</span>Holographic Shimmer</a>
+
+        <div class="lib-category" data-cat="loading">Loading — 60</div>
+        <a href="loading/load.html#1" class="lib-item" data-cat="loading"><span class="lib-num">01</span>Spinner Ring</a>
+        <a href="loading/load.html#2" class="lib-item" data-cat="loading"><span class="lib-num">02</span>Dot Bounce</a>
+        <a href="loading/load.html#3" class="lib-item" data-cat="loading"><span class="lib-num">03</span>Liquid Fill</a>
+        <a href="loading/load.html#4" class="lib-item" data-cat="loading"><span class="lib-num">04</span>Aurora Pulse</a>
+        <a href="loading/load.html#5" class="lib-item" data-cat="loading"><span class="lib-num">05</span>Ribbon</a>
+        <a href="loading/load.html#6" class="lib-item" data-cat="loading"><span class="lib-num">06</span>Bar Progress</a>
+        <a href="loading/load.html#7" class="lib-item" data-cat="loading"><span class="lib-num">07</span>Circle Slice</a>
+        <a href="loading/load.html#8" class="lib-item" data-cat="loading"><span class="lib-num">08</span>Cube Grid</a>
+        <a href="loading/load.html#9" class="lib-item" data-cat="loading"><span class="lib-num">09</span>Dual Ring</a>
+        <a href="loading/load.html#10" class="lib-item" data-cat="loading"><span class="lib-num">10</span>Elastic Dot</a>
+        <a href="loading/load.html#11" class="lib-item" data-cat="loading"><span class="lib-num">11</span>Fourier</a>
+        <a href="loading/load.html#12" class="lib-item" data-cat="loading"><span class="lib-num">12</span>Gear</a>
+        <a href="loading/load.html#13" class="lib-item" data-cat="loading"><span class="lib-num">13</span>Helix Spinner</a>
+        <a href="loading/load.html#14" class="lib-item" data-cat="loading"><span class="lib-num">14</span>Infinite Bar</a>
+        <a href="loading/load.html#15" class="lib-item" data-cat="loading"><span class="lib-num">15</span>Jelly</a>
+        <a href="loading/load.html#16" class="lib-item" data-cat="loading"><span class="lib-num">16</span>Kinetic Dots</a>
+        <a href="loading/load.html#17" class="lib-item" data-cat="loading"><span class="lib-num">17</span>Laser</a>
+        <a href="loading/load.html#18" class="lib-item" data-cat="loading"><span class="lib-num">18</span>Moveable Lines</a>
+        <a href="loading/load.html#19" class="lib-item" data-cat="loading"><span class="lib-num">19</span>Neon Strobe</a>
+        <a href="loading/load.html#20" class="lib-item" data-cat="loading"><span class="lib-num">20</span>Orbit</a>
+        <a href="loading/load.html#21" class="lib-item" data-cat="loading"><span class="lib-num">21</span>Pulse</a>
+        <a href="loading/load.html#22" class="lib-item" data-cat="loading"><span class="lib-num">22</span>Quick Flip</a>
+        <a href="loading/load.html#23" class="lib-item" data-cat="loading"><span class="lib-num">23</span>Ripple</a>
+        <a href="loading/load.html#24" class="lib-item" data-cat="loading"><span class="lib-num">24</span>Spinner Arc</a>
+        <a href="loading/load.html#25" class="lib-item" data-cat="loading"><span class="lib-num">25</span>Sliding Bars</a>
+        <a href="loading/load.html#26" class="lib-item" data-cat="loading"><span class="lib-num">26</span>Three Dots</a>
+        <a href="loading/load.html#27" class="lib-item" data-cat="loading"><span class="lib-num">27</span>U-Loader</a>
+        <a href="loading/load.html#28" class="lib-item" data-cat="loading"><span class="lib-num">28</span>Vortex Spinner</a>
+        <a href="loading/load.html#29" class="lib-item" data-cat="loading"><span class="lib-num">29</span>Wave</a>
+        <a href="loading/load.html#30" class="lib-item" data-cat="loading"><span class="lib-num">30</span>X-Bar</a>
+        <a href="loading/load.html#31" class="lib-item" data-cat="loading"><span class="lib-num">31</span>Y-Ball</a>
+        <a href="loading/load.html#32" class="lib-item" data-cat="loading"><span class="lib-num">32</span>Zigzag Ball</a>
+        <a href="loading/load.html#33" class="lib-item" data-cat="loading"><span class="lib-num">33</span>Alpha Fade</a>
+        <a href="loading/load.html#34" class="lib-item" data-cat="loading"><span class="lib-num">34</span>Bounce</a>
+        <a href="loading/load.html#35" class="lib-item" data-cat="loading"><span class="lib-num">35</span>Chasing Dots</a>
+        <a href="loading/load.html#36" class="lib-item" data-cat="loading"><span class="lib-num">36</span>Dot Grid</a>
+        <a href="loading/load.html#37" class="lib-item" data-cat="loading"><span class="lib-num">37</span>Elastic Arc</a>
+        <a href="loading/load.html#38" class="lib-item" data-cat="loading"><span class="lib-num">38</span>Flip Circle</a>
+        <a href="loading/load.html#39" class="lib-item" data-cat="loading"><span class="lib-num">39</span>Glow Spinner</a>
+        <a href="loading/load.html#40" class="lib-item" data-cat="loading"><span class="lib-num">40</span>Heart Beat</a>
+        <a href="loading/load.html#41" class="lib-item" data-cat="loading"><span class="lib-num">41</span>Infini Spiral</a>
+        <a href="loading/load.html#42" class="lib-item" data-cat="loading"><span class="lib-num">42</span>Jump Dots</a>
+        <a href="loading/load.html#43" class="lib-item" data-cat="loading"><span class="lib-num">43</span>Kinetoscope</a>
+        <a href="loading/load.html#44" class="lib-item" data-cat="loading"><span class="lib-num">44</span>Liquid Wave</a>
+        <a href="loading/load.html#45" class="lib-item" data-cat="loading"><span class="lib-num">45</span>Morphing Circle</a>
+        <a href="loading/load.html#46" class="lib-item" data-cat="loading"><span class="lib-num">46</span>Noise</a>
+        <a href="loading/load.html#47" class="lib-item" data-cat="loading"><span class="lib-num">47</span>Outline Bubbles</a>
+        <a href="loading/load.html#48" class="lib-item" data-cat="loading"><span class="lib-num">48</span>Pendulum</a>
+        <a href="loading/load.html#49" class="lib-item" data-cat="loading"><span class="lib-num">49</span>Quantum Spin</a>
+        <a href="loading/load.html#50" class="lib-item" data-cat="loading"><span class="lib-num">50</span>Rotating Squares</a>
+        <a href="loading/load.html#51" class="lib-item" data-cat="loading"><span class="lib-num">51</span>Glassmorphic Spinner</a>
+        <a href="loading/load.html#52" class="lib-item" data-cat="loading"><span class="lib-num">52</span>Neumorphic Pulse</a>
+        <a href="loading/load.html#53" class="lib-item" data-cat="loading"><span class="lib-num">53</span>Aurora Ring</a>
+        <a href="loading/load.html#54" class="lib-item" data-cat="loading"><span class="lib-num">54</span>Brutalist Blocks</a>
+        <a href="loading/load.html#55" class="lib-item" data-cat="loading"><span class="lib-num">55</span>DNA Helix</a>
+        <a href="loading/load.html#56" class="lib-item" data-cat="loading"><span class="lib-num">56</span>Neon Ring</a>
+        <a href="loading/load.html#57" class="lib-item" data-cat="loading"><span class="lib-num">57</span>Morphing Shape</a>
+        <a href="loading/load.html#58" class="lib-item" data-cat="loading"><span class="lib-num">58</span>Skeleton Shimmer</a>
+        <a href="loading/load.html#59" class="lib-item" data-cat="loading"><span class="lib-num">59</span>Orbit Dots</a>
+        <a href="loading/load.html#60" class="lib-item" data-cat="loading"><span class="lib-num">60</span>Progress Bar</a>
+
+        <div class="lib-category" data-cat="nav">Navbars — 48</div>
+        <a href="nav/nav.html#1" class="lib-item" data-cat="nav"><span class="lib-num">01</span>Glassmorphic Nav</a>
+        <a href="nav/nav.html#2" class="lib-item" data-cat="nav"><span class="lib-num">02</span>Sticky Scroll</a>
+        <a href="nav/nav.html#3" class="lib-item" data-cat="nav"><span class="lib-num">03</span>Slide-In Side</a>
+        <a href="nav/nav.html#4" class="lib-item" data-cat="nav"><span class="lib-num">04</span>Full-Screen Overlay</a>
+        <a href="nav/nav.html#5" class="lib-item" data-cat="nav"><span class="lib-num">05</span>Neon Pulse</a>
+        <a href="nav/nav.html#6" class="lib-item" data-cat="nav"><span class="lib-num">06</span>Hover Underline</a>
+        <a href="nav/nav.html#7" class="lib-item" data-cat="nav"><span class="lib-num">07</span>Elastic Bounce</a>
+        <a href="nav/nav.html#8" class="lib-item" data-cat="nav"><span class="lib-num">08</span>Parallax Background</a>
+        <a href="nav/nav.html#9" class="lib-item" data-cat="nav"><span class="lib-num">09</span>Retro Pixel</a>
+        <a href="nav/nav.html#10" class="lib-item" data-cat="nav"><span class="lib-num">10</span>Minimalist Flat</a>
+        <a href="nav/nav.html#11" class="lib-item" data-cat="nav"><span class="lib-num">11</span>Claymorphic Curved</a>
+        <a href="nav/nav.html#12" class="lib-item" data-cat="nav"><span class="lib-num">12</span>Brutalist Block</a>
+        <a href="nav/nav.html#13" class="lib-item" data-cat="nav"><span class="lib-num">13</span>Floating Card</a>
+        <a href="nav/nav.html#14" class="lib-item" data-cat="nav"><span class="lib-num">14</span>Gradient Swipe</a>
+        <a href="nav/nav.html#15" class="lib-item" data-cat="nav"><span class="lib-num">15</span>Icon-Only Tooltip</a>
+        <a href="nav/nav.html#16" class="lib-item" data-cat="nav"><span class="lib-num">16</span>Vertical Accordion</a>
+        <a href="nav/nav.html#17" class="lib-item" data-cat="nav"><span class="lib-num">17</span>Magic Line Cursor</a>
+        <a href="nav/nav.html#18" class="lib-item" data-cat="nav"><span class="lib-num">18</span>Skewed Angle</a>
+        <a href="nav/nav.html#19" class="lib-item" data-cat="nav"><span class="lib-num">19</span>Aurora Glow</a>
+        <a href="nav/nav.html#20" class="lib-item" data-cat="nav"><span class="lib-num">20</span>Dropdown Fade-In</a>
+        <a href="nav/nav.html#21" class="lib-item" data-cat="nav"><span class="lib-num">21</span>Accordion Collapse</a>
+        <a href="nav/nav.html#22" class="lib-item" data-cat="nav"><span class="lib-num">22</span>Blobby Background</a>
+        <a href="nav/nav.html#23" class="lib-item" data-cat="nav"><span class="lib-num">23</span>Circular Radial</a>
+        <a href="nav/nav.html#24" class="lib-item" data-cat="nav"><span class="lib-num">24</span>Transparent Scroll</a>
+        <a href="nav/nav.html#25" class="lib-item" data-cat="nav"><span class="lib-num">25</span>Flip-Text</a>
+        <a href="nav/nav.html#26" class="lib-item" data-cat="nav"><span class="lib-num">26</span>Slide Reveal Link</a>
+        <a href="nav/nav.html#27" class="lib-item" data-cat="nav"><span class="lib-num">27</span>Glitch Distortion</a>
+        <a href="nav/nav.html#28" class="lib-item" data-cat="nav"><span class="lib-num">28</span>3D Depth-Shadow</a>
+        <a href="nav/nav.html#29" class="lib-item" data-cat="nav"><span class="lib-num">29</span>Typewriter Animate</a>
+        <a href="nav/nav.html#30" class="lib-item" data-cat="nav"><span class="lib-num">30</span>Hover Blur-Backdrop</a>
+        <a href="nav/nav.html#31" class="lib-item" data-cat="nav"><span class="lib-num">31</span>Expand-On-Scroll</a>
+        <a href="nav/nav.html#32" class="lib-item" data-cat="nav"><span class="lib-num">32</span>Icon-Morph</a>
+        <a href="nav/nav.html#33" class="lib-item" data-cat="nav"><span class="lib-num">33</span>Wave Divider</a>
+        <a href="nav/nav.html#34" class="lib-item" data-cat="nav"><span class="lib-num">34</span>Color-Shift Gradient</a>
+        <a href="nav/nav.html#35" class="lib-item" data-cat="nav"><span class="lib-num">35</span>Split-Screen Dual</a>
+        <a href="nav/nav.html#36" class="lib-item" data-cat="nav"><span class="lib-num">36</span>Scroll-Spy Highlight</a>
+        <a href="nav/nav.html#37" class="lib-item" data-cat="nav"><span class="lib-num">37</span>Sequential Fade-In</a>
+        <a href="nav/nav.html#38" class="lib-item" data-cat="nav"><span class="lib-num">38</span>Animated Breadcrumb</a>
+        <a href="nav/nav.html#39" class="lib-item" data-cat="nav"><span class="lib-num">39</span>Glassmorphic Nav</a>
+        <a href="nav/nav.html#40" class="lib-item" data-cat="nav"><span class="lib-num">40</span>Neumorphic Nav</a>
+        <a href="nav/nav.html#41" class="lib-item" data-cat="nav"><span class="lib-num">41</span>Brutalist Nav</a>
+        <a href="nav/nav.html#42" class="lib-item" data-cat="nav"><span class="lib-num">42</span>Neon Underline</a>
+        <a href="nav/nav.html#43" class="lib-item" data-cat="nav"><span class="lib-num">43</span>Pill Nav</a>
+        <a href="nav/nav.html#44" class="lib-item" data-cat="nav"><span class="lib-num">44</span>Gradient Border</a>
+        <a href="nav/nav.html#45" class="lib-item" data-cat="nav"><span class="lib-num">45</span>Floating Island</a>
+        <a href="nav/nav.html#46" class="lib-item" data-cat="nav"><span class="lib-num">46</span>Split CTA</a>
+        <a href="nav/nav.html#47" class="lib-item" data-cat="nav"><span class="lib-num">47</span>Dot Indicator</a>
+        <a href="nav/nav.html#48" class="lib-item" data-cat="nav"><span class="lib-num">48</span>Command Bar</a>
+
+        <div class="lib-category" data-cat="burger">Burger Menus — 60</div>
+        <a href="burger/burger.html#1" class="lib-item" data-cat="burger"><span class="lib-num">01</span>Morphing</a>
+        <a href="burger/burger.html#2" class="lib-item" data-cat="burger"><span class="lib-num">02</span>Slide-In</a>
+        <a href="burger/burger.html#3" class="lib-item" data-cat="burger"><span class="lib-num">03</span>Gooey</a>
+        <a href="burger/burger.html#4" class="lib-item" data-cat="burger"><span class="lib-num">04</span>Elastic</a>
+        <a href="burger/burger.html#5" class="lib-item" data-cat="burger"><span class="lib-num">05</span>Full-Screen</a>
+        <a href="burger/burger.html#6" class="lib-item" data-cat="burger"><span class="lib-num">06</span>Hover Pulse</a>
+        <a href="burger/burger.html#7" class="lib-item" data-cat="burger"><span class="lib-num">07</span>Iconic</a>
+        <a href="burger/burger.html#8" class="lib-item" data-cat="burger"><span class="lib-num">08</span>Jelly</a>
+        <a href="burger/burger.html#9" class="lib-item" data-cat="burger"><span class="lib-num">09</span>Kinetic</a>
+        <a href="burger/burger.html#10" class="lib-item" data-cat="burger"><span class="lib-num">10</span>Liquid</a>
+        <a href="burger/burger.html#11" class="lib-item" data-cat="burger"><span class="lib-num">11</span>Magnetic</a>
+        <a href="burger/burger.html#12" class="lib-item" data-cat="burger"><span class="lib-num">12</span>Neon</a>
+        <a href="burger/burger.html#13" class="lib-item" data-cat="burger"><span class="lib-num">13</span>Overflow Fade</a>
+        <a href="burger/burger.html#14" class="lib-item" data-cat="burger"><span class="lib-num">14</span>Pixel</a>
+        <a href="burger/burger.html#15" class="lib-item" data-cat="burger"><span class="lib-num">15</span>Quick Swipe</a>
+        <a href="burger/burger.html#16" class="lib-item" data-cat="burger"><span class="lib-num">16</span>Ripple</a>
+        <a href="burger/burger.html#17" class="lib-item" data-cat="burger"><span class="lib-num">17</span>Shimmer</a>
+        <a href="burger/burger.html#18" class="lib-item" data-cat="burger"><span class="lib-num">18</span>Tilt</a>
+        <a href="burger/burger.html#19" class="lib-item" data-cat="burger"><span class="lib-num">19</span>Underline</a>
+        <a href="burger/burger.html#20" class="lib-item" data-cat="burger"><span class="lib-num">20</span>Voice-Activated</a>
+        <a href="burger/burger.html#21" class="lib-item" data-cat="burger"><span class="lib-num">21</span>Wavy</a>
+        <a href="burger/burger.html#22" class="lib-item" data-cat="burger"><span class="lib-num">22</span>Xylophone</a>
+        <a href="burger/burger.html#23" class="lib-item" data-cat="burger"><span class="lib-num">23</span>Yoyo</a>
+        <a href="burger/burger.html#24" class="lib-item" data-cat="burger"><span class="lib-num">24</span>Zoom</a>
+        <a href="burger/burger.html#25" class="lib-item" data-cat="burger"><span class="lib-num">25</span>Accordion</a>
+        <a href="burger/burger.html#26" class="lib-item" data-cat="burger"><span class="lib-num">26</span>Blobby</a>
+        <a href="burger/burger.html#27" class="lib-item" data-cat="burger"><span class="lib-num">27</span>Clip-Path</a>
+        <a href="burger/burger.html#28" class="lib-item" data-cat="burger"><span class="lib-num">28</span>Drift</a>
+        <a href="burger/burger.html#29" class="lib-item" data-cat="burger"><span class="lib-num">29</span>Echo</a>
+        <a href="burger/burger.html#30" class="lib-item" data-cat="burger"><span class="lib-num">30</span>Flip</a>
+        <a href="burger/burger.html#31" class="lib-item" data-cat="burger"><span class="lib-num">31</span>Gradient</a>
+        <a href="burger/burger.html#32" class="lib-item" data-cat="burger"><span class="lib-num">32</span>Hover Burst</a>
+        <a href="burger/burger.html#33" class="lib-item" data-cat="burger"><span class="lib-num">33</span>Invert</a>
+        <a href="burger/burger.html#34" class="lib-item" data-cat="burger"><span class="lib-num">34</span>Jump</a>
+        <a href="burger/burger.html#35" class="lib-item" data-cat="burger"><span class="lib-num">35</span>Kaleidoscope</a>
+        <a href="burger/burger.html#36" class="lib-item" data-cat="burger"><span class="lib-num">36</span>Loop</a>
+        <a href="burger/burger.html#37" class="lib-item" data-cat="burger"><span class="lib-num">37</span>Metaball</a>
+        <a href="burger/burger.html#38" class="lib-item" data-cat="burger"><span class="lib-num">38</span>Nested</a>
+        <a href="burger/burger.html#39" class="lib-item" data-cat="burger"><span class="lib-num">39</span>Overlay</a>
+        <a href="burger/burger.html#40" class="lib-item" data-cat="burger"><span class="lib-num">40</span>Parallax</a>
+        <a href="burger/burger.html#41" class="lib-item" data-cat="burger"><span class="lib-num">41</span>Quiet</a>
+        <a href="burger/burger.html#42" class="lib-item" data-cat="burger"><span class="lib-num">42</span>Rotate</a>
+        <a href="burger/burger.html#43" class="lib-item" data-cat="burger"><span class="lib-num">43</span>Swipe-Border</a>
+        <a href="burger/burger.html#44" class="lib-item" data-cat="burger"><span class="lib-num">44</span>Thermal</a>
+        <a href="burger/burger.html#45" class="lib-item" data-cat="burger"><span class="lib-num">45</span>Unfolding</a>
+        <a href="burger/burger.html#46" class="lib-item" data-cat="burger"><span class="lib-num">46</span>Vortex</a>
+        <a href="burger/burger.html#47" class="lib-item" data-cat="burger"><span class="lib-num">47</span>Wave</a>
+        <a href="burger/burger.html#48" class="lib-item" data-cat="burger"><span class="lib-num">48</span>Xtreme</a>
+        <a href="burger/burger.html#49" class="lib-item" data-cat="burger"><span class="lib-num">49</span>Yarn</a>
+        <a href="burger/burger.html#50" class="lib-item" data-cat="burger"><span class="lib-num">50</span>Zipper</a>
+        <a href="burger/burger.html#51" class="lib-item" data-cat="burger"><span class="lib-num">51</span>Glassmorphic</a>
+        <a href="burger/burger.html#52" class="lib-item" data-cat="burger"><span class="lib-num">52</span>Neumorphic</a>
+        <a href="burger/burger.html#53" class="lib-item" data-cat="burger"><span class="lib-num">53</span>Brutalist</a>
+        <a href="burger/burger.html#54" class="lib-item" data-cat="burger"><span class="lib-num">54</span>Neon</a>
+        <a href="burger/burger.html#55" class="lib-item" data-cat="burger"><span class="lib-num">55</span>Arrow Transform</a>
+        <a href="burger/burger.html#56" class="lib-item" data-cat="burger"><span class="lib-num">56</span>Collapse Dot</a>
+        <a href="burger/burger.html#57" class="lib-item" data-cat="burger"><span class="lib-num">57</span>Rotate Square</a>
+        <a href="burger/burger.html#58" class="lib-item" data-cat="burger"><span class="lib-num">58</span>Pill</a>
+        <a href="burger/burger.html#59" class="lib-item" data-cat="burger"><span class="lib-num">59</span>Stagger Slide</a>
+        <a href="burger/burger.html#60" class="lib-item" data-cat="burger"><span class="lib-num">60</span>Scale X</a>
+
+        <div class="lib-category" data-cat="text">Text Animations — 60</div>
+        <a href="text/text.html#1" class="lib-item" data-cat="text"><span class="lib-num">01</span>Typewriter</a>
+        <a href="text/text.html#2" class="lib-item" data-cat="text"><span class="lib-num">02</span>Glitch</a>
+        <a href="text/text.html#3" class="lib-item" data-cat="text"><span class="lib-num">03</span>Fade Up</a>
+        <a href="text/text.html#4" class="lib-item" data-cat="text"><span class="lib-num">04</span>Wave</a>
+        <a href="text/text.html#5" class="lib-item" data-cat="text"><span class="lib-num">05</span>Scramble</a>
+        <a href="text/text.html#6" class="lib-item" data-cat="text"><span class="lib-num">06</span>Bounce In</a>
+        <a href="text/text.html#7" class="lib-item" data-cat="text"><span class="lib-num">07</span>Slide Left</a>
+        <a href="text/text.html#8" class="lib-item" data-cat="text"><span class="lib-num">08</span>Blur Reveal</a>
+        <a href="text/text.html#9" class="lib-item" data-cat="text"><span class="lib-num">09</span>Rotate In</a>
+        <a href="text/text.html#10" class="lib-item" data-cat="text"><span class="lib-num">10</span>Scale Pop</a>
+        <a href="text/text.html#11" class="lib-item" data-cat="text"><span class="lib-num">11</span>Neon Flicker</a>
+        <a href="text/text.html#12" class="lib-item" data-cat="text"><span class="lib-num">12</span>Rainbow Shift</a>
+        <a href="text/text.html#13" class="lib-item" data-cat="text"><span class="lib-num">13</span>Shadow Dance</a>
+        <a href="text/text.html#14" class="lib-item" data-cat="text"><span class="lib-num">14</span>Letter Spacing</a>
+        <a href="text/text.html#15" class="lib-item" data-cat="text"><span class="lib-num">15</span>Clip Reveal</a>
+        <a href="text/text.html#16" class="lib-item" data-cat="text"><span class="lib-num">16</span>Elastic Stretch</a>
+        <a href="text/text.html#17" class="lib-item" data-cat="text"><span class="lib-num">17</span>Flip Card</a>
+        <a href="text/text.html#18" class="lib-item" data-cat="text"><span class="lib-num">18</span>Gradient Swipe</a>
+        <a href="text/text.html#19" class="lib-item" data-cat="text"><span class="lib-num">19</span>Highlight Sweep</a>
+        <a href="text/text.html#20" class="lib-item" data-cat="text"><span class="lib-num">20</span>Ink Bleed</a>
+        <a href="text/text.html#21" class="lib-item" data-cat="text"><span class="lib-num">21</span>Jitter</a>
+        <a href="text/text.html#22" class="lib-item" data-cat="text"><span class="lib-num">22</span>Kinetic Path</a>
+        <a href="text/text.html#23" class="lib-item" data-cat="text"><span class="lib-num">23</span>Liquid Morph</a>
+        <a href="text/text.html#24" class="lib-item" data-cat="text"><span class="lib-num">24</span>Matrix Rain</a>
+        <a href="text/text.html#25" class="lib-item" data-cat="text"><span class="lib-num">25</span>Noise Distort</a>
+        <a href="text/text.html#26" class="lib-item" data-cat="text"><span class="lib-num">26</span>Orbit Letters</a>
+        <a href="text/text.html#27" class="lib-item" data-cat="text"><span class="lib-num">27</span>Parallax Depth</a>
+        <a href="text/text.html#28" class="lib-item" data-cat="text"><span class="lib-num">28</span>Quake Shake</a>
+        <a href="text/text.html#29" class="lib-item" data-cat="text"><span class="lib-num">29</span>Ribbon Unfurl</a>
+        <a href="text/text.html#30" class="lib-item" data-cat="text"><span class="lib-num">30</span>Split Reveal</a>
+        <a href="text/text.html#31" class="lib-item" data-cat="text"><span class="lib-num">31</span>Thermal Glow</a>
+        <a href="text/text.html#32" class="lib-item" data-cat="text"><span class="lib-num">32</span>Underline Grow</a>
+        <a href="text/text.html#33" class="lib-item" data-cat="text"><span class="lib-num">33</span>Void Fill</a>
+        <a href="text/text.html#34" class="lib-item" data-cat="text"><span class="lib-num">34</span>Wipe Left</a>
+        <a href="text/text.html#35" class="lib-item" data-cat="text"><span class="lib-num">35</span>X-Axis Spin</a>
+        <a href="text/text.html#36" class="lib-item" data-cat="text"><span class="lib-num">36</span>Y-Axis Tilt</a>
+        <a href="text/text.html#37" class="lib-item" data-cat="text"><span class="lib-num">37</span>Zoom Burst</a>
+        <a href="text/text.html#38" class="lib-item" data-cat="text"><span class="lib-num">38</span>Arc Path</a>
+        <a href="text/text.html#39" class="lib-item" data-cat="text"><span class="lib-num">39</span>Blink Cursor</a>
+        <a href="text/text.html#40" class="lib-item" data-cat="text"><span class="lib-num">40</span>Cascade Down</a>
+        <a href="text/text.html#41" class="lib-item" data-cat="text"><span class="lib-num">41</span>Drop Shadow Pop</a>
+        <a href="text/text.html#42" class="lib-item" data-cat="text"><span class="lib-num">42</span>Echo Fade</a>
+        <a href="text/text.html#43" class="lib-item" data-cat="text"><span class="lib-num">43</span>Fly In</a>
+        <a href="text/text.html#44" class="lib-item" data-cat="text"><span class="lib-num">44</span>Gravity Fall</a>
+        <a href="text/text.html#45" class="lib-item" data-cat="text"><span class="lib-num">45</span>Hinge Drop</a>
+        <a href="text/text.html#46" class="lib-item" data-cat="text"><span class="lib-num">46</span>Implode</a>
+        <a href="text/text.html#47" class="lib-item" data-cat="text"><span class="lib-num">47</span>Jellyfish Float</a>
+        <a href="text/text.html#48" class="lib-item" data-cat="text"><span class="lib-num">48</span>Kaleidoscope</a>
+        <a href="text/text.html#49" class="lib-item" data-cat="text"><span class="lib-num">49</span>Laser Write</a>
+        <a href="text/text.html#50" class="lib-item" data-cat="text"><span class="lib-num">50</span>Magnetic Pull</a>
+        <a href="text/text.html#51" class="lib-item" data-cat="text"><span class="lib-num">51</span>Glassmorphic</a>
+        <a href="text/text.html#52" class="lib-item" data-cat="text"><span class="lib-num">52</span>Neumorphic Embossed</a>
+        <a href="text/text.html#53" class="lib-item" data-cat="text"><span class="lib-num">53</span>Aurora Gradient</a>
+        <a href="text/text.html#54" class="lib-item" data-cat="text"><span class="lib-num">54</span>Brutalist Stamp</a>
+        <a href="text/text.html#55" class="lib-item" data-cat="text"><span class="lib-num">55</span>Glitch Text</a>
+        <a href="text/text.html#56" class="lib-item" data-cat="text"><span class="lib-num">56</span>Neon Glow</a>
+        <a href="text/text.html#57" class="lib-item" data-cat="text"><span class="lib-num">57</span>Typewriter</a>
+        <a href="text/text.html#58" class="lib-item" data-cat="text"><span class="lib-num">58</span>Gradient Outline</a>
+        <a href="text/text.html#59" class="lib-item" data-cat="text"><span class="lib-num">59</span>Float Animation</a>
+        <a href="text/text.html#60" class="lib-item" data-cat="text"><span class="lib-num">60</span>Reveal Slide</a>
+
+        <div class="lib-category" data-cat="modal">Modals — 60</div>
+        <a href="modal/modal.html#1" class="lib-item" data-cat="modal"><span class="lib-num">01</span>Glassmorphic</a>
+        <a href="modal/modal.html#2" class="lib-item" data-cat="modal"><span class="lib-num">02</span>Slide-In</a>
+        <a href="modal/modal.html#3" class="lib-item" data-cat="modal"><span class="lib-num">03</span>Pop-Up Bubble</a>
+        <a href="modal/modal.html#4" class="lib-item" data-cat="modal"><span class="lib-num">04</span>3D Flip</a>
+        <a href="modal/modal.html#5" class="lib-item" data-cat="modal"><span class="lib-num">05</span>Fade-In Overlay</a>
+        <a href="modal/modal.html#6" class="lib-item" data-cat="modal"><span class="lib-num">06</span>Elastic Pop</a>
+        <a href="modal/modal.html#7" class="lib-item" data-cat="modal"><span class="lib-num">07</span>Neumorphic</a>
+        <a href="modal/modal.html#8" class="lib-item" data-cat="modal"><span class="lib-num">08</span>Neon Border</a>
+        <a href="modal/modal.html#9" class="lib-item" data-cat="modal"><span class="lib-num">09</span>Draggable</a>
+        <a href="modal/modal.html#10" class="lib-item" data-cat="modal"><span class="lib-num">10</span>Full-Screen</a>
+        <a href="modal/modal.html#11" class="lib-item" data-cat="modal"><span class="lib-num">11</span>Tooltip</a>
+        <a href="modal/modal.html#12" class="lib-item" data-cat="modal"><span class="lib-num">12</span>Carousel</a>
+        <a href="modal/modal.html#13" class="lib-item" data-cat="modal"><span class="lib-num">13</span>Video</a>
+        <a href="modal/modal.html#14" class="lib-item" data-cat="modal"><span class="lib-num">14</span>Audio</a>
+        <a href="modal/modal.html#15" class="lib-item" data-cat="modal"><span class="lib-num">15</span>Form Wizard</a>
+        <a href="modal/modal.html#16" class="lib-item" data-cat="modal"><span class="lib-num">16</span>Tabbed</a>
+        <a href="modal/modal.html#17" class="lib-item" data-cat="modal"><span class="lib-num">17</span>Stepper</a>
+        <a href="modal/modal.html#18" class="lib-item" data-cat="modal"><span class="lib-num">18</span>Countdown</a>
+        <a href="modal/modal.html#19" class="lib-item" data-cat="modal"><span class="lib-num">19</span>Animated SVG</a>
+        <a href="modal/modal.html#20" class="lib-item" data-cat="modal"><span class="lib-num">20</span>Clip-Path</a>
+        <a href="modal/modal.html#21" class="lib-item" data-cat="modal"><span class="lib-num">21</span>Parallax</a>
+        <a href="modal/modal.html#22" class="lib-item" data-cat="modal"><span class="lib-num">22</span>Sticky</a>
+        <a href="modal/modal.html#23" class="lib-item" data-cat="modal"><span class="lib-num">23</span>Scrollable</a>
+        <a href="modal/modal.html#24" class="lib-item" data-cat="modal"><span class="lib-num">24</span>Split</a>
+        <a href="modal/modal.html#25" class="lib-item" data-cat="modal"><span class="lib-num">25</span>Magnetic</a>
+        <a href="modal/modal.html#26" class="lib-item" data-cat="modal"><span class="lib-num">26</span>Hover-Triggered</a>
+        <a href="modal/modal.html#27" class="lib-item" data-cat="modal"><span class="lib-num">27</span>Contextual Popover</a>
+        <a href="modal/modal.html#28" class="lib-item" data-cat="modal"><span class="lib-num">28</span>Toast Notification</a>
+        <a href="modal/modal.html#29" class="lib-item" data-cat="modal"><span class="lib-num">29</span>Sliding Sheet</a>
+        <a href="modal/modal.html#30" class="lib-item" data-cat="modal"><span class="lib-num">30</span>Jelly</a>
+        <a href="modal/modal.html#31" class="lib-item" data-cat="modal"><span class="lib-num">31</span>Rapid Zoom</a>
+        <a href="modal/modal.html#32" class="lib-item" data-cat="modal"><span class="lib-num">32</span>Rotating</a>
+        <a href="modal/modal.html#33" class="lib-item" data-cat="modal"><span class="lib-num">33</span>Thermal</a>
+        <a href="modal/modal.html#34" class="lib-item" data-cat="modal"><span class="lib-num">34</span>Underline</a>
+        <a href="modal/modal.html#35" class="lib-item" data-cat="modal"><span class="lib-num">35</span>Voice-Activated</a>
+        <a href="modal/modal.html#36" class="lib-item" data-cat="modal"><span class="lib-num">36</span>Waterfall</a>
+        <a href="modal/modal.html#37" class="lib-item" data-cat="modal"><span class="lib-num">37</span>X-Ray</a>
+        <a href="modal/modal.html#38" class="lib-item" data-cat="modal"><span class="lib-num">38</span>Yinyang</a>
+        <a href="modal/modal.html#39" class="lib-item" data-cat="modal"><span class="lib-num">39</span>Zigzag</a>
+        <a href="modal/modal.html#40" class="lib-item" data-cat="modal"><span class="lib-num">40</span>Zoom In/Out</a>
+        <a href="modal/modal.html#41" class="lib-item" data-cat="modal"><span class="lib-num">41</span>Bounce</a>
+        <a href="modal/modal.html#42" class="lib-item" data-cat="modal"><span class="lib-num">42</span>Curtain</a>
+        <a href="modal/modal.html#43" class="lib-item" data-cat="modal"><span class="lib-num">43</span>Drop Shadow</a>
+        <a href="modal/modal.html#44" class="lib-item" data-cat="modal"><span class="lib-num">44</span>Exploding</a>
+        <a href="modal/modal.html#45" class="lib-item" data-cat="modal"><span class="lib-num">45</span>Frosted Glass</a>
+        <a href="modal/modal.html#46" class="lib-item" data-cat="modal"><span class="lib-num">46</span>Gradient Fade</a>
+        <a href="modal/modal.html#47" class="lib-item" data-cat="modal"><span class="lib-num">47</span>Highlighted Edges</a>
+        <a href="modal/modal.html#48" class="lib-item" data-cat="modal"><span class="lib-num">48</span>Inset Frame</a>
+        <a href="modal/modal.html#49" class="lib-item" data-cat="modal"><span class="lib-num">49</span>Jump-In</a>
+        <a href="modal/modal.html#50" class="lib-item" data-cat="modal"><span class="lib-num">50</span>Kinetic</a>
+        <a href="modal/modal.html#51" class="lib-item" data-cat="modal"><span class="lib-num">51</span>Glassmorphic V2</a>
+        <a href="modal/modal.html#52" class="lib-item" data-cat="modal"><span class="lib-num">52</span>Neumorphic</a>
+        <a href="modal/modal.html#53" class="lib-item" data-cat="modal"><span class="lib-num">53</span>Brutalist</a>
+        <a href="modal/modal.html#54" class="lib-item" data-cat="modal"><span class="lib-num">54</span>Aurora</a>
+        <a href="modal/modal.html#55" class="lib-item" data-cat="modal"><span class="lib-num">55</span>Minimal Drawer</a>
+        <a href="modal/modal.html#56" class="lib-item" data-cat="modal"><span class="lib-num">56</span>Neon</a>
+        <a href="modal/modal.html#57" class="lib-item" data-cat="modal"><span class="lib-num">57</span>Pill</a>
+        <a href="modal/modal.html#58" class="lib-item" data-cat="modal"><span class="lib-num">58</span>Notification Toast</a>
+        <a href="modal/modal.html#59" class="lib-item" data-cat="modal"><span class="lib-num">59</span>Command Palette</a>
+        <a href="modal/modal.html#60" class="lib-item" data-cat="modal"><span class="lib-num">60</span>Spotlight</a>
       </div>
     </section>
 
-    <div class="divider flip">
-      <svg viewBox="0 0 1440 100" preserveAspectRatio="none">
-        <path
-          d="M0,100 C360,0 1080,200 1440,100 L1440,0 L0,0 Z"
-          fill="url(#grad1)"
-        />
-      </svg>
-    </div>
+    <!-- LIVE DEMO STRIP -->
+    <section id="live-demo" class="section demo-section">
+      <div class="section-header">
+        <span class="section-tag">INTERACTIVE</span>
+        <h2>Live Preview</h2>
+        <p class="section-desc">Try out some effects right here.</p>
+      </div>
 
-    <!-- BUTTONS -->
-    <section id="buttons" class="section buttons-section glass">
-      <h2>Buttons</h2>
-      <div class="buttons-grid">
-        <button class="btn btn-neon ripple" aria-label="Canvas ripple button">
-          <canvas class="btnCanvas"></canvas>
-          <span>Click Me</span>
-        </button>
-        <button class="btn btn-neon pulse" aria-label="Canvas pulse button">
-          <canvas class="btnCanvas"></canvas>
-          <span>Hover Me</span>
-        </button>
+      <div class="demo-grid">
+        <!-- Div Effects Demo -->
+        <div class="demo-block">
+          <h3>Div Effects</h3>
+          <div class="demo-row">
+            <div class="effect-card neon-glow" tabindex="0">Neon Glow</div>
+            <div class="effect-card gradient-fade" tabindex="0">Gradient Fade</div>
+            <div class="effect-card pulse-effect" tabindex="0">Pulse</div>
+            <div class="effect-card shape-morph" tabindex="0">Shape Morph</div>
+          </div>
+        </div>
+
+        <!-- Buttons Demo -->
+        <div class="demo-block">
+          <h3>Buttons</h3>
+          <div class="demo-row">
+            <button class="btn btn-primary ripple"><span>Primary</span></button>
+            <button class="btn btn-outline ripple"><span>Outline</span></button>
+            <button class="btn btn-ghost ripple"><span>Ghost</span></button>
+            <button class="btn btn-brutal ripple"><span>Brutal</span></button>
+          </div>
+        </div>
+
+        <!-- Input Demo -->
+        <div class="demo-block">
+          <h3>Inputs</h3>
+          <div class="demo-row inputs-row">
+            <div class="input-glass-wrap">
+              <input type="text" class="input-glass" placeholder=" " id="demoInput1"/>
+              <label for="demoInput1" class="input-glass-label">Glass Input</label>
+            </div>
+            <div class="input-brutal-wrap">
+              <input type="text" class="input-brutal" placeholder="Brutal Input"/>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
-
-    <div class="divider">
-      <svg viewBox="0 0 1440 100" preserveAspectRatio="none">
-        <path
-          d="M0,100 C360,0 1080,200 1440,100 L1440,0 L0,0 Z"
-          fill="url(#grad1)"
-        />
-      </svg>
-    </div>
 
     <!-- CTA -->
-    <section id="cta" class="section cta-section glass">
-      <h2>Join the Movement</h2>
-      <p>Contribute to StyleSync on GitHub and shape the future of web UI.</p>
-      <a
-        href="https://github.com/shariarmahmudsaif/stylesync"
-        target="_blank"
-        rel="noopener"
-        class="btn btn-primary"
-        data-tooltip="Contribute on GitHub"
-        >Contribute on GitHub</a
-      >
+    <section id="cta" class="section cta-section">
+      <div class="cta-inner glass-card">
+        <div class="cta-content">
+          <span class="section-tag">GET INVOLVED</span>
+          <h2>Join the Movement</h2>
+          <p>Contribute to StyleSync on GitHub and shape the future of open-source web UI.</p>
+          <div class="cta-actions">
+            <a href="https://github.com/shariarmahmudsaif/stylesync" target="_blank" rel="noopener" class="btn btn-primary btn-lg">Contribute on GitHub</a>
+            <a href="CONTRIBUTING.markdown" class="btn btn-outline btn-lg">Read the Guide</a>
+          </div>
+        </div>
+      </div>
     </section>
   </main>
 
   <!-- FOOTER -->
-  <footer class="footer glass">
+  <footer class="footer">
     <div class="footer-content">
-      <div class="social-media">
-        <a href="https://github.com/shariarmahmudsaif" aria-label="GitHub"><!-- SVG --></a>
-        <a href="https://instagram.com/shariarmahmudsaif" aria-label="Instagram"><!-- SVG --></a>
-        <a href="https://facebook.com/ignacio.hyper" aria-label="Facebook"><!-- SVG --></a>
+      <div class="footer-brand">
+        <span class="logo"><span class="logo-bracket">[</span>Style<span class="logo-accent">Sync</span><span class="logo-bracket">]</span></span>
+        <p class="footer-tagline">Open-source UI toolkit for the modern web.</p>
       </div>
-
-      <ul class="footer-links">
-        <li><a href="https://shariarmahmudsaif.github.io/Ignacio-portfolio/">Contact</a></li>
-        <li><a
-            href="https://github.com/shariarmahmudsaif/"
-            target="_blank"
-            rel="noopener"
-            >Ask For Commission</a
-          ></li>
-        <li>
-          <a
-            href="https://github.com/shariarmahmudsaif/stylesync"
-            target="_blank"
-            rel="noopener"
-            >GitHub</a
-          >
-        </li>
-      </ul>
+      <div class="footer-nav">
+        <h4>Components</h4>
+        <ul>
+          <li><a href="div/div.html">Div Effects</a></li>
+          <li><a href="button/button.html">Buttons</a></li>
+          <li><a href="inputs/input.html">Inputs</a></li>
+          <li><a href="font/font.html">Fonts</a></li>
+          <li><a href="hover/hover.html">Hover</a></li>
+        </ul>
+      </div>
+      <div class="footer-nav">
+        <h4>More</h4>
+        <ul>
+          <li><a href="loading/load.html">Loading</a></li>
+          <li><a href="nav/nav.html">Navbars</a></li>
+          <li><a href="burger/burger.html">Burger</a></li>
+          <li><a href="text/text.html">Text</a></li>
+          <li><a href="modal/modal.html">Modals</a></li>
+        </ul>
+      </div>
+      <div class="footer-nav">
+        <h4>Links</h4>
+        <ul>
+          <li><a href="https://github.com/shariarmahmudsaif/stylesync" target="_blank" rel="noopener">GitHub</a></li>
+          <li><a href="CONTRIBUTING.markdown">Contribute</a></li>
+          <li><a href="https://shariarmahmudsaif.github.io/Ignacio-portfolio/" target="_blank" rel="noopener">Contact</a></li>
+        </ul>
+      </div>
     </div>
-    <p class="footer-copy">© 2025 IGNACIO-StyleSync</p>
+    <div class="footer-bottom">
+      <p>&copy; 2025 IGNACIO — StyleSync. All rights reserved.</p>
+      <div class="footer-socials">
+        <a href="https://github.com/shariarmahmudsaif" target="_blank" rel="noopener" aria-label="GitHub">
+          <svg width="20" height="20" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+        </a>
+        <a href="https://instagram.com/shariarmahmudsaif" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
+        </a>
+        <a href="https://facebook.com/ignacio.hyper" target="_blank" rel="noopener" aria-label="Facebook">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        </a>
+      </div>
+    </div>
   </footer>
 
   <script defer src="scripts.js"></script>

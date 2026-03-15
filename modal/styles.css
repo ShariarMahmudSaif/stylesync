@@ -1,4 +1,9 @@
 /* General Modal Styles */
+body {
+  background: #0a0a0a;
+  min-height: 100vh;
+  color: #ffffff;
+}
 .modal-overlay {
   display: none;
   position: fixed;
@@ -352,3 +357,146 @@
 .copy-btn {
   transition: background-color 0.3s ease-in-out;
 }
+/* === NEW STARTUP-STYLE MODALS === */
+
+/* Modal 51: Glassmorphic Modal */
+.modal-51 .modal-content {
+  background: rgba(26, 26, 26, 0.7);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.4);
+}
+
+/* Modal 52: Neumorphic Modal */
+.modal-52 .modal-content {
+  background: #1a1a1a;
+  border: none;
+  border-radius: 16px;
+  box-shadow: 12px 12px 24px #0d0d0d, -12px -12px 24px #272727;
+}
+
+/* Modal 53: Brutalist Modal */
+.modal-53 .modal-content {
+  background: #f5f0e8;
+  color: #0a0a0a;
+  border: 4px solid #0a0a0a;
+  box-shadow: 10px 10px 0 #0a0a0a;
+  border-radius: 0;
+}
+.modal-53 .modal-content h3 { color: #0a0a0a; font-weight: 900; text-transform: uppercase; }
+
+/* Modal 54: Aurora Modal */
+.modal-54 .modal-content {
+  background: linear-gradient(135deg, #0f0c29, #302b63);
+  border: 1px solid rgba(255, 140, 0, 0.2);
+  border-radius: 12px;
+  position: relative;
+  overflow: hidden;
+}
+.modal-54 .modal-content::before {
+  content: '';
+  position: absolute;
+  top: -1px; left: -1px; right: -1px;
+  height: 3px;
+  background: linear-gradient(90deg, #ff8c00, #764ba2, #23d5ab, #ff8c00);
+  background-size: 200%;
+  animation: aurora-bar 3s linear infinite;
+}
+@keyframes aurora-bar {
+  0% { background-position: 0% 0%; }
+  100% { background-position: 200% 0%; }
+}
+
+/* Modal 55: Minimal Drawer */
+.modal-55 .modal-content {
+  background: #1a1a1a;
+  border: 1px solid rgba(255, 140, 0, 0.15);
+  border-radius: 0;
+  position: fixed;
+  right: 0; top: 0;
+  height: 100vh;
+  width: 360px;
+  max-width: 90vw;
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+}
+.modal-55.active .modal-content {
+  transform: translateX(0);
+}
+
+/* Modal 56: Neon Modal */
+.modal-56 .modal-content {
+  background: #0a0a0a;
+  border: 1px solid #0ff;
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.2), inset 0 0 20px rgba(0, 255, 255, 0.05);
+}
+
+/* Modal 57: Pill Modal */
+.modal-57 .modal-content {
+  background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
+  border: 1px solid rgba(255, 140, 0, 0.15);
+  border-radius: 24px;
+  padding: 2rem;
+}
+
+/* Modal 58: Notification Toast */
+.modal-58 .modal-content {
+  background: #1a1a1a;
+  border-left: 4px solid #ff8c00;
+  border-radius: 4px;
+  padding: 1rem 1.5rem;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+  max-width: 400px;
+}
+
+/* Modal 59: Command Palette */
+.modal-59 .modal-content {
+  background: #1a1a1a;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  max-width: 600px;
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.5);
+}
+.modal-59 .modal-content input {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(255, 140, 0, 0.2);
+  color: #f5f0e8;
+  padding: 12px 16px;
+  width: 100%;
+  font-size: 1rem;
+}
+
+/* Modal 60: Spotlight Modal */
+.modal-60 .modal-overlay {
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(4px);
+}
+.modal-60 .modal-content {
+  background: #1a1a1a;
+  border: 1px solid rgba(255, 140, 0, 0.3);
+  border-radius: 16px;
+  box-shadow: 0 0 60px rgba(255, 140, 0, 0.1);
+}
+
+/* --- LIGHT MODE --- */
+[data-theme="light"] body { background: #f5f0e8; }
+[data-theme="light"] .modal-overlay {
+  background: rgba(0,0,0,0.4);
+}
+[data-theme="light"] .modal {
+  background: #ffffff;
+  color: #1a1a1a;
+  border-color: rgba(10,10,10,0.1);
+}
+[data-theme="light"] .modal h2 { color: #1a1a1a; }
+[data-theme="light"] .modal p { color: #4a4540; }
+[data-theme="light"] .close-btn { color: #1a1a1a; }
+[data-theme="light"] .modal-51 { background: rgba(255,255,255,0.85) !important; backdrop-filter: blur(20px); }
+[data-theme="light"] .modal-52 { background: #e8e0d4 !important; box-shadow: 6px 6px 12px #ccc, -6px -6px 12px #fff !important; }
+[data-theme="light"] .modal-53 { background: #fff8ee !important; border: 3px solid #1a1a1a !important; }
+[data-theme="light"] .modal-56 { background: #1a1a1a !important; color: #0ff !important; }
+[data-theme="light"] .modal-56 h2, [data-theme="light"] .modal-56 p { color: #0ff !important; }

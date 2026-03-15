@@ -1,4 +1,9 @@
 /* General Font Preview Styles */
+body {
+  background: #0a0a0a;
+  min-height: 100vh;
+  color: #ffffff;
+}
 .font-preview {
   font-size: 24px;
   color: #ffffff;
@@ -33,4 +38,11 @@
 }
 .copy-btn {
   transition: background-color 0.3s ease-in-out;
+}
+/* --- LIGHT MODE --- */
+[data-theme="light"] body { background: #f5f0e8; }
+[data-theme="light"] .font-preview {
+  color: #1a1a1a !important;
+  background: rgba(0, 0, 0, 0.05) !important;
+  border: 1px solid rgba(0,0,0,0.08);
 }

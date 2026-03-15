@@ -1,7 +1,12 @@
 /* General Text Styles */
+body {
+  background: #0a0a0a;
+  min-height: 100vh;
+  color: #ffffff;
+}
 span {
   font-size: 24px;
-  color: #fff;
+  color: #f5f0e8;
   font-family: 'Inter', sans-serif;
   transition: all 0.3s ease-in-out;
   display: inline-block;
@@ -442,3 +447,157 @@ span:focus {
 .copy-btn {
   transition: background-color 0.3s ease-in-out;
 }
+/* === NEW STARTUP-STYLE TEXT EFFECTS === */
+
+/* Text 51: Glassmorphic Text */
+.text-51 {
+  color: rgba(255, 255, 255, 0.9);
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  background: rgba(255, 255, 255, 0.06);
+  -webkit-background-clip: text;
+  background-clip: text;
+  backdrop-filter: blur(4px);
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+/* Text 52: Neumorphic Embossed */
+.text-52 {
+  color: #1a1a1a;
+  text-shadow: 1px 1px 2px #272727, -1px -1px 2px #0d0d0d;
+  font-size: 2rem;
+  font-weight: 800;
+}
+
+/* Text 53: Aurora Gradient Text */
+.text-53 {
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: aurora-text 4s ease infinite;
+  font-size: 2rem;
+  font-weight: 800;
+}
+@keyframes aurora-text {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Text 54: Brutalist Stamp */
+.text-54 {
+  color: #ff8c00;
+  font-size: 2rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  -webkit-text-stroke: 2px #0a0a0a;
+  text-shadow: 4px 4px 0 #0a0a0a;
+}
+
+/* Text 55: Glitch Text */
+.text-55 {
+  color: #f5f0e8;
+  font-size: 2rem;
+  font-weight: 800;
+  position: relative;
+  animation: glitch-text 3s infinite;
+}
+@keyframes glitch-text {
+  0%, 90%, 100% { transform: none; text-shadow: none; }
+  92% { transform: skew(-2deg); text-shadow: -2px 0 #ff0000, 2px 0 #0ff; }
+  94% { transform: skew(2deg); text-shadow: 2px 0 #ff0000, -2px 0 #0ff; }
+  96% { transform: none; text-shadow: -1px 0 #ff0000, 1px 0 #0ff; }
+}
+
+/* Text 56: Neon Glow Text */
+.text-56 {
+  color: #0ff;
+  font-size: 2rem;
+  font-weight: 700;
+  text-shadow: 0 0 10px #0ff, 0 0 20px #0ff, 0 0 40px #0ff;
+  animation: neon-flicker 2s infinite;
+}
+@keyframes neon-flicker {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.85; }
+  52% { opacity: 1; }
+  54% { opacity: 0.9; }
+}
+
+/* Text 57: Typewriter Text */
+.text-57 {
+  color: #f5f0e8;
+  font-family: 'Space Mono', monospace;
+  font-size: 1.2rem;
+  border-right: 2px solid #ff8c00;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 0;
+  animation: typewriter 3s steps(20) forwards, blink-caret 0.75s step-end infinite;
+}
+@keyframes typewriter {
+  to { width: 100%; }
+}
+@keyframes blink-caret {
+  50% { border-color: transparent; }
+}
+
+/* Text 58: Gradient Outline */
+.text-58 {
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: transparent;
+  -webkit-text-stroke: 2px #ff8c00;
+  background: linear-gradient(135deg, #ff8c00, #764ba2);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+/* Text 59: Float Animation Text */
+.text-59 {
+  color: #f5f0e8;
+  font-size: 2rem;
+  font-weight: 700;
+  animation: float-text 3s ease-in-out infinite;
+}
+@keyframes float-text {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+/* Text 60: Reveal Slide Text */
+.text-60 {
+  color: #f5f0e8;
+  font-size: 2rem;
+  font-weight: 800;
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+}
+.text-60::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: #ff8c00;
+  animation: reveal-slide 2s forwards;
+}
+@keyframes reveal-slide {
+  0% { transform: translateX(0); }
+  50% { transform: translateX(0); }
+  100% { transform: translateX(101%); }
+}
+
+/* --- LIGHT MODE --- */
+[data-theme="light"] body { background: #f5f0e8; }
+[data-theme="light"] main span {
+  color: #1a1a1a !important;
+}
+[data-theme="light"] .text-51 span { color: #1a1a1a !important; }
+[data-theme="light"] .text-52 span { color: #4a4540 !important; text-shadow: 1px 1px 2px #ccc, -1px -1px 2px #fff !important; }
+[data-theme="light"] .text-53 span { background: linear-gradient(135deg, #e07800, #a855f7, #06b6d4) !important; -webkit-background-clip: text !important; -webkit-text-fill-color: transparent !important; }
+[data-theme="light"] .text-54 span { color: #1a1a1a !important; border-color: #1a1a1a !important; }
+[data-theme="light"] .text-56 span { color: #e07800 !important; text-shadow: 0 0 8px rgba(224,120,0,0.4) !important; }

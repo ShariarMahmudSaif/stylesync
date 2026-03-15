@@ -4,16 +4,98 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hover & Click Effects - StyleSync</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Fira+Code&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            cream: { DEFAULT: '#f5f0e8', dark: '#e8dcc8' },
+            accent: { DEFAULT: '#ff8c00', light: '#ffb347', dark: '#cc7000' },
+            surface: '#1a1a1a',
+          },
+          fontFamily: {
+            grotesk: ['"Space Grotesk"', 'system-ui', 'sans-serif'],
+            mono: ['"Space Mono"', 'monospace'],
+          }
+        }
+      }
+    }
+  </script>
+  <style type="text/tailwindcss">
+    ::selection { background: #ff8c00; color: #0a0a0a; }
+    .code-container { border: 2px solid rgba(255,140,0,0.2) !important; background: rgba(10,10,10,0.8) !important; }
+    .code-container code { color: #f5f0e8 !important; }
+    .copy-btn { background: #ff8c00 !important; color: #0a0a0a !important; border: 2px solid #0a0a0a !important; font-weight: 700 !important; text-transform: uppercase !important; letter-spacing: 0.05em !important; font-size: 0.75rem !important; }
+    .copy-btn:hover { background: #ffb347 !important; transform: translate(-1px,-1px) !important; box-shadow: 3px 3px 0 #0a0a0a !important; }
+    .cross-nav { display: flex; flex-wrap: wrap; gap: 0.4rem; justify-content: center; margin-top: 1rem; }
+    .cross-nav a { font-family: 'Space Mono', monospace; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.08em; padding: 0.35rem 0.7rem; border: 2px solid rgba(255,140,0,0.25); color: #a89f91; text-decoration: none; transition: all 0.15s; background: rgba(26,26,26,0.5); }
+    .cross-nav a:hover { background: #ff8c00; color: #0a0a0a; border-color: #ff8c00; box-shadow: 2px 2px 0 #cc7000; }
+    .cross-nav a.current { background: #ff8c00; color: #0a0a0a; border-color: #ff8c00; pointer-events: none; }
+    /* Theme toggle */
+    .theme-toggle { position: fixed; top: 1rem; right: 1rem; z-index: 999; background: rgba(26,26,26,0.8); border: 2px solid rgba(255,140,0,0.3); width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; color: #a89f91; cursor: pointer; transition: all 0.2s; backdrop-filter: blur(10px); }
+    .theme-toggle:hover { border-color: #ff8c00; color: #ff8c00; }
+    .icon-moon { display: block; }
+    .icon-sun { display: none; }
+    [data-theme="light"] .icon-moon { display: none; }
+    [data-theme="light"] .icon-sun { display: block; }
+    [data-theme="light"] .theme-toggle { background: rgba(255,248,238,0.8); border-color: rgba(224,120,0,0.3); color: #6b6155; }
+    [data-theme="light"] .theme-toggle:hover { border-color: #e07800; color: #e07800; }
+    /* Light mode overrides */
+    [data-theme="light"] body { background: #f5f0e8 !important; }
+    [data-theme="light"] header h1, [data-theme="light"] header h3 { color: #1a1a1a !important; }
+    [data-theme="light"] header p { color: #6b6155 !important; }
+    [data-theme="light"] main h3 { color: #1a1a1a !important; }
+    [data-theme="light"] main .text-white { color: #1a1a1a !important; }
+    [data-theme="light"] main .text-gray-200 { color: #6b6155 !important; }
+    [data-theme="light"] main .text-cream { color: #1a1a1a !important; }
+    [data-theme="light"] main .bg-gray-800 { background: #e8e0d4 !important; }
+    [data-theme="light"] .code-container .bg-gray-800 { background: rgba(26,26,26,0.95) !important; }
+    [data-theme="light"] .copy-btn { background: #e07800 !important; color: #fff !important; }
+    [data-theme="light"] .cross-nav a { background: rgba(255,248,238,0.6); color: #6b6155; border-color: rgba(224,120,0,0.25); }
+    [data-theme="light"] .cross-nav a:hover { background: #e07800; color: #f5f0e8; border-color: #e07800; }
+    [data-theme="light"] .cross-nav a.current { background: #e07800; color: #f5f0e8; border-color: #e07800; }
+    [data-theme="light"] .code-container { background: rgba(26,26,26,0.9) !important; }
+    [data-theme="light"] .code-container code { color: #f5f0e8 !important; }
+  </style>
   <link rel="stylesheet" href="styles.css">
+  <script>
+    (function(){
+      var KEY="stylesync-theme";
+      var root=document.documentElement;
+      function get(){var s=localStorage.getItem(KEY);if(s)return s;return window.matchMedia("(prefers-color-scheme:light)").matches?"light":"dark";}
+      function apply(t){root.setAttribute("data-theme",t);localStorage.setItem(KEY,t);if(document.body){document.body.classList.toggle("light-mode",t==="light");document.body.classList.toggle("dark-mode",t==="dark");}}
+      apply(get());
+      document.addEventListener("DOMContentLoaded",function(){
+        apply(get());
+        var btn=document.getElementById("theme-toggle");
+        if(btn)btn.addEventListener("click",function(){apply(root.getAttribute("data-theme")==="dark"?"light":"dark");});
+      });
+    })();
+  </script>
 </head>
-<body class="p-6 font-inter">
-  <header class="text-center mb-8">
-    <h1 class="text-3xl font-bold text-white">Hover & Click Effects</h1>
-    <p class="text-lg text-gray-200 mt-2">Interactive and responsive effects for developers</p>
-    <a href="../index.html" class="text-white underline hover:text-gray-200">Back to Home</a>
-  </header>
+<body class="p-6 font-grotesk dark-mode">
+  <header class="text-center mb-12">
+    <a href="../index.html" class="inline-block mb-4 text-accent hover:text-accent-light font-mono text-xs uppercase tracking-widest border-2 border-accent px-4 py-2 hover:bg-accent hover:text-[#0a0a0a] transition-all">&larr; Back to Home</a>
+    <h1 class="text-4xl font-bold text-cream font-grotesk">Hover & Click Effects</h1>
+    <p class="text-lg text-cream-dark/70 mt-3 font-grotesk">Interactive and responsive effects for developers</p>
+    <nav class="cross-nav mt-6">
+      <a href="../div/div.html">Div Effects</a>
+      <a href="../button/button.html">Button Effects</a>
+      <a href="../inputs/input.html">Input Styles</a>
+      <a href="../font/font.html">Font Showcase</a>
+      <a href="#" class="current">Hover Effects</a>
+      <a href="../loading/load.html">Loading Anims</a>
+      <a href="../nav/nav.html">Navbar Styles</a>
+      <a href="../burger/burger.html">Burger Menus</a>
+      <a href="../text/text.html">Text Anims</a>
+      <a href="../modal/modal.html">Modal Styles</a>
+    </nav>
+    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+      <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+      <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+    </button>  </header>
   <main class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
     <div class="flex flex-col sm:flex-columb gap-4 items-start">
       <div class="effect effect-1" data-snippet=".effect-1 { position: relative; overflow: hidden; }\n.effect-1::after { content: ''; position: absolute; top: 50%; left: 50%; width: 0; height: 0; background: rgba(255, 255, 255, 0.3); border-radius: 50%; transform: translate(-50%, -50%); transition: width 0.4s, height 0.4s; }\n.effect-1:active::after { width: 200%; height: 200%; }">Ripple Click</div>
@@ -667,6 +749,58 @@
 .effect-50:hover {
   transform: scale(1.2);
 }</code></pre><button class="copy-btn mt-2 bg-blue-500 text-white px-2 py-1 rounded hover:bg-blue-600 text-xs">Copy</button></div>
+    </div>
+    <div class="flex flex-col sm:flex-columb gap-4 items-start">
+      <div class="effect effect-51" data-snippet=".effect-51 { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); }\n.effect-51:hover { background: rgba(255,255,255,0.12); backdrop-filter: blur(16px); border-color: rgba(255,140,0,0.4); }">Glassmorphic Hover</div>
+      <div class="code-container"><pre class="bg-gray-800 text-white p-2 rounded text-xs"><code>.effect-51 { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); }
+.effect-51:hover { background: rgba(255,255,255,0.12); backdrop-filter: blur(16px); border-color: rgba(255,140,0,0.4); }</code></pre><button class="copy-btn mt-2 bg-blue-500 text-white px-2 py-1 rounded hover:bg-blue-600 text-xs">Copy</button></div>
+    </div>
+    <div class="flex flex-col sm:flex-columb gap-4 items-start">
+      <div class="effect effect-52" data-snippet=".effect-52 { background: #1a1a1a; box-shadow: 6px 6px 12px #0d0d0d, -6px -6px 12px #272727; }\n.effect-52:hover { box-shadow: inset 4px 4px 8px #0d0d0d, inset -4px -4px 8px #272727; transform: scale(0.98); }">Neumorphic Press</div>
+      <div class="code-container"><pre class="bg-gray-800 text-white p-2 rounded text-xs"><code>.effect-52 { background: #1a1a1a; box-shadow: 6px 6px 12px #0d0d0d, -6px -6px 12px #272727; }
+.effect-52:hover { box-shadow: inset 4px 4px 8px #0d0d0d, inset -4px -4px 8px #272727; transform: scale(0.98); }</code></pre><button class="copy-btn mt-2 bg-blue-500 text-white px-2 py-1 rounded hover:bg-blue-600 text-xs">Copy</button></div>
+    </div>
+    <div class="flex flex-col sm:flex-columb gap-4 items-start">
+      <div class="effect effect-53" data-snippet=".effect-53 { background: #1a1a1a; position: relative; overflow: hidden; }\n.effect-53::before { content: ''; position: absolute; inset: 0; background: linear-gradient(-45deg, #0f0c29, #302b63, #24243e, #ff8c00); opacity: 0; transition: opacity 0.5s; }\n.effect-53:hover::before { opacity: 1; }">Aurora Reveal</div>
+      <div class="code-container"><pre class="bg-gray-800 text-white p-2 rounded text-xs"><code>.effect-53 { background: #1a1a1a; position: relative; overflow: hidden; }
+.effect-53::before { background: linear-gradient(-45deg, #0f0c29, #302b63, #ff8c00); opacity: 0; }
+.effect-53:hover::before { opacity: 1; }</code></pre><button class="copy-btn mt-2 bg-blue-500 text-white px-2 py-1 rounded hover:bg-blue-600 text-xs">Copy</button></div>
+    </div>
+    <div class="flex flex-col sm:flex-columb gap-4 items-start">
+      <div class="effect effect-54" data-snippet=".effect-54 { background: #ff8c00; color: #0a0a0a; border: 3px solid #0a0a0a; box-shadow: 6px 6px 0 #0a0a0a; }\n.effect-54:hover { transform: translate(-4px,-4px); box-shadow: 10px 10px 0 #0a0a0a; }">Brutalist Shift</div>
+      <div class="code-container"><pre class="bg-gray-800 text-white p-2 rounded text-xs"><code>.effect-54 { background: #ff8c00; color: #0a0a0a; border: 3px solid #0a0a0a; box-shadow: 6px 6px 0 #0a0a0a; }
+.effect-54:hover { transform: translate(-4px,-4px); box-shadow: 10px 10px 0 #0a0a0a; }</code></pre><button class="copy-btn mt-2 bg-blue-500 text-white px-2 py-1 rounded hover:bg-blue-600 text-xs">Copy</button></div>
+    </div>
+    <div class="flex flex-col sm:flex-columb gap-4 items-start">
+      <div class="effect effect-55" data-snippet=".effect-55 { background: linear-gradient(135deg, #1a1a1a, #2a2a2a); border: 1px solid rgba(255,140,0,0.15); }\n.effect-55:hover { transform: perspective(600px) rotateY(8deg) rotateX(-4deg); box-shadow: -8px 8px 24px rgba(0,0,0,0.3); }">Magnetic Tilt</div>
+      <div class="code-container"><pre class="bg-gray-800 text-white p-2 rounded text-xs"><code>.effect-55 { background: linear-gradient(135deg, #1a1a1a, #2a2a2a); }
+.effect-55:hover { transform: perspective(600px) rotateY(8deg) rotateX(-4deg); }</code></pre><button class="copy-btn mt-2 bg-blue-500 text-white px-2 py-1 rounded hover:bg-blue-600 text-xs">Copy</button></div>
+    </div>
+    <div class="flex flex-col sm:flex-columb gap-4 items-start">
+      <div class="effect effect-56" data-snippet=".effect-56 { background: #0a0a0a; position: relative; }\n.effect-56::before { content: ''; position: absolute; inset: -2px; background: conic-gradient(#0ff, #f0f, #ff0, #0ff); opacity: 0; }\n.effect-56:hover::before { opacity: 1; animation: border-chase 2s linear infinite; }">Neon Border Chase</div>
+      <div class="code-container"><pre class="bg-gray-800 text-white p-2 rounded text-xs"><code>.effect-56 { background: #0a0a0a; position: relative; }
+.effect-56::before { background: conic-gradient(#0ff, #f0f, #ff0, #0ff); opacity: 0; }
+.effect-56:hover::before { opacity: 1; animation: border-chase 2s linear infinite; }</code></pre><button class="copy-btn mt-2 bg-blue-500 text-white px-2 py-1 rounded hover:bg-blue-600 text-xs">Copy</button></div>
+    </div>
+    <div class="flex flex-col sm:flex-columb gap-4 items-start">
+      <div class="effect effect-57" data-snippet=".effect-57 { background: #1a1a1a; transition: all 0.5s cubic-bezier(0.34,1.56,0.64,1); }\n.effect-57:hover { transform: scale(1.08); box-shadow: 0 16px 40px rgba(255,140,0,0.2); }">Scale Bloom</div>
+      <div class="code-container"><pre class="bg-gray-800 text-white p-2 rounded text-xs"><code>.effect-57 { background: #1a1a1a; transition: all 0.5s cubic-bezier(0.34,1.56,0.64,1); }
+.effect-57:hover { transform: scale(1.08); box-shadow: 0 16px 40px rgba(255,140,0,0.2); }</code></pre><button class="copy-btn mt-2 bg-blue-500 text-white px-2 py-1 rounded hover:bg-blue-600 text-xs">Copy</button></div>
+    </div>
+    <div class="flex flex-col sm:flex-columb gap-4 items-start">
+      <div class="effect effect-58" data-snippet=".effect-58 { background: transparent; position: relative; }\n.effect-58::after { content: ''; position: absolute; bottom: 0; left: 50%; width: 0; height: 3px; background: #ff8c00; transition: all 0.3s; }\n.effect-58:hover::after { left: 0; width: 100%; }">Underline Expand</div>
+      <div class="code-container"><pre class="bg-gray-800 text-white p-2 rounded text-xs"><code>.effect-58::after { bottom: 0; left: 50%; width: 0; height: 3px; background: #ff8c00; }
+.effect-58:hover::after { left: 0; width: 100%; }</code></pre><button class="copy-btn mt-2 bg-blue-500 text-white px-2 py-1 rounded hover:bg-blue-600 text-xs">Copy</button></div>
+    </div>
+    <div class="flex flex-col sm:flex-columb gap-4 items-start">
+      <div class="effect effect-59" data-snippet=".effect-59 { background: #1a1a1a; position: relative; overflow: hidden; }\n.effect-59::before { content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: linear-gradient(135deg, #ff8c00, #ff6b00); transition: left 0.4s; }\n.effect-59:hover::before { left: 0; }">Gradient Wipe</div>
+      <div class="code-container"><pre class="bg-gray-800 text-white p-2 rounded text-xs"><code>.effect-59::before { left: -100%; background: linear-gradient(135deg, #ff8c00, #ff6b00); transition: left 0.4s; }
+.effect-59:hover::before { left: 0; }</code></pre><button class="copy-btn mt-2 bg-blue-500 text-white px-2 py-1 rounded hover:bg-blue-600 text-xs">Copy</button></div>
+    </div>
+    <div class="flex flex-col sm:flex-columb gap-4 items-start">
+      <div class="effect effect-60" data-snippet=".effect-60 { background: linear-gradient(135deg, #667eea, #764ba2); position: relative; overflow: hidden; }\n.effect-60::before { content: ''; background: conic-gradient(from 0deg, transparent, rgba(255,255,255,0.4), transparent 30%); opacity: 0; }\n.effect-60:hover::before { opacity: 1; animation: holo-hover 3s linear infinite; }">Holographic Shimmer</div>
+      <div class="code-container"><pre class="bg-gray-800 text-white p-2 rounded text-xs"><code>.effect-60 { background: linear-gradient(135deg, #667eea, #764ba2); position: relative; overflow: hidden; }
+.effect-60:hover::before { opacity: 1; animation: holo-hover 3s linear infinite; }</code></pre><button class="copy-btn mt-2 bg-blue-500 text-white px-2 py-1 rounded hover:bg-blue-600 text-xs">Copy</button></div>
     </div>
   </main>
   <script src="scripts.js"></script>

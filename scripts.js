@@ -1,218 +1,246 @@
-// DOM Elements
-const body = document.body;
-const loader = document.getElementById("loader");
-const header = document.getElementById("site-header");
-const backToTop = document.getElementById("backToTop");
-const burgerBtn = document.getElementById("burger");
-const burgerCanvas = document.getElementById("burgerCanvas");
-const mobileMenu = document.getElementById("mobile-menu");
-const mobileClose = document.getElementById("mobile-close");
-const themeToggle = document.getElementById("theme-toggle");
-const settingsBtn = document.getElementById("settingsBtn");
-const settingsModal = document.getElementById("settingsModal");
-const closeSettings = document.getElementById("closeSettings");
-const sampleModal = document.getElementById("sampleModal");
-const closeSample = document.getElementById("closeSampleModal");
-const heroCanvas = document.getElementById("heroCanvas");
-const btnCanvases = document.querySelectorAll(".btnCanvas");
+/* ═══════════════════════════════════════
+   STYLESYNC — Main Script
+   ═══════════════════════════════════════ */
+(() => {
+  "use strict";
 
-// SETTINGS STATE
-const options = {
-  burger: true,
-  nav: true,
-  textAnim: true,
-  fonts: true,
-  buttons: true,
-  div: true,
-  hover: true,
-  inputs: true,
-  loading: true,
-  modal: true,
-};
+  // ─── DOM ───
+  const $ = (sel) => document.querySelector(sel);
+  const $$ = (sel) => document.querySelectorAll(sel);
 
-// UTIL: toggle class
-const toggleClass = (el, cls, enabled) => {
-  if (enabled) el.classList.add(cls);
-  else el.classList.remove(cls);
-};
+  const root = document.documentElement;
+  const loader = $("#loader");
+  const header = $("#site-header");
+  const backToTop = $("#backToTop");
+  const burgerBtn = $("#burger");
+  const mobileMenu = $("#mobile-menu");
+  const mobileClose = $("#mobile-close");
+  const themeToggle = $("#theme-toggle");
+  const heroCanvas = $("#heroCanvas");
 
-// HIDE LOADER
-function hideLoader() {
-  setTimeout(() => {
-    loader.style.display = "none";
-  }, 800);
-}
+  // ─── THEME ───
+  const THEME_KEY = "stylesync-theme";
 
-// SCROLL EVENTS
-window.addEventListener("scroll", () => {
-  const y = window.scrollY;
-  // nav shrink
-  if (options.nav) {
-    header.classList.toggle("scrolled", y > 50);
+  function getPreferredTheme() {
+    const stored = localStorage.getItem(THEME_KEY);
+    if (stored) return stored;
+    return window.matchMedia("(prefers-color-scheme: light)").matches
+      ? "light"
+      : "dark";
   }
-  // back-to-top
-  backToTop.classList.toggle("show", y > 500);
-});
 
-// BACK TO TOP
-backToTop.addEventListener("click", () =>
-  window.scrollTo({ top: 0, behavior: "smooth" })
-);
+  function applyTheme(theme) {
+    root.setAttribute("data-theme", theme);
+    localStorage.setItem(THEME_KEY, theme);
+  }
 
-// THEME TOGGLE
-themeToggle.addEventListener("click", () => {
-  body.classList.toggle("light-theme");
-  themeToggle.textContent = body.classList.contains("light-theme")
-    ? "☀️"
-    : "🌙";
-});
+  applyTheme(getPreferredTheme());
 
-// BURGER & MOBILE MENU
-burgerBtn.addEventListener("click", () => {
-  options.burger && burstBurgerParticles();
-  burgerBtn.classList.toggle("open");
-  const open = burgerBtn.classList.contains("open");
-  mobileMenu.classList.toggle("open", open);
-  burgerBtn.setAttribute("aria-expanded", open);
-});
-mobileClose.addEventListener("click", () => {
-  burgerBtn.click();
-});
-
-// SETTINGS MODAL
-settingsBtn.addEventListener("click", () => {
-  settingsModal.classList.add("open");
-});
-closeSettings.addEventListener("click", () => {
-  settingsModal.classList.remove("open");
-});
-settingsModal
-  .querySelectorAll("input[type=checkbox]")
-  .forEach((cb) => {
-    cb.addEventListener("change", (e) => {
-      const opt = e.target.dataset.opt;
-      options[opt] = e.target.checked;
-      // apply toggles
-      toggleClass(burgerBtn, "open", options.burger && burgerBtn.classList.contains("open"));
-      header.classList.toggle("scrolled", options.nav && window.scrollY > 50);
-      toggleClass(body, "light-theme", options.fonts && body.classList.contains("light-theme"));
-      toggleClass(loader, "hidden", !options.loading);
-    });
+  themeToggle.addEventListener("click", () => {
+    const next =
+      root.getAttribute("data-theme") === "dark" ? "light" : "dark";
+    applyTheme(next);
   });
 
-// SAMPLE MODAL (demo)
-if (options.modal) {
-  setTimeout(() => sampleModal.classList.add("open"), 1500);
-}
-closeSample.addEventListener("click", () =>
-  sampleModal.classList.remove("open")
-);
-
-// INIT HERO CANVAS
-const initHero = () => {
-  const ctx = heroCanvas.getContext("2d");
-  const particles = [];
-  const colors = [options.text ? "#00ff99" : "#5500ff", "#cc00ff"];
-  const create = () => ({
-    x: Math.random() * heroCanvas.width,
-    y: Math.random() * heroCanvas.height,
-    r: Math.random() * 1.5 + 0.5,
-    dx: (Math.random() - 0.5) * 0.3,
-    dy: (Math.random() - 0.5) * 0.3,
-    col: colors[Math.floor(Math.random() * colors.length)],
-  });
-  for (let i = 0; i < 30; i++) particles.push(create());
-  const animate = () => {
-    ctx.clearRect(0, 0, heroCanvas.width, heroCanvas.height);
-    particles.forEach((p) => {
-      ctx.beginPath();
-      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-      ctx.fillStyle = p.col;
-      ctx.fill();
-      p.x += p.dx;
-      p.y += p.dy;
-      if (p.x < 0 || p.x > heroCanvas.width) p.dx *= -1;
-      if (p.y < 0 || p.y > heroCanvas.height) p.dy *= -1;
-    });
-    requestAnimationFrame(animate);
-  };
-  const resize = () => {
-    heroCanvas.width = heroCanvas.clientWidth;
-    heroCanvas.height = heroCanvas.clientHeight;
-  };
-  window.addEventListener("resize", resize);
-  resize();
-  animate();
-};
-
-// BURGER PARTICLES
-const burstBurgerParticles = () => {
-  const ctx = burgerCanvas.getContext("2d");
-  const w = burgerCanvas.width = 32;
-  const h = burgerCanvas.height = 32;
-  const parts = [];
-  for (let i = 0; i < 12; i++) {
-    parts.push({
-      x: w / 2,
-      y: h / 2,
-      r: Math.random() * 2 + 1,
-      dx: (Math.random() - 0.5) * 2,
-      dy: (Math.random() - 0.5) * 2,
-      life: 30,
-      col: options.nav ? "#00ff99" : "#cc00ff",
-    });
+  // ─── LOADER ───
+  function hideLoader() {
+    loader.classList.add("hidden");
+    setTimeout(() => {
+      loader.style.display = "none";
+    }, 600);
   }
-  const draw = () => {
-    ctx.clearRect(0, 0, w, h);
-    parts.forEach((p) => {
-      if (p.life > 0) {
-        ctx.beginPath();
-        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-        ctx.fillStyle = p.col;
-        ctx.fill();
+
+  // ─── SCROLL ───
+  let ticking = false;
+  window.addEventListener("scroll", () => {
+    if (!ticking) {
+      requestAnimationFrame(() => {
+        const y = window.scrollY;
+        header.classList.toggle("scrolled", y > 60);
+        backToTop.classList.toggle("show", y > 500);
+        ticking = false;
+      });
+      ticking = true;
+    }
+  });
+
+  // ─── BACK TO TOP ───
+  backToTop.addEventListener("click", () =>
+    window.scrollTo({ top: 0, behavior: "smooth" })
+  );
+
+  // ─── BURGER & MOBILE MENU ───
+  function toggleMobile(open) {
+    burgerBtn.classList.toggle("open", open);
+    mobileMenu.classList.toggle("open", open);
+    mobileMenu.setAttribute("aria-hidden", String(!open));
+    burgerBtn.setAttribute("aria-expanded", String(open));
+    document.body.style.overflow = open ? "hidden" : "";
+  }
+
+  burgerBtn.addEventListener("click", () => {
+    toggleMobile(!burgerBtn.classList.contains("open"));
+  });
+
+  mobileClose.addEventListener("click", () => toggleMobile(false));
+
+  // Close mobile menu on link click
+  mobileMenu.querySelectorAll("a").forEach((a) => {
+    a.addEventListener("click", () => toggleMobile(false));
+  });
+
+  // ─── HERO CANVAS — Floating Grid Dots ───
+  function initHeroCanvas() {
+    if (!heroCanvas) return;
+    const ctx = heroCanvas.getContext("2d");
+    const particles = [];
+    const PARTICLE_COUNT = 50;
+
+    function getColors() {
+      const isDark = root.getAttribute("data-theme") === "dark";
+      return isDark
+        ? ["#ff8c00", "#ffb347", "#cc7000", "#f5f0e8"]
+        : ["#e07800", "#cc7000", "#b36200", "#1a1a1a"];
+    }
+
+    function resize() {
+      heroCanvas.width = heroCanvas.clientWidth;
+      heroCanvas.height = heroCanvas.clientHeight;
+    }
+
+    function createParticle() {
+      const colors = getColors();
+      return {
+        x: Math.random() * heroCanvas.width,
+        y: Math.random() * heroCanvas.height,
+        size: Math.random() * 3 + 1,
+        dx: (Math.random() - 0.5) * 0.4,
+        dy: (Math.random() - 0.5) * 0.4,
+        color: colors[Math.floor(Math.random() * colors.length)],
+        opacity: Math.random() * 0.5 + 0.2,
+      };
+    }
+
+    resize();
+    for (let i = 0; i < PARTICLE_COUNT; i++) {
+      particles.push(createParticle());
+    }
+
+    function draw() {
+      ctx.clearRect(0, 0, heroCanvas.width, heroCanvas.height);
+
+      // Draw connections
+      for (let i = 0; i < particles.length; i++) {
+        for (let j = i + 1; j < particles.length; j++) {
+          const dx = particles[i].x - particles[j].x;
+          const dy = particles[i].y - particles[j].y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+          if (dist < 120) {
+            ctx.beginPath();
+            ctx.moveTo(particles[i].x, particles[i].y);
+            ctx.lineTo(particles[j].x, particles[j].y);
+            ctx.strokeStyle = `rgba(255, 140, 0, ${0.08 * (1 - dist / 120)})`;
+            ctx.lineWidth = 1;
+            ctx.stroke();
+          }
+        }
+      }
+
+      // Draw particles
+      particles.forEach((p) => {
+        ctx.fillStyle = p.color;
+        ctx.globalAlpha = p.opacity;
+        // Draw squares for brutalist feel
+        ctx.fillRect(
+          p.x - p.size / 2,
+          p.y - p.size / 2,
+          p.size,
+          p.size
+        );
+        ctx.globalAlpha = 1;
+
         p.x += p.dx;
         p.y += p.dy;
-        p.life--;
-      }
+
+        if (p.x < 0 || p.x > heroCanvas.width) p.dx *= -1;
+        if (p.y < 0 || p.y > heroCanvas.height) p.dy *= -1;
+      });
+
+      requestAnimationFrame(draw);
+    }
+
+    window.addEventListener("resize", resize);
+    draw();
+  }
+
+  // ─── RIPPLE EFFECT ───
+  function initRipples() {
+    $$(".ripple").forEach((btn) => {
+      btn.addEventListener("click", function (e) {
+        const circle = document.createElement("span");
+        const d = Math.max(this.clientWidth, this.clientHeight);
+        circle.style.width = circle.style.height = d + "px";
+        circle.classList.add("ripple-circle");
+        this.appendChild(circle);
+        const rect = this.getBoundingClientRect();
+        circle.style.left = e.clientX - rect.left - d / 2 + "px";
+        circle.style.top = e.clientY - rect.top - d / 2 + "px";
+        circle.addEventListener("animationend", () => circle.remove());
+      });
     });
-    if (parts.some((p) => p.life > 0)) requestAnimationFrame(draw);
-    else ctx.clearRect(0, 0, w, h);
-  };
-  draw();
-};
+  }
 
-// BUTTON CANVASES
-const initButtons = () => {
-  btnCanvases.forEach((cnv) => {
-    const ctx = cnv.getContext("2d");
-    const w = (cnv.width = cnv.clientWidth);
-    const h = (cnv.height = cnv.clientHeight);
-    const grad = ctx.createLinearGradient(0, 0, w, h);
-    grad.addColorStop(0, options.buttons ? "#00ff99" : "#cc00ff");
-    grad.addColorStop(1, options.buttons ? "#cc00ff" : "#00ff99");
-    ctx.fillStyle = grad;
-    ctx.fillRect(0, 0, w, h);
+  // ─── INTERSECTION OBSERVER — Animate on Scroll ───
+  function initScrollAnimations() {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = "1";
+            entry.target.style.transform = "translateY(0)";
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.1, rootMargin: "0px 0px -40px 0px" }
+    );
+
+    $$(".showcase-card, .demo-block, .cta-inner").forEach((el) => {
+      el.style.opacity = "0";
+      el.style.transform = "translateY(24px)";
+      el.style.transition = "opacity 0.5s ease, transform 0.5s ease";
+      observer.observe(el);
+    });
+  }
+
+  // ─── LIBRARY FILTER ───
+  function initLibraryFilter() {
+    const btns = $$(".filter-btn");
+    const items = $$(".lib-item");
+    const dividers = $$(".lib-category");
+    if (!btns.length || !items.length) return;
+
+    btns.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        btns.forEach((b) => b.classList.remove("active"));
+        btn.classList.add("active");
+        const cat = btn.dataset.filter;
+        items.forEach((item) => {
+          item.classList.toggle("hidden", cat !== "all" && item.dataset.cat !== cat);
+        });
+        dividers.forEach((d) => {
+          d.classList.toggle("hidden", cat !== "all" && d.dataset.cat !== cat);
+        });
+      });
+    });
+  }
+
+  // ─── INIT ───
+  window.addEventListener("load", () => {
+    hideLoader();
+    initHeroCanvas();
+    initRipples();
+    initScrollAnimations();
+    initLibraryFilter();
   });
-};
-
-// BUTTON RIPPLE EFFECT
-document.querySelectorAll(".ripple").forEach((btn) => {
-  btn.addEventListener("click", function (e) {
-    const circle = document.createElement("span");
-    const d = Math.max(this.clientWidth, this.clientHeight);
-    circle.style.width = circle.style.height = d + "px";
-    circle.classList.add("ripple-circle");
-    this.appendChild(circle);
-    const rect = this.getBoundingClientRect();
-    circle.style.left = e.clientX - rect.left - d / 2 + "px";
-    circle.style.top = e.clientY - rect.top - d / 2 + "px";
-    circle.addEventListener("animationend", () => circle.remove());
-  });
-});
-
-// INITIALIZE ALL
-window.addEventListener("load", () => {
-  if (options.loading) hideLoader();
-  initHero();
-  initButtons();
-});
+})();

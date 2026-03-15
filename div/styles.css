@@ -1,4 +1,9 @@
 /* General Div Styles */
+body {
+  background: #0a0a0a;
+  min-height: 100vh;
+  color: #ffffff;
+}
 div {
   width: 100%;
   height: 100px;
@@ -32,7 +37,7 @@ div:focus {
   height: 50px;
   overflow: hidden;
   background: #3b82f6;
-  color: #fff;
+  color: #f5f0e8;
 }
 .div-2:hover {
   filter: blur(0);
@@ -40,7 +45,7 @@ div:focus {
 .div-2 {
   filter: blur(5px);
   background: #ef4444;
-  color: #fff;
+  color: #f5f0e8;
 }
 .div-3:hover {
   transform: translateY(-10px);
@@ -58,7 +63,7 @@ div:focus {
   display: grid;
   grid-template-columns: 1fr 1fr;
   background: #3b82f6;
-  color: #fff;
+  color: #f5f0e8;
 }
 .div-5:hover {
   transform: scale(1.1);
@@ -69,7 +74,7 @@ div:focus {
 }
 .div-5 {
   background: #ef4444;
-  color: #fff;
+  color: #f5f0e8;
 }
 .div-6.scrolled {
   opacity: 1;
@@ -85,7 +90,7 @@ div:focus {
   background: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.3);
-  color: #fff;
+  color: #f5f0e8;
 }
 .div-7:hover {
   background: rgba(255, 255, 255, 0.3);
@@ -95,7 +100,7 @@ div:focus {
 }
 .div-8 {
   background: #3b82f6;
-  color: #fff;
+  color: #f5f0e8;
 }
 .div-9:hover {
   transform: translateZ(20px);
@@ -103,7 +108,7 @@ div:focus {
 .div-9 {
   perspective: 100px;
   background: #ef4444;
-  color: #fff;
+  color: #f5f0e8;
 }
 .div-10:hover {
   animation: jelly 0.5s;
@@ -121,12 +126,12 @@ div:focus {
 }
 .div-11 {
   background: #3b82f6;
-  color: #fff;
+  color: #f5f0e8;
 }
 .div-12 {
   position: relative;
   background: #ef4444;
-  color: #fff;
+  color: #f5f0e8;
   perspective: 100px;
 }
 .div-12:after {
@@ -148,7 +153,7 @@ div:focus {
 }
 .div-13 {
   background: #3b82f6;
-  color: #fff;
+  color: #f5f0e8;
 }
 .div-14:hover {
   opacity: 1;
@@ -162,7 +167,7 @@ div:focus {
   position: relative;
   overflow: hidden;
   background: #3b82f6;
-  color: #fff;
+  color: #f5f0e8;
 }
 .div-15:after {
   content: '';
@@ -184,7 +189,7 @@ div:focus {
 }
 .div-16 {
   background: #ef4444;
-  color: #fff;
+  color: #f5f0e8;
 }
 .div-17 {
   position: relative;
@@ -208,7 +213,7 @@ div:focus {
 .div-18 {
   position: relative;
   background: #3b82f6;
-  color: #fff;
+  color: #f5f0e8;
 }
 .div-18:after {
   content: '';
@@ -233,7 +238,7 @@ div:focus {
 }
 .div-20 {
   background: #3b82f6;
-  color: #fff;
+  color: #f5f0e8;
 }
 .div-21:hover {
   transform: translateY(-10px);
@@ -241,7 +246,7 @@ div:focus {
 }
 .div-21 {
   background: #ef4444;
-  color: #fff;
+  color: #f5f0e8;
 }
 .div-22 {
   clip-path: polygon(0 0, 100% 0, 100% 80%, 80% 100%, 0 100%);
@@ -256,7 +261,7 @@ div:focus {
 .div-23 {
   mask: url(#circle-mask);
   background: #3b82f6;
-  color: #fff;
+  color: #f5f0e8;
 }
 .div-23:hover {
   mask: none;
@@ -266,11 +271,11 @@ div:focus {
 }
 .div-24 {
   background: #ef4444;
-  color: #fff;
+  color: #f5f0e8;
 }
 .div-25 {
   background: url('https://www.transparenttextures.com/patterns/canvas.png'), #3b82f6;
-  color: #fff;
+  color: #f5f0e8;
 }
 .div-25:hover {
   background: url('https://www.transparenttextures.com/patterns/canvas.png'), #facc15;
@@ -286,7 +291,7 @@ div:focus {
 .div-27 {
   position: relative;
   background: #3b82f6;
-  color: #fff;
+  color: #f5f0e8;
 }
 .div-27:after {
   content: '';
@@ -307,14 +312,14 @@ div:focus {
 }
 .div-28 {
   background: #ef4444;
-  color: #fff;
+  color: #f5f0e8;
 }
 .div-29:hover {
   background: radial-gradient(circle, #facc15, #3b82f6);
 }
 .div-29 {
   background: #3b82f6;
-  color: #fff;
+  color: #f5f0e8;
 }
 .div-30:hover {
   filter: url(#chromatic);
@@ -330,7 +335,7 @@ div:focus {
   background: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.3);
-  color: #fff;
+  color: #f5f0e8;
 }
 .div-32:hover {
   animation: bounce 0.5s;
@@ -340,13 +345,13 @@ div:focus {
 }
 .div-32 {
   background: #3b82f6;
-  color: #fff;
+  color: #f5f0e8;
 }
 .div-33 {
   position: relative;
   overflow: hidden;
   background: #ef4444;
-  color: #fff;
+  color: #f5f0e8;
 }
 .div-33:after {
   content: '';
@@ -371,16 +376,16 @@ div:focus {
 }
 .div-35:hover {
   background: #ef4444;
-  color: #fff;
+  color: #f5f0e8;
 }
 .div-35 {
   background: #3b82f6;
-  color: #fff;
+  color: #f5f0e8;
 }
 .div-36 {
   position: relative;
   background: #3b82f6;
-  color: #fff;
+  color: #f5f0e8;
 }
 .div-36:after {
   content: '';
@@ -398,14 +403,14 @@ div:focus {
 }
 .div-37 {
   background: url('https://www.transparenttextures.com/patterns/noise.png'), #ef4444;
-  color: #fff;
+  color: #f5f0e8;
 }
 .div-37:hover {
   background: url('https://www.transparenttextures.com/patterns/noise.png'), #facc15;
 }
 .div-38 {
   position: relative;
-  color: #fff;
+  color: #f5f0e8;
 }
 .div-38 video {
   position: absolute;
@@ -425,7 +430,7 @@ div:focus {
 .div-39 {
   position: relative;
   background: #3b82f6;
-  color: #fff;
+  color: #f5f0e8;
   perspective: 100px;
 }
 .div-39:after {
@@ -444,7 +449,7 @@ div:focus {
 .div-40 {
   clip-path: circle(30% at 50% 50%);
   background: #ef4444;
-  color: #fff;
+  color: #f5f0e8;
 }
 .div-41:hover {
   grid-template-columns: 3fr 1fr;
@@ -464,7 +469,7 @@ div:focus {
 }
 .div-42 {
   background: #3b82f6;
-  color: #fff;
+  color: #f5f0e8;
 }
 .div-43 {
   position: relative;
@@ -497,14 +502,14 @@ div:focus {
 }
 .div-45 {
   background: #3b82f6;
-  color: #fff;
+  color: #f5f0e8;
 }
 .div-46:hover {
   filter: hue-rotate(90deg);
 }
 .div-46 {
   background: linear-gradient(45deg, #0000ff, #ff0000);
-  color: #fff;
+  color: #f5f0e8;
 }
 .div-47:hover {
   transform: scaleX(-1);
@@ -516,7 +521,7 @@ div:focus {
 .div-48 {
   position: relative;
   background: #3b82f6;
-  color: #fff;
+  color: #f5f0e8;
 }
 .div-48:after {
   content: '';
@@ -535,7 +540,7 @@ div:focus {
 .div-49 {
   position: relative;
   background: #ef4444;
-  color: #fff;
+  color: #f5f0e8;
 }
 .div-49:after {
   content: '';
@@ -549,7 +554,7 @@ div:focus {
 .div-50 {
   position: relative;
   background: #3b82f6;
-  color: #fff;
+  color: #f5f0e8;
 }
 .div-50 canvas {
   position: absolute;
@@ -575,3 +580,180 @@ div:focus {
 main.gap-12 {
     gap: 4rem;
 }
+/* === NEW STARTUP-STYLE COMPONENTS === */
+
+/* Div 51: Glassmorphic Card */
+.div-51 {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #f5f0e8;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+.div-51:hover {
+  background: rgba(255, 255, 255, 0.14);
+  border-color: rgba(255, 140, 0, 0.4);
+  box-shadow: 0 8px 32px rgba(255, 140, 0, 0.15);
+}
+
+/* Div 52: Neumorphic Box */
+.div-52 {
+  background: #1a1a1a;
+  color: #f5f0e8;
+  box-shadow: 8px 8px 16px #0d0d0d, -8px -8px 16px #272727;
+  border: none;
+}
+.div-52:hover {
+  box-shadow: inset 4px 4px 8px #0d0d0d, inset -4px -4px 8px #272727;
+}
+
+/* Div 53: Aurora Gradient */
+.div-53 {
+  background: linear-gradient(-45deg, #0f0c29, #302b63, #24243e, #ff8c00);
+  background-size: 400% 400%;
+  animation: aurora-shift 8s ease infinite;
+  color: #f5f0e8;
+  border: none;
+}
+@keyframes aurora-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Div 54: Brutalist Block */
+.div-54 {
+  background: #ff8c00;
+  color: #0a0a0a;
+  border: 4px solid #0a0a0a;
+  box-shadow: 8px 8px 0 #0a0a0a;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+.div-54:hover {
+  transform: translate(-4px, -4px);
+  box-shadow: 12px 12px 0 #0a0a0a;
+}
+
+/* Div 55: Bento Cell */
+.div-55 {
+  background: #1a1a1a;
+  border: 1px solid rgba(255, 140, 0, 0.15);
+  color: #a89f91;
+  position: relative;
+  overflow: hidden;
+}
+.div-55::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 4px; height: 100%;
+  background: linear-gradient(180deg, #ff8c00, transparent);
+}
+.div-55:hover {
+  border-color: rgba(255, 140, 0, 0.4);
+  color: #f5f0e8;
+}
+
+/* Div 56: Cyberpunk Neon */
+.div-56 {
+  background: #0a0a0a;
+  color: #0ff;
+  border: 1px solid #0ff;
+  text-shadow: 0 0 10px #0ff;
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.3), inset 0 0 10px rgba(0, 255, 255, 0.05);
+}
+.div-56:hover {
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.5), inset 0 0 20px rgba(0, 255, 255, 0.1), 0 0 40px rgba(0, 255, 255, 0.2);
+  text-shadow: 0 0 20px #0ff, 0 0 40px #0ff;
+}
+
+/* Div 57: 3D Flip Card */
+.div-57 {
+  background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
+  color: #f5f0e8;
+  border: 1px solid rgba(255, 140, 0, 0.2);
+  perspective: 800px;
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
+}
+.div-57:hover {
+  transform: rotateY(12deg) rotateX(5deg);
+  box-shadow: -10px 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+/* Div 58: Grain Texture */
+.div-58 {
+  background: #1a1a1a;
+  color: #f5f0e8;
+  position: relative;
+  overflow: hidden;
+}
+.div-58::after {
+  content: '';
+  position: absolute;
+  top: -50%; left: -50%;
+  width: 200%; height: 200%;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.08'/%3E%3C/svg%3E");
+  pointer-events: none;
+}
+
+/* Div 59: Morphing Blob */
+.div-59 {
+  background: linear-gradient(135deg, #ff8c00, #ff6b00);
+  color: #0a0a0a;
+  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  animation: blob-morph 6s ease-in-out infinite;
+  font-weight: 700;
+}
+@keyframes blob-morph {
+  0% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
+  25% { border-radius: 58% 42% 75% 25% / 76% 46% 54% 24%; }
+  50% { border-radius: 50% 50% 33% 67% / 55% 27% 73% 45%; }
+  75% { border-radius: 33% 67% 58% 42% / 63% 68% 32% 37%; }
+  100% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
+}
+
+/* Div 60: Holographic */
+.div-60 {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+.div-60::before {
+  content: '';
+  position: absolute;
+  top: -50%; left: -50%;
+  width: 200%; height: 200%;
+  background: conic-gradient(from 0deg, transparent, rgba(255,255,255,0.3), transparent 30%);
+  animation: holo-spin 4s linear infinite;
+}
+@keyframes holo-spin {
+  100% { transform: rotate(360deg); }
+}
+
+/* --- LIGHT MODE --- */
+[data-theme="light"] body { background: #f5f0e8; }
+[data-theme="light"] [class*="div-"] {
+  color: #1a1a1a !important;
+  border-color: rgba(10,10,10,0.15) !important;
+}
+[data-theme="light"] [class*="div-"][style*="background"] {
+  color: #1a1a1a !important;
+}
+[data-theme="light"] .component-card,
+[data-theme="light"] .flex.flex-col.gap-4 {
+  background: transparent;
+}
+[data-theme="light"] [class*="div-"] h3,
+[data-theme="light"] [class*="div-"] p,
+[data-theme="light"] [class*="div-"] span {
+  color: #1a1a1a !important;
+}
+[data-theme="light"] .div-51 { background: rgba(255,255,255,0.4) !important; border-color: rgba(0,0,0,0.1) !important; }
+[data-theme="light"] .div-52 { background: #e8e0d4 !important; box-shadow: 4px 4px 8px #ccc, -4px -4px 8px #fff !important; }
+[data-theme="light"] .div-56 { background: #1a1a1a !important; color: #0ff !important; }
+[data-theme="light"] .div-56 h3, [data-theme="light"] .div-56 p { color: #0ff !important; }

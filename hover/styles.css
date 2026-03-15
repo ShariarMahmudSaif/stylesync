@@ -1,9 +1,9 @@
 body {
-  background: linear-gradient(45deg, #3b82f6, #ef4444);
+  background: #0a0a0a;
   min-height: 100vh;
 }
 .effect {
-  @apply p-4 bg-white rounded-lg shadow-md text-center cursor-pointer text-gray-800;
+  @apply p-4 rounded-none shadow-md text-center cursor-pointer; background: #1a1a1a; color: #f5f0e8; border: 2px solid rgba(255,140,0,0.2);
 }
 .effect-1 {
   position: relative;
@@ -111,12 +111,12 @@ body {
   transition: box-shadow 0.3s;
 }
 .effect-12:hover {
-  box-shadow: 0 0 10px #00ff88, 0 0 20px #00ff88;
+  box-shadow: 0 0 10px #cc7000f88, 0 0 20px #cc7000f88;
   animation: flicker 1.5s infinite alternate;
 }
 @keyframes flicker {
-  0% { box-shadow: 0 0 10px #00ff88, 0 0 20px #00ff88; }
-  100% { box-shadow: 0 0 5px #00ff88, 0 0 10px #00ff88; }
+  0% { box-shadow: 0 0 10px #cc7000f88, 0 0 20px #cc7000f88; }
+  100% { box-shadow: 0 0 5px #cc7000f88, 0 0 10px #cc7000f88; }
 }
 .effect-13 {
   position: relative;
@@ -172,7 +172,7 @@ body {
   left: 0;
   width: 0;
   height: 2px;
-  background: #00ff88;
+  background: #cc7000f88;
   transition: width 0.3s;
 }
 .effect-18:hover::after {
@@ -407,7 +407,7 @@ body {
   left: 50%;
   width: 0;
   height: 0;
-  border: 2px solid #00ff88;
+  border: 2px solid #cc7000f88;
   border-radius: 50%;
   transform: translate(-50%, -50%);
   transition: width 0.3s, height 0.3s;
@@ -522,3 +522,202 @@ main.max-w-6xl {
 main.md\:grid-cols-3 {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
+/* === NEW STARTUP-STYLE HOVER EFFECTS === */
+
+/* Effect 51: Glassmorphic Hover */
+.effect-51 {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.4s;
+}
+.effect-51:hover {
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-color: rgba(255, 140, 0, 0.4);
+  box-shadow: 0 8px 32px rgba(255, 140, 0, 0.15);
+}
+
+/* Effect 52: Neumorphic Press */
+.effect-52 {
+  background: #1a1a1a;
+  box-shadow: 6px 6px 12px #0d0d0d, -6px -6px 12px #272727;
+  transition: all 0.3s;
+}
+.effect-52:hover {
+  box-shadow: inset 4px 4px 8px #0d0d0d, inset -4px -4px 8px #272727;
+  transform: scale(0.98);
+}
+
+/* Effect 53: Aurora Reveal */
+.effect-53 {
+  background: #1a1a1a;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.5s;
+}
+.effect-53::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(-45deg, #0f0c29, #302b63, #24243e, #ff8c00);
+  background-size: 400% 400%;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+.effect-53:hover::before {
+  opacity: 1;
+  animation: aurora-hover 3s ease infinite;
+}
+@keyframes aurora-hover {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Effect 54: Brutalist Shift */
+.effect-54 {
+  background: #ff8c00;
+  color: #0a0a0a;
+  border: 3px solid #0a0a0a;
+  box-shadow: 6px 6px 0 #0a0a0a;
+  transition: all 0.15s;
+}
+.effect-54:hover {
+  transform: translate(-4px, -4px);
+  box-shadow: 10px 10px 0 #0a0a0a;
+}
+
+/* Effect 55: Magnetic Tilt */
+.effect-55 {
+  background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
+  border: 1px solid rgba(255, 140, 0, 0.15);
+  transition: all 0.4s;
+  transform-style: preserve-3d;
+}
+.effect-55:hover {
+  transform: perspective(600px) rotateY(8deg) rotateX(-4deg);
+  box-shadow: -8px 8px 24px rgba(0, 0, 0, 0.3);
+  border-color: rgba(255, 140, 0, 0.4);
+}
+
+/* Effect 56: Neon Border Chase */
+.effect-56 {
+  background: #0a0a0a;
+  border: 2px solid transparent;
+  position: relative;
+  transition: all 0.3s;
+}
+.effect-56::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  background: conic-gradient(#0ff, #f0f, #ff0, #0ff);
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.effect-56:hover::before {
+  opacity: 1;
+  animation: border-chase 2s linear infinite;
+}
+@keyframes border-chase {
+  100% { transform: rotate(360deg); }
+}
+
+/* Effect 57: Scale Bloom */
+.effect-57 {
+  background: #1a1a1a;
+  transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.effect-57:hover {
+  transform: scale(1.08);
+  box-shadow: 0 16px 40px rgba(255, 140, 0, 0.2);
+  background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
+}
+
+/* Effect 58: Underline Expand */
+.effect-58 {
+  background: transparent;
+  position: relative;
+  transition: all 0.3s;
+}
+.effect-58::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 50%;
+  width: 0; height: 3px;
+  background: #ff8c00;
+  transition: all 0.3s;
+}
+.effect-58:hover::after {
+  left: 0;
+  width: 100%;
+}
+
+/* Effect 59: Gradient Wipe */
+.effect-59 {
+  background: #1a1a1a;
+  position: relative;
+  overflow: hidden;
+  transition: color 0.4s;
+}
+.effect-59::before {
+  content: '';
+  position: absolute;
+  top: 0; left: -100%;
+  width: 100%; height: 100%;
+  background: linear-gradient(135deg, #ff8c00, #ff6b00);
+  transition: left 0.4s;
+}
+.effect-59:hover::before {
+  left: 0;
+}
+.effect-59:hover {
+  color: #0a0a0a;
+}
+
+/* Effect 60: Holographic Shimmer */
+.effect-60 {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s;
+}
+.effect-60::before {
+  content: '';
+  position: absolute;
+  top: -50%; left: -50%;
+  width: 200%; height: 200%;
+  background: conic-gradient(from 0deg, transparent, rgba(255,255,255,0.4), transparent 30%);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.effect-60:hover::before {
+  opacity: 1;
+  animation: holo-hover 3s linear infinite;
+}
+@keyframes holo-hover {
+  100% { transform: rotate(360deg); }
+}
+
+/* --- LIGHT MODE --- */
+[data-theme="light"] body { background: #f5f0e8; }
+[data-theme="light"] .effect {
+  background: #ffffff !important;
+  color: #1a1a1a !important;
+  border: 2px solid rgba(10,10,10,0.2) !important;
+  box-shadow: 3px 3px 0 rgba(0,0,0,0.08) !important;
+}
+[data-theme="light"] .effect span,
+[data-theme="light"] .effect p {
+  color: #1a1a1a !important;
+}
+[data-theme="light"] .effect::before,
+[data-theme="light"] .effect::after {
+  color: #1a1a1a;
+}
+[data-theme="light"] .effect-51 { background: rgba(0,0,0,0.04) !important; }
+[data-theme="light"] .effect-52 { background: #e8e0d4 !important; box-shadow: 4px 4px 8px #ccc, -4px -4px 8px #fff !important; }
+[data-theme="light"] .effect-54 { border-color: #1a1a1a !important; }
+[data-theme="light"] .effect-56 { border-color: #e07800 !important; }
